@@ -1,9 +1,10 @@
+import Hero from "@/components/hero";
 import Image from "next/image";
-export default function hello() {
+export default function Main() {
   return (
     <>
-      <h1>hello</h1>
-      
+
+      <Hero />
     </>
   );
 }
