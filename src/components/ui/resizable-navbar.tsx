@@ -1,6 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { Menu as IconMenu2, X as IconX } from "lucide-react";
+import Link from "next/link";
 import {
   motion,
   AnimatePresence,
@@ -126,7 +127,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
       )}
     >
       {items.map((item, idx) => (
-        <a
+        <Link
           onMouseEnter={() => setHovered(idx)}
           onClick={onItemClick}
           className="relative px-4 py-1.5 text-neutral-300 hover:text-white transition duration-200"
@@ -141,7 +142,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
             />
           )}
           <span className="relative z-20 font-medium text-xs tracking-wider uppercase">{item.name}</span>
-        </a>
+        </Link>
       ))}
     </motion.div>
   );
@@ -236,8 +237,8 @@ export const MobileNavToggle = ({
 
 export const NavbarLogo = () => {
   return (
-    <a
-      href="#"
+    <Link
+      href="/"
       className="relative z-20 flex items-center space-x-2.5 px-1 py-0.5"
     >
       <div className="w-8 h-8 rounded-lg bg-[#C5EC60] flex items-center justify-center text-black shadow-md font-bold shrink-0">
@@ -250,13 +251,13 @@ export const NavbarLogo = () => {
         <span className="font-bold text-white text-sm tracking-wide leading-none">EZ Soft Tech</span>
         <span className="text-[8px] text-neutral-400 uppercase tracking-widest font-medium mt-0.5">Software</span>
       </div>
-    </a>
+    </Link>
   );
 };
 
 export const NavbarButton = ({
   href,
-  as: Tag = "a",
+  as: Tag = Link,
   children,
   className,
   variant = "primary",
@@ -268,7 +269,7 @@ export const NavbarButton = ({
   className?: string;
   variant?: "primary" | "secondary" | "dark" | "gradient" | "lime";
 } & (
-  | React.ComponentPropsWithoutRef<"a">
+  | React.ComponentPropsWithoutRef<typeof Link>
   | React.ComponentPropsWithoutRef<"button">
 )) => {
   const baseStyles =

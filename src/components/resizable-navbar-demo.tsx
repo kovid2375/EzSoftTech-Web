@@ -12,24 +12,25 @@ import {
 } from "@/components/ui/resizable-navbar";
 import { useState } from "react";
 import Button from "@/components/button";
+import Link from "next/link";
 
 export default function Navbar1() {
   const navItems = [
     {
+      name: "Home",
+      link: "/",
+    },
+    {
       name: "About Us",
-      link: "#about",
+      link: "/about-us",
     },
     {
       name: "Services",
-      link: "#services",
+      link: "/services",
     },
     {
-      name: "Expertise",
-      link: "#expertise",
-    },
-    {
-      name: "FAQ",
-      link: "#faq",
+      name: "Contact",
+      link: "/contact",
     },
   ];
 
@@ -43,7 +44,9 @@ export default function Navbar1() {
           <NavbarLogo />
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
-            <Button >Get Started</Button>
+            <Link href="/contact">
+              <Button>Get Started</Button>
+            </Link>
           </div>
         </NavBody>
 
@@ -63,21 +66,21 @@ export default function Navbar1() {
           >
             <div className="flex flex-col gap-4 w-full">
               {navItems.map((item, idx) => (
-                <a
+                <Link
                   key={`mobile-link-${idx}`}
                   href={item.link}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="text-sm font-semibold uppercase tracking-wider text-neutral-300 hover:text-white transition duration-200 py-1"
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
               <div className="h-[1px] bg-neutral-800 w-full my-2" />
               <div className="flex w-full flex-col gap-3">
                 <NavbarButton
                   onClick={() => setIsMobileMenuOpen(false)}
                   variant="primary"
-                  href="#services"
+                  href="/services"
                   className="w-full text-center"
                 >
                   Get Started
