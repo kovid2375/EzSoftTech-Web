@@ -45,7 +45,7 @@ export function FaqSection() {
   };
 
   return (
-    <section className="py-20 md:py-28 px-4 bg-white flex justify-center font-sans overflow-hidden -mt-10">
+    <section id="faq" className="py-20 md:py-28 px-4 bg-white flex justify-center font-sans overflow-hidden -mt-10">
       <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
         
         {/* Left Column - Headline & CTA Box */}

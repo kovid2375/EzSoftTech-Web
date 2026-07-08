@@ -61,7 +61,7 @@ function Counter({ value, suffix = "" }: CounterProps) {
 
 export function AboutUsSection() {
   return (
-    <section className="py-20 md:py-28 px-4 bg-white flex flex-col items-center text-center font-sans overflow-hidden -mt-10">
+    <section id="about" className="py-20 md:py-28 px-4 bg-white flex flex-col items-center text-center font-sans overflow-hidden -mt-10">
       <div className="flex items-center gap-2 mb-8 md:mb-10 text-xs md:text-sm font-semibold tracking-[0.2em] text-black uppercase">
         <span className="w-1.5 h-1.5 bg-black rounded-full" />
         About Us

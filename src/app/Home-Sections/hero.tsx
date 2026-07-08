@@ -7,7 +7,7 @@ import { FlipWords } from "../../components/ui/flip-words";
 export default function Hero() {
     const words=["Fast", "Reliable", "Scalable"]
     return (
-        <main className="p-5">
+        <main className="p-3">
             <div className="relative min-h-[1080px] w-full rounded-3xl overflow-hidden flex flex-col items-center pt-24 pb-12 shadow-xl">
                 <img className="absolute inset-0 h-full w-full object-cover z-0" src="/image.png" alt="" />
                 <div className="relative z-10 flex flex-col items-center text-center px-4 max-w-4xl">
