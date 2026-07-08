@@ -283,14 +283,16 @@ export const NavbarButton = ({
     lime: "bg-[#D6FD70] text-neutral-950 hover:bg-[#c5ec60]"
   };
 
+  const Component = Tag as React.ComponentType<any>;
+
   return (
-    <Tag
+    <Component
       href={href || undefined}
       className={cn(baseStyles, variantStyles[variant], className)}
       {...props}
     >
       {children}
-    </Tag>
+    </Component>
   );
 };
 
