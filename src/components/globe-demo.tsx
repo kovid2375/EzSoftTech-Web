@@ -30,7 +30,7 @@ export default function GlobeDemo() {
     autoRotate: true,
     autoRotateSpeed: 0.5,
   };
-  const colors = ["#c5ec60", "#c5ec60", "#c5ec60"];
+  const colors = ["#3c83f6", "#3c83f6", "#3c83f6"];
   const sampleArcs = [
     {
       order: 1,
@@ -395,30 +395,22 @@ export default function GlobeDemo() {
   ];
 
   return (
-    <div className="flex flex-row items-center justify-center py-15 h-screen md:h-auto dark:bg-black bg-white relative w-full">
-      <div className="max-w-7xl mx-auto w-full relative overflow-hidden h-full md:h-[40rem] px-4">
-        <motion.div
-          initial={{
-            opacity: 0,
-            y: 20,
-          }}
-          animate={{
-            opacity: 1,
-            y: 0,
-          }}
-          transition={{
-            duration: 1,
-          }}
-          className="div"
-        >
-          <h2 className="text-center text-xl md:text-4xl font-bold text-black dark:text-white">
-            Serving Clients Globally
-          </h2>
-          <p className="text-center text-base md:text-lg font-normal text-neutral-700 dark:text-neutral-200 max-w-md mt-2 mx-auto">
-            Trusted by businesses in India, UK, UAE, and USA
-          </p>
-        </motion.div>
-        <div className="absolute w-full -bottom-20 h-72 md:h-full z-10">
+    <div className="w-full flex flex-col items-center justify-center bg-transparent py-4">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        className="w-full text-center mb-6"
+      >
+        <h2 className="text-xl md:text-2xl font-bold text-neutral-900 dark:text-neutral-50 tracking-tight">
+          Serving Clients Globally
+        </h2>
+        <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-2 max-w-md mx-auto leading-relaxed">
+          Trusted by businesses in India, UK, UAE, and USA
+        </p>
+      </motion.div>
+      <div className="w-full h-[300px] sm:h-[400px] md:h-[450px] relative overflow-hidden flex items-center justify-center">
+        <div className="absolute inset-0 w-full h-full">
           <World data={sampleArcs} globeConfig={globeConfig} />
         </div>
       </div>

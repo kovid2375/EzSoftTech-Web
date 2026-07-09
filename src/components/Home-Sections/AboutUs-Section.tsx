@@ -129,7 +129,7 @@ export function AboutUsSection() {
             </div>
           </div>
           <div className="bg-white rounded-2xl p-6 shadow-sm mx-4 mb-4 mt-auto text-left relative z-10 flex flex-col gap-1">
-            <h3 className="text-4xl md:text-5xl font-bold tracking-tight text-neutral-950">
+            <h3 className="text-4xl md:text-5xl font-bold tracking-tight text-blue-500">
               <Counter value={500} suffix="+" />
             </h3>
             <p className="text-xs md:text-sm font-semibold text-neutral-500 uppercase tracking-wider">Projects Delivered</p>
@@ -141,7 +141,7 @@ export function AboutUsSection() {
         <div className="rounded-3xl p-8 bg-[#f4f4f5] text-left flex flex-col justify-between min-h-[420px] shadow-sm border border-neutral-100/50">
           <div>
             <span className="text-xs font-semibold text-neutral-400 uppercase tracking-widest block mb-4">Commitment to measurable</span>
-            <h3 className="text-5xl md:text-6xl font-bold tracking-tight text-neutral-950">
+            <h3 className="text-5xl md:text-6xl font-bold tracking-tight text-blue-500">
               <Counter value={200} suffix="+" />
             </h3>
             <p className="text-xs md:text-sm font-semibold text-neutral-500 uppercase tracking-wider mt-1">Happy Clients</p>
@@ -160,15 +160,15 @@ export function AboutUsSection() {
           </div>
         </div>
         <div className="flex flex-col gap-6 justify-between min-h-[420px]">
-          <div className="p-8 bg-[#cfff33] text-left rounded-3xl h-[280px] flex flex-col justify-between shadow-sm">
+          <div className="p-8 bg-[#3c83f6] text-left rounded-3xl h-[280px] flex flex-col justify-between shadow-sm">
             <div>
-              <span className="text-xs font-semibold text-neutral-800 uppercase tracking-widest block mb-4">Data Points</span>
-              <h3 className="text-5xl md:text-6xl font-bold tracking-tight text-neutral-950">
+              <span className="text-xs font-semibold text-white uppercase tracking-widest block mb-4">Data Points</span>
+              <h3 className="text-5xl md:text-6xl font-bold tracking-tight text-white">
                 <Counter value={4} />
               </h3>
-              <p className="text-xs md:text-sm font-semibold text-neutral-800 uppercase tracking-wider mt-1">Countries Served</p>
+              <p className="text-xs md:text-sm font-semibold text-white uppercase tracking-wider mt-1">Countries Served</p>
             </div>
-            <p className="text-sm text-neutral-900 leading-relaxed font-medium">
+            <p className="text-sm text-white leading-relaxed font-medium">
               Spanning international borders to deliver regional compliance and globally localized software expertise.
             </p>
           </div>
@@ -178,7 +178,7 @@ export function AboutUsSection() {
                 <span className="text-xs font-semibold text-neutral-500 uppercase tracking-widest block mb-1">Products Built</span>
                 <h4 className="text-lg md:text-xl font-bold text-white tracking-tight">Mobile Apps</h4>
               </div>
-              <div className="text-3xl md:text-4xl font-extrabold text-[#cfff33] leading-none">
+              <div className="text-3xl md:text-4xl font-extrabold text-blue-400 leading-none">
                 <Counter value={100} suffix="+" />
               </div>
             </div>

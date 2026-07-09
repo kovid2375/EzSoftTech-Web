@@ -241,7 +241,7 @@ export const NavbarLogo = () => {
       href="/"
       className="relative z-20 flex items-center space-x-2.5 px-1 py-0.5"
     >
-      <div className="w-8 h-8 rounded-lg bg-[#C5EC60] flex items-center justify-center text-black shadow-md font-bold shrink-0">
+      <div className="w-8 h-8 rounded-lg bg-[#3C83F6] flex items-center justify-center text-white shadow-md font-bold shrink-0">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-4.5 h-4.5">
           <polyline points="16 18 22 12 16 6"></polyline>
           <polyline points="8 6 2 12 8 18"></polyline>
@@ -276,11 +276,11 @@ export const NavbarButton = ({
     "px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase relative cursor-pointer active:scale-95 transition duration-200 inline-block text-center";
 
   const variantStyles = {
-    primary: "bg-[#D6FD70] text-neutral-950 hover:bg-[#c5ec60] shadow-md",
+    primary: "bg-[#3C83F6] text-white hover:bg-[#2563EB] shadow-md",
     secondary: "bg-white/10 border border-white/10 text-white hover:bg-white/20",
     dark: "bg-neutral-950 text-white border border-neutral-800 hover:bg-neutral-900",
     gradient: "bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-md hover:opacity-90",
-    lime: "bg-[#D6FD70] text-neutral-950 hover:bg-[#c5ec60]"
+    lime: "bg-[#3C83F6] text-white hover:bg-[#2563EB]"
   };
 
   const Component = Tag as React.ComponentType<any>;

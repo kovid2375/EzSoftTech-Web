@@ -15,7 +15,7 @@ export function Footer() {
           <div className="lg:col-span-5 flex flex-col items-start">
             {/* Logo */}
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-[#C5EC60] flex items-center justify-center text-black shadow-md">
+              <div className="w-10 h-10 rounded-xl bg-[#3c83f6] flex items-center justify-center text-white shadow-md">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
                   <polyline points="16 18 22 12 16 6"></polyline>
                   <polyline points="8 6 2 12 8 18"></polyline>
