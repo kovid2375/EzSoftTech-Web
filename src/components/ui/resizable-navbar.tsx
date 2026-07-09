@@ -103,7 +103,7 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
         minWidth: "800px",
       }}
       className={cn(
-        "relative z-[60] mx-auto hidden w-full max-w-6xl flex-row items-center justify-between self-start rounded-full border px-6 py-2.5 lg:flex transition-all duration-300",
+        "relative z-[60] mx-auto hidden w-full max-w-6xl flex-row items-center justify-between self-start rounded-2xl border px-6 py-2.5 lg:flex transition-all duration-300",
         visible 
           ? "bg-[#0b0b0d] border-neutral-800 text-white" 
           : "bg-black border-white/10 text-white",
@@ -137,7 +137,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
           {hovered === idx && (
             <motion.div
               layoutId="hovered"
-              className="absolute inset-0 h-full w-full rounded-full bg-white/10"
+              className="absolute inset-0 h-full w-full rounded-md bg-white/10"
               transition={{ type: "spring", stiffness: 380, damping: 30 }}
             />
           )}
@@ -159,7 +159,7 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
         width: visible ? "95%" : "100%",
         paddingRight: visible ? "16px" : "12px",
         paddingLeft: visible ? "16px" : "12px",
-        borderRadius: "2rem",
+        borderRadius: "0.375rem",
         y: visible ? 10 : 0,
       }}
       transition={{

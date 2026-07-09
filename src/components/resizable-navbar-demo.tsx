@@ -21,12 +21,12 @@ export default function Navbar1() {
       link: "/",
     },
     {
-      name: "About Us",
-      link: "/about-us",
-    },
-    {
       name: "Services",
       link: "/services",
+    },
+    {
+      name: "About Us",
+      link: "/about-us",
     },
     {
       name: "Contact",
@@ -45,7 +45,7 @@ export default function Navbar1() {
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
             <Link href="/contact">
-              <Button>Get Started</Button>
+              <Button>Contact Us</Button>
             </Link>
           </div>
         </NavBody>
@@ -83,7 +83,7 @@ export default function Navbar1() {
                   href="/services"
                   className="w-full text-center"
                 >
-                  Get Started
+                  Contact Us
                 </NavbarButton>
               </div>
             </div>
