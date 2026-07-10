@@ -28,336 +28,499 @@ export default function CurvedCarousel() {
 
   // Definition of the 9 cards with high-fidelity styles matching the screenshots
   const cards: CardItem[] = [
-    // 1. Performance Analytics Bar Chart (Image 5, leftmost)
-    {
-      id: 1,
-      content: (
-        <div className="w-full h-full bg-white rounded-3xl p-6 flex flex-col justify-between shadow-[0_15px_35px_rgba(0,0,0,0.05)] border border-zinc-100">
-          <div>
-            <div className="flex justify-between items-start">
-              <div>
-                <span className="text-zinc-400 text-xs font-semibold uppercase tracking-wider">Analytics</span>
-                <h3 className="text-xl font-semibold text-zinc-900 mt-1">Growth rate</h3>
-              </div>
-              <span className="text-emerald-500 bg-emerald-50 text-xs font-semibold px-2.5 py-1 rounded-full flex items-center gap-1">
-                +15.4%
+  // 1. Projects Delivered
+  {
+    id: 1,
+    content: (
+      <div className="w-full h-full bg-white rounded-3xl p-6 flex flex-col justify-between shadow-[0_15px_35px_rgba(0,0,0,0.05)] border border-zinc-100">
+        <div>
+          <div className="flex justify-between items-start">
+            <div>
+              <span className="text-zinc-400 text-xs font-semibold uppercase tracking-wider">
+                Our Work
               </span>
+              <h3 className="text-xl font-semibold text-zinc-900 mt-1">
+                Projects Delivered
+              </h3>
             </div>
-            <div className="mt-8 h-32 flex items-end gap-3 justify-between">
-              {[30, 45, 35, 60, 80, 50, 75, 90, 65, 85].map((height, i) => (
-                <div key={i} className="flex-1 flex flex-col items-center gap-1.5 group">
-                  <div 
+
+            <span className="text-blue-500 bg-blue-50 text-xs font-semibold px-2.5 py-1 rounded-full">
+              Growing
+            </span>
+          </div>
+
+          <div className="mt-8 h-32 flex items-end gap-3 justify-between">
+            {[30, 45, 38, 55, 65, 58, 72, 78, 85, 95].map(
+              (height, i) => (
+                <div
+                  key={i}
+                  className="flex-1 flex flex-col items-center gap-1.5 group"
+                >
+                  <div
                     className="w-full rounded-t-md transition-all duration-500 ease-out bg-zinc-100 group-hover:bg-blue-500"
                     style={{ height: `${height}%` }}
                   />
-                  <span className="text-[10px] text-zinc-400 font-semibold">{i + 1}d</span>
+                  <span className="text-[10px] text-zinc-400 font-semibold">
+                    {i + 1}
+                  </span>
                 </div>
-              ))}
-            </div>
-          </div>
-          <div className="pt-4 border-t border-zinc-100 flex items-center justify-between text-xs text-zinc-500">
-            <span>Overall rating</span>
-            <span className="font-semibold text-zinc-900">Excellent</span>
+              )
+            )}
           </div>
         </div>
-      ),
-    },
-    // 2. Monthly Expense (Image 2 style)
-    {
-      id: 2,
-      content: (
-        <div className="w-full h-full bg-white rounded-3xl p-6 flex flex-col justify-between shadow-[0_15px_35px_rgba(0,0,0,0.05)] border border-zinc-100">
-          <div>
-            <span className="text-zinc-500 text-sm font-normal">Monthly expanse</span>
-            <div className="flex items-baseline mt-2 gap-1.5">
-              <span className="text-4xl font-semibold text-zinc-900 font-plus-jakarta tracking-tight">$4,900</span>
-              <span className="text-2xl text-zinc-300 font-normal">/ $10,000</span>
-            </div>
-            <div className="w-full h-3.5 bg-zinc-100 rounded-full mt-4 overflow-hidden">
-              <div className="w-[49%] h-full bg-[#38bdf8] rounded-full transition-all duration-1000 ease-out" />
-            </div>
-          </div>
 
-          <div className="flex flex-col gap-2 mt-4">
-            {[
-              { date: "November 18, 2025", amount: "$300" },
-              { date: "November 15, 2025", amount: "$150" },
-              { date: "November 14, 2025", amount: "$120" },
-            ].map((item, i) => (
-              <div key={i} className="flex items-center justify-between p-2.5 bg-[#f4f4f4] rounded-2xl">
-                <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-full bg-zinc-900 flex items-center justify-center text-white">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-medium text-zinc-800">Vit premium</h4>
-                    <p className="text-[10px] text-zinc-400 font-semibold">{item.date}</p>
-                  </div>
-                </div>
-                <span className="text-sm font-semibold text-zinc-900">{item.amount}</span>
-              </div>
-            ))}
-          </div>
+        <div className="pt-4 border-t border-zinc-100 flex items-center justify-between text-xs text-zinc-500">
+          <span>Delivery Quality</span>
+          <span className="font-semibold text-zinc-900">Built to Perform</span>
         </div>
-      ),
-    },
-    // 3. Income & Expense (Image 5, 3rd card - orange background portrait)
-    {
-      id: 3,
-      content: (
-        <div className="w-full h-full bg-gradient-to-br from-orange-400 to-amber-600 rounded-3xl overflow-hidden relative shadow-[0_15px_35px_rgba(0,0,0,0.05)] flex flex-col justify-between">
-          <div className="absolute inset-0 z-0">
-            <img 
-              src="/portrait_woman.png" 
-              alt="Profile" 
-              className="w-full h-full object-cover brightness-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" />
-          </div>
+      </div>
+    ),
+  },
 
-          <div className="z-10 p-5 flex justify-between items-start">
-            <span className="bg-white/20 backdrop-blur-md text-white text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-full">
-              Live Feed
-            </span>
-          </div>
+  // 2. Our Services
+  {
+    id: 2,
+    content: (
+      <div className="w-full h-full bg-white rounded-3xl p-6 flex flex-col shadow-[0_15px_35px_rgba(0,0,0,0.05)] border border-zinc-100">
+        <div>
+          <span className="text-zinc-400 text-xs font-semibold uppercase tracking-wider">
+            What We Build
+          </span>
 
-          <div className="z-10 p-4">
-            <div className="bg-white/95 backdrop-blur-md rounded-2xl p-4 shadow-lg flex items-center justify-between text-zinc-900">
-              <div className="border-r border-zinc-100 pr-4 flex-1">
-                <p className="text-[10px] text-zinc-500 font-medium">Income</p>
-                <div className="flex items-center gap-1 mt-0.5">
-                  <span className="font-semibold text-sm">$2,670</span>
-                  <span className="text-[9px] font-bold text-emerald-500 bg-emerald-50 px-1 rounded">+12%</span>
-                </div>
+          <h3 className="text-2xl font-semibold text-zinc-900 mt-1">
+            Digital Solutions
+          </h3>
+
+          <p className="text-xs text-zinc-400 mt-2">
+            Technology designed around your business.
+          </p>
+        </div>
+
+        <div className="flex flex-col gap-2 mt-5">
+          {[
+            {
+              title: "Web Development",
+              progress: "95%",
+            },
+            {
+              title: "Mobile Applications",
+              progress: "88%",
+            },
+            {
+              title: "Custom Software",
+              progress: "92%",
+            },
+            {
+              title: "Desktop Applications",
+              progress: "82%",
+            },
+          ].map((service, i) => (
+            <div key={i} className="p-3 bg-zinc-50 rounded-2xl">
+              <div className="flex justify-between items-center mb-2">
+                <span className="text-xs font-medium text-zinc-800">
+                  {service.title}
+                </span>
+
+                <svg
+                  className="w-4 h-4 text-blue-500"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
               </div>
-              <div className="pl-4 flex-1">
-                <p className="text-[10px] text-zinc-500 font-medium">Expense</p>
-                <span className="font-semibold text-sm mt-0.5 block">$1,200</span>
+
+              <div className="h-1.5 bg-zinc-200 rounded-full overflow-hidden">
+                <div
+                  className="h-full bg-blue-500 rounded-full"
+                  style={{ width: service.progress }}
+                />
               </div>
             </div>
-          </div>
+          ))}
         </div>
-      ),
-    },
-    // 4. Decision Intelligence Line Chart (Image 5, 4th card)
-    {
-      id: 4,
-      content: (
-        <div className="w-full h-full bg-white rounded-3xl p-6 flex flex-col justify-between shadow-[0_15px_35px_rgba(0,0,0,0.05)] border border-zinc-100">
-          <div>
-            <h3 className="text-lg font-semibold text-zinc-900 leading-tight">Intelligence in Every Decision</h3>
-            <p className="text-xs text-zinc-400 mt-1">Growth trends over the years</p>
-          </div>
-          
-          <div className="my-2 relative flex-1 min-h-[140px] flex items-end">
-            <svg viewBox="0 0 300 150" className="w-full h-full overflow-visible">
-              <defs>
-                <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.25" />
-                  <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.0" />
-                </linearGradient>
-              </defs>
-              {/* Grid lines */}
-              <line x1="0" y1="30" x2="300" y2="30" stroke="#f4f4f5" strokeWidth="1" strokeDasharray="4 4" />
-              <line x1="0" y1="70" x2="300" y2="70" stroke="#f4f4f5" strokeWidth="1" strokeDasharray="4 4" />
-              <line x1="0" y1="110" x2="300" y2="110" stroke="#f4f4f5" strokeWidth="1" strokeDasharray="4 4" />
-              
-              {/* Area path */}
-              <path
-                d="M 10 130 C 50 120, 80 80, 110 85 C 140 90, 175 60, 210 50 C 245 40, 265 10, 290 10 L 290 140 L 10 140 Z"
-                fill="url(#chartGradient)"
-              />
-              {/* Line path */}
-              <path
-                d="M 10 130 C 50 120, 80 80, 110 85 C 140 90, 175 60, 210 50 C 245 40, 265 10, 290 10"
+      </div>
+    ),
+  },
+
+  // 3. Client Success
+  {
+    id: 3,
+    content: (
+      <div className="w-full h-full bg-gradient-to-br from-blue-500 to-blue-700 rounded-3xl p-6 flex flex-col justify-between text-white shadow-[0_15px_35px_rgba(37,99,235,0.2)] relative overflow-hidden">
+        <div className="absolute -top-20 -right-20 w-52 h-52 bg-white/10 rounded-full blur-2xl" />
+
+        <div className="relative z-10">
+          <span className="text-[10px] font-semibold uppercase tracking-wider bg-white/15 backdrop-blur-md px-3 py-1.5 rounded-full">
+            Client Success
+          </span>
+
+          <h3 className="text-3xl font-semibold mt-6 tracking-tight">
+            Built Around
+            <br />
+            Your Goals.
+          </h3>
+
+          <p className="text-white/70 text-sm mt-3 leading-relaxed">
+            We understand your business first, then build technology that moves
+            it forward.
+          </p>
+        </div>
+
+        <div className="relative z-10 bg-white/15 backdrop-blur-xl rounded-2xl p-4 border border-white/20">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-blue-600">
+              <svg
+                className="w-5 h-5"
                 fill="none"
-                stroke="#3b82f6"
-                strokeWidth="3.5"
-                strokeLinecap="round"
-              />
-              {/* Glowing endpoints */}
-              <circle cx="290" cy="10" r="5" fill="#3b82f6" stroke="white" strokeWidth="2" className="animate-pulse" />
-            </svg>
-            {/* Axis Y Values */}
-            <div className="absolute left-0 top-0 h-full flex flex-col justify-between text-[9px] font-semibold text-zinc-400 pointer-events-none">
-              <span>10K</span>
-              <span>8K</span>
-              <span>6K</span>
-              <span>4K</span>
-              <span>2K</span>
-              <span>0</span>
+                stroke="currentColor"
+                strokeWidth={2}
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+            </div>
+
+            <div>
+              <p className="text-sm font-semibold">Business-First Approach</p>
+              <p className="text-[10px] text-white/60">
+                Solutions designed for real impact
+              </p>
             </div>
           </div>
+        </div>
+      </div>
+    ),
+  },
 
-          <div className="flex justify-between text-[9px] font-semibold text-zinc-400 pt-2 border-t border-zinc-50">
-            <span>2018</span>
-            <span>2019</span>
-            <span>2020</span>
-            <span>2021</span>
-            <span>2022</span>
-            <span>2023</span>
-            <span>2024</span>
-          </div>
+  // 4. Business Growth
+  {
+    id: 4,
+    content: (
+      <div className="w-full h-full bg-white rounded-3xl p-6 flex flex-col justify-between shadow-[0_15px_35px_rgba(0,0,0,0.05)] border border-zinc-100">
+        <div>
+          <span className="text-zinc-400 text-xs font-semibold uppercase tracking-wider">
+            Digital Transformation
+          </span>
+
+          <h3 className="text-lg font-semibold text-zinc-900 mt-1 leading-tight">
+            Technology That Moves
+            <br />
+            Businesses Forward
+          </h3>
         </div>
-      ),
-    },
-    // 5. Expertise Text Card (Image 3 style)
-    {
-      id: 5,
-      content: (
-        <div className="w-full h-full bg-zinc-950 rounded-3xl p-8 flex flex-col justify-center shadow-[0_15px_45px_rgba(0,0,0,0.15)] border border-zinc-800">
-          <div className="text-[2.2rem] font-medium leading-[1.3] text-left font-plus-jakarta tracking-tight">
-            <span className="text-white">Expertise </span>
-            <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-[#D6FD70] mx-1 align-middle text-black shadow-[0_0_15px_rgba(214,253,112,0.3)] transition-transform duration-300 hover:scale-110">
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6C7.8 12.16 7 10.63 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z" />
-              </svg>
-            </span>
-            <span className="text-zinc-600"> that</span>
-            <br />
-            <span className="text-zinc-600">Combines Strategy,</span>
-            <br />
-            <span className="text-white">Data, </span>
-            <span className="text-zinc-600">and Artificial</span>
-            <br />
-            <span className="text-white">Intelligence</span>
-          </div>
+
+        <div className="my-2 relative flex-1 min-h-[140px] flex items-end">
+          <svg
+            viewBox="0 0 300 150"
+            className="w-full h-full overflow-visible"
+          >
+            <defs>
+              <linearGradient
+                id="businessGrowthGradient"
+                x1="0"
+                y1="0"
+                x2="0"
+                y2="1"
+              >
+                <stop
+                  offset="0%"
+                  stopColor="#3b82f6"
+                  stopOpacity="0.25"
+                />
+                <stop
+                  offset="100%"
+                  stopColor="#3b82f6"
+                  stopOpacity="0"
+                />
+              </linearGradient>
+            </defs>
+
+            {[30, 70, 110].map((y) => (
+              <line
+                key={y}
+                x1="0"
+                y1={y}
+                x2="300"
+                y2={y}
+                stroke="#f4f4f5"
+                strokeWidth="1"
+                strokeDasharray="4 4"
+              />
+            ))}
+
+            <path
+              d="M 10 130 C 45 120, 70 100, 100 105 C 135 110, 155 75, 190 70 C 225 65, 255 30, 290 15 L 290 140 L 10 140 Z"
+              fill="url(#businessGrowthGradient)"
+            />
+
+            <path
+              d="M 10 130 C 45 120, 70 100, 100 105 C 135 110, 155 75, 190 70 C 225 65, 255 30, 290 15"
+              fill="none"
+              stroke="#3b82f6"
+              strokeWidth="3.5"
+              strokeLinecap="round"
+            />
+
+            <circle
+              cx="290"
+              cy="15"
+              r="5"
+              fill="#3b82f6"
+              stroke="white"
+              strokeWidth="2"
+              className="animate-pulse"
+            />
+          </svg>
         </div>
-      ),
-    },
-    // 6. Data Training Card (Image 4 style)
-    {
-      id: 6,
-      content: (
-        <div className="w-full h-full bg-gradient-to-tr from-[#9cd6fc] via-[#5caef7] to-[#2c86e9] rounded-3xl p-8 flex flex-col justify-center items-center text-center shadow-[0_15px_35px_rgba(44,134,233,0.15)] relative overflow-hidden group">
-          {/* Decorative glowing gradient circle */}
-          <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-white/10 blur-xl pointer-events-none" />
-          
-          <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center text-[#2c86e9] shadow-lg mb-6 transition-all duration-500 ease-out group-hover:scale-110 group-hover:rotate-90">
-            <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+
+        <div className="flex justify-between text-[9px] font-semibold text-zinc-400 pt-2 border-t border-zinc-50">
+          <span>Idea</span>
+          <span>Strategy</span>
+          <span>Design</span>
+          <span>Develop</span>
+          <span>Scale</span>
+        </div>
+      </div>
+    ),
+  },
+
+  // 5. Expertise
+  {
+    id: 5,
+    content: (
+      <div className="w-full h-full bg-zinc-950 rounded-3xl p-8 flex flex-col justify-center shadow-[0_15px_45px_rgba(0,0,0,0.15)] border border-zinc-800">
+        <div className="text-[2.1rem] font-medium leading-[1.3] text-left font-plus-jakarta tracking-tight">
+          <span className="text-white">Expertise </span>
+
+          <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-[#D6FD70] mx-1 align-middle text-black">
+            <svg
+              className="w-5 h-5"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z" />
+            </svg>
+          </span>
+
+          <span className="text-zinc-600"> that</span>
+          <br />
+
+          <span className="text-zinc-600">Combines Strategy,</span>
+          <br />
+
+          <span className="text-white">Design </span>
+          <span className="text-zinc-600">and</span>
+          <br />
+
+          <span className="text-white">Technology</span>
+        </div>
+      </div>
+    ),
+  },
+
+  // 6. Start Your Project
+  {
+    id: 6,
+    content: (
+      <div className="w-full h-full bg-gradient-to-tr from-[#9cd6fc] via-[#5caef7] to-[#2c86e9] rounded-3xl p-8 flex flex-col justify-center items-center text-center shadow-[0_15px_35px_rgba(44,134,233,0.15)] relative overflow-hidden group">
+        <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-white/10 blur-xl" />
+
+        <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center text-[#2c86e9] shadow-lg mb-6 transition-all duration-500 group-hover:scale-110 group-hover:rotate-90">
+          <svg
+            className="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={3}
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M12 4.5v15m7.5-7.5h-15"
+            />
+          </svg>
+        </div>
+
+        <h3 className="text-3xl font-semibold text-white tracking-tight">
+          Start Your Project
+        </h3>
+
+        <p className="text-white/80 text-sm mt-2 font-medium">
+          Let's build something great together
+        </p>
+      </div>
+    ),
+  },
+
+  // 7. Technologies
+  {
+    id: 7,
+    content: (
+      <div className="w-full h-full bg-white rounded-3xl p-6 flex flex-col justify-between shadow-[0_15px_35px_rgba(0,0,0,0.05)] border border-zinc-100">
+        <div>
+          <span className="text-zinc-400 text-xs font-semibold uppercase tracking-wider">
+            Technologies
+          </span>
+
+          <h3 className="text-xl font-semibold text-zinc-900 mt-1">
+            Modern Tech Stack
+          </h3>
+
+          <p className="text-xs text-zinc-400 mt-2">
+            Powerful technology for powerful products.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-2 gap-2.5 my-5">
+          {[
+            "React",
+            "Next.js",
+            "Node.js",
+            "TypeScript",
+            "MongoDB",
+            "Cloud",
+          ].map((tech) => (
+            <div
+              key={tech}
+              className="bg-zinc-50 border border-zinc-100 rounded-xl p-3 flex items-center gap-2"
+            >
+              <div className="w-2 h-2 rounded-full bg-blue-500" />
+
+              <span className="text-xs font-semibold text-zinc-700">
+                {tech}
+              </span>
+            </div>
+          ))}
+        </div>
+
+        <div className="pt-4 border-t border-zinc-100 text-xs text-zinc-500">
+          Built with modern, scalable technologies.
+        </div>
+      </div>
+    ),
+  },
+
+  // 8. Development Excellence
+  {
+    id: 8,
+    content: (
+      <div className="w-full h-full bg-white rounded-3xl p-5 flex flex-col justify-between shadow-[0_15px_35px_rgba(0,0,0,0.05)] border border-zinc-100">
+        <div className="bg-[#111] rounded-[1.8rem] p-4 flex items-center justify-between">
+          <div>
+            <h4 className="text-sm font-semibold text-white">
+              Development Excellence
+            </h4>
+
+            <p className="text-[10px] text-zinc-500 font-medium mt-0.5">
+              Built for real-world performance
+            </p>
+          </div>
+
+          <div className="text-white bg-zinc-800/80 p-2 rounded-xl">
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2.5}
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M13 10V3L4 14h7v7l9-11h-7z"
+              />
             </svg>
           </div>
-          <h3 className="text-3xl font-semibold text-white tracking-tight">Data training</h3>
-          <p className="text-white/80 text-sm mt-2 font-medium">Upload your content</p>
         </div>
-      ),
-    },
-    // 7. Data Points Card (Image 5, 7th card)
-    {
-      id: 7,
-      content: (
-        <div className="w-full h-full bg-white rounded-3xl p-6 flex flex-col justify-between shadow-[0_15px_35px_rgba(0,0,0,0.05)] border border-zinc-100">
-          <div>
-            <span className="text-zinc-400 text-xs font-semibold uppercase tracking-wider">Metrics</span>
-            <h4 className="text-sm font-medium text-zinc-500 mt-1">Data Points</h4>
-          </div>
-          <div className="my-6">
-            <span className="text-5xl font-bold text-zinc-900 tracking-tight">520k+</span>
-          </div>
-          <div className="flex flex-wrap gap-1.5">
-            {["Smarter", "Strategic", "AI-Focused", "Growth"].map((tag, i) => (
-              <span key={i} className="text-[10px] font-semibold bg-zinc-100 text-zinc-800 px-2.5 py-1 rounded-full">
-                {tag}
-              </span>
+
+        <div className="my-4">
+          <h3 className="text-4xl font-bold text-zinc-950 tracking-tight">
+            Built Better.
+          </h3>
+
+          <p className="text-[11px] text-zinc-400 font-semibold mt-2 uppercase tracking-wider">
+            Performance • Security • Scalability
+          </p>
+        </div>
+
+        <div className="flex flex-wrap gap-2">
+          {[
+            "Fast",
+            "Scalable",
+            "Secure",
+            "Reliable",
+            "Responsive",
+            "Modern",
+          ].map((tag) => (
+            <span
+              key={tag}
+              className="text-[10px] font-bold bg-zinc-100 text-zinc-800 px-3 py-1.5 rounded-full"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+    ),
+  },
+
+  // 9. Custom Software
+  {
+    id: 9,
+    content: (
+      <div className="w-full h-full bg-gradient-to-br from-emerald-500 to-teal-700 rounded-3xl p-6 flex flex-col justify-between text-white shadow-[0_15px_35px_rgba(16,185,129,0.15)] relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-28 h-28 bg-white/10 rounded-full blur-xl" />
+
+        <div>
+          <span className="text-[10px] font-semibold bg-white/20 px-2.5 py-1 rounded-full">
+            Built Around Your Business
+          </span>
+
+          <h3 className="text-xl font-bold mt-3 tracking-tight">
+            Custom Software
+          </h3>
+
+          <p className="text-white/70 text-xs mt-1">
+            Technology tailored to your operations
+          </p>
+        </div>
+
+        <div className="my-2 bg-black/20 rounded-2xl p-4 border border-white/10">
+          <div className="grid grid-cols-2 gap-2">
+            {["ERP Systems", "CRM", "Billing", "Inventory"].map((item) => (
+              <div
+                key={item}
+                className="bg-white/10 rounded-lg p-2.5 text-[10px] font-semibold"
+              >
+                {item}
+              </div>
             ))}
           </div>
         </div>
-      ),
-    },
-    // 8. Performance Details Card (Image 1 style)
-    {
-      id: 8,
-      content: (
-        <div className="w-full h-full bg-white rounded-3xl p-5 flex flex-col justify-between shadow-[0_15px_35px_rgba(0,0,0,0.05)] border border-zinc-100">
-          {/* Black Header Block */}
-          <div className="bg-[#111] rounded-[1.8rem] p-4 flex items-center justify-between shadow-inner">
-            <div className="text-left">
-              <h4 className="text-sm font-semibold text-white">Performance</h4>
-              <p className="text-[10px] text-zinc-500 font-medium mt-0.5">In the past 7 days</p>
-            </div>
-            <div className="text-white bg-zinc-800/80 p-2 rounded-xl">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.281m5.94 2.28l-2.28 5.941" />
-              </svg>
-            </div>
-          </div>
 
-          {/* Middle Stat Section */}
-          <div className="my-4 text-left">
-            <div className="flex items-center gap-2">
-              <span className="text-5xl font-bold text-zinc-950 tracking-tight font-plus-jakarta">49%</span>
-              <span className="text-[10px] font-bold text-[#10b981] bg-[#e6fbf3] px-2.5 py-1 rounded-full">
-                +2.5%
-              </span>
-            </div>
-            <p className="text-[11px] text-zinc-400 font-semibold mt-1 uppercase tracking-wider">Business growth</p>
-          </div>
+        <div className="flex items-center justify-between text-[10px] text-white/80 pt-2 border-t border-white/10">
+          <span>Solution Status</span>
 
-          {/* Scrolling tag band */}
-          <div className="space-y-1.5 overflow-hidden select-none -mx-2">
-            <div className="flex gap-1.5 animate-marquee whitespace-nowrap">
-              {["Strategic", "AI-Focused", "Growth", "Smart", "Strategic", "AI-Focused"].map((tag, i) => (
-                <span key={i} className="text-[10px] font-bold bg-[#f3f4f6] text-zinc-800 px-3 py-1.5 rounded-full inline-block">
-                  {tag}
-                </span>
-              ))}
-            </div>
-            <div className="flex gap-1.5 animate-marquee-reverse whitespace-nowrap">
-              {["Grow Faster", "Build Smart", "Expertise", "Grow Faster", "Build Smart"].map((tag, i) => (
-                <span key={i} className="text-[10px] font-bold bg-[#f3f4f6] text-zinc-800 px-3 py-1.5 rounded-full inline-block">
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
+          <span className="flex items-center gap-1 font-semibold text-emerald-300">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-300 animate-pulse" />
+            Built to Scale
+          </span>
         </div>
-      ),
-    },
-    // 9. Phone Mockup Card (Image 5, rightmost)
-    {
-      id: 9,
-      content: (
-        <div className="w-full h-full bg-gradient-to-br from-emerald-500 to-teal-700 rounded-3xl p-6 flex flex-col justify-between text-white shadow-[0_15px_35px_rgba(16,185,129,0.15)] relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-28 h-28 bg-white/10 rounded-full blur-xl pointer-events-none" />
-          
-          <div>
-            <span className="text-[10px] font-semibold bg-white/20 px-2.5 py-1 rounded-full">Security Enabled</span>
-            <h3 className="text-xl font-bold mt-3 tracking-tight">Enterprise Vault</h3>
-            <p className="text-white/70 text-xs mt-1">Smart secure asset storage</p>
-          </div>
-          
-          <div className="my-2 bg-black/20 rounded-2xl p-4 border border-white/10">
-            <div className="flex justify-between items-center">
-              <span className="text-[10px] text-white/60">Portfolio Balance</span>
-              <span className="text-[9px] bg-emerald-400/20 text-emerald-300 font-bold px-1.5 py-0.5 rounded">Active</span>
-            </div>
-            <h4 className="text-2xl font-bold mt-1 font-plus-jakarta">$8,420.50</h4>
-            <div className="flex gap-2 mt-3">
-              <div className="flex-1 h-2 bg-white/10 rounded-full overflow-hidden">
-                <div className="w-4/5 h-full bg-emerald-400 rounded-full" />
-              </div>
-              <div className="flex-1 h-2 bg-white/10 rounded-full overflow-hidden">
-                <div className="w-2/5 h-full bg-blue-400 rounded-full" />
-              </div>
-            </div>
-          </div>
-
-          <div className="flex items-center justify-between text-[10px] text-white/80 pt-2 border-t border-white/10">
-            <span>Server status</span>
-            <span className="flex items-center gap-1 font-semibold text-emerald-400">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
-              Online
-            </span>
-          </div>
-        </div>
-      ),
-    },
-  ];
-
+      </div>
+    ),
+  },
+];
   // Auto-play interval
   useEffect(() => {
     if (isDragging) return;

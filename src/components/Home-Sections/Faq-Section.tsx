@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Button from '@/components/button';
+import Link from 'next/link';
 
 interface FaqItem {
   key?: string;
@@ -12,29 +13,35 @@ interface FaqItem {
 const faqData: FaqItem[] = [
   {
     key: "faq-1",
-    question: "What types of businesses do you work with?",
-    answer: "We partner with businesses of all sizes, from tech startups to enterprise leaders. We help organizations across retail, fintech, healthcare, and logistics scale through custom web, mobile, and cloud software solutions."
+    question: "What services does EZ Soft Tech offer in Bilaspur?",
+    answer: "EZ Soft Tech offers comprehensive software development services in Bilaspur including website development, mobile app development (iOS & Android), custom software solutions, business automation, billing software, API development, and digital marketing services. We serve clients locally in Chhattisgarh and globally in UK, UAE, and USA."
   },
   {
     key: "faq-2",
-    question: "How does your consulting process work?",
-    answer: "We begin with a discovery phase to understand your core operational challenges. From there, we design a technical blueprint, build the software using agile methodology, and handle integration, deployment, and optimization."
+    question: "How much does website development cost in Bilaspur?",
+    answer: "Website development costs vary based on project requirements. At EZ Soft Tech, we offer competitive pricing starting from ₹15,000 for basic websites to ₹2,00,000+ for complex web applications. We provide free consultations and detailed quotes tailored to your specific needs. Contact us for a customized estimate."
   },
   {
     key: "faq-3",
-    question: "What makes your AI solutions different?",
-    answer: "Our AI solutions are integrated directly into your existing business systems rather than operating as standalone tools. We build intelligent workflow automation, customized data models, and autonomous agents designed for your metrics."
+    question: "How long does it take to develop a mobile app?",
+    answer: "Mobile app development timelines depend on complexity. Simple apps take 4-8 weeks, medium complexity apps take 8-16 weeks, and complex enterprise apps may take 16-24 weeks. We follow agile methodology to ensure timely delivery with regular updates and milestones."
   },
   {
     key: "faq-4",
-    question: "Do I need to have technical knowledge to work with you?",
-    answer: "Not at all. We guide you through the entire process, explaining technical architectures in plain language. We handle all engineering, integrations, and deployment while keeping you updated with visual progress reports."
+    question: "Do you provide billing software for businesses in Chhattisgarh?",
+    answer: "Yes, we are a leading billing software provider in Chhattisgarh. Our billing solutions include GST-compliant invoicing, inventory management, sales tracking, payment gateway integration, and comprehensive reporting. We customize solutions for retail, wholesale, and manufacturing businesses."
   },
   {
     key: "faq-5",
-    question: "How long does it take to see results?",
-    answer: "While full platform custom software builds can take 2 to 4 months, we use an incremental delivery approach. This means you will see live modules and functional integrations within the first few weeks of the project."
+    question: "Can you help with digital marketing for my business?",
+    answer: "Absolutely! As a digital marketing company in Bilaspur, we offer SEO optimization, social media marketing, Google Ads management, content marketing, and email marketing services. Our strategies are designed to increase your online visibility and generate quality leads."
+  },
+  {
+    key: "faq-6",
+    question: "What technologies do you use for web development?",
+    answer: "We use modern technologies including React, Next.js, Vue.js for frontend; Node.js, Python, PHP for backend; MongoDB, PostgreSQL, MySQL for databases; and AWS, Google Cloud for hosting. We choose the best tech stack based on your project requirements."
   }
+
 ];
 
 export function FaqSection() {
@@ -62,21 +69,25 @@ export function FaqSection() {
             </h2>
             {/* Paragraph Description */}
             <p className="text-sm md:text-base text-neutral-500 leading-relaxed max-w-sm">
-              Everything you need to know about our consulting and AI solutions — from strategy to implementation.
+              Find answers to common questions about our software development services in Bilaspur and Chhattisgarh.
             </p>
-          </div>
-
-          {/* CTA Card */}
-          <div className="bg-[#0b0b0d] text-white rounded-3xl p-8 mt-12 flex flex-col gap-6 relative overflow-hidden shadow-md">
+            <div className="bg-[#0b0b0d] text-white rounded-3xl p-8 mt-12 flex flex-col gap-6 relative overflow-hidden shadow-md">
             <h3 className="text-xl md:text-2xl font-bold tracking-tight">
               Still have questions?
             </h3>
             
             {/* CTA Button */}
            <div>
+            <Link href={"/contact"}>
             <Button>Contact Us</Button>
+            </Link>
+            
            </div>
           </div>
+          </div>
+
+          {/* CTA Card */}
+          
         </div>
 
         {/* Right Column - Accordion */}

@@ -70,12 +70,12 @@ export default function Navbar1() {
                   key={`mobile-link-${idx}`}
                   href={item.link}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-sm font-semibold uppercase tracking-wider text-neutral-300 hover:text-white transition duration-200 py-1"
+                  className="text-sm font-semibold uppercase tracking-wider text-neutral-800 hover:text-black transition duration-200 py-1"
                 >
                   {item.name}
                 </Link>
               ))}
-              <div className="h-[1px] bg-neutral-800 w-full my-2" />
+              <div className="h-[1px] bg-white w-full my-2" />
               <div className="flex w-full flex-col gap-3">
                 <NavbarButton
                   onClick={() => setIsMobileMenuOpen(false)}

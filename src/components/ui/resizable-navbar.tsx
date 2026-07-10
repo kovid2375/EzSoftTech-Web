@@ -103,10 +103,10 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
         minWidth: "800px",
       }}
       className={cn(
-        "relative z-[60] mx-auto hidden w-full max-w-6xl flex-row items-center justify-between self-start rounded-2xl border px-6 py-2.5 lg:flex transition-all duration-300",
+        "relative z-[60] mx-auto hidden w-full max-w-6xl flex-row items-center justify-between self-start rounded-2xl border px-6 py-2.5 lg:flex transition-all duration-300 backdrop-blur-md",
         visible 
-          ? "bg-[#0b0b0d] border-neutral-800 text-white" 
-          : "bg-black border-white/10 text-white",
+          ? "bg-white border-black/10 text-black shadow-[0_8px_32px_0_rgba(0,0,0,0.08)]" 
+          : "bg-white/40 border-black/5 text-black",
         className,
       )}
     >
@@ -122,7 +122,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
     <motion.div
       onMouseLeave={() => setHovered(null)}
       className={cn(
-        "absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium text-neutral-300 lg:flex lg:space-x-1",
+        "absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium text-neutral-800 lg:flex lg:space-x-1",
         className,
       )}
     >
@@ -130,14 +130,14 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
         <Link
           onMouseEnter={() => setHovered(idx)}
           onClick={onItemClick}
-          className="relative px-4 py-1.5 text-neutral-300 hover:text-white transition duration-200"
+          className="relative px-4 py-1.5 text-neutral-700 hover:text-black transition duration-200"
           key={`link-${idx}`}
           href={item.link}
         >
           {hovered === idx && (
             <motion.div
               layoutId="hovered"
-              className="absolute inset-0 h-full w-full rounded-md bg-white/10"
+              className="absolute inset-0 h-full w-full rounded-md bg-black/10"
               transition={{ type: "spring", stiffness: 380, damping: 30 }}
             />
           )}
@@ -168,10 +168,10 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
         damping: 30,
       }}
       className={cn(
-        "relative z-50 mx-auto flex w-full max-w-[calc(100vw-2rem)] flex-col items-center justify-between border px-3 py-2.5 lg:hidden transition-all duration-300",
+        "relative z-50 mx-auto flex w-full max-w-[calc(100vw-2rem)] flex-col items-center justify-between border px-3 py-2.5 lg:hidden transition-all duration-300 backdrop-blur-md",
         visible 
-          ? "bg-[#0b0b0d]/90 border-neutral-800 text-white" 
-          : "bg-black/35 border-white/10 text-white",
+          ? "bg-white/60 border-black/10 text-black shadow-[0_8px_32px_0_rgba(0,0,0,0.08)]" 
+          : "bg-white/20 border-black/5 text-black",
         className,
       )}
     >
@@ -210,7 +210,7 @@ export const MobileNavMenu = ({
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           className={cn(
-            "absolute inset-x-0 top-16 z-50 flex w-full flex-col items-start justify-start gap-5 rounded-3xl bg-[#0b0b0d]/95 border border-neutral-800/80 px-6 py-8 shadow-2xl text-white backdrop-blur-md",
+            "absolute inset-x-0 top-16 z-50 flex w-full flex-col items-start justify-start gap-5 rounded-3xl bg-white/90 border border-black/10 px-6 py-8 shadow-2xl text-black backdrop-blur-xl",
             className,
           )}
         >
@@ -229,9 +229,9 @@ export const MobileNavToggle = ({
   onClick: () => void;
 }) => {
   return isOpen ? (
-    <IconX className="text-white cursor-pointer hover:opacity-80" onClick={onClick} />
+    <IconX className="text-black cursor-pointer hover:opacity-80" onClick={onClick} />
   ) : (
-    <IconMenu2 className="text-white cursor-pointer hover:opacity-80" onClick={onClick} />
+    <IconMenu2 className="text-black cursor-pointer hover:opacity-80" onClick={onClick} />
   );
 };
 
@@ -248,8 +248,8 @@ export const NavbarLogo = () => {
         </svg>
       </div>
       <div className="flex flex-col items-start text-left">
-        <span className="font-bold text-white text-sm tracking-wide leading-none">EZ Soft Tech</span>
-        <span className="text-[8px] text-neutral-400 uppercase tracking-widest font-medium mt-0.5">Software</span>
+        <span className="font-bold text-black text-sm tracking-wide leading-none">EZ Soft Tech</span>
+        <span className="text-[8px] text-neutral-600 uppercase tracking-widest font-medium mt-0.5">Software</span>
       </div>
     </Link>
   );

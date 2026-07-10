@@ -51,7 +51,7 @@ export function FaqBelowSection() {
 
             {/* CTA Button */}
             <div>
-              <Button>Get Started</Button>
+              <Button href="/contact">Get Started</Button>
             </div>
           </div>
         </div>

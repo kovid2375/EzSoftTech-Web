@@ -45,7 +45,7 @@ export function Section1(){
                             </div>
         
                             <div className="flex gap-6 mt-6">
-                                <Button>Get Started</Button>
+                                <Button href="/contact">Get Started</Button>
                             </div>
                         </div>
                         <div className="relative z-10 w-full mt-8">

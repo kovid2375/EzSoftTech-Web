@@ -1,12 +1,14 @@
 import React from "react";
+import Link from "next/link";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
+  href?: string;
 }
 
-export default function Button({ children, className = "", ...props }: ButtonProps) {
-  return (
-    <button className={`cssbuttons-io-button ${className}`} {...props}>
+export default function Button({ children, className = "", href, ...props }: ButtonProps) {
+  const content = (
+    <>
       <span>{children}</span>
       <div className="icon">
         <svg
@@ -22,6 +24,23 @@ export default function Button({ children, className = "", ...props }: ButtonPro
           ></path>
         </svg>
       </div>
+    </>
+  );
+
+  const fullClassName = `cssbuttons-io-button ${className}`;
+
+  if (href) {
+    const { type, ...linkProps } = props as any;
+    return (
+      <Link href={href} className={fullClassName} {...linkProps}>
+        {content}
+      </Link>
+    );
+  }
+
+  return (
+    <button className={fullClassName} {...props}>
+      {content}
     </button>
   );
 }

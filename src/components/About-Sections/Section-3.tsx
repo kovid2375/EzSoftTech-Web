@@ -3,6 +3,7 @@
 import React from 'react'
 import Button from '../button'
 import CircularGallery from '../ui/circular-gallery'
+import Link from 'next/link'
 
 export function Section3() {
   const galleryItems = [
@@ -43,8 +44,9 @@ export function Section3() {
           </div>
         </div>
         <div>
-        <Button>Contact Us</Button>
-
+          <Link href="/contact">
+            <Button>Contact Us</Button>
+          </Link>
         </div>
 
         {/* Dynamic CircularGallery below the button */}

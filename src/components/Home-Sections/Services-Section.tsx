@@ -8,22 +8,22 @@ export function ServicesSection() {
   const serviceCards = [
     {
       title: "Custom Software Solutions",
-      src: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop",
+      src: "/hero2.png",
       
     },
     {
       title: "API Development",
-      src: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=800&auto=format&fit=crop",
+      src: "/hero3.png",
     
     },
     {
       title: "Business Automation",
-      src: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop",
+      src: "/hero4.png",
      
     },
     {
-      title: "Data Analysis & BI",
-      src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+      title: "Cloud Development",
+      src: "/hero5.png",
      
     }
   ];
@@ -42,7 +42,7 @@ export function ServicesSection() {
         We specialize in creating powerful digital solutions that drive business growth. <br className="hidden md:inline" />
         we handle every aspect of software development.
       </p>
-      <Button>Get Started</Button>
+      <Button href="/contact">Get Started</Button>
 
       <FocusCards cards={serviceCards} />
     </section>

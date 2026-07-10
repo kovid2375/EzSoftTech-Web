@@ -115,7 +115,7 @@ export function AboutUsSection() {
         <div className="relative rounded-3xl overflow-hidden min-h-[420px] flex flex-col bg-neutral-100 group shadow-sm">
           <div 
             className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-            style={{ backgroundImage: `url('https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=800&q=80')` }}
+            style={{ backgroundImage: 'url("/home.png")' }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-black/35" />
           <div className="relative z-10 p-6 flex justify-between items-start w-full">
@@ -134,7 +134,7 @@ export function AboutUsSection() {
             </h3>
             <p className="text-xs md:text-sm font-semibold text-neutral-500 uppercase tracking-wider">Projects Delivered</p>
             <p className="text-sm text-neutral-700 leading-relaxed mt-1">
-              Collaborating with leading AI and cloud technology providers to build scalable software solutions.
+              From websites and mobile apps to custom business software, we build reliable digital solutions designed for real-world growth.
             </p>
           </div>
         </div>
