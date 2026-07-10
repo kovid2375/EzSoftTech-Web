@@ -2,6 +2,7 @@
 import { cn } from "@/lib/utils";
 import { Menu as IconMenu2, X as IconX } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   motion,
   AnimatePresence,
@@ -87,11 +88,11 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
   return (
     <motion.div
       animate={{
-        backdropFilter: "blur(12px)",
+        backdropFilter: "blur(16px)",
         boxShadow: visible
-          ? "0 20px 25px -5px rgb(0 0 0 / 0.5), 0 8px 10px -6px rgb(0 0 0 / 0.5)"
-          : "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)",
-        width: visible ? "45%" : "100%",
+          ? "0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05)"
+          : "0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -2px rgba(0, 0, 0, 0.02)",
+        width: visible ? "780px" : "100%",
         y: visible ? 10 : 0,
       }}
       transition={{
@@ -99,14 +100,11 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
         stiffness: 180,
         damping: 30,
       }}
-      style={{
-        minWidth: "800px",
-      }}
       className={cn(
-        "relative z-[60] mx-auto hidden w-full max-w-6xl flex-row items-center justify-between self-start rounded-2xl border px-6 py-2.5 lg:flex transition-all duration-300 backdrop-blur-md",
+        "relative z-[60] mx-auto hidden w-full max-w-6xl flex-row items-center justify-between self-start rounded-full border px-6 py-2 md:py-2.5 lg:flex transition-all duration-300 backdrop-blur-md",
         visible 
-          ? "bg-white border-black/10 text-black shadow-[0_8px_32px_0_rgba(0,0,0,0.08)]" 
-          : "bg-white/40 border-black/5 text-black",
+          ? "bg-white/80 border-white/50 text-black shadow-[0_8px_32px_0_rgba(0,0,0,0.06)]" 
+          : "bg-white/30 border-white/20 text-black",
         className,
       )}
     >
@@ -117,33 +115,47 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
 
 export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
   const [hovered, setHovered] = useState<number | null>(null);
+  const pathname = usePathname();
 
   return (
     <motion.div
       onMouseLeave={() => setHovered(null)}
       className={cn(
-        "absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium text-neutral-800 lg:flex lg:space-x-1",
+        "absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-1 text-sm font-medium lg:flex",
         className,
       )}
     >
-      {items.map((item, idx) => (
-        <Link
-          onMouseEnter={() => setHovered(idx)}
-          onClick={onItemClick}
-          className="relative px-4 py-1.5 text-neutral-700 hover:text-black transition duration-200"
-          key={`link-${idx}`}
-          href={item.link}
-        >
-          {hovered === idx && (
-            <motion.div
-              layoutId="hovered"
-              className="absolute inset-0 h-full w-full rounded-md bg-black/10"
-              transition={{ type: "spring", stiffness: 380, damping: 30 }}
-            />
-          )}
-          <span className="relative z-20 font-medium text-xs tracking-wider uppercase">{item.name}</span>
-        </Link>
-      ))}
+      {items.map((item, idx) => {
+        const isActive = pathname === item.link;
+        return (
+          <Link
+            onMouseEnter={() => setHovered(idx)}
+            onClick={onItemClick}
+            className={cn(
+              "relative px-4 py-1.5 transition duration-200 rounded-lg",
+              isActive ? "text-blue-600 font-semibold" : "text-neutral-700 hover:text-black"
+            )}
+            key={`link-${idx}`}
+            href={item.link}
+          >
+            {isActive && (
+              <motion.div
+                layoutId="active-indicator"
+                className="absolute inset-0 h-full w-full rounded-lg bg-blue-50/70 border border-blue-100/50"
+                transition={{ type: "spring", stiffness: 380, damping: 30 }}
+              />
+            )}
+            {hovered === idx && !isActive && (
+              <motion.div
+                layoutId="hovered"
+                className="absolute inset-0 h-full w-full rounded-lg bg-black/5"
+                transition={{ type: "spring", stiffness: 380, damping: 30 }}
+              />
+            )}
+            <span className="relative z-20 font-semibold text-[11px] tracking-wider uppercase">{item.name}</span>
+          </Link>
+        );
+      })}
     </motion.div>
   );
 };
@@ -239,17 +251,17 @@ export const NavbarLogo = () => {
   return (
     <Link
       href="/"
-      className="relative z-20 flex items-center space-x-2.5 px-1 py-0.5"
+      className="relative z-20 flex items-center space-x-2.5 px-1 py-0.5 group"
     >
-      <div className="w-8 h-8 rounded-lg bg-[#3C83F6] flex items-center justify-center text-white shadow-md font-bold shrink-0">
+      <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center text-white shadow-md shadow-blue-500/20 font-bold shrink-0 transition-transform duration-300 group-hover:scale-105">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-4.5 h-4.5">
           <polyline points="16 18 22 12 16 6"></polyline>
           <polyline points="8 6 2 12 8 18"></polyline>
         </svg>
       </div>
       <div className="flex flex-col items-start text-left">
-        <span className="font-bold text-black text-sm tracking-wide leading-none">EZ Soft Tech</span>
-        <span className="text-[8px] text-neutral-600 uppercase tracking-widest font-medium mt-0.5">Software</span>
+        <span className="font-bold text-black text-sm tracking-wide leading-none group-hover:text-blue-600 transition-colors duration-200">EZ Soft Tech</span>
+        <span className="text-[8px] text-neutral-500 uppercase tracking-widest font-medium mt-0.5">Software</span>
       </div>
     </Link>
   );
