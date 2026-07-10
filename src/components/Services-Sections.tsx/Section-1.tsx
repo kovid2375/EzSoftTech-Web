@@ -9,22 +9,22 @@ import { InfiniteMovingCards } from "../ui/infinite-moving-cards"
 export function Section1(){
     const items = [
         {
-            image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600"
+            image: "/services-3.png"
         },
         {
-            image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=600"
+            image: "/services-4.png"
         },
         {
-            image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=600"
+            image: "/services-6.png"
         },
         {
-            image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=600"
+            image: "/sevices-2.png"
         },
         {
-            image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=600"
+            image: "/services-7.png"
         },
         {
-            image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=600"
+            image: "/services-8.png"
         }
     ]
     return(

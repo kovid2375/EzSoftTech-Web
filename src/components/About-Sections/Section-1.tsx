@@ -59,8 +59,8 @@ export function Section1() {
                 {/* Right Side */}
                 <div className="w-full md:w-1/2 flex justify-center relative mt-10 md:mt-0">
                     <img 
-                        className="absolute left-1/2 -translate-x-1/2 top-50 sm:-bottom-6 rounded-2xl w-40 h-52 sm:w-56 sm:h-72 object-cover z-10" 
-                        src="/about-2.png" 
+                        className="absolute left-1/2 -translate-x-1/2 top-50 sm:-bottom-6 rounded-2xl w-40 h-52 sm:w-56 sm:h-72 object-contain z-10" 
+                        src="/about-3.png" 
                         alt="EZ Soft Tech" 
                     />
                     <img

@@ -12,6 +12,7 @@ export const InfiniteMovingCards = ({
 }: {
   items: {
     image: string;
+    fit?: "cover" | "contain";
   }[];
   direction?: "left" | "right";
   speed?: "fast" | "normal" | "slow";
@@ -87,16 +88,19 @@ export const InfiniteMovingCards = ({
         )}
       >
         {items.map((item, idx) => {
-          
+          const fitMode = item.fit || "cover";
           return (
             <li
-              className="relative w-[300px] h-[270px] shrink-0 rounded-3xl overflow-hidden  shadow-md md:w-[300px] md:h-[270px] "
+              className="relative w-[300px] h-[300px] shrink-0 rounded-3xl overflow-hidden shadow-md md:w-[300px] md:h-[300px]"
               key={`${item.image}-${idx}`}
             >
               <img
                 src={item.image}
                 alt=""
-                className="w-full h-full object-cover pointer-events-none"
+                className={cn(
+                  "w-full h-full pointer-events-none",
+                  fitMode === "cover" ? "object-cover" : "object-contain bg-neutral-50"
+                )}
                 loading="lazy"
               />
             </li>

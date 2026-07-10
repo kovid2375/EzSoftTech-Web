@@ -47,8 +47,8 @@ export function Section2(){
                   <img src="./sevices-2.png" className="absolute inset-0 w-full h-full object-cover pointer-events-none" alt="Innovation and tech consulting" />
                 </div>
 
-                <div className="relative rounded-3xl overflow-hidden  transition-all duration-300 w-full h-full min-h-[320px]">
-                  <img src="./services-3.png" className="absolute inset-0 w-full h-full object-cover pointer-events-none" alt="Data analytics and dashboard" />
+                <div className="relative rounded-3xl overflow-hidden  transition-all duration-300 w-full h-full min-h-[325px]">
+                  <img src="./services-9.png" className="absolute inset-0 w-full h-full object-contain pointer-events-none" alt="Data analytics and dashboard" />
                 </div>
 
                 <div className="bg-neutral-50/60 dark:bg-neutral-900/60 border border-neutral-100 dark:border-neutral-800 rounded-3xl p-8  transition-all duration-300 flex flex-col justify-between items-start text-left min-h-[320px] w-full">
@@ -82,7 +82,7 @@ export function Section2(){
                 </div>
 
                 <div className="relative rounded-3xl overflow-hidden  transition-all duration-300 w-full h-full min-h-[320px]">
-                  <img src="./services-4.png" className="absolute inset-0 w-full h-full object-cover pointer-events-none" alt="Developer collaboration" />
+                  <img src="./services-10.png" className="absolute inset-0 w-full h-full object-cover pointer-events-none" alt="Developer collaboration" />
                 </div>
 
                 <div className="bg-neutral-50/60 dark:bg-neutral-900/60 border border-neutral-100 dark:border-neutral-800 rounded-3xl p-8  transition-all duration-300 flex flex-col justify-between items-start text-left min-h-[320px] w-full">
