@@ -2,6 +2,8 @@
 
 import React from 'react'
 import { ArrowUpRight, ArrowRight } from 'lucide-react'
+import Link from 'next/link'
+import Button from '../button'
 
 export function Section1() {
     return (
@@ -45,14 +47,9 @@ export function Section1() {
 
                     {/* Action Button */}
                     <div className="mt-8">
-                        <button className="group flex items-center gap-4 bg-neutral-900 hover:bg-neutral-800 text-white rounded-full pl-6 pr-2 py-2 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 cursor-pointer">
-                            <span className="text-xs font-bold tracking-[0.2em] uppercase pl-1">
-                                Get Started
-                            </span>
-                            <div className="w-8 h-8 rounded-full bg-[#d2fc32] group-hover:bg-[#c5f82a] flex items-center justify-center transition-colors duration-300">
-                                <ArrowUpRight className="w-4 h-4 text-black transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                            </div>
-                        </button>
+                        <Link href='/contact'>
+                    <Button >Learn More</Button>
+                    </Link>
                     </div>
                 </div>
 

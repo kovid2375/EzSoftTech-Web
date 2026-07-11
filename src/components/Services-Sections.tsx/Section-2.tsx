@@ -2,6 +2,7 @@
 
 import Button2 from "../button2"
 import { Smartphone,MonitorSmartphone,Building2,MonitorPlay,BotMessageSquare,ChartNoAxesCombined  } from 'lucide-react';
+import Link from 'next/link';
 
 
 
@@ -29,7 +30,9 @@ export function Section2(){
                     <p className="text-sm md:text-base text-neutral-500 dark:text-neutral-400 leading-relaxed font-normal">Custom websites and web applications built with modern technologies. As a leading website development company in Bilaspur, we deliver responsive, fast, and SEO-optimized solutions.</p>
                   </div>
                   <div className="mt-6">
+                    <Link href='/contact'>
                     <Button2>Learn More</Button2>
+                    </Link>
                   </div>
                 </div>
 
@@ -39,7 +42,9 @@ export function Section2(){
                     <p className="text-sm md:text-base text-neutral-500 dark:text-neutral-400 leading-relaxed font-normal">Native and cross-platform mobile applications for iOS and Android. Our mobile app development company in Bilaspur creates user-friendly interfaces with robust functionality.</p>
                   </div>
                   <div className="mt-6">
+                    <Link href='/contact'>
                     <Button2>Learn More</Button2>
+                    </Link>
                   </div>
                 </div>
 
@@ -57,7 +62,9 @@ export function Section2(){
                     <p className="text-sm md:text-base text-neutral-500 dark:text-neutral-400 leading-relaxed font-normal">GST-compliant billing software provider in Chhattisgarh. Streamline your business processes with automated solutions that increase efficiency.</p>
                   </div>
                   <div className="mt-6">
+                    <Link href='/contact'>
                     <Button2>Learn More</Button2>
+                    </Link>
                   </div>
                 </div>
 
@@ -67,7 +74,9 @@ export function Section2(){
                     <p className="text-sm md:text-base text-neutral-500 dark:text-neutral-400 leading-relaxed font-normal">Powerful desktop software for Windows, macOS, and Linux. Feature-rich applications for complex business needs in Chhattisgarh.</p>
                   </div>
                   <div className="mt-6">
+                    <Link href='/contact'>
                     <Button2>Learn More</Button2>
+                    </Link>
                   </div>
                 </div>
 
@@ -77,7 +86,9 @@ export function Section2(){
                     <p className="text-sm md:text-base text-neutral-500 dark:text-neutral-400 leading-relaxed font-normal">Robust and secure APIs for seamless integration. RESTful services and third-party integrations for businesses across India.</p>
                   </div>
                   <div className="mt-6">
+                    <Link href='/contact'>
                     <Button2>Learn More</Button2>
+                    </Link>
                   </div>
                 </div>
 
@@ -91,7 +102,9 @@ export function Section2(){
                     <p className="text-sm md:text-base text-neutral-500 dark:text-neutral-400 leading-relaxed font-normal">Complete digital marketing company in Bilaspur. SEO, social media marketing, PPC advertising, and content marketing to grow your online presence.</p>
                   </div>
                   <div className="mt-6">
+                    <Link href='/contact'>
                     <Button2>Learn More</Button2>
+                    </Link>
                   </div>
                 </div>
 
