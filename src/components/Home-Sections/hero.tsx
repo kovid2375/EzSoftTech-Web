@@ -12,10 +12,10 @@ export default function Hero() {
             <div className="relative min-h-[750px] sm:min-h-[900px] lg:min-h-[1080px] w-full rounded-3xl overflow-hidden flex flex-col items-center pt-16 pb-8 md:pt-24 md:pb-12 shadow-xl">
                 <img className="absolute inset-0 h-full w-full object-cover z-0" src="/image.png" alt="" />
                 <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-4xl">
-                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white drop-shadow-2xl font-[500] font-plus-jakarta leading-tight">
-                        Transforming ideas <br/> into Technology
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white drop-shadow-2xl font-[500] font-plus-jakarta leading-tight">
+                        Transforming ideas into Technology
                     </h1>
-                    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-2xl font-[500] font-plus-jakarta leading-tight mt-1">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white drop-shadow-2xl font-[500] font-plus-jakarta leading-tight mt-1">
                          <span className="text-[#bcd7ef]">that's</span> <span className="text-[#bcd7ef]"><FlipWords words={words}/></span>
                     </h1>
 
@@ -30,7 +30,7 @@ export default function Hero() {
                         <Button href="/contact">Get Started</Button>
                     </div>
                 </div>
-                <div className="relative z-10 w-full mt-6 sm:mt-8">
+                <div className="relative z-10 w-full mt-6 sm:-mt-2">
                     <CurvedCarousel />
                 </div>
             </div>

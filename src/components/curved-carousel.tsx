@@ -32,35 +32,35 @@ export default function CurvedCarousel() {
   {
     id: 1,
     content: (
-      <div className="w-full h-full bg-white rounded-3xl p-6 flex flex-col justify-between shadow-[0_15px_35px_rgba(0,0,0,0.05)] border border-zinc-100">
+      <div className="w-full h-full bg-white rounded-3xl p-4 flex flex-col justify-between shadow-[0_15px_35px_rgba(0,0,0,0.05)] border border-zinc-100">
         <div>
           <div className="flex justify-between items-start">
             <div>
-              <span className="text-zinc-400 text-xs font-semibold uppercase tracking-wider">
+              <span className="text-zinc-400 text-[10px] font-semibold uppercase tracking-wider">
                 Our Work
               </span>
-              <h3 className="text-xl font-semibold text-zinc-900 mt-1">
+              <h3 className="text-lg font-semibold text-zinc-900 mt-0.5">
                 Projects Delivered
               </h3>
             </div>
 
-            <span className="text-blue-500 bg-blue-50 text-xs font-semibold px-2.5 py-1 rounded-full">
+            <span className="text-blue-500 bg-blue-50 text-[10px] font-semibold px-2.5 py-0.5 rounded-full">
               Growing
             </span>
           </div>
 
-          <div className="mt-8 h-32 flex items-end gap-3 justify-between">
+          <div className="mt-4 h-20 flex items-end gap-2.5 justify-between">
             {[30, 45, 38, 55, 65, 58, 72, 78, 85, 95].map(
               (height, i) => (
                 <div
                   key={i}
-                  className="flex-1 flex flex-col items-center gap-1.5 group"
+                  className="flex-1 flex flex-col items-center gap-1 group"
                 >
                   <div
-                    className="w-full rounded-t-md transition-all duration-500 ease-out bg-zinc-100 group-hover:bg-blue-500"
+                    className="w-full rounded-t transition-all duration-500 ease-out bg-zinc-100 group-hover:bg-blue-500"
                     style={{ height: `${height}%` }}
                   />
-                  <span className="text-[10px] text-zinc-400 font-semibold">
+                  <span className="text-[9px] text-zinc-400 font-semibold">
                     {i + 1}
                   </span>
                 </div>
@@ -69,7 +69,7 @@ export default function CurvedCarousel() {
           </div>
         </div>
 
-        <div className="pt-4 border-t border-zinc-100 flex items-center justify-between text-xs text-zinc-500">
+        <div className="pt-2 border-t border-zinc-100 flex items-center justify-between text-[11px] text-zinc-500">
           <span>Delivery Quality</span>
           <span className="font-semibold text-zinc-900">Built to Perform</span>
         </div>
@@ -81,22 +81,22 @@ export default function CurvedCarousel() {
   {
     id: 2,
     content: (
-      <div className="w-full h-full bg-white rounded-3xl p-6 flex flex-col shadow-[0_15px_35px_rgba(0,0,0,0.05)] border border-zinc-100">
+      <div className="w-full h-full bg-white rounded-3xl p-4 flex flex-col justify-between shadow-[0_15px_35px_rgba(0,0,0,0.05)] border border-zinc-100">
         <div>
-          <span className="text-zinc-400 text-xs font-semibold uppercase tracking-wider">
+          <span className="text-zinc-400 text-[10px] font-semibold uppercase tracking-wider">
             What We Build
           </span>
 
-          <h3 className="text-2xl font-semibold text-zinc-900 mt-1">
+          <h3 className="text-lg font-semibold text-zinc-900 mt-0.5">
             Digital Solutions
           </h3>
 
-          <p className="text-xs text-zinc-400 mt-2">
+          <p className="text-[11px] text-zinc-400 mt-1">
             Technology designed around your business.
           </p>
         </div>
 
-        <div className="flex flex-col gap-2 mt-5">
+        <div className="flex flex-col gap-1.5 mt-3">
           {[
             {
               title: "Web Development",
@@ -115,14 +115,14 @@ export default function CurvedCarousel() {
               progress: "82%",
             },
           ].map((service, i) => (
-            <div key={i} className="p-3 bg-zinc-50 rounded-2xl">
-              <div className="flex justify-between items-center mb-2">
-                <span className="text-xs font-medium text-zinc-800">
+            <div key={i} className="p-2 bg-zinc-50 rounded-xl">
+              <div className="flex justify-between items-center mb-1">
+                <span className="text-[11px] font-medium text-zinc-800">
                   {service.title}
                 </span>
 
                 <svg
-                  className="w-4 h-4 text-blue-500"
+                  className="w-3 h-3 text-blue-500"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -136,7 +136,7 @@ export default function CurvedCarousel() {
                 </svg>
               </div>
 
-              <div className="h-1.5 bg-zinc-200 rounded-full overflow-hidden">
+              <div className="h-1 bg-zinc-200 rounded-full overflow-hidden">
                 <div
                   className="h-full bg-blue-500 rounded-full"
                   style={{ width: service.progress }}
@@ -153,31 +153,31 @@ export default function CurvedCarousel() {
   {
     id: 3,
     content: (
-      <div className="w-full h-full bg-gradient-to-br from-blue-500 to-blue-700 rounded-3xl p-6 flex flex-col justify-between text-white shadow-[0_15px_35px_rgba(37,99,235,0.2)] relative overflow-hidden">
+      <div className="w-full h-full bg-gradient-to-br from-blue-500 to-blue-700 rounded-3xl p-4 flex flex-col justify-between text-white shadow-[0_15px_35px_rgba(37,99,235,0.2)] relative overflow-hidden">
         <div className="absolute -top-20 -right-20 w-52 h-52 bg-white/10 rounded-full blur-2xl" />
 
         <div className="relative z-10">
-          <span className="text-[10px] font-semibold uppercase tracking-wider bg-white/15 backdrop-blur-md px-3 py-1.5 rounded-full">
+          <span className="text-[9px] font-semibold uppercase tracking-wider bg-white/15 backdrop-blur-md px-2.5 py-1 rounded-full">
             Client Success
           </span>
 
-          <h3 className="text-3xl font-semibold mt-6 tracking-tight">
+          <h3 className="text-xl font-semibold mt-4 tracking-tight">
             Built Around
             <br />
             Your Goals.
           </h3>
 
-          <p className="text-white/70 text-sm mt-3 leading-relaxed">
+          <p className="text-white/70 text-xs mt-2 leading-relaxed">
             We understand your business first, then build technology that moves
             it forward.
           </p>
         </div>
 
-        <div className="relative z-10 bg-white/15 backdrop-blur-xl rounded-2xl p-4 border border-white/20">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-blue-600">
+        <div className="relative z-10 bg-white/15 backdrop-blur-xl rounded-2xl p-2.5 border border-white/20">
+          <div className="flex items-center gap-2.5">
+            <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center text-blue-600 shrink-0">
               <svg
-                className="w-5 h-5"
+                className="w-4 h-4"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth={2}
@@ -192,8 +192,8 @@ export default function CurvedCarousel() {
             </div>
 
             <div>
-              <p className="text-sm font-semibold">Business-First Approach</p>
-              <p className="text-[10px] text-white/60">
+              <p className="text-xs font-semibold">Business-First Approach</p>
+              <p className="text-[9px] text-white/60">
                 Solutions designed for real impact
               </p>
             </div>
@@ -207,20 +207,20 @@ export default function CurvedCarousel() {
   {
     id: 4,
     content: (
-      <div className="w-full h-full bg-white rounded-3xl p-6 flex flex-col justify-between shadow-[0_15px_35px_rgba(0,0,0,0.05)] border border-zinc-100">
+      <div className="w-full h-full bg-white rounded-3xl p-4 flex flex-col justify-between shadow-[0_15px_35px_rgba(0,0,0,0.05)] border border-zinc-100">
         <div>
-          <span className="text-zinc-400 text-xs font-semibold uppercase tracking-wider">
+          <span className="text-zinc-400 text-[10px] font-semibold uppercase tracking-wider">
             Digital Transformation
           </span>
 
-          <h3 className="text-lg font-semibold text-zinc-900 mt-1 leading-tight">
+          <h3 className="text-base font-semibold text-zinc-900 mt-0.5 leading-tight">
             Technology That Moves
             <br />
             Businesses Forward
           </h3>
         </div>
 
-        <div className="my-2 relative flex-1 min-h-[140px] flex items-end">
+        <div className="my-1.5 relative flex-1 min-h-[96px] flex items-end">
           <svg
             viewBox="0 0 300 150"
             className="w-full h-full overflow-visible"
@@ -284,7 +284,7 @@ export default function CurvedCarousel() {
           </svg>
         </div>
 
-        <div className="flex justify-between text-[9px] font-semibold text-zinc-400 pt-2 border-t border-zinc-50">
+        <div className="flex justify-between text-[8px] font-semibold text-zinc-400 pt-1.5 border-t border-zinc-50">
           <span>Idea</span>
           <span>Strategy</span>
           <span>Design</span>
@@ -299,13 +299,13 @@ export default function CurvedCarousel() {
   {
     id: 5,
     content: (
-      <div className="w-full h-full bg-zinc-950 rounded-3xl p-8 flex flex-col justify-center shadow-[0_15px_45px_rgba(0,0,0,0.15)] border border-zinc-800">
-        <div className="text-[2.1rem] font-medium leading-[1.3] text-left font-plus-jakarta tracking-tight">
+      <div className="w-full h-full bg-zinc-950 rounded-3xl p-5 flex flex-col justify-center shadow-[0_15px_45px_rgba(0,0,0,0.15)] border border-zinc-800">
+        <div className="text-[1.6rem] font-medium leading-[1.3] text-left font-plus-jakarta tracking-tight">
           <span className="text-white">Expertise </span>
 
-          <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-[#D6FD70] mx-1 align-middle text-black">
+          <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#D6FD70] mx-1 align-middle text-black">
             <svg
-              className="w-5 h-5"
+              className="w-4 h-4"
               fill="currentColor"
               viewBox="0 0 24 24"
             >
@@ -333,12 +333,12 @@ export default function CurvedCarousel() {
   {
     id: 6,
     content: (
-      <div className="w-full h-full bg-gradient-to-tr from-[#9cd6fc] via-[#5caef7] to-[#2c86e9] rounded-3xl p-8 flex flex-col justify-center items-center text-center shadow-[0_15px_35px_rgba(44,134,233,0.15)] relative overflow-hidden group">
+      <div className="w-full h-full bg-gradient-to-tr from-[#9cd6fc] via-[#5caef7] to-[#2c86e9] rounded-3xl p-5 flex flex-col justify-center items-center text-center shadow-[0_15px_35px_rgba(44,134,233,0.15)] relative overflow-hidden group">
         <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-white/10 blur-xl" />
 
-        <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center text-[#2c86e9] shadow-lg mb-6 transition-all duration-500 group-hover:scale-110 group-hover:rotate-90">
+        <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-[#2c86e9] shadow-lg mb-4 transition-all duration-500 group-hover:scale-110 group-hover:rotate-90">
           <svg
-            className="w-8 h-8"
+            className="w-6 h-6"
             fill="none"
             stroke="currentColor"
             strokeWidth={3}
@@ -352,11 +352,11 @@ export default function CurvedCarousel() {
           </svg>
         </div>
 
-        <h3 className="text-3xl font-semibold text-white tracking-tight">
+        <h3 className="text-2xl font-semibold text-white tracking-tight">
           Start Your Project
         </h3>
 
-        <p className="text-white/80 text-sm mt-2 font-medium">
+        <p className="text-white/80 text-xs mt-1.5 font-medium">
           Let's build something great together
         </p>
       </div>
@@ -367,22 +367,22 @@ export default function CurvedCarousel() {
   {
     id: 7,
     content: (
-      <div className="w-full h-full bg-white rounded-3xl p-6 flex flex-col justify-between shadow-[0_15px_35px_rgba(0,0,0,0.05)] border border-zinc-100">
+      <div className="w-full h-full bg-white rounded-3xl p-4 flex flex-col justify-between shadow-[0_15px_35px_rgba(0,0,0,0.05)] border border-zinc-100">
         <div>
-          <span className="text-zinc-400 text-xs font-semibold uppercase tracking-wider">
+          <span className="text-zinc-400 text-[10px] font-semibold uppercase tracking-wider">
             Technologies
           </span>
 
-          <h3 className="text-xl font-semibold text-zinc-900 mt-1">
+          <h3 className="text-lg font-semibold text-zinc-900 mt-0.5">
             Modern Tech Stack
           </h3>
 
-          <p className="text-xs text-zinc-400 mt-2">
+          <p className="text-[11px] text-zinc-400 mt-1">
             Powerful technology for powerful products.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 gap-2.5 my-5">
+        <div className="grid grid-cols-2 gap-1.5 my-3">
           {[
             "React",
             "Next.js",
@@ -393,18 +393,18 @@ export default function CurvedCarousel() {
           ].map((tech) => (
             <div
               key={tech}
-              className="bg-zinc-50 border border-zinc-100 rounded-xl p-3 flex items-center gap-2"
+              className="bg-zinc-50 border border-zinc-100 rounded-xl p-2 flex items-center gap-1.5"
             >
-              <div className="w-2 h-2 rounded-full bg-blue-500" />
+              <div className="w-1.5 h-1.5 rounded-full bg-blue-500" />
 
-              <span className="text-xs font-semibold text-zinc-700">
+              <span className="text-[11px] font-semibold text-zinc-700">
                 {tech}
               </span>
             </div>
           ))}
         </div>
 
-        <div className="pt-4 border-t border-zinc-100 text-xs text-zinc-500">
+        <div className="pt-2 border-t border-zinc-100 text-[11px] text-zinc-500">
           Built with modern, scalable technologies.
         </div>
       </div>
@@ -415,21 +415,21 @@ export default function CurvedCarousel() {
   {
     id: 8,
     content: (
-      <div className="w-full h-full bg-white rounded-3xl p-5 flex flex-col justify-between shadow-[0_15px_35px_rgba(0,0,0,0.05)] border border-zinc-100">
-        <div className="bg-[#111] rounded-[1.8rem] p-4 flex items-center justify-between">
+      <div className="w-full h-full bg-white rounded-3xl p-4 flex flex-col justify-between shadow-[0_15px_35px_rgba(0,0,0,0.05)] border border-zinc-100">
+        <div className="bg-[#111] rounded-2xl p-2.5 flex items-center justify-between">
           <div>
-            <h4 className="text-sm font-semibold text-white">
+            <h4 className="text-[11px] font-semibold text-white">
               Development Excellence
             </h4>
 
-            <p className="text-[10px] text-zinc-500 font-medium mt-0.5">
+            <p className="text-[9px] text-zinc-500 font-medium mt-0.5">
               Built for real-world performance
             </p>
           </div>
 
-          <div className="text-white bg-zinc-800/80 p-2 rounded-xl">
+          <div className="text-white bg-zinc-800/80 p-1.5 rounded-lg">
             <svg
-              className="w-5 h-5"
+              className="w-4 h-4"
               fill="none"
               stroke="currentColor"
               strokeWidth={2.5}
@@ -444,17 +444,17 @@ export default function CurvedCarousel() {
           </div>
         </div>
 
-        <div className="my-4">
-          <h3 className="text-4xl font-bold text-zinc-950 tracking-tight">
+        <div className="my-2.5">
+          <h3 className="text-2xl font-bold text-zinc-950 tracking-tight">
             Built Better.
           </h3>
 
-          <p className="text-[11px] text-zinc-400 font-semibold mt-2 uppercase tracking-wider">
+          <p className="text-[9px] text-zinc-400 font-semibold mt-1 uppercase tracking-wider">
             Performance • Security • Scalability
           </p>
         </div>
 
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-1.5">
           {[
             "Fast",
             "Scalable",
@@ -465,7 +465,7 @@ export default function CurvedCarousel() {
           ].map((tag) => (
             <span
               key={tag}
-              className="text-[10px] font-bold bg-zinc-100 text-zinc-800 px-3 py-1.5 rounded-full"
+              className="text-[9px] font-bold bg-zinc-100 text-zinc-800 px-2.5 py-1 rounded-full"
             >
               {tag}
             </span>
@@ -479,29 +479,29 @@ export default function CurvedCarousel() {
   {
     id: 9,
     content: (
-      <div className="w-full h-full bg-gradient-to-br from-emerald-500 to-teal-700 rounded-3xl p-6 flex flex-col justify-between text-white shadow-[0_15px_35px_rgba(16,185,129,0.15)] relative overflow-hidden">
+      <div className="w-full h-full bg-gradient-to-br from-emerald-500 to-teal-700 rounded-3xl p-4 flex flex-col justify-between text-white shadow-[0_15px_35px_rgba(16,185,129,0.15)] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-28 h-28 bg-white/10 rounded-full blur-xl" />
 
         <div>
-          <span className="text-[10px] font-semibold bg-white/20 px-2.5 py-1 rounded-full">
+          <span className="text-[9px] font-semibold bg-white/20 px-2 py-0.5 rounded-full">
             Built Around Your Business
           </span>
 
-          <h3 className="text-xl font-bold mt-3 tracking-tight">
+          <h3 className="text-lg font-bold mt-2 tracking-tight">
             Custom Software
           </h3>
 
-          <p className="text-white/70 text-xs mt-1">
+          <p className="text-white/70 text-[11px] mt-0.5">
             Technology tailored to your operations
           </p>
         </div>
 
-        <div className="my-2 bg-black/20 rounded-2xl p-4 border border-white/10">
-          <div className="grid grid-cols-2 gap-2">
+        <div className="my-1.5 bg-black/20 rounded-2xl p-2.5 border border-white/10">
+          <div className="grid grid-cols-2 gap-1.5">
             {["ERP Systems", "CRM", "Billing", "Inventory"].map((item) => (
               <div
                 key={item}
-                className="bg-white/10 rounded-lg p-2.5 text-[10px] font-semibold"
+                className="bg-white/10 rounded-lg p-2 text-[9px] font-semibold text-center"
               >
                 {item}
               </div>
@@ -509,7 +509,7 @@ export default function CurvedCarousel() {
           </div>
         </div>
 
-        <div className="flex items-center justify-between text-[10px] text-white/80 pt-2 border-t border-white/10">
+        <div className="flex items-center justify-between text-[9px] text-white/80 pt-1.5 border-t border-white/10">
           <span>Solution Status</span>
 
           <span className="flex items-center gap-1 font-semibold text-emerald-300">
@@ -574,7 +574,7 @@ export default function CurvedCarousel() {
 
   return (
     <section 
-      className="relative w-full py-8 pb-14 bg-transparent overflow-hidden select-none animate-fadeIn"
+      className="relative w-full py-4 pb-8 bg-transparent overflow-hidden select-none animate-fadeIn"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => {
         setIsHovered(false);
@@ -635,7 +635,7 @@ export default function CurvedCarousel() {
         
         {/* 3D Perspective Wrapper */}
         <div 
-          className="relative w-full h-[460px] flex items-center justify-center cursor-grab active:cursor-grabbing overflow-visible"
+          className="relative w-full h-[360px] flex items-center justify-center cursor-grab active:cursor-grabbing overflow-visible"
           style={{ perspective: "1400px", perspectiveOrigin: "50% 30%" }}
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
@@ -678,7 +678,7 @@ export default function CurvedCarousel() {
                     setActiveIndex(idx);
                   }
                 }}
-                className={`absolute w-[320px] h-[360px] transition-all duration-700 cubic-bezier(0.25, 1, 0.5, 1) origin-center will-change-transform ${
+                className={`absolute w-[280px] h-[280px] transition-all duration-700 cubic-bezier(0.25, 1, 0.5, 1) origin-center will-change-transform ${
                   idx === activeIndex ? "ring-2 ring-white/50 shadow-2xl" : "hover:brightness-105"
                 } rounded-3xl overflow-hidden`}
                 style={{
@@ -695,7 +695,7 @@ export default function CurvedCarousel() {
         </div>
 
         {/* Carousel Dots / Navigation Indicator */}
-        <div className="flex gap-2.5 mt-8 mb-4">
+        <div className="flex gap-2.5 mt-6 mb-2">
           {cards.map((_, idx) => (
             <button
               key={idx}
@@ -711,16 +711,16 @@ export default function CurvedCarousel() {
         </div>
 
         {/* Review & Trust Footer (Image 5 Bottom) */}
-        <div className="mt-6 flex flex-col items-center gap-2">
-          <p className="text-white text-lg font-medium font-plus-jakarta drop-shadow-md">
+        <div className="mt-4 flex flex-col items-center gap-1.5">
+          <p className="text-white text-base font-medium font-plus-jakarta drop-shadow-md">
             Rated 4.9/5 by 4,900+ clients
           </p>
           
-          <div className="flex gap-1.5">
+          <div className="flex gap-1">
             {[1, 2, 3, 4, 5].map((star) => (
               <svg
                 key={star}
-                className="w-5.5 h-5.5 text-yellow-300 drop-shadow-md hover:scale-125 transition-transform cursor-pointer"
+                className="w-5 h-5 text-yellow-300 drop-shadow-md hover:scale-125 transition-transform cursor-pointer"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
