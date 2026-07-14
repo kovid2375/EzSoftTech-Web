@@ -19,7 +19,7 @@ export default function Hero() {
                          <span className="text-[#bcd7ef]">that's</span> <span className="text-[#bcd7ef]"><FlipWords words={words}/></span>
                     </h1>
 
-                    <p className="mt-6 sm:mt-8 text-white text-sm sm:text-base md:text-lg font-normal tracking-wide opacity-90 max-w-2xl leading-relaxed">
+                    <p className="mt-6 sm:mt-8 text-white text-md sm:text-md md:text-md font-normal tracking-wide opacity-90 max-w-2xl leading-relaxed">
                         EZ Soft Tech transforms ideas into powerful digital products.<br className="hidden sm:inline" />
                         From modern websites and mobile apps to custom software and <br className="hidden sm:inline"/>
                         business automation, we create scalable technology solutions.
