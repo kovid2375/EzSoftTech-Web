@@ -7,11 +7,11 @@ import Button from '../button'
 
 export function Section1() {
     return (
-        <main className="mt-15 md:mt-18 lg:mt-26">
-            <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-16 px-6 md:px-16 py-12 md:py-20">
+        <main className="mt-15 md:mt-18 lg:mt-10">
+            <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-16 px-6 md:px-16 py-12 md:py-20">
 
                 {/* Left Side */}
-                <div className="w-full md:w-1/2 flex flex-col justify-center pr-0 md:pr-8">
+                <div className="w-full md:w-[40%] flex flex-col justify-center pr-0 md:pr-8">
 
                     {/* Badge & Trusted Info */}
                     <div className="flex items-center gap-3 mb-6">
@@ -54,17 +54,8 @@ export function Section1() {
                 </div>
 
                 {/* Right Side */}
-                <div className="w-full md:w-1/2 flex justify-center relative mt-10 md:mt-0">
-                    <img 
-                        className="absolute left-1/2 -translate-x-1/2 top-50 sm:-bottom-6 rounded-2xl w-40 h-52 sm:w-56 sm:h-72 object-contain z-10" 
-                        src="/about-3.png" 
-                        alt="EZ Soft Tech" 
-                    />
-                    <img
-                        src="/about-section.png"
-                        alt="Who We Are"
-                        className="w-full max-w-md md:max-w-full h-auto rounded-2xl shadow-lg object-cover"
-                    />
+                <div className="w-full md:w-[60%] flex justify-center relative mt-10 md:mt-0">
+                   <video className='rounded-xl w-full border border-neutral-100/80 shadow-md' src="/About-section.mp4" loop muted autoPlay></video>
                 </div>
 
             </div>

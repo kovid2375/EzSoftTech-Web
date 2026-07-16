@@ -29,7 +29,7 @@ export function Section2() {
   ]
 
   return (
-    <section className="py-20 md:py-28 overflow-hidden bg-white">
+    <section className="py-20 md:py-5 overflow-hidden bg-white">
       <div className="max-w-5xl mx-auto px-6 flex flex-col items-center text-center">
         
         {/* Animated Heading */}
