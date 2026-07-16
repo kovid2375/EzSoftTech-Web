@@ -75,9 +75,9 @@ export const Navbar = ({ children, className }: NavbarProps) => {
       {React.Children.map(children, (child) =>
         React.isValidElement(child)
           ? React.cloneElement(
-              child as React.ReactElement<{ visible?: boolean }>,
-              { visible },
-            )
+            child as React.ReactElement<{ visible?: boolean }>,
+            { visible },
+          )
           : child,
       )}
     </motion.div>
@@ -102,8 +102,8 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
       }}
       className={cn(
         "relative z-[60] mx-auto hidden w-full max-w-6xl flex-row items-center justify-between self-start rounded-full border px-6 py-2 md:py-2.5 lg:flex transition-all duration-300 backdrop-blur-md",
-        visible 
-          ? "bg-white/80 border-white/50 text-black shadow-[0_8px_32px_0_rgba(0,0,0,0.06)]" 
+        visible
+          ? "bg-white/80 border-white/50 text-black shadow-[0_8px_32px_0_rgba(0,0,0,0.06)]"
           : "bg-white/30 border-white/20 text-black",
         className,
       )}
@@ -181,8 +181,8 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
       }}
       className={cn(
         "relative z-50 mx-auto flex w-full max-w-[calc(100vw-2rem)] flex-col items-center justify-between border px-3 py-2.5 lg:hidden transition-all duration-300 backdrop-blur-md",
-        visible 
-          ? "bg-white/60 border-black/10 text-black shadow-[0_8px_32px_0_rgba(0,0,0,0.08)]" 
+        visible
+          ? "bg-white/60 border-black/10 text-black shadow-[0_8px_32px_0_rgba(0,0,0,0.08)]"
           : "bg-white/20 border-black/5 text-black",
         className,
       )}
@@ -281,9 +281,9 @@ export const NavbarButton = ({
   className?: string;
   variant?: "primary" | "secondary" | "dark" | "gradient" | "lime";
 } & (
-  | React.ComponentPropsWithoutRef<typeof Link>
-  | React.ComponentPropsWithoutRef<"button">
-)) => {
+    | React.ComponentPropsWithoutRef<typeof Link>
+    | React.ComponentPropsWithoutRef<"button">
+  )) => {
   const baseStyles =
     "px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase relative cursor-pointer active:scale-95 transition duration-200 inline-block text-center";
 

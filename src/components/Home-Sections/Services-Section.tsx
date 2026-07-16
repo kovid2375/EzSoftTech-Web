@@ -35,8 +35,8 @@ export function ServicesSection() {
         Services
       </div>
       <h2 className="text-3xl sm:text-5xl md:text-[50px] font-medium tracking-tight text-neutral-950 leading-[1.2] md:leading-[1.15] max-w-5xl mx-auto mb-6">
-        Our Development Services includes<br className="hidden md:inline" />
-        intelligent and  innovation
+        Our Development Services Include<br className="hidden md:inline" />
+        Intelligent and Innovative Solutions
       </h2>
       <p className="text-base sm:text-lg md:text-xl text-neutral-500 max-w-3xl mx-auto leading-relaxed mb-12">
         We specialize in creating powerful digital solutions that drive business growth. <br className="hidden md:inline" />

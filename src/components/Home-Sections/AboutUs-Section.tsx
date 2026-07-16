@@ -52,7 +52,7 @@ function Counter({ value, suffix = "" }: CounterProps) {
   }, [value, hasAnimated]);
 
   return (
-    <span ref={ref}>
+    <span ref={ref} className="whitespace-nowrap">
       {count}
       {suffix}
     </span>
@@ -61,15 +61,15 @@ function Counter({ value, suffix = "" }: CounterProps) {
 
 export function AboutUsSection() {
   return (
-    <section id="about" className="py-20 md:py-28 px-4 bg-white flex flex-col items-center text-center font-sans overflow-hidden -mt-10">
+    <section id="about" className="py-20 md:py-28 px-4 bg-white flex flex-col items-center text-center font-sans overflow-hidden -mt-8 ">
       <div className="flex items-center gap-2 mb-8 md:mb-10 text-xs md:text-sm font-semibold tracking-[0.2em] text-black uppercase">
         <span className="w-1.5 h-1.5 bg-black rounded-full" />
         About Us
       </div>
-      <h2 className="text-2xl sm:text-5xl md:text-[42px] font-medium tracking-tight text-neutral-950 leading-[1.2] md:leading-[1.15] max-w-5xl mx-auto mb-16">
+      <h2 className="text-2xl sm:text-5xl md:text-[42px] font-medium tracking-tight text-black leading-[1.2] md:leading-[1.15] max-w-5xl mx-auto mb-16">
         A Trusted Software Company <br className="hidden md:inline" />
         Dedicated to Building{" "}
-        <span className="group inline-flex items-center justify-center bg-sky-400 text-white rounded-full w-[38px] h-[38px] md:w-[64px] md:h-[64px] mx-1 md:mx-2 align-middle transition-transform duration-300 hover:scale-110 cursor-pointer">
+        <span className="group inline-flex items-center justify-center bg-sky-400 text-black rounded-full w-[38px] h-[38px] md:w-[64px] md:h-[64px] mx-1 md:mx-2 align-middle transition-transform duration-300 hover:scale-110 cursor-pointer">
           <svg
             viewBox="0 0 24 24"
             fill="none"
@@ -88,7 +88,7 @@ export function AboutUsSection() {
           </svg>
         </span>{" "}
         smarter <br className="hidden md:inline" />
-        <span className="text-neutral-500">
+        <span className="text-black">
           and{" "}
           <span className="group inline-flex items-center justify-center bg-[#cfff33] text-neutral-950 rounded-full w-[38px] h-[38px] md:w-[64px] md:h-[64px] mx-1 md:mx-2 align-middle transition-all duration-300 hover:scale-110 hover:shadow-[0_0_25px_rgba(207,255,51,0.9)] cursor-pointer">
             <svg

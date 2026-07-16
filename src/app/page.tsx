@@ -12,14 +12,14 @@ import Navbar1 from "@/components/resizable-navbar-demo";
 export default function Main() {
   return (
     <div className="">
-      
+
       <Hero />
-      <LogoSection/>
+      <LogoSection />
       <AboutUsSection />
-      <ServicesSection/>
-      <ExpertiseSection/>
+      <ServicesSection />
+      <ExpertiseSection />
       <FaqSection />
-      <FaqBelowSection />
+    
     </div>
   );
 }
