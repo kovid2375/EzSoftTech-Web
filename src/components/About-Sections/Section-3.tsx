@@ -38,45 +38,45 @@ export function Section3() {
       emojiBadges: ["🧪 AUTOMATED TESTS", "📈 98.4% COVERAGE"],
       color: "emerald",
       visual: (
-        <div className="w-full h-full bg-black border border-neutral-800/85 rounded-2xl p-6 font-mono text-xs text-neutral-400 select-none flex flex-col justify-between shadow-lg relative overflow-hidden group">
+        <div className="w-full h-full bg-white border border-neutral-200/85 rounded-2xl p-6 font-mono text-xs text-neutral-600 select-none flex flex-col justify-between shadow-md relative overflow-hidden group">
           {/* Top Bar */}
-          <div className="flex justify-between items-center border-b border-neutral-800 pb-4 mb-4">
+          <div className="flex justify-between items-center border-b border-neutral-200 pb-4 mb-4">
             <div className="flex gap-1.5">
               <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
               <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
             </div>
             <span className="text-[10px] text-neutral-500 font-semibold uppercase flex items-center gap-1.5">
-              <Terminal className="w-3.5 h-3.5 text-emerald-400" />
+              <Terminal className="w-3.5 h-3.5 text-emerald-600" />
               test_runner.js
             </span>
           </div>
 
           {/* Test Runner Body */}
           <div className="flex-1 space-y-2.5 mb-4">
-            <p className="text-emerald-400 font-semibold flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+            <p className="text-emerald-600 font-semibold flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
               <span>✓ All tests passed successfully</span>
             </p>
-            <div className="space-y-1.5 pl-6 border-l border-neutral-800">
+            <div className="space-y-1.5 pl-6 border-l border-neutral-200">
               <p className="text-neutral-500">→ Linting: 0 warnings, 0 errors</p>
-              <p className="text-neutral-300">→ Unit Tests: 42 passed</p>
-              <p className="text-neutral-300">→ Integration Tests: 18 passed</p>
-              <p className="text-neutral-400 flex items-center gap-2">
+              <p className="text-neutral-700">→ Unit Tests: 42 passed</p>
+              <p className="text-neutral-700">→ Integration Tests: 18 passed</p>
+              <p className="text-neutral-600 flex items-center gap-2">
                 → Code Coverage: 
-                <span className="text-emerald-400 font-bold">98.4%</span>
+                <span className="text-emerald-600 font-bold">98.4%</span>
               </p>
             </div>
-            <div className="w-full bg-neutral-900/60 rounded-full h-1.5 mt-2">
+            <div className="w-full bg-neutral-100 rounded-full h-1.5 mt-2">
               <div className="bg-emerald-500 h-1.5 rounded-full transition-all duration-1000 w-[98.4%]" />
             </div>
           </div>
 
           {/* Code Snippet Box */}
-          <div className="bg-[#0a0a0a] p-4 rounded-xl border border-neutral-800/80 text-[11px] leading-relaxed">
-            <p><span className="text-purple-400">const</span> build = <span className="text-blue-400">await</span> compileProject();</p>
-            <p className="text-emerald-400/90 pl-4">verifyStandards(build);</p>
-            <p className="text-neutral-500 pl-4">// Pipeline status: success</p>
+          <div className="bg-neutral-50 p-4 rounded-xl border border-neutral-200/80 text-[11px] leading-relaxed">
+            <p><span className="text-purple-600 font-medium">const</span> build = <span className="text-blue-600">await</span> compileProject();</p>
+            <p className="text-emerald-600/90 pl-4">verifyStandards(build);</p>
+            <p className="text-neutral-400 pl-4">// Pipeline status: success</p>
           </div>
         </div>
       )
@@ -89,14 +89,14 @@ export function Section3() {
       emojiBadges: ["⚡ AGILE SPRINTS", "📅 100% ON-TIME"],
       color: "sky",
       visual: (
-        <div className="w-full h-full bg-black border border-neutral-800/85 rounded-2xl p-6 flex flex-col justify-between shadow-lg relative overflow-hidden group">
+        <div className="w-full h-full bg-white border border-neutral-200/85 rounded-2xl p-6 flex flex-col justify-between shadow-md relative overflow-hidden group">
           {/* Header */}
-          <div className="flex justify-between items-center border-b border-neutral-800 pb-4 mb-4">
-            <span className="text-xs font-bold text-neutral-300 flex items-center gap-1.5">
-              <Clock className="w-4 h-4 text-sky-400" />
+          <div className="flex justify-between items-center border-b border-neutral-200 pb-4 mb-4">
+            <span className="text-xs font-bold text-neutral-700 flex items-center gap-1.5">
+              <Clock className="w-4 h-4 text-sky-500" />
               TIMELINE TRACKER
             </span>
-            <span className="text-[10px] font-bold text-sky-400 uppercase tracking-wider bg-sky-500/10 border border-sky-500/20 px-2 py-0.5 rounded-full">
+            <span className="text-[10px] font-bold text-sky-600 uppercase tracking-wider bg-sky-500/10 border border-sky-500/20 px-2 py-0.5 rounded-full">
               Sprint 12 Active
             </span>
           </div>
@@ -106,29 +106,29 @@ export function Section3() {
             <div className="relative w-36 h-36 flex items-center justify-center border-4 border-dashed border-sky-500/20 rounded-full">
               <div className="absolute inset-2 border-4 border-sky-500 border-r-transparent rounded-full animate-[spin_8s_linear_infinite]" />
               <div className="text-center z-10">
-                <span className="text-3xl font-extrabold text-white tracking-tight">100%</span>
-                <p className="text-[9px] font-bold text-sky-400 uppercase tracking-widest mt-1">On-Time</p>
+                <span className="text-3xl font-extrabold text-neutral-800 tracking-tight">100%</span>
+                <p className="text-[9px] font-bold text-sky-500 uppercase tracking-widest mt-1">On-Time</p>
               </div>
             </div>
           </div>
 
           {/* Milestones Flow */}
-          <div className="grid grid-cols-4 gap-2 pt-4 border-t border-neutral-800/80 text-[10px] text-center text-neutral-400">
+          <div className="grid grid-cols-4 gap-2 pt-4 border-t border-neutral-200 text-[10px] text-center text-neutral-600">
             <div className="space-y-1">
-              <span className="block font-bold text-emerald-400">✓ Phase 1</span>
+              <span className="block font-bold text-emerald-600">✓ Phase 1</span>
               <span className="text-neutral-500">Design</span>
             </div>
             <div className="space-y-1">
-              <span className="block font-bold text-emerald-400">✓ Phase 2</span>
+              <span className="block font-bold text-emerald-600">✓ Phase 2</span>
               <span className="text-neutral-500">Develop</span>
             </div>
             <div className="space-y-1">
-              <span className="block font-bold text-sky-400 animate-pulse">● Phase 3</span>
-              <span className="text-neutral-300">QA Test</span>
+              <span className="block font-bold text-sky-500 animate-pulse">● Phase 3</span>
+              <span className="text-neutral-700">QA Test</span>
             </div>
             <div className="space-y-1">
-              <span className="block text-neutral-600">○ Phase 4</span>
-              <span className="text-neutral-600">Deploy</span>
+              <span className="block text-neutral-400">○ Phase 4</span>
+              <span className="text-neutral-400">Deploy</span>
             </div>
           </div>
         </div>
@@ -142,11 +142,11 @@ export function Section3() {
       emojiBadges: ["🤝 DAILY STANDUPS", "⭐ 5.0 RATING"],
       color: "amber",
       visual: (
-        <div className="w-full h-full bg-black border border-neutral-800/85 rounded-2xl p-6 flex flex-col justify-between shadow-lg relative overflow-hidden group">
+        <div className="w-full h-full bg-white border border-neutral-200/85 rounded-2xl p-6 flex flex-col justify-between shadow-md relative overflow-hidden group">
           {/* Header */}
-          <div className="flex justify-between items-center border-b border-neutral-800 pb-4 mb-4">
-            <span className="text-xs font-bold text-neutral-300 flex items-center gap-1.5">
-              <HeartHandshake className="w-4 h-4 text-amber-400" />
+          <div className="flex justify-between items-center border-b border-neutral-200 pb-4 mb-4">
+            <span className="text-xs font-bold text-neutral-700 flex items-center gap-1.5">
+              <HeartHandshake className="w-4 h-4 text-amber-500" />
               CUSTOMER SATISFACTION
             </span>
             <div className="flex gap-0.5 text-amber-400 text-xs">
@@ -160,17 +160,17 @@ export function Section3() {
 
           {/* Testimonial Quote Bubble */}
           <div className="flex-1 flex flex-col justify-center my-2">
-            <div className="bg-[#0a0a0a] p-4 rounded-xl border border-neutral-800/80 relative">
+            <div className="bg-neutral-50 p-4 rounded-xl border border-neutral-200/80 relative">
               <span className="absolute -top-3 left-4 text-3xl font-serif text-amber-500/30 leading-none">“</span>
-              <p className="text-[11px] leading-relaxed text-neutral-300 italic pl-2">
+              <p className="text-[11px] leading-relaxed text-neutral-600 italic pl-2">
                 The communication and agility of EZ Soft Tech are outstanding. They delivered the billing software 2 weeks early and supported us post-launch flawlessly.
               </p>
               <div className="mt-3 flex items-center gap-2 pl-2">
-                <div className="w-6 h-6 rounded-full bg-neutral-800 flex items-center justify-center text-[10px] font-bold text-white uppercase">
+                <div className="w-6 h-6 rounded-full bg-neutral-200 flex items-center justify-center text-[10px] font-bold text-neutral-700 uppercase">
                   JD
                 </div>
                 <div>
-                  <h4 className="text-[10px] font-bold text-white">Jonathan Davis</h4>
+                  <h4 className="text-[10px] font-bold text-neutral-800">Jonathan Davis</h4>
                   <p className="text-[8px] text-neutral-500">CTO, Vertex Logistics</p>
                 </div>
               </div>
@@ -178,9 +178,9 @@ export function Section3() {
           </div>
 
           {/* Score Indicator */}
-          <div className="flex justify-between items-center pt-3 border-t border-neutral-800/80 text-[10px] text-neutral-400">
+          <div className="flex justify-between items-center pt-3 border-t border-neutral-200 text-[10px] text-neutral-500">
             <span>Net Promoter Score</span>
-            <span className="font-bold text-amber-400 text-sm">78 (Excellent)</span>
+            <span className="font-bold text-amber-600 text-sm">78 (Excellent)</span>
           </div>
         </div>
       )
@@ -193,35 +193,35 @@ export function Section3() {
       emojiBadges: ["🔒 OWASP SECURED", "🇪🇺 GDPR COMPLIANT"],
       color: "purple",
       visual: (
-        <div className="w-full h-full bg-black border border-neutral-800/85 rounded-2xl p-6 flex flex-col justify-between shadow-lg relative overflow-hidden group">
+        <div className="w-full h-full bg-white border border-neutral-200/85 rounded-2xl p-6 flex flex-col justify-between shadow-md relative overflow-hidden group">
           {/* Header */}
-          <div className="flex justify-between items-center border-b border-neutral-800 pb-4 mb-4">
-            <span className="text-xs font-bold text-neutral-300 flex items-center gap-1.5">
-              <ShieldCheck className="w-4 h-4 text-purple-400" />
+          <div className="flex justify-between items-center border-b border-neutral-200 pb-4 mb-4">
+            <span className="text-xs font-bold text-neutral-700 flex items-center gap-1.5">
+              <ShieldCheck className="w-4 h-4 text-purple-500" />
               SECURITY LAYER
             </span>
-            <span className="text-[9px] font-bold text-purple-400 bg-purple-500/10 border border-purple-500/20 px-2 py-0.5 rounded-full flex items-center gap-1">
+            <span className="text-[9px] font-bold text-purple-600 bg-purple-500/10 border border-purple-500/20 px-2 py-0.5 rounded-full flex items-center gap-1">
               <Lock className="w-2.5 h-2.5" /> SECURED
             </span>
           </div>
 
           {/* Security Badges Grid */}
           <div className="grid grid-cols-2 gap-3 flex-1 justify-content-center py-2">
-            <div className="bg-[#0a0a0a] border border-neutral-800/60 p-3 rounded-xl flex flex-col justify-between hover:border-purple-500/30 transition-colors">
+            <div className="bg-neutral-50 border border-neutral-200/60 p-3 rounded-xl flex flex-col justify-between hover:border-purple-500/30 transition-colors">
               <span className="text-[9px] font-bold text-neutral-500 uppercase">Coding standards</span>
-              <span className="text-xs font-semibold text-neutral-200 mt-1">OWASP Top 10</span>
+              <span className="text-xs font-semibold text-neutral-700 mt-1">OWASP Top 10</span>
             </div>
-            <div className="bg-[#0a0a0a] border border-neutral-800/60 p-3 rounded-xl flex flex-col justify-between hover:border-purple-500/30 transition-colors">
+            <div className="bg-neutral-50 border border-neutral-200/60 p-3 rounded-xl flex flex-col justify-between hover:border-purple-500/30 transition-colors">
               <span className="text-[9px] font-bold text-neutral-500 uppercase">EU Data Privacy</span>
-              <span className="text-xs font-semibold text-neutral-200 mt-1">GDPR Compliant</span>
+              <span className="text-xs font-semibold text-neutral-700 mt-1">GDPR Compliant</span>
             </div>
-            <div className="bg-[#0a0a0a] border border-neutral-800/60 p-3 rounded-xl flex flex-col justify-between hover:border-purple-500/30 transition-colors">
+            <div className="bg-neutral-50 border border-neutral-200/60 p-3 rounded-xl flex flex-col justify-between hover:border-purple-500/30 transition-colors">
               <span className="text-[9px] font-bold text-neutral-500 uppercase">Information Sec</span>
-              <span className="text-xs font-semibold text-neutral-200 mt-1">ISO 27001 Ready</span>
+              <span className="text-xs font-semibold text-neutral-700 mt-1">ISO 27001 Ready</span>
             </div>
-            <div className="bg-[#0a0a0a] border border-neutral-800/60 p-3 rounded-xl flex flex-col justify-between hover:border-purple-500/30 transition-colors">
+            <div className="bg-neutral-50 border border-neutral-200/60 p-3 rounded-xl flex flex-col justify-between hover:border-purple-500/30 transition-colors">
               <span className="text-[9px] font-bold text-neutral-500 uppercase">Data Trust Audited</span>
-              <span className="text-xs font-semibold text-neutral-200 mt-1">SOC 2 Compliant</span>
+              <span className="text-xs font-semibold text-neutral-700 mt-1">SOC 2 Compliant</span>
             </div>
           </div>
         </div>
@@ -235,11 +235,11 @@ export function Section3() {
       emojiBadges: ["🌍 24/7 SUPPORT", "🏢 4 HUBS"],
       color: "rose",
       visual: (
-        <div className="w-full h-full bg-black border border-neutral-800/85 rounded-2xl p-6 flex flex-col justify-between shadow-lg relative overflow-hidden group">
+        <div className="w-full h-full bg-white border border-neutral-200/85 rounded-2xl p-6 flex flex-col justify-between shadow-md relative overflow-hidden group">
           {/* Header */}
-          <div className="flex justify-between items-center border-b border-neutral-800 pb-4 mb-4">
-            <span className="text-xs font-bold text-neutral-300 flex items-center gap-1.5">
-              <Globe2 className="w-4 h-4 text-rose-400" />
+          <div className="flex justify-between items-center border-b border-neutral-200 pb-4 mb-4">
+            <span className="text-xs font-bold text-neutral-700 flex items-center gap-1.5">
+              <Globe2 className="w-4 h-4 text-rose-500" />
               GLOBAL OPERATIONS
             </span>
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
@@ -247,43 +247,43 @@ export function Section3() {
 
           {/* Global Locations List */}
           <div className="grid grid-cols-2 gap-2.5 flex-1 py-1">
-            <div className="bg-[#0a0a0a] border border-neutral-800/60 px-3.5 py-2.5 rounded-xl flex items-center gap-2 hover:bg-[#121212] transition-colors duration-300">
+            <div className="bg-neutral-50 border border-neutral-200/60 px-3.5 py-2.5 rounded-xl flex items-center gap-2 hover:bg-neutral-100 transition-colors duration-300">
               <span className="text-base shrink-0">🇮🇳</span>
               <div className="overflow-hidden">
-                <span className="block text-[10px] font-bold text-white leading-tight">India</span>
+                <span className="block text-[10px] font-bold text-neutral-800 leading-tight">India</span>
                 <span className="text-[8px] text-neutral-500 block leading-tight">Dev HQ</span>
               </div>
             </div>
-            <div className="bg-[#0a0a0a] border border-neutral-800/60 px-3.5 py-2.5 rounded-xl flex items-center gap-2 hover:bg-[#121212] transition-colors duration-300">
+            <div className="bg-neutral-50 border border-neutral-200/60 px-3.5 py-2.5 rounded-xl flex items-center gap-2 hover:bg-neutral-100 transition-colors duration-300">
               <span className="text-base shrink-0">🇺🇸</span>
               <div className="overflow-hidden">
-                <span className="block text-[10px] font-bold text-white leading-tight">USA</span>
+                <span className="block text-[10px] font-bold text-neutral-800 leading-tight">USA</span>
                 <span className="text-[8px] text-neutral-500 block leading-tight">Partnership</span>
               </div>
             </div>
-            <div className="bg-[#0a0a0a] border border-neutral-800/60 px-3.5 py-2.5 rounded-xl flex items-center gap-2 hover:bg-[#121212] transition-colors duration-300">
+            <div className="bg-neutral-50 border border-neutral-200/60 px-3.5 py-2.5 rounded-xl flex items-center gap-2 hover:bg-neutral-100 transition-colors duration-300">
               <span className="text-base shrink-0">🇬🇧</span>
               <div className="overflow-hidden">
-                <span className="block text-[10px] font-bold text-white leading-tight">UK</span>
+                <span className="block text-[10px] font-bold text-neutral-800 leading-tight">UK</span>
                 <span className="text-[8px] text-neutral-500 block leading-tight">Client Hub</span>
               </div>
             </div>
-            <div className="bg-[#0a0a0a] border border-neutral-800/60 px-3.5 py-2.5 rounded-xl flex items-center gap-2 hover:bg-[#121212] transition-colors duration-300">
+            <div className="bg-neutral-50 border border-neutral-200/60 px-3.5 py-2.5 rounded-xl flex items-center gap-2 hover:bg-neutral-100 transition-colors duration-300">
               <span className="text-base shrink-0">🇦🇪</span>
               <div className="overflow-hidden">
-                <span className="block text-[10px] font-bold text-white leading-tight">UAE</span>
+                <span className="block text-[10px] font-bold text-neutral-800 leading-tight">UAE</span>
                 <span className="text-[8px] text-neutral-500 block leading-tight">Regional Support</span>
               </div>
             </div>
           </div>
 
           {/* Connectivity Status */}
-          <div className="flex justify-between items-center pt-3 border-t border-neutral-800/80 text-[10px] text-neutral-500">
+          <div className="flex justify-between items-center pt-3 border-t border-neutral-200 text-[10px] text-neutral-500">
             <span className="flex items-center gap-1.5">
-              <MapPin className="w-3.5 h-3.5 text-rose-400" />
+              <MapPin className="w-3.5 h-3.5 text-rose-500" />
               Chhattisgarh, Bilaspur (Core)
             </span>
-            <span className="text-rose-400 font-semibold">24/7 Ops</span>
+            <span className="text-rose-500 font-semibold">24/7 Ops</span>
           </div>
         </div>
       )
@@ -349,31 +349,31 @@ export function Section3() {
 
   // Helper colors mapping
   const badgeClasses = {
-    emerald: 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20',
-    sky: 'bg-sky-500/10 text-sky-400 border border-sky-500/20',
-    amber: 'bg-amber-500/10 text-amber-400 border border-amber-500/20',
-    purple: 'bg-purple-500/10 text-purple-400 border border-purple-500/20',
-    rose: 'bg-rose-500/10 text-rose-400 border border-rose-500/20'
+    emerald: 'bg-emerald-50 text-emerald-600 border border-emerald-200',
+    sky: 'bg-sky-50 text-sky-600 border border-sky-200',
+    amber: 'bg-amber-50 text-amber-600 border border-amber-200',
+    purple: 'bg-purple-50 text-purple-600 border border-purple-200',
+    rose: 'bg-rose-50 text-rose-600 border border-rose-200'
   }
 
   const activeTextClass = {
-    emerald: 'text-emerald-400 font-bold',
-    sky: 'text-sky-400 font-bold',
-    amber: 'text-amber-400 font-bold',
-    purple: 'text-purple-400 font-bold',
-    rose: 'text-rose-400 font-bold'
+    emerald: 'text-emerald-600 font-bold',
+    sky: 'text-sky-600 font-bold',
+    amber: 'text-amber-600 font-bold',
+    purple: 'text-purple-600 font-bold',
+    rose: 'text-rose-600 font-bold'
   }
 
   const activeIndicatorBg = {
-    emerald: 'bg-emerald-400',
-    sky: 'bg-sky-400',
-    amber: 'bg-amber-400',
-    purple: 'bg-purple-400',
-    rose: 'bg-rose-400'
+    emerald: 'bg-emerald-600',
+    sky: 'bg-sky-600',
+    amber: 'bg-amber-600',
+    purple: 'bg-purple-600',
+    rose: 'bg-rose-600'
   }
 
   return (
-    <section className="px-6 md:px-16 lg:px-24 xl:px-40 py-20 bg-black border-t rounded-[32px] md:rounded-[40px] border-neutral-800/80 relative mb-2 md:mb-4">
+    <section className="px-6 md:px-16 lg:px-24 xl:px-40 py-20 bg-white border-t rounded-[32px] md:rounded-[40px] border-neutral-200/80 relative mb-2 md:mb-4">
       <div className="max-w-7xl mx-auto">
         
         {/* Desktop Interactive Sticky Scroll Grid */}
@@ -391,11 +391,9 @@ export function Section3() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -15 }}
                   transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-                  className="text-[120px] lg:text-[180px] font-black text-white tracking-tighter"
+                  className="text-[120px] lg:text-[180px] font-black text-neutral-900 tracking-tighter"
                 >
                   {reasons[activeIndex].number}.
-
-
                 </motion.div>
               </AnimatePresence>
             </div>
@@ -422,7 +420,7 @@ export function Section3() {
                     </div>
 
                     {/* Uppercase Menu Title */}
-                    <span className={`text-xs sm:text-sm font-bold tracking-widest uppercase transition-colors duration-300 ${isActive ? 'text-white' : 'text-neutral-600 hover:text-neutral-400'}`}>
+                    <span className={`text-xs sm:text-sm font-bold tracking-widest uppercase transition-colors duration-300 ${isActive ? 'text-black' : 'text-neutral-400 hover:text-neutral-600'}`}>
                       {reason.title}
                     </span>
                   </button>
@@ -431,7 +429,7 @@ export function Section3() {
             </div>
 
             {/* Bottom Area: Active Details Panel */}
-            <div className="border-t border-neutral-800/60 pt-6">
+            <div className="border-t border-neutral-200/60 pt-6">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeIndex}
@@ -446,8 +444,8 @@ export function Section3() {
                     {reasons[activeIndex].category}
                   </span>
 
-                  {/* Description in large white text */}
-                  <p className="text-white text-lg sm:text-xl font-medium leading-relaxed tracking-tight max-w-lg">
+                  {/* Description in large text */}
+                  <p className="text-neutral-800 text-lg sm:text-xl font-medium leading-relaxed tracking-tight max-w-lg">
                     {reasons[activeIndex].description}
                   </p>
 
@@ -456,7 +454,7 @@ export function Section3() {
                     {reasons[activeIndex].emojiBadges.map((badge) => (
                       <span 
                         key={badge} 
-                        className="text-[9px] font-bold text-neutral-300 bg-neutral-900/60 border border-neutral-800/80 px-3 py-1 rounded-full uppercase tracking-wider flex items-center gap-1.5"
+                        className="text-[9px] font-bold text-neutral-600 bg-neutral-100 border border-neutral-200/85 px-3 py-1 rounded-full uppercase tracking-wider flex items-center gap-1.5"
                       >
                         {badge}
                       </span>
@@ -477,7 +475,7 @@ export function Section3() {
                 className="w-full min-h-[360px] lg:min-h-[400px] flex items-center justify-center transition-all duration-700"
               >
                 <motion.div 
-                  className="w-full aspect-[4/3] rounded-2xl p-1 bg-gradient-to-tr from-neutral-900 to-neutral-950 shadow-2xl border border-neutral-800/80 transition-all duration-500 hover:scale-[1.01] hover:border-neutral-700/80"
+                  className="w-full aspect-[4/3] rounded-2xl p-1 bg-gradient-to-tr from-neutral-100 to-neutral-200/80 shadow-2xl border border-neutral-200/80 transition-all duration-500 hover:scale-[1.01] hover:border-neutral-300/80"
                   initial={{ opacity: 0.7, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: false, margin: "-20% 0px -20% 0px" }}
@@ -496,13 +494,13 @@ export function Section3() {
           
           {/* Main Title Mobile */}
           <div>
-            <span className="text-[9px] font-bold text-neutral-400 uppercase tracking-widest border border-neutral-800 bg-neutral-900/60 px-2.5 py-0.5 rounded-full inline-block mb-2">
+            <span className="text-[9px] font-bold text-neutral-600 uppercase tracking-widest border border-neutral-200 bg-neutral-100 px-2.5 py-0.5 rounded-full inline-block mb-2">
               ( WHY CHOOSE US )
             </span>
-            <h2 className="text-3xl font-semibold tracking-tight text-white leading-tight">
+            <h2 className="text-3xl font-semibold tracking-tight text-black leading-tight">
               Why Choose <br />EZ Soft Tech?
             </h2>
-            <p className="text-neutral-400 mt-2.5 text-sm leading-relaxed">
+            <p className="text-neutral-600 mt-2.5 text-sm leading-relaxed">
               We combine engineering excellence, transparent partnership, and global compliance to deliver products that perform.
             </p>
           </div>
@@ -512,7 +510,7 @@ export function Section3() {
             {reasons.map((reason) => (
               <div 
                 key={reason.number}
-                className="bg-neutral-900/30 border border-neutral-800/60 p-6 rounded-2xl shadow-xl flex flex-col gap-5"
+                className="bg-neutral-50/60 border border-neutral-200 p-6 rounded-2xl shadow-xl flex flex-col gap-5"
               >
                 {/* Text details */}
                 <div className="space-y-3">
@@ -521,16 +519,16 @@ export function Section3() {
                     <span className="text-neutral-500 text-[10px] font-semibold tracking-wider uppercase block">
                       {reason.category}
                     </span>
-                    <span className="text-white text-lg font-black tracking-tighter">
+                    <span className="text-neutral-800 text-lg font-black tracking-tighter">
                       {reason.number}.
                     </span>
                   </div>
 
                   {/* Main description block */}
-                  <h3 className="text-lg font-bold text-white uppercase tracking-wide">
+                  <h3 className="text-lg font-bold text-neutral-800 uppercase tracking-wide">
                     {reason.title}
                   </h3>
-                  <p className="text-neutral-400 text-sm leading-relaxed">
+                  <p className="text-neutral-600 text-sm leading-relaxed">
                     {reason.description}
                   </p>
 
@@ -539,7 +537,7 @@ export function Section3() {
                     {reason.emojiBadges.map((badge) => (
                       <span 
                         key={badge} 
-                        className="text-[8px] font-bold text-neutral-300 bg-neutral-950 border border-neutral-800/60 px-2 py-0.5 rounded-full uppercase tracking-wider"
+                        className="text-[8px] font-bold text-neutral-600 bg-neutral-100 border border-neutral-200 px-2 py-0.5 rounded-full uppercase tracking-wider"
                       >
                         {badge}
                       </span>
@@ -548,7 +546,7 @@ export function Section3() {
                 </div>
 
                 {/* Visual Representation */}
-                <div className="w-full aspect-[4/3] rounded-xl overflow-hidden shadow-inner border border-neutral-800/60">
+                <div className="w-full aspect-[4/3] rounded-xl overflow-hidden shadow-inner border border-neutral-200">
                   {reason.visual}
                 </div>
               </div>
