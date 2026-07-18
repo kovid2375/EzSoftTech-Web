@@ -23,11 +23,11 @@ export default function Navbar1() {
   }, []);
 
   const services = [
-    { name: "Web Development", link: "/services#web-dev" },
-    { name: "Mobile Applications", link: "/services#mobile-apps" },
-    { name: "Custom Software", link: "/services#custom-software" },
-    { name: "Cloud & DevOps", link: "/services#cloud-devops" },
-    { name: "Business Automation", link: "/services#automation" }
+    { name: "Web Development", link: "/services/web-dev" },
+    { name: "Mobile Applications", link: "/services/app-dev" },
+    { name: "Desktop Applications", link: "/services/desk-app" },
+    { name: "Cloud & DevOps", link: "/services/cloud-devops-services" },
+    { name: "Business Automation", link: "/services/business-automation-solutions" }
   ];
 
   const explore = [
