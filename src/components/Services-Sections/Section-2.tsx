@@ -22,7 +22,7 @@ export function Section2(){
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-[1px] bg-neutral-800/40 border-y border-neutral-800/40 w-full max-w-7xl mx-auto mt-12">
                 {/* 1. Website Development */}
-                <Link href="/contact" className="group block h-full text-left bg-black">
+                <Link href="/services/web-dev" className="group block h-full text-left bg-black">
                   <div className="pt-10 px-6 sm:px-8 pb-0 flex flex-col justify-between min-h-[440px] h-full sm:h-[460px] transition-all duration-300 hover:bg-neutral-950/80">
                     <div>
                       <h3 className="text-xl flex items-center gap-3 font-semibold text-white mb-3 tracking-tight font-plus-jakarta">
@@ -46,7 +46,7 @@ export function Section2(){
                 </Link>
 
                 {/* 2. App Development */}
-                <Link href="/contact" className="group block h-full text-left bg-black">
+                <Link href="/services/app-dev" className="group block h-full text-left bg-black">
                   <div className="pt-10 px-6 sm:px-8 pb-0 flex flex-col justify-between min-h-[440px] h-full sm:h-[460px] transition-all duration-300 hover:bg-neutral-950/80">
                     <div>
                       <h3 className="text-xl flex items-center gap-3 font-semibold text-white mb-3 tracking-tight font-plus-jakarta">
@@ -70,7 +70,7 @@ export function Section2(){
                 </Link>
 
                 {/* 3. Billing Software */}
-                <Link href="/contact" className="group block h-full text-left bg-black">
+                <Link href="/services/business-auto" className="group block h-full text-left bg-black">
                   <div className="pt-10 px-6 sm:px-8 pb-0 flex flex-col justify-between min-h-[440px] h-full sm:h-[460px] transition-all duration-300 hover:bg-neutral-950/80">
                     <div>
                       <h3 className="text-xl flex items-center gap-3 font-semibold text-white mb-3 tracking-tight font-plus-jakarta">
@@ -94,7 +94,7 @@ export function Section2(){
                 </Link>
 
                 {/* 4. Desktop Applications */}
-                <Link href="/contact" className="group block h-full text-left bg-black">
+                <Link href="/services/desk-app" className="group block h-full text-left bg-black">
                   <div className="pt-10 px-6 sm:px-8 pb-0 flex flex-col justify-between min-h-[440px] h-full sm:h-[460px] transition-all duration-300 hover:bg-neutral-950/80">
                     <div>
                       <h3 className="text-xl flex items-center gap-3 font-semibold text-white mb-3 tracking-tight font-plus-jakarta">
@@ -118,7 +118,7 @@ export function Section2(){
                 </Link>
 
                 {/* 5. API & Cloud DevOps */}
-                <Link href="/contact" className="group block h-full text-left bg-black">
+                <Link href="/services/cloud-devops-services" className="group block h-full text-left bg-black">
                   <div className="pt-10 px-6 sm:px-8 pb-0 flex flex-col justify-between min-h-[440px] h-full sm:h-[460px] transition-all duration-300 hover:bg-neutral-950/80">
                     <div>
                       <h3 className="text-xl flex items-center gap-3 font-semibold text-white mb-3 tracking-tight font-plus-jakarta">
@@ -142,7 +142,7 @@ export function Section2(){
                 </Link>
 
                 {/* 6. Digital Marketing */}
-                <Link href="/contact" className="group block h-full text-left bg-black">
+                <Link href="/services/digital-marketing" className="group block h-full text-left bg-black">
                   <div className="pt-10 px-6 sm:px-8 pb-0 flex flex-col justify-between min-h-[440px] h-full sm:h-[460px] transition-all duration-300 hover:bg-neutral-950/80">
                     <div>
                       <h3 className="text-xl flex items-center gap-3 font-semibold text-white mb-3 tracking-tight font-plus-jakarta">

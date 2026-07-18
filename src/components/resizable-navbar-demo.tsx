@@ -26,8 +26,8 @@ export default function Navbar1() {
     { name: "Web Development", link: "/services/web-dev" },
     { name: "Mobile Applications", link: "/services/app-dev" },
     { name: "Desktop Applications", link: "/services/desk-app" },
-    { name: "Cloud & DevOps", link: "/services/cloud-devops-services" },
-    { name: "Business Automation", link: "/services/business-automation-solutions" }
+    { name: "Business Automation", link: "/services/business-auto" },
+    { name: "Digital Marketing", link: "/services/digital-marketing" }
   ];
 
   const explore = [
