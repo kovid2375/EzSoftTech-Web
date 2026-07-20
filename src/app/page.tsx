@@ -16,8 +16,8 @@ export default function Main() {
       <Hero />
       <LogoSection />
       <AboutUsSection />
-      <ServicesSection />
       <ExpertiseSection />
+      <ServicesSection />
       <FaqSection />
     
     </div>

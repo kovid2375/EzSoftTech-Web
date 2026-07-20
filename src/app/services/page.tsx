@@ -12,8 +12,9 @@ const page = () => {
       <Section1 />
       <Section4 />
       <Section2 />
-      <Section5/>
       <Section3 />
+      <Section5/>
+      
 
     </>
   )
