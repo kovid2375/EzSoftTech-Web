@@ -132,7 +132,7 @@ export default function Section3() {
     : technologies.filter(tech => tech.category === activeCategory)
 
   return (
-    <section className="py-24 px-4 relative overflow-hidden font-sans">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden font-sans">
       {/* Background Decorative Grid */}
       <div 
         className="absolute inset-0 opacity-[0.02] pointer-events-none"
@@ -143,27 +143,27 @@ export default function Section3() {
       />
 
       {/* Header Container */}
-      <div className="max-w-7xl mx-auto text-center mb-16 relative z-10">
+      <div className="max-w-7xl mx-auto text-center mb-10 sm:mb-16 relative z-10">
         <div className="inline-flex items-center gap-2 mb-4 text-xs md:text-sm font-semibold tracking-[0.2em] text-[#0b64f1] uppercase">
           <span className="w-1.5 h-1.5 bg-[#0b64f1] rounded-full animate-pulse" />
           Our Desktop Tech Stack
         </div>
-        <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-neutral-900 leading-[1.15] max-w-4xl mx-auto mb-6">
+        <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-neutral-900 leading-[1.15] max-w-4xl mx-auto mb-4 sm:mb-6">
           Technologies We Use for Desktop Apps
         </h2>
-        <p className="text-base sm:text-lg text-neutral-600 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-sm sm:text-base md:text-lg text-neutral-600 max-w-2xl mx-auto leading-relaxed">
           We use state-of-the-art desktop frameworks, native compilation systems, and optimized local engines to build highly resilient software.
         </p>
       </div>
 
       {/* Category Tabs */}
-      <div className="flex justify-center mb-16 relative z-10">
-        <div className="flex items-center gap-1.5 p-1 bg-neutral-200/40 backdrop-blur-md rounded-2xl border border-neutral-200/50 max-w-full overflow-x-auto no-scrollbar">
+      <div className="flex justify-center mb-10 sm:mb-16 relative z-10">
+        <div className="flex items-center gap-1 sm:gap-1.5 p-1 sm:p-1.5 bg-neutral-200/40 backdrop-blur-md rounded-2xl border border-neutral-200/50 max-w-full overflow-x-auto no-scrollbar py-1">
           {categories.map((category) => (
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className="relative px-5 py-2.5 text-xs sm:text-sm font-semibold rounded-xl transition-colors duration-300 cursor-pointer focus:outline-none whitespace-nowrap"
+              className="relative px-3.5 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm font-semibold rounded-xl transition-colors duration-300 cursor-pointer focus:outline-none whitespace-nowrap flex-shrink-0"
               style={{
                 color: activeCategory === category ? '#ffffff' : '#4b5563'
               }}
@@ -188,7 +188,7 @@ export default function Section3() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto px-2 relative z-10"
+        className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6 max-w-7xl mx-auto relative z-10"
       >
         <AnimatePresence mode="popLayout">
           {filteredTechs.map((tech) => (
@@ -204,7 +204,7 @@ export default function Section3() {
                 transition: { duration: 0.2 } 
               }}
               key={tech.name}
-              className="relative bg-white border border-neutral-200/70 rounded-3xl p-6 shadow-sm flex flex-col items-start gap-5 group transition-shadow duration-300 hover:shadow-md overflow-hidden cursor-pointer"
+              className="relative bg-white border border-neutral-200/70 rounded-2xl sm:rounded-3xl p-4 sm:p-6 shadow-sm flex flex-col items-start gap-4 sm:gap-5 group transition-shadow duration-300 hover:shadow-md overflow-hidden cursor-pointer"
             >
               {/* Background gradient blur on hover */}
               <div 
@@ -215,26 +215,26 @@ export default function Section3() {
               <div className="flex justify-between items-center w-full relative z-10">
                 {/* Tech Icon Container */}
                 <div 
-                  className="w-12 h-12 rounded-2xl flex items-center justify-center border transition-all duration-300 group-hover:scale-110"
+                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl flex items-center justify-center border transition-all duration-300 group-hover:scale-110"
                   style={{
                     backgroundColor: `${tech.color}08`, 
                     borderColor: `${tech.color}15`,
                   }}
                 >
                   <tech.icon 
-                    size={24}
+                    size={22}
                     style={{ color: tech.color }}
                   />
                 </div>
 
                 {/* Category Badge */}
-                <span className="text-[10px] uppercase tracking-wider font-semibold px-2.5 py-1 rounded-full bg-neutral-100 text-neutral-500">
+                <span className="text-[9px] sm:text-[10px] uppercase tracking-wider font-semibold px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full bg-neutral-100 text-neutral-500">
                   {tech.category}
                 </span>
               </div>
 
               <div className="relative z-10">
-                <h3 className="text-lg font-bold text-neutral-900 mb-1.5 transition-colors duration-300">
+                <h3 className="text-base sm:text-lg font-bold text-neutral-900 mb-1 transition-colors duration-300">
                   {tech.name}
                 </h3>
               </div>

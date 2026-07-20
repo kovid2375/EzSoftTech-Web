@@ -373,7 +373,7 @@ export function Section3() {
   }
 
   return (
-    <section className="px-6 md:px-16 lg:px-24 xl:px-40 py-20 bg-white border-t rounded-[32px] md:rounded-[40px] border-neutral-200/80 relative mb-2 md:mb-4">
+    <section className="px-6 md:px-16 lg:px-24 xl:px-40 py-20 bg-white   relative mb-2 md:mb-4">
       <div className="max-w-7xl mx-auto">
         
         {/* Desktop Interactive Sticky Scroll Grid */}
@@ -391,7 +391,7 @@ export function Section3() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -15 }}
                   transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-                  className="text-[120px] lg:text-[180px] font-black text-neutral-900 tracking-tighter"
+                  className="text-[120px] lg:text-[180px] font-black text-blue-600 tracking-tighter"
                 >
                   {reasons[activeIndex].number}.
                 </motion.div>

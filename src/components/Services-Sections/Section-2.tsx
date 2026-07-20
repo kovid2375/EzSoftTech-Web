@@ -118,7 +118,7 @@ export function Section2(){
                 </Link>
 
                 {/* 5. API & Cloud DevOps */}
-                <Link href="/services/cloud-devops-services" className="group block h-full text-left bg-black">
+                <Link href="" className="group block h-full text-left bg-black">
                   <div className="pt-10 px-6 sm:px-8 pb-0 flex flex-col justify-between min-h-[440px] h-full sm:h-[460px] transition-all duration-300 hover:bg-neutral-950/80">
                     <div>
                       <h3 className="text-xl flex items-center gap-3 font-semibold text-white mb-3 tracking-tight font-plus-jakarta">

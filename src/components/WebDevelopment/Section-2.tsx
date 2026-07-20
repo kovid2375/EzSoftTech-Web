@@ -46,7 +46,7 @@ export default function Section2() {
   ]
 
   return (
-    <section className="py-24 px-4  relative overflow-hidden font-sans">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden font-sans">
       {/* Background Decorative Grid */}
       <div 
         className="absolute inset-0 opacity-[0.03] pointer-events-none"
@@ -57,15 +57,15 @@ export default function Section2() {
       />
 
       {/* Header Container */}
-      <div className="max-w-7xl mx-auto text-center mb-16 relative z-10">
+      <div className="max-w-7xl mx-auto text-center mb-10 sm:mb-16 relative z-10">
         <div className="inline-flex items-center gap-2 mb-4 text-xs md:text-sm font-semibold tracking-[0.2em] text-[#0b64f1] uppercase">
           <span className="w-1.5 h-1.5 bg-[#0b64f1] rounded-full animate-ping" />
           Our Capabilities
         </div>
-        <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-neutral-900 leading-[1.15] max-w-4xl mx-auto mb-6">
+        <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-neutral-900 leading-[1.15] max-w-4xl mx-auto mb-4 sm:mb-6">
           Engineered for Speed, Scalability, and Impact
         </h2>
-        <p className="text-base sm:text-lg text-neutral-600 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-sm sm:text-base md:text-lg text-neutral-600 max-w-2xl mx-auto leading-relaxed">
           We combine cutting-edge frontend technologies with custom backend integrations to build web experiences that capture attention and drive business growth.
         </p>
       </div>
@@ -76,12 +76,12 @@ export default function Section2() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto px-2 relative z-10"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto relative z-10"
       >
         {/* Card 1: Custom Web Applications (Col Span 2, Row Span 2 on lg) */}
         <motion.div 
           variants={itemVariants}
-          className="lg:col-span-2 lg:row-span-2 rounded-3xl bg-white border border-neutral-200/70 p-8 shadow-sm flex flex-col justify-between group hover:shadow-md transition-all duration-300 relative overflow-hidden min-h-[480px] lg:min-h-[580px]"
+          className="lg:col-span-2 lg:row-span-2 rounded-3xl bg-white border border-neutral-200/70 p-5 sm:p-8 shadow-sm flex flex-col justify-between group hover:shadow-md transition-all duration-300 relative overflow-hidden min-h-[440px] sm:min-h-[480px] lg:min-h-[580px]"
         >
           {/* Subtle top light reflection */}
           <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-neutral-200 to-transparent" />
@@ -91,7 +91,7 @@ export default function Section2() {
               <Code size={24} />
             </div>
             <div>
-              <h3 className="text-2xl font-bold text-neutral-900 group-hover:text-blue-600 transition-colors duration-300 mb-2">
+              <h3 className="text-xl sm:text-2xl font-bold text-neutral-900 group-hover:text-blue-600 transition-colors duration-300 mb-2">
                 Custom Web Applications
               </h3>
               <p className="text-neutral-600 leading-relaxed text-sm sm:text-base">
@@ -100,9 +100,9 @@ export default function Section2() {
             </div>
             
             {/* Tech Badges */}
-            <div className="flex flex-wrap gap-2 mt-2">
+            <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-2">
               {techBadges.map((badge, idx) => (
-                <span key={idx} className={`px-3 py-1 rounded-full text-xs font-semibold border ${badge.color}`}>
+                <span key={idx} className={`px-2.5 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs font-semibold border ${badge.color}`}>
                   {badge.name}
                 </span>
               ))}
@@ -110,12 +110,12 @@ export default function Section2() {
           </div>
 
           {/* Graphical Representation: Premium Browser Window */}
-          <div className="relative mt-8 w-full border border-neutral-200/80 bg-neutral-50 rounded-2xl shadow-sm overflow-hidden aspect-video transition-transform duration-500 group-hover:scale-[1.02]">
-            <div className="flex items-center gap-1.5 px-4 py-2.5 bg-neutral-100 border-b border-neutral-200/80">
-              <div className="w-2.5 h-2.5 rounded-full bg-red-400" />
-              <div className="w-2.5 h-2.5 rounded-full bg-yellow-400" />
-              <div className="w-2.5 h-2.5 rounded-full bg-green-400" />
-              <div className="h-4 w-40 bg-white border border-neutral-200/60 rounded-md mx-auto flex items-center justify-center text-[9px] text-neutral-400 font-mono">
+          <div className="relative mt-6 sm:mt-8 w-full border border-neutral-200/80 bg-neutral-50 rounded-2xl shadow-sm overflow-hidden aspect-video transition-transform duration-500 group-hover:scale-[1.01]">
+            <div className="flex items-center gap-1.5 px-3 sm:px-4 py-2 sm:py-2.5 bg-neutral-100 border-b border-neutral-200/80">
+              <div className="w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-red-400" />
+              <div className="w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-yellow-400" />
+              <div className="w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-green-400" />
+              <div className="h-4 w-28 sm:w-40 bg-white border border-neutral-200/60 rounded-md mx-auto flex items-center justify-center text-[8px] sm:text-[9px] text-neutral-400 font-mono truncate px-1">
                 ezsoft.tech/dashboard
               </div>
             </div>
@@ -133,17 +133,17 @@ export default function Section2() {
         {/* Card 2: E-Commerce Solutions (Col Span 1, Row Span 1) */}
         <motion.div 
           variants={itemVariants}
-          className="rounded-3xl bg-white border border-neutral-200/70 p-8 shadow-sm flex flex-col justify-between group hover:shadow-md transition-all duration-300 relative overflow-hidden min-h-[280px]"
+          className="rounded-3xl bg-white border border-neutral-200/70 p-5 sm:p-8 shadow-sm flex flex-col justify-between group hover:shadow-md transition-all duration-300 relative overflow-hidden min-h-[240px] sm:min-h-[280px]"
         >
           <div className="flex flex-col gap-4">
             <div className="w-12 h-12 rounded-2xl bg-rose-50 text-rose-600 flex items-center justify-center border border-rose-100">
               <ShoppingBag size={24} />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-neutral-900 group-hover:text-rose-600 transition-colors duration-300 mb-2">
+              <h3 className="text-lg sm:text-xl font-bold text-neutral-900 group-hover:text-rose-600 transition-colors duration-300 mb-2">
                 High-Conversion E-Commerce
               </h3>
-              <p className="text-neutral-600 text-sm leading-relaxed">
+              <p className="text-neutral-600 text-xs sm:text-sm leading-relaxed">
                 Feature-rich, blazing fast online storefronts with custom carts, secure payment systems, headless setups, and seamless inventory management.
               </p>
             </div>
@@ -157,7 +157,7 @@ export default function Section2() {
         {/* Card 3: Speed & Performance (Col Span 1, Row Span 2 on lg) */}
         <motion.div 
           variants={itemVariants}
-          className="lg:row-span-2 rounded-3xl bg-neutral-900 text-white border border-neutral-800 p-8 shadow-sm flex flex-col justify-between group hover:shadow-md transition-all duration-300 relative overflow-hidden min-h-[420px] lg:min-h-[580px]"
+          className="lg:row-span-2 rounded-3xl bg-neutral-900 text-white border border-neutral-800 p-5 sm:p-8 shadow-sm flex flex-col justify-between group hover:shadow-md transition-all duration-300 relative overflow-hidden min-h-[400px] sm:min-h-[420px] lg:min-h-[580px]"
         >
           {/* Subtle inner dark gradient */}
           <div className="absolute inset-0 bg-gradient-to-b from-neutral-800/10 via-transparent to-black pointer-events-none" />
@@ -167,45 +167,45 @@ export default function Section2() {
               <Zap size={24} />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-white mb-2">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-2">
                 Instant Load Times
               </h3>
-              <p className="text-neutral-400 text-sm leading-relaxed">
+              <p className="text-neutral-400 text-xs sm:text-sm leading-relaxed">
                 We engineer for near-zero loading times. Optimization of Core Web Vitals guarantees higher search engine rankings, increased conversions, and a frictionless experience for every user.
               </p>
             </div>
           </div>
 
           {/* Performance Radar Widget */}
-          <div className="relative my-8 flex flex-col items-center justify-center z-10 py-4">
-            <div className="relative w-36 h-36 flex items-center justify-center">
+          <div className="relative my-6 sm:my-8 flex flex-col items-center justify-center z-10 py-2 sm:py-4">
+            <div className="relative w-28 h-28 sm:w-36 sm:h-36 flex items-center justify-center">
               {/* Outer pulsing ring */}
               <div className="absolute inset-0 rounded-full border border-emerald-500/20 animate-[ping_3s_infinite]" />
               {/* Inner ring */}
               <div className="absolute inset-2 rounded-full border border-emerald-500/30" />
               {/* Core gauge background */}
-              <div className="absolute inset-4 rounded-full bg-neutral-950 border-2 border-emerald-500 flex flex-col items-center justify-center shadow-[0_0_30px_rgba(16,185,129,0.25)]">
-                <span className="text-4xl font-extrabold tracking-tight text-emerald-400">100</span>
-                <span className="text-[10px] font-bold text-emerald-500 uppercase tracking-widest mt-0.5">Performance</span>
+              <div className="absolute inset-3 sm:inset-4 rounded-full bg-neutral-950 border-2 border-emerald-500 flex flex-col items-center justify-center shadow-[0_0_30px_rgba(16,185,129,0.25)]">
+                <span className="text-3xl sm:text-4xl font-extrabold tracking-tight text-emerald-400">100</span>
+                <span className="text-[9px] sm:text-[10px] font-bold text-emerald-500 uppercase tracking-widest mt-0.5">Performance</span>
               </div>
             </div>
             
             {/* Speed metrics mock */}
-            <div className="grid grid-cols-2 gap-x-8 gap-y-2 mt-8 w-full max-w-[200px] text-xs font-mono">
+            <div className="grid grid-cols-2 gap-x-4 sm:gap-x-8 gap-y-2 mt-6 sm:mt-8 w-full max-w-[200px] text-[11px] sm:text-xs font-mono">
               <div className="flex items-center gap-1.5 text-neutral-400">
-                <div className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0" />
                 <span>LCP: 0.8s</span>
               </div>
               <div className="flex items-center gap-1.5 text-neutral-400">
-                <div className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0" />
                 <span>FID: 12ms</span>
               </div>
               <div className="flex items-center gap-1.5 text-neutral-400">
-                <div className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0" />
                 <span>CLS: 0.01</span>
               </div>
               <div className="flex items-center gap-1.5 text-neutral-400">
-                <div className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0" />
                 <span>TTFB: 0.1s</span>
               </div>
             </div>
@@ -219,17 +219,17 @@ export default function Section2() {
         {/* Card 4: API & Cloud Integrations (Col Span 1, Row Span 1) */}
         <motion.div 
           variants={itemVariants}
-          className="rounded-3xl bg-white border border-neutral-200/70 p-8 shadow-sm flex flex-col justify-between group hover:shadow-md transition-all duration-300 relative overflow-hidden min-h-[280px]"
+          className="rounded-3xl bg-white border border-neutral-200/70 p-5 sm:p-8 shadow-sm flex flex-col justify-between group hover:shadow-md transition-all duration-300 relative overflow-hidden min-h-[240px] sm:min-h-[280px]"
         >
           <div className="flex flex-col gap-4">
             <div className="w-12 h-12 rounded-2xl bg-cyan-50 text-cyan-600 flex items-center justify-center border border-cyan-100">
               <LineChart size={24} />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-neutral-900 group-hover:text-cyan-600 transition-colors duration-300 mb-2">
+              <h3 className="text-lg sm:text-xl font-bold text-neutral-900 group-hover:text-cyan-600 transition-colors duration-300 mb-2">
                 SEO & Analytics Included
               </h3>
-              <p className="text-neutral-600 text-sm leading-relaxed">
+              <p className="text-neutral-600 text-xs sm:text-sm leading-relaxed">
                 Built-in search engine optimization with JSON-LD structured schema code, sitemaps, social sharing metadata, and pre-integrated web analytics trackers.
               </p>
             </div>
@@ -242,17 +242,17 @@ export default function Section2() {
         {/* Card 5: Mobile-First Responsive Design (Col Span 1, Row Span 1) */}
         <motion.div 
           variants={itemVariants}
-          className="rounded-3xl bg-white border border-neutral-200/70 p-8 shadow-sm flex flex-col justify-between group hover:shadow-md transition-all duration-300 relative overflow-hidden min-h-[280px]"
+          className="rounded-3xl bg-white border border-neutral-200/70 p-5 sm:p-8 shadow-sm flex flex-col justify-between group hover:shadow-md transition-all duration-300 relative overflow-hidden min-h-[240px] sm:min-h-[280px]"
         >
           <div className="flex flex-col gap-4">
             <div className="w-12 h-12 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center border border-purple-100">
               <Smartphone size={24} />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-neutral-900 group-hover:text-purple-600 transition-colors duration-300 mb-2">
+              <h3 className="text-lg sm:text-xl font-bold text-neutral-900 group-hover:text-purple-600 transition-colors duration-300 mb-2">
                 Fluid Responsive Design
               </h3>
-              <p className="text-neutral-600 text-sm leading-relaxed">
+              <p className="text-neutral-600 text-xs sm:text-sm leading-relaxed">
                 Every layout is handcrafted to perform seamlessly across all screens. We design and test on multiple breakpoints for a flawless display on mobile, tablet, and desktop.
               </p>
             </div>

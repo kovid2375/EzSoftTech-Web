@@ -121,34 +121,36 @@ export default function Section3() {
     : technologies.filter(tech => tech.category === activeCategory)
 
   return (
-    <section className="py-24 px-4 bg-neutral-50 relative overflow-hidden font-sans border-t border-neutral-200/50">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-neutral-50 relative overflow-hidden font-sans border-t border-neutral-200/50">
       <div className="max-w-6xl mx-auto relative z-10">
         
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 mb-4">
+        <div className="text-center mb-10 sm:mb-16">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-neutral-900 mb-4">
             Our Marketing & Analytics Stack
           </h2>
-          <p className="text-neutral-600 max-w-xl mx-auto text-sm sm:text-base">
+          <p className="text-sm sm:text-base md:text-lg text-neutral-600 max-w-xl mx-auto leading-relaxed">
             We leverage industry-standard tracking portals, automated outreach tools, and SEO crawlers to track campaigns and ensure conversions.
           </p>
         </div>
 
         {/* Tab Filters */}
-        <div className="flex flex-wrap justify-center gap-2 mb-12">
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setActiveCategory(category)}
-              className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold tracking-wide border transition-all duration-300 ${
-                activeCategory === category
-                  ? 'bg-neutral-900 border-neutral-950 text-white shadow-sm'
-                  : 'bg-white border-neutral-200 text-neutral-600 hover:border-neutral-300 hover:text-neutral-900'
-              }`}
-            >
-              {category}
-            </button>
-          ))}
+        <div className="flex justify-center mb-10 sm:mb-12 relative z-10">
+          <div className="flex items-center gap-1 sm:gap-1.5 p-1 sm:p-1.5 bg-white rounded-2xl border border-neutral-200 max-w-full overflow-x-auto no-scrollbar py-1 shadow-sm">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setActiveCategory(category)}
+                className={`px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 whitespace-nowrap flex-shrink-0 cursor-pointer ${
+                  activeCategory === category
+                    ? 'bg-neutral-900 text-white shadow-sm'
+                    : 'text-neutral-600 hover:text-neutral-900'
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Grid Container */}
@@ -158,7 +160,7 @@ export default function Section3() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4"
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4"
         >
           <AnimatePresence mode="popLayout">
             {filteredTechnologies.map((tech) => {
@@ -172,21 +174,21 @@ export default function Section3() {
                   animate="visible"
                   exit="exit"
                   whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                  className="bg-white border border-neutral-200/60 rounded-2xl p-6 flex flex-col items-center justify-center text-center gap-4 shadow-sm hover:shadow-md transition-all duration-300 group"
+                  className="bg-white border border-neutral-200/60 rounded-2xl p-4 sm:p-6 flex flex-col items-center justify-center text-center gap-3 sm:gap-4 shadow-sm hover:shadow-md transition-all duration-300 group cursor-pointer"
                 >
                   <div 
-                    className="w-16 h-16 rounded-2xl flex items-center justify-center border transition-colors duration-300 bg-neutral-50 group-hover:bg-opacity-100"
+                    className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl flex items-center justify-center border transition-colors duration-300 bg-neutral-50 group-hover:bg-opacity-100"
                     style={{ borderColor: `${tech.color}20` }}
                   >
                     <Icon 
-                      size={32} 
+                      size={26} 
                       style={{ color: tech.color }}
                       className="transition-transform duration-300 group-hover:scale-110"
                     />
                   </div>
                   <div>
                     <h3 className="font-bold text-neutral-800 text-xs sm:text-sm mb-1">{tech.name}</h3>
-                    <p className="text-[10px] text-neutral-400 font-semibold tracking-wider uppercase">{tech.category}</p>
+                    <p className="text-[9px] sm:text-[10px] text-neutral-400 font-semibold tracking-wider uppercase">{tech.category}</p>
                   </div>
                 </motion.div>
               )

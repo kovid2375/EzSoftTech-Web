@@ -120,9 +120,9 @@ export default function Navbar1() {
           </button>
 
           {/* Center: Brand Logo */}
-          <div className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center pointer-events-none">
+          <div className="absolute sm:left-1/2 left-35 -translate-x-1/2 flex items-center justify-center pointer-events-none">
             <Link href="/" className="pointer-events-auto flex items-center gap-1 sm:gap-2 group">
-              <img src="/ez-logo.png" className="w-[160px]" alt="" />
+              <img src="/ez-logo.png" className="w-[140px]" alt="" />
             </Link>
           </div>
 
