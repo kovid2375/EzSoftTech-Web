@@ -96,7 +96,7 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
   return (
     <motion.div
       animate={{
-        backdropFilter: "blur(8px) saturate(190%)",
+        backdropFilter: "blur(8px) ",
         boxShadow: visible
           ? "0 20px 45px -10px rgba(0, 0, 0, 0.4), 0 10px 25px -5px rgba(37, 99, 235, 0.2), inset 0 1px 0 0 rgba(255, 255, 255, 0.2), inset 0 -2px 10px rgba(0, 0, 0, 0.2)"
           : "0 12px 30px -8px rgba(0, 0, 0, 0.3), 0 6px 18px -4px rgba(37, 99, 235, 0.15), inset 0 1px 0 0 rgba(255, 255, 255, 0.18), inset 0 -2px 8px rgba(0, 0, 0, 0.15)",
@@ -113,11 +113,10 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
         damping: 26,
       }}
       style={{
-        backgroundColor: "rgba(15, 23, 42, 0.42)",
-        border: "1px solid rgba(255, 255, 255, 0.16)",
+        backgroundColor: "rgba(255, 255, 255, 0.42)",
       }}
       className={cn(
-        "relative z-[60] mx-auto hidden w-full flex-row items-center justify-between rounded-full lg:flex transition-all duration-300 text-slate-100 backdrop-blur-2xl",
+        "relative z-[60] mx-auto hidden w-full flex-row items-center justify-between rounded-full lg:flex transition-all duration-300 text-black backdrop-blur-2xl",
         className,
       )}
     >
@@ -146,8 +145,8 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
             className={cn(
               "px-4 py-1.5 rounded-full transition-all duration-200 flex items-center gap-1",
               isActive
-                ? "bg-blue-500 text-blue-300 border border-blue-400 font-extrabold"
-                : "text-white hover:text-white hover:bg-white/10 font-semibold"
+                ? "bg-blue-600 text-white font-extrabold shadow-sm"
+                : "text-black hover:text-black hover:bg-black/10 font-bold"
             )}
           >
             {item.name}
@@ -162,7 +161,7 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
   return (
     <motion.div
       animate={{
-        backdropFilter: "blur(24px) saturate(190%)",
+        backdropFilter: "blur(8px) saturate(190%)",
         boxShadow: "0 15px 35px -8px rgba(0, 0, 0, 0.35), 0 8px 20px rgba(37, 99, 235, 0.15), inset 0 1px 0 0 rgba(255, 255, 255, 0.18)",
         maxWidth: visible ? "92%" : "100%",
         paddingTop: visible ? "8px" : "12px",
@@ -175,11 +174,10 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
         damping: 26,
       }}
       style={{
-        backgroundColor: "rgba(15, 23, 42, 0.55)",
-        border: "1px solid rgba(255, 255, 255, 0.16)",
+        backgroundColor: "rgba(255, 255, 255, 0.42)",
       }}
       className={cn(
-        "relative z-50 mx-auto flex w-full flex-col items-center justify-between rounded-full px-5 lg:hidden transition-all duration-300 text-slate-100 backdrop-blur-2xl",
+        "relative z-50 mx-auto flex w-full flex-col items-center justify-between rounded-full px-5 lg:hidden transition-all duration-300 text-black backdrop-blur-2xl",
         className,
       )}
     >
@@ -218,13 +216,12 @@ export const MobileNavMenu = ({
           exit={{ opacity: 0, y: -10, scale: 0.98 }}
           transition={{ duration: 0.2 }}
           style={{
-            backgroundColor: "rgba(15, 23, 42, 0.90)", // Slightly transparent dark slate (90%)
-            border: "1px solid rgba(255, 255, 255, 0.14)",
-            boxShadow: "0 25px 60px -15px rgba(0, 0, 0, 0.7), 0 10px 30px rgba(37, 99, 235, 0.2)",
-            backdropFilter: "blur(20px) saturate(180%)",
+            backgroundColor: "rgba(255, 255, 255, 0.92)",
+            boxShadow: "0 25px 60px -15px rgba(0, 0, 0, 0.15), 0 10px 30px rgba(37, 99, 235, 0.1)",
+            backdropFilter: "blur(12px) saturate(180%)",
           }}
           className={cn(
-            "absolute inset-x-0 top-16 z-50 flex w-full flex-col items-start justify-start gap-4 rounded-3xl px-6 py-6 text-slate-100 backdrop-blur-xl shadow-2xl",
+            "absolute inset-x-0 top-16 z-50 flex w-full flex-col items-start justify-start gap-4 rounded-3xl px-6 py-6 text-black backdrop-blur-xl shadow-2xl",
             className,
           )}
         >
@@ -243,21 +240,23 @@ export const MobileNavToggle = ({
   onClick: () => void;
 }) => {
   return isOpen ? (
-    <IconX className="text-slate-200 cursor-pointer hover:opacity-80 w-6 h-6" onClick={onClick} />
+    <IconX className="text-black cursor-pointer hover:opacity-80 w-6 h-6" onClick={onClick} />
   ) : (
-    <IconMenu2 className="text-slate-200 cursor-pointer hover:opacity-80 w-6 h-6" onClick={onClick} />
+    <IconMenu2 className="text-black cursor-pointer hover:opacity-80 w-6 h-6" onClick={onClick} />
   );
 };
 
 export const NavbarLogo = () => {
   return (
-    <Link href="/" className="flex items-center shrink-0 opacity-100 h-10 md:h-16 overflow-visible">
+    <div className="">
+      <Link href="/" className="flex items-center shrink-0 opacity-100 h-10 md:h-14 overflow-visible">
       <img
         src="/ez-logo.png"
         alt="EZ Soft Tech"
         className="h-full w-auto object-contain transition-all duration-200 opacity-100"
       />
     </Link>
+    </div>
   );
 };
 
@@ -346,8 +345,8 @@ export const ResizableNavbar = () => {
             className={cn(
               "px-4 py-1.5 rounded-full transition-all duration-200",
               pathname === "/"
-                ? "bg-blue-500/25 text-blue-300 border border-blue-400/40 font-black shadow-lg shadow-blue-500/15 backdrop-blur-md"
-                : "text-slate-200 hover:text-white hover:bg-white/10 font-semibold"
+                ? "bg-blue-600 text-white font-black shadow-md"
+                : "text-black hover:text-black hover:bg-black/10 font-bold"
             )}
           >
             HOME
@@ -359,8 +358,8 @@ export const ResizableNavbar = () => {
             className={cn(
               "px-4 py-1.5 rounded-full transition-all duration-200",
               pathname === "/about-us"
-                ? "bg-blue-500/25 text-blue-300 border border-blue-400/40 font-black shadow-lg shadow-blue-500/15 backdrop-blur-md"
-                : "text-slate-200 hover:text-white hover:bg-white/10 font-semibold"
+                ? "bg-blue-600 text-white font-black shadow-md"
+                : "text-black hover:text-black hover:bg-black/10 font-bold"
             )}
           >
             ABOUT US
@@ -372,8 +371,8 @@ export const ResizableNavbar = () => {
             className={cn(
               "px-4 py-1.5 rounded-full transition-all duration-200",
               isServicesActive
-                ? "bg-blue-500/25 text-blue-300 border border-blue-400/40 font-black shadow-lg shadow-blue-500/15 backdrop-blur-md"
-                : "text-slate-200 hover:text-white hover:bg-white/10 font-semibold"
+                ? "bg-blue-600 text-white font-black shadow-md"
+                : "text-black hover:text-black hover:bg-black/10 font-bold"
             )}
           >
             SERVICES
@@ -389,15 +388,15 @@ export const ResizableNavbar = () => {
               className={cn(
                 "px-4 py-1.5 rounded-full transition-all duration-200 flex items-center gap-1.5 cursor-pointer",
                 isExpertiseActive || isExpertiseOpen
-                  ? "bg-blue-500/25 text-blue-300 border border-blue-400/40 font-black shadow-lg shadow-blue-500/15 backdrop-blur-md"
-                  : "text-slate-200 hover:text-white hover:bg-white/10 font-semibold"
+                  ? "bg-blue-600 text-white font-black shadow-md"
+                  : "text-black hover:text-black hover:bg-black/10 font-bold"
               )}
             >
               <span>EXPERTISE</span>
               <ChevronDown
                 className={cn(
                   "w-3.5 h-3.5 stroke-[2.5] transition-transform duration-200",
-                  isExpertiseActive || isExpertiseOpen ? "text-blue-300" : "text-slate-400",
+                  isExpertiseActive || isExpertiseOpen ? "text-white" : "text-slate-800",
                   isExpertiseOpen && "rotate-180"
                 )}
               />
@@ -413,7 +412,7 @@ export const ResizableNavbar = () => {
                   transition={{ type: "spring", stiffness: 350, damping: 25 }}
                   style={{
                     backgroundColor: "rgba(15, 23, 42, 0.90)", // Slightly transparent dark slate (90%)
-                    border: "1px solid rgba(255, 255, 255, 0.14)",
+                    
                     boxShadow: "0 25px 60px -15px rgba(0, 0, 0, 0.7), 0 10px 30px rgba(37, 99, 235, 0.2)",
                     backdropFilter: "blur(20px) saturate(180%)",
                   }}
@@ -444,8 +443,8 @@ export const ResizableNavbar = () => {
                           className={cn(
                             "group flex items-center gap-3 p-2.5 rounded-2xl transition-all duration-200 normal-case tracking-normal border border-transparent",
                             isActive
-                              ? "bg-blue-500/20 border-blue-400/30 text-blue-300"
-                              : "hover:bg-white/10 hover:border-white/10 text-slate-200"
+                              ? "bg-white border-white text-black"
+                              : "hover:bg-white hover:border-white text-black"
                           )}
                         >
                           {/* Icon Container */}
@@ -511,8 +510,8 @@ export const ResizableNavbar = () => {
             className={cn(
               "px-4 py-1.5 rounded-full transition-all duration-200",
               pathname === "/contact"
-                ? "bg-blue-500/25 text-blue-300 border border-blue-400/40 font-black shadow-lg shadow-blue-500/15 backdrop-blur-md"
-                : "text-slate-200 hover:text-white hover:bg-white/10 font-semibold"
+                ? "bg-blue-600 text-white font-black shadow-md"
+                : "text-black hover:text-black hover:bg-black/10 font-bold"
             )}
           >
             CONTACT
@@ -531,13 +530,13 @@ export const ResizableNavbar = () => {
         </MobileNavHeader>
 
         <MobileNavMenu isOpen={isOpen} onClose={() => setIsOpen(false)}>
-          <div className="flex flex-col w-full gap-2 text-sm font-bold tracking-wider uppercase">
+          <div className="flex flex-col w-full gap-2 text-sm font-bold tracking-wider uppercase text-black">
             <Link
               href="/"
               onClick={() => setIsOpen(false)}
               className={cn(
                 "px-4 py-2.5 rounded-xl transition-all",
-                pathname === "/" ? "bg-blue-500/20 text-blue-400 border border-blue-400/30" : "text-slate-200 hover:bg-white/10"
+                pathname === "/" ? "bg-blue-500/20 text-blue-600 border border-blue-400/30" : "text-black hover:bg-black/5"
               )}
             >
               HOME
@@ -548,7 +547,7 @@ export const ResizableNavbar = () => {
               onClick={() => setIsOpen(false)}
               className={cn(
                 "px-4 py-2.5 rounded-xl transition-all",
-                pathname === "/about-us" ? "bg-blue-500/20 text-blue-400 border border-blue-400/30" : "text-slate-200 hover:bg-white/10"
+                pathname === "/about-us" ? "bg-blue-500/20 text-blue-600 border border-blue-400/30" : "text-black hover:bg-black/5"
               )}
             >
               ABOUT US
@@ -559,7 +558,7 @@ export const ResizableNavbar = () => {
               onClick={() => setIsOpen(false)}
               className={cn(
                 "px-4 py-2.5 rounded-xl transition-all",
-                isServicesActive ? "bg-blue-500/20 text-blue-400 border border-blue-400/30" : "text-slate-200 hover:bg-white/10"
+                isServicesActive ? "bg-blue-500/20 text-blue-600 border border-blue-400/30" : "text-black hover:bg-black/5"
               )}
             >
               SERVICES
@@ -569,7 +568,7 @@ export const ResizableNavbar = () => {
               <div
                 className={cn(
                   "px-4 py-2.5 rounded-xl transition-all flex items-center justify-between cursor-pointer",
-                  isExpertiseActive ? "bg-blue-500/20 text-blue-400 border border-blue-400/30" : "text-slate-200 hover:bg-white/10"
+                  isExpertiseActive ? "bg-blue-500/20 text-blue-600 border border-blue-400/30" : "text-black hover:bg-black/5"
                 )}
                 onClick={() => setIsExpertiseOpen(!isExpertiseOpen)}
               >
@@ -578,7 +577,7 @@ export const ResizableNavbar = () => {
               </div>
 
               {/* Mobile Expertise List */}
-              <div className="ml-4 pl-3 border-l-2 border-white/10 flex flex-col gap-1.5 my-1.5">
+              <div className="ml-4 pl-3 border-l-2 border-slate-200 flex flex-col gap-1.5 my-1.5">
                 {expertiseList.map((item, idx) => {
                   const Icon = item.icon;
                   return (
@@ -589,11 +588,11 @@ export const ResizableNavbar = () => {
                       className={cn(
                         "px-3 py-2 rounded-xl text-xs font-semibold normal-case tracking-normal transition-all flex items-center gap-2.5",
                         pathname === item.link
-                          ? "bg-blue-500/20 text-blue-400 font-bold"
-                          : "text-slate-300 hover:bg-white/10 hover:text-white"
+                          ? "bg-blue-500/20 text-blue-600 font-bold"
+                          : "text-slate-800 hover:bg-black/5 hover:text-black"
                       )}
                     >
-                      <Icon className="w-4 h-4 text-blue-400 shrink-0" />
+                      <Icon className="w-4 h-4 text-blue-600 shrink-0" />
                       <span>{item.name}</span>
                     </Link>
                   );
@@ -606,14 +605,14 @@ export const ResizableNavbar = () => {
               onClick={() => setIsOpen(false)}
               className={cn(
                 "px-4 py-2.5 rounded-xl transition-all",
-                pathname === "/contact" ? "bg-blue-500/20 text-blue-400 border border-blue-400/30" : "text-slate-200 hover:bg-white/10"
+                pathname === "/contact" ? "bg-blue-500/20 text-blue-600 border border-blue-400/30" : "text-black hover:bg-black/5"
               )}
             >
               CONTACT
             </Link>
           </div>
 
-          <div className="w-full pt-4 border-t border-white/10 flex justify-center">
+          <div className="w-full pt-4 border-t border-slate-200 flex justify-center">
             <NavbarButton href="/contact" onClick={() => setIsOpen(false)} className="w-full justify-center">
               Contact Us
             </NavbarButton>
