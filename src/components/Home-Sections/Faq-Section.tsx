@@ -104,7 +104,7 @@ export function FaqSection() {
           </div>
 
           {/* Prefer Email Footer Link */}
-          <div className="mt-4 text-center sm:text-left text-sm text-slate-500 flex items-center gap-1.5 justify-center sm:justify-start">
+          <div className="mt-4 ml-5 text-center sm:text-left text-sm text-slate-500 flex items-center gap-1.5 justify-center sm:justify-start">
             <span>Prefer email?</span>
             <a href="mailto:info@ezsofttech.in" className="text-slate-700 font-semibold hover:underline flex items-center gap-1">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 text-slate-600">

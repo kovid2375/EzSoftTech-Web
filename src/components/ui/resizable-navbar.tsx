@@ -411,23 +411,13 @@ export const ResizableNavbar = () => {
                   exit={{ opacity: 0, y: 8, scale: 0.96 }}
                   transition={{ type: "spring", stiffness: 350, damping: 25 }}
                   style={{
-                    backgroundColor: "rgba(15, 23, 42, 0.90)", // Slightly transparent dark slate (90%)
+                    backgroundColor: "rgba(255, 255, 255, 0.90)", // Slightly transparent dark slate (90%)
                     
                     boxShadow: "0 25px 60px -15px rgba(0, 0, 0, 0.7), 0 10px 30px rgba(37, 99, 235, 0.2)",
                     backdropFilter: "blur(20px) saturate(180%)",
                   }}
                   className="absolute -left-12 top-full mt-3 w-80 rounded-3xl p-3 z-50 flex flex-col gap-1.5 shadow-2xl backdrop-blur-xl"
                 >
-                  {/* Card Sub-Header */}
-                  <div className="px-3 py-2 flex items-center justify-between border-b border-white/10 mb-1">
-                    <span className="text-[10px] font-extrabold text-blue-400 tracking-widest uppercase flex items-center gap-1.5">
-                      <Sparkles className="w-3 h-3 text-blue-400" />
-                      Our Capabilities
-                    </span>
-                    <span className="text-[9px] font-bold bg-blue-500/20 text-blue-300 px-2 py-0.5 rounded-full border border-blue-400/30">
-                      5 Solutions
-                    </span>
-                  </div>
 
                   {/* Dropdown Items List */}
                   <div className="flex flex-col gap-1">
@@ -444,7 +434,7 @@ export const ResizableNavbar = () => {
                             "group flex items-center gap-3 p-2.5 rounded-2xl transition-all duration-200 normal-case tracking-normal border border-transparent",
                             isActive
                               ? "bg-white border-white text-black"
-                              : "hover:bg-white hover:border-white text-black"
+                              : "hover:bg-blue-700 hover:border-white text-black"
                           )}
                         >
                           {/* Icon Container */}
@@ -453,7 +443,7 @@ export const ResizableNavbar = () => {
                               "w-9 h-9 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300 shadow-xs",
                               isActive
                                 ? "bg-[#1a6eff] text-white"
-                                : "bg-white/10 text-slate-200 border border-white/10 group-hover:bg-[#1a6eff] group-hover:text-white group-hover:scale-105"
+                                : "bg-blue-700 text-white border border-white/10 group-hover:bg-[#1a6eff] group-hover:text-white group-hover:scale-105"
                             )}
                           >
                             <Icon className="w-4 h-4" />
@@ -464,7 +454,7 @@ export const ResizableNavbar = () => {
                             <span
                               className={cn(
                                 "text-xs font-bold transition-colors leading-tight truncate",
-                                isActive ? "text-blue-400" : "text-slate-100 group-hover:text-blue-400"
+                                isActive ? "text-white" : "text-black-100 group-hover:text-white"
                               )}
                             >
                               {item.name}
