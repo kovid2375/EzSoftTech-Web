@@ -71,23 +71,49 @@ export function FaqSection() {
             <p className="text-sm md:text-base text-neutral-500 leading-relaxed max-w-sm">
               Find answers to common questions about our software development services in Bilaspur and Chhattisgarh.
             </p>
-            <div className="bg-[#0b0b0d] text-white rounded-3xl p-8 mt-12 flex flex-col gap-6 relative overflow-hidden shadow-md">
-            <h3 className="text-xl md:text-2xl font-bold tracking-tight">
-              Still have questions?
-            </h3>
-            
-            {/* CTA Button */}
-           <div>
-            <Link href={"/contact"}>
-            <Button>Contact Us</Button>
+          {/* Dark CTA Card */}
+          <div className="bg-[#0b0f19] text-white rounded-[2rem] p-8 md:p-10 mt-12 flex flex-col sm:flex-col sm:items-center justify-between gap-6 relative overflow-hidden shadow-xl border border-slate-800">
+            <div className="space-y-3 max-w-md">
+              {/* Badge Pill */}
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900/80 border border-slate-700/60 text-slate-300 text-xs font-medium">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-3.5 h-3.5">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+                <span>We&apos;re here to help</span>
+              </div>
+
+              {/* Title */}
+              <h3 className="text-2xl sm:text-3xl font-semibold text-white tracking-tight">
+                Still have questions?
+              </h3>
+
+              {/* Description */}
+              <p className="text-slate-400 text-sm leading-relaxed">
+                Our team is ready to answer your questions and guide you through the next steps.
+              </p>
+            </div>
+
+            {/* Pill Contact Us Button */}
+          <div>
+            <Link href="tel:+918962370822">
+            <Button className='w-full'>Call NOW</Button>
             </Link>
-            
-           </div>
           </div>
+          </div>
+          
           </div>
 
-          {/* CTA Card */}
-          
+          {/* Prefer Email Footer Link */}
+          <div className="mt-4 text-center sm:text-left text-sm text-slate-500 flex items-center gap-1.5 justify-center sm:justify-start">
+            <span>Prefer email?</span>
+            <a href="mailto:info@ezsofttech.in" className="text-slate-700 font-semibold hover:underline flex items-center gap-1">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 text-slate-600">
+                <rect width="20" height="16" x="2" y="4" rx="2" />
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+              </svg>
+              info@ezsofttech.in
+            </a>
+          </div>
         </div>
 
         {/* Right Column - Accordion */}

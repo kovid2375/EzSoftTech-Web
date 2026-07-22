@@ -14,46 +14,35 @@ export function Footer() {
           {/* Column 1 - Brand Info */}
           <div className="lg:col-span-5 flex flex-col items-start">
             {/* Logo */}
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-[#3c83f6] flex items-center justify-center text-white shadow-md">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
-                  <polyline points="16 18 22 12 16 6"></polyline>
-                  <polyline points="8 6 2 12 8 18"></polyline>
-                </svg>
-              </div>
-              <div>
-                <h3 className="text-xl md:text-2xl font-bold tracking-tight text-white leading-none">EZ Soft Tech</h3>
-                <span className="text-[10px] text-neutral-500 uppercase tracking-widest font-semibold mt-1 block">Software Company in Bilaspur</span>
-              </div>
-            </div>
+            <img className='w-50' src="/ez-logo.png" alt="" />
 
             {/* Description */}
-            <p className="text-sm text-neutral-400 leading-relaxed mt-5 max-w-sm">
+            <p className="text-sm text-neutral-400 leading-relaxed mt-1 max-w-sm">
               EZ Soft Tech is the leading <strong className="text-neutral-200 font-semibold">software development company in Bilaspur, Chhattisgarh</strong>. We deliver world-class website development, mobile app development, and billing software solutions to clients across India, UK, UAE, and USA.
             </p>
 
             {/* Social Icons */}
-            <div className="flex items-center gap-3 mt-6">
-              <a href="#" className="w-9 h-9 rounded-full bg-neutral-900 border border-neutral-800/80 flex items-center justify-center text-neutral-400 hover:bg-[#D6FD70] hover:text-black hover:border-[#D6FD70] transition-all duration-300" aria-label="Code">
+            <div className="flex items-center gap-3 mt-3">
+              <a href="#" className="w-9 h-9 rounded-full bg-neutral-900 border border-neutral-800/80 flex items-center justify-center text-neutral-400 hover:bg-blue-600 hover:text-white  transition-all duration-300" aria-label="Code">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
                   <polyline points="16 18 22 12 16 6"></polyline>
                   <polyline points="8 6 2 12 8 18"></polyline>
                 </svg>
               </a>
-              <a href="#" className="w-9 h-9 rounded-full bg-neutral-900 border border-neutral-800/80 flex items-center justify-center text-neutral-400 hover:bg-[#D6FD70] hover:text-black hover:border-[#D6FD70] transition-all duration-300" aria-label="Mobile">
+              <a href="#" className="w-9 h-9 rounded-full bg-neutral-900 border border-neutral-800/80 flex items-center justify-center text-neutral-400 hover:bg-blue-600 hover:text-white  transition-all duration-300" aria-label="Mobile">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
                   <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
                   <line x1="12" y1="18" x2="12.01" y2="18"></line>
                 </svg>
               </a>
-              <a href="#" className="w-9 h-9 rounded-full bg-neutral-900 border border-neutral-800/80 flex items-center justify-center text-neutral-400 hover:bg-[#D6FD70] hover:text-black hover:border-[#D6FD70] transition-all duration-300" aria-label="Globe">
+              <a href="#" className="w-9 h-9 rounded-full bg-neutral-900 border border-neutral-800/80 flex items-center justify-center text-neutral-400 hover:bg-blue-600 hover:text-white transition-all duration-300" aria-label="Globe">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
                   <circle cx="12" cy="12" r="10"></circle>
                   <line x1="2" y1="12" x2="22" y2="12"></line>
                   <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
                 </svg>
               </a>
-              <a href="#" className="w-9 h-9 rounded-full bg-neutral-900 border border-neutral-800/80 flex items-center justify-center text-neutral-400 hover:bg-[#D6FD70] hover:text-black hover:border-[#D6FD70] transition-all duration-300" aria-label="Database">
+              <a href="#" className="w-9 h-9 rounded-full bg-neutral-900 border border-neutral-800/80 flex items-center justify-center text-neutral-400 hover:bg-blue-600 hover:text-white  transition-all duration-300" aria-label="Database">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
                   <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
                   <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
@@ -63,20 +52,7 @@ export function Footer() {
             </div>
 
             {/* Newsletter */}
-            <div className="w-full max-w-sm mt-8">
-              <h4 className="text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-3">Subscribe our newsletter</h4>
-              <form onSubmit={(e) => e.preventDefault()} className="relative flex items-center bg-neutral-900 border border-neutral-800/80 rounded-full p-1 pl-4 pr-1.5 focus-within:border-neutral-700 transition-all duration-300">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="bg-transparent text-sm text-white placeholder-neutral-500 focus:outline-none w-full py-2"
-                  required
-                />
-                <div>
-                    <Button>Submit</Button>
-                </div>
-              </form>
-            </div>
+            
 
           </div>
 
