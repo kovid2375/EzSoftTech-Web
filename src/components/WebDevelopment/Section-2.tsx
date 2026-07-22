@@ -46,7 +46,7 @@ export default function Section2() {
   ]
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden font-sans">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-1 px-4 sm:px-6 lg:px-8 relative overflow-hidden font-sans">
       {/* Background Decorative Grid */}
       <div 
         className="absolute inset-0 opacity-[0.03] pointer-events-none"

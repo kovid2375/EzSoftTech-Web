@@ -433,7 +433,7 @@ export const ResizableNavbar = () => {
                           className={cn(
                             "group flex items-center gap-3 p-2.5 rounded-2xl transition-all duration-200 normal-case tracking-normal border border-transparent",
                             isActive
-                              ? "bg-white border-white text-black"
+                              ? "bg-blue-700 border-white text-black"
                               : "hover:bg-blue-700 hover:border-white text-black"
                           )}
                         >
@@ -494,18 +494,7 @@ export const ResizableNavbar = () => {
             </AnimatePresence>
           </div>
 
-          {/* 5. CONTACT */}
-          <Link
-            href="/contact"
-            className={cn(
-              "px-4 py-1.5 rounded-full transition-all duration-200",
-              pathname === "/contact"
-                ? "bg-blue-600 text-white font-black shadow-md"
-                : "text-black hover:text-black hover:bg-black/10 font-bold"
-            )}
-          >
-            CONTACT
-          </Link>
+          
         </div>
 
         {/* Right: Solid CTA Button */}
