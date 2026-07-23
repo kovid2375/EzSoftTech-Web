@@ -28,7 +28,7 @@ export default function Hero() {
                 <motion.div
                     animate={{ scale: [0.8, 1.15, 0.8], rotate: [0, 10, -10, 0], opacity: [0.8, 0.8, 0.8] }}
                     transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute left-[4%] sm:left-[18%] top-[8%] text-amber-500 select-none pointer-events-none"
+                    className="absolute left-[10%] sm:left-[18%] top-[10%] text-amber-500 select-none pointer-events-none"
                 >
                     <svg className="w-6 h-6 sm:w-10 sm:h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M7 8l-5 4 5 4" />
@@ -53,7 +53,7 @@ export default function Hero() {
                 <motion.div
                     animate={{ scale: [0.85, 1.15, 0.85], rotate: [0, 5, -5, 0], opacity: [0.8, 0.8, 0.8] }}
                     transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-                    className="absolute left-[78%] sm:left-[72%] top-[38%] text-[#0b64f1]  select-none pointer-events-none"
+                    className="absolute left-[78%] sm:left-[72%] top-[42%] text-[#0b64f1]  select-none pointer-events-none"
                 >
                     <svg className="w-6 h-6 sm:w-10 sm:h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M4 7l6 5-6 5" />
@@ -78,7 +78,7 @@ export default function Hero() {
                 </motion.div>
 
                 {/* Hand-drawn SVG doodle left (Swirl + Label) */}
-                <div className="absolute left-[2%] sm:left-[16%] top-[25%] opacity-70  sm:flex flex-col items-center select-none pointer-events-none text-neutral-800">
+                <div className="absolute left-[5%] sm:left-[16%] top-[28%] opacity-70  sm:flex flex-col items-center select-none pointer-events-none text-neutral-800">
                     <span className="font-handwriting text-lg sm:text-2xl text-neutral-800 tracking-wide transform -rotate-8 mb-2  ">
                         Built for scale
                     </span>
@@ -94,7 +94,7 @@ export default function Hero() {
                 </div>
 
                 {/* Hand-drawn SVG doodle right (Loop Arrow + Label) */}
-                <div className="absolute right-[2%] sm:right-[20%] top-[25%] opacity-70  sm:flex flex-col items-center select-none pointer-events-none text-neutral-800">
+                <div className="absolute right-[2%] sm:right-[20%] top-[29%] opacity-70  sm:flex flex-col items-center select-none pointer-events-none text-neutral-800">
                     <span className="font-handwriting text-lg sm:text-xl text-neutral-800 tracking-wide transform rotate-6 mb-1 ">
                         Scale your operations
                     </span>

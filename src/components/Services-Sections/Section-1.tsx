@@ -40,18 +40,18 @@ export function Section1(){
                 />
 
                 {/* Hero Viewport Section (Full screen height on initial view) */}
-                <div className="relative w-full min-h-[calc(100vh-2.5rem)] flex flex-col items-center justify-center px-4 py-16 z-10">
+                <div className="relative w-full min-h-[calc(100vh-2.5rem)] flex flex-col items-center justify-center px-4 py-16 z-10 overflow-hidden sm:overflow-visible">
 
                     {/* Hand-drawn Service Doodle 1 (Top-Right: Web Apps) */}
-                    <div className="absolute right-[10%] top-[18%] opacity-80 hidden lg:flex flex-col items-center select-none pointer-events-none text-neutral-800 z-10">
-                        <span className="font-handwriting text-lg sm:text-2xl text-neutral-700 tracking-wide transform -rotate-6 mb-1">
+                    <div className="absolute right-[2%] sm:right-[5%] md:right-[8%] lg:right-[10%] top-[20%] sm:top-[6%] md:top-[12%] lg:top-[16%] opacity-80 flex flex-col items-center select-none pointer-events-none text-neutral-800 z-10 scale-75 xs:scale-85 sm:scale-90 md:scale-100 origin-top-right transition-all">
+                        <span className="font-handwriting text-lg xs:text-sm sm:text-xl lg:text-2xl text-neutral-700 tracking-wide transform -rotate-6 mb-1 whitespace-nowrap">
                             Modern Web Apps
                         </span>
                         <motion.div
                             animate={{ y: [0, -8, 0], rotate: [-2, 2, -2] }}
                             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
                         >
-                            <svg className="w-12 h-10 sm:w-[80px] sm:h-[60px]" viewBox="0 0 80 60" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                            <svg className="w-9 h-7 xs:w-11 xs:h-8 sm:w-14 sm:h-10 md:w-16 md:h-12 lg:w-[80px] lg:h-[60px]" viewBox="0 0 80 60" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
                                 <rect x="5" y="8" width="70" height="44" rx="4" />
                                 <line x1="5" y1="18" x2="75" y2="18" />
                                 <circle cx="12" cy="13" r="1.5" fill="currentColor" />
@@ -65,16 +65,50 @@ export function Section1(){
                         </motion.div>
                     </div>
 
-                    {/* Hand-drawn Service Doodle 2 (Middle-Right: iOS & Android Apps) */}
-                    <div className="absolute right-[15%] top-[63%] opacity-80 hidden xl:flex flex-col items-center select-none pointer-events-none text-neutral-800 z-10">
-                        <span className="font-handwriting text-lg sm:text-xl text-neutral-700 tracking-wide transform rotate-6 mb-1">
+                    {/* Hand-drawn Service Doodle 2 (Top-Left: AI & Automation) */}
+                    <div className="absolute left-[2%] sm:left-[5%] md:left-[8%] lg:left-[10%] top-[25%] sm:top-[6%] md:top-[12%] lg:top-[17%] opacity-80 flex flex-col xs:flex-row items-center select-none pointer-events-none text-amber-500 z-10 scale-75 xs:scale-85 sm:scale-90 md:scale-100 origin-top-left transition-all">
+                        <motion.div
+                            animate={{ scale: [0.9, 1.1, 0.9], rotate: [0, 360] }}
+                            transition={{ scale: { duration: 4, repeat: Infinity, ease: "easeInOut" }, rotate: { duration: 25, repeat: Infinity, ease: "linear" } }}
+                        >
+                            <svg className="w-7 h-7 xs:w-8 xs:h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 xs:mr-2" viewBox="0 0 50 50" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                                <circle cx="25" cy="25" r="8" />
+                                <path d="M25 5v6M25 39v6M5 25h6M39 25h6M11 11l4.2 4.2M34.8 34.8l4.2 4.2M11 39l4.2-4.2M34.8 15.2l4.2-4.2" />
+                                {/* Sparkle inside */}
+                                <path d="M25 21l1 3 3 1-3 1-1 3-1-3-3-1 3-1z" fill="currentColor" />
+                            </svg>
+                        </motion.div>
+                        <span className="font-handwriting text-lg xs:text-sm sm:text-xl lg:text-2xl text-amber-600 tracking-wider transform -rotate-6 whitespace-nowrap">
+                            AI & Automation
+                        </span>
+                    </div>
+
+                    {/* Hand-drawn Service Doodle 3 (Bottom-Left: Cloud Infrastructure) */}
+                    <div className="absolute left-[2%] sm:left-[5%] md:left-[8%] lg:left-[11%] bottom-[20%] sm:bottom-[12%] md:top-[60%] lg:top-[63%] opacity-80 flex flex-col items-center select-none pointer-events-none text-indigo-600 z-10 scale-75 xs:scale-85 sm:scale-90 md:scale-100 origin-bottom-left transition-all">
+                        <span className="font-handwriting text-lg xs:text-sm sm:text-lg lg:text-xl text-indigo-700 tracking-wide transform -rotate-6 mb-1 whitespace-nowrap">
+                            Cloud Infrastructure
+                        </span>
+                        <motion.div
+                            animate={{ y: [0, -6, 0], rotate: [-2, 2, -2] }}
+                            transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
+                        >
+                            <svg className="w-8 h-6 xs:w-10 xs:h-7 sm:w-12 sm:h-8 md:w-[55px] md:h-[38px] lg:w-[65px] lg:h-[45px]" viewBox="0 0 65 45" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                                <path d="M15 35h35a12 12 0 0 0 0-24 16 16 0 0 0-30-4 10 10 0 0 0-5 28z" />
+                                <path d="M32 28v-12M26 21l6-6 6 6" />
+                            </svg>
+                        </motion.div>
+                    </div>
+
+                    {/* Hand-drawn Service Doodle 4 (Bottom-Right: iOS & Android Apps) */}
+                    <div className="absolute right-[2%] sm:right-[5%] md:right-[8%] lg:right-[13%] bottom-[30%] sm:bottom-[12%] md:top-[60%] lg:top-[63%] opacity-80 flex flex-col items-center select-none pointer-events-none text-neutral-800 z-10 scale-75 xs:scale-85 sm:scale-90 md:scale-100 origin-bottom-right transition-all">
+                        <span className="font-handwriting text-lg xs:text-sm sm:text-lg lg:text-xl text-neutral-700 tracking-wide transform rotate-6 mb-1 whitespace-nowrap">
                             iOS & Android Apps
                         </span>
                         <motion.div
                             animate={{ y: [0, 8, 0], rotate: [2, -2, 2] }}
                             transition={{ duration: 5.2, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
                         >
-                            <svg className="w-8 h-12 sm:w-[50px] sm:h-[75px]" viewBox="0 0 50 80" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                            <svg className="w-6 h-9 xs:w-7 xs:h-[40px] sm:w-9 sm:h-[52px] md:w-[42px] md:h-[65px] lg:w-[50px] lg:h-[75px]" viewBox="0 0 50 80" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
                                 <rect x="10" y="6" width="30" height="68" rx="6" />
                                 <circle cx="25" cy="68" r="2.5" fill="currentColor" />
                                 <line x1="20" y1="12" x2="30" y2="12" />
@@ -88,31 +122,26 @@ export function Section1(){
                         </motion.div>
                     </div>
 
-                    {/* Hand-drawn Service Doodle 3 (Top-Left: AI & Automation) */}
-                    <div className="absolute left-[10%] top-[17%] opacity-80 hidden lg:flex flex-row items-center select-none pointer-events-none text-amber-500 z-10">
-                        <motion.div
-                            animate={{ scale: [0.9, 1.1, 0.9], rotate: [0, 360] }}
-                            transition={{ scale: { duration: 4, repeat: Infinity, ease: "easeInOut" }, rotate: { duration: 25, repeat: Infinity, ease: "linear" } }}
-                        >
-                            <svg className="w-10 h-10 sm:w-14 sm:h-14 mr-2" viewBox="0 0 50 50" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                                <circle cx="25" cy="25" r="8" />
-                                <path d="M25 5v6M25 39v6M5 25h6M39 25h6M11 11l4.2 4.2M34.8 34.8l4.2 4.2M11 39l4.2-4.2M34.8 15.2l4.2-4.2" />
-                                {/* Sparkle inside */}
-                                <path d="M25 21l1 3 3 1-3 1-1 3-1-3-3-1 3-1z" fill="currentColor" />
-                            </svg>
-                        </motion.div>
-                        <span className="font-handwriting text-lg sm:text-2xl text-amber-600 tracking-wider transform -rotate-6 ">
-                            AI & Automation
-                        </span>
-                    </div>
-
                     {/* Main Hero Content */}
-                    <div className="relative z-10 flex flex-col items-center justify-center">
+                    <div className="relative z-10 flex flex-col items-center justify-center text-center">
                         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[90px] text-neutral-900 font-bold font-plus-jakarta leading-tight text-center items-center">
                             Smarter strategy.
                         </h1>
                         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[80px] text-neutral-900 font-bold font-plus-jakarta leading-tight mt-1 text-center items-center">
-                            <span className="text-[#0b64f1]">Powered By AI</span>
+                            <span className="relative inline-block text-[#0b64f1]">
+                                Powered By AI
+                                <svg className="absolute -bottom-1 sm:-bottom-2 left-0 w-full h-2.5 sm:h-3 text-orange-600" viewBox="0 0 150 12" fill="none" preserveAspectRatio="none">
+                                    <motion.path
+                                        initial={{ pathLength: 0 }}
+                                        animate={{ pathLength: 1 }}
+                                        transition={{ duration: 1.5, ease: "easeOut", delay: 0.5 }}
+                                        d="M4,6 C50,11 100,5 146,7 C95,9 45,7 6,10"
+                                        stroke="currentColor"
+                                        strokeWidth="2.5"
+                                        strokeLinecap="round"
+                                    />
+                                </svg>
+                            </span>
                         </h1>
 
                         <div className="mt-4 flex flex-col text-neutral-600 text-sm sm:text-base md:text-lg font-medium tracking-wide max-w-2xl space-y-1 text-center">
@@ -120,12 +149,12 @@ export function Section1(){
                             <p>that deliver measurable impact.</p>
                         </div>
 
-                        <div className="relative flex items-center justify-center gap-6 mt-8">
+                        <div className="relative flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mt-8">
                             <Button href="/contact">Get Started</Button>
                             
-                            {/* Hand-drawn Service Doodle 4 (CTA Pointer placed inline next to button for robust responsive positioning) */}
-                            <div className="hidden md:flex items-center gap-2 select-none pointer-events-none text-neutral-700">
-                                <svg className="absolute -ml-100 mt-18 w-10 h-10 sm:w-[60px] sm:h-[50px] transform rotate-12" viewBox="0 0 60 45" fill="none" stroke="currentColor" strokeWidth="2">
+                            {/* Hand-drawn Service Doodle 5 (CTA Pointer placed inline/responsive) */}
+                            <div className="flex items-center gap-2 select-none pointer-events-none text-neutral-700 sm:absolute sm:left-[calc(50%+85px)] md:left-[calc(50%+100px)] lg:left-[-300px] sm:top-1/2 sm:-translate-y-1/2">
+                                <svg className="w-8 h-7 sm:w-11 sm:h-9 md:w-[55px] md:h-[45px] transform -rotate-45 sm:rotate-12" viewBox="0 0 60 45" fill="none" stroke="currentColor" strokeWidth="2">
                                     <motion.path
                                         initial={{ pathLength: 0 }}
                                         animate={{ pathLength: 1 }}
@@ -142,7 +171,7 @@ export function Section1(){
                                         strokeLinejoin="round"
                                     />
                                 </svg>
-                                <span className=" absolute font-handwriting text-lg -ml-120 sm:text-2xl text-neutral-800 transform -rotate-6">
+                                <span className="font-handwriting text-base sm:text-xl md:text-2xl text-neutral-800 tracking-wide transform -rotate-3 sm:-rotate-6 whitespace-nowrap">
                                     Boost your business
                                 </span>
                             </div>
