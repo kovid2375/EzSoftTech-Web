@@ -8,7 +8,6 @@ import { AboutUsSection } from "@/components/Home-Sections/AboutUs-Section";
 import { ExpertiseSection } from "@/components/Home-Sections/Expertise-Section";
 import { FaqSection } from "@/components/Home-Sections/Faq-Section";
 import { FaqBelowSection } from "@/components/Home-Sections/FaqBelow-Section";
-import Navbar1 from "@/components/resizable-navbar-demo";
 
 export default function Main() {
   return (

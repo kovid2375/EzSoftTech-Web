@@ -385,8 +385,9 @@ export const ResizableNavbar = () => {
             onMouseLeave={() => setIsExpertiseOpen(false)}
           >
             <div
+              onClick={() => setIsExpertiseOpen((prev) => !prev)}
               className={cn(
-                "px-4 py-1.5 rounded-full transition-all duration-200 flex items-center gap-1.5 cursor-pointer",
+                "px-4 py-1.5 rounded-full transition-all duration-200 flex items-center gap-1.5 cursor-pointer select-none",
                 isExpertiseActive || isExpertiseOpen
                   ? "bg-blue-600 text-white font-black shadow-md"
                   : "text-black hover:text-black hover:bg-black/10 font-bold"
@@ -402,92 +403,99 @@ export const ResizableNavbar = () => {
               />
             </div>
 
-            {/* Slightly Transparent Dropdown Card */}
+            {/* Slightly Transparent Dropdown Card with padding-top gap bridge */}
             <AnimatePresence>
               {isExpertiseOpen && (
                 <motion.div
-                  initial={{ opacity: 0, y: 12, scale: 0.96 }}
+                  initial={{ opacity: 0, y: 8, scale: 0.96 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: 8, scale: 0.96 }}
+                  exit={{ opacity: 0, y: 6, scale: 0.96 }}
                   transition={{ type: "spring", stiffness: 350, damping: 25 }}
-                  style={{
-                    backgroundColor: "rgba(255, 255, 255, 0.90)", // Slightly transparent dark slate (90%)
-                    
-                    boxShadow: "0 25px 60px -15px rgba(0, 0, 0, 0.7), 0 10px 30px rgba(37, 99, 235, 0.2)",
-                    backdropFilter: "blur(20px) saturate(180%)",
-                  }}
-                  className="absolute -left-12 top-full mt-3 w-80 rounded-3xl p-3 z-50 flex flex-col gap-1.5 shadow-2xl backdrop-blur-xl"
+                  className="absolute -left-12 top-full pt-2.5 w-80 z-50 flex flex-col"
                 >
+                  <div
+                    style={{
+                      backgroundColor: "rgba(255, 255, 255, 0.96)",
+                      boxShadow: "0 20px 50px -10px rgba(0, 0, 0, 0.25), 0 10px 25px -5px rgba(37, 99, 235, 0.15)",
+                      backdropFilter: "blur(20px) saturate(180%)",
+                    }}
+                    className="rounded-3xl p-3 flex flex-col gap-1.5 shadow-2xl backdrop-blur-xl border border-slate-200/80"
+                  >
+                    {/* Dropdown Items List */}
+                    <div className="flex flex-col gap-1">
+                      {expertiseList.map((item, idx) => {
+                        const Icon = item.icon;
+                        const isActive = pathname === item.link;
 
-                  {/* Dropdown Items List */}
-                  <div className="flex flex-col gap-1">
-                    {expertiseList.map((item, idx) => {
-                      const Icon = item.icon;
-                      const isActive = pathname === item.link;
-
-                      return (
-                        <Link
-                          key={idx}
-                          href={item.link}
-                          onClick={() => setIsExpertiseOpen(false)}
-                          className={cn(
-                            "group flex items-center gap-3 p-2.5 rounded-2xl transition-all duration-200 normal-case tracking-normal border border-transparent",
-                            isActive
-                              ? "bg-blue-700 border-white text-black"
-                              : "hover:bg-blue-700 hover:border-white text-black"
-                          )}
-                        >
-                          {/* Icon Container */}
-                          <div
+                        return (
+                          <Link
+                            key={idx}
+                            href={item.link}
+                            onClick={() => setIsExpertiseOpen(false)}
                             className={cn(
-                              "w-9 h-9 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300 shadow-xs",
+                              "group flex items-center gap-3 p-2.5 rounded-2xl transition-all duration-200 normal-case tracking-normal border border-transparent",
                               isActive
-                                ? "bg-[#1a6eff] text-white"
-                                : "bg-blue-700 text-white border border-white/10 group-hover:bg-[#1a6eff] group-hover:text-white group-hover:scale-105"
+                                ? "bg-blue-600 text-white font-semibold shadow-xs"
+                                : "hover:bg-blue-50/80 hover:border-blue-100/80 text-slate-900"
                             )}
                           >
-                            <Icon className="w-4 h-4" />
-                          </div>
-
-                          {/* Item Title & Description */}
-                          <div className="flex flex-col flex-1 min-w-0">
-                            <span
+                            {/* Icon Container */}
+                            <div
                               className={cn(
-                                "text-xs font-bold transition-colors leading-tight truncate",
-                                isActive ? "text-white" : "text-black-100 group-hover:text-white"
+                                "w-9 h-9 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300 shadow-xs",
+                                isActive
+                                  ? "bg-white text-blue-600"
+                                  : "bg-blue-50 text-blue-600 border border-blue-100 group-hover:bg-blue-600 group-hover:text-white group-hover:scale-105"
                               )}
                             >
-                              {item.name}
-                            </span>
-                            <span className="text-[10px] text-slate-400 font-medium truncate mt-0.5">
-                              {item.desc}
-                            </span>
-                          </div>
+                              <Icon className="w-4 h-4" />
+                            </div>
 
-                          {/* Hover Arrow */}
-                          <ChevronRight
-                            className={cn(
-                              "w-3.5 h-3.5 transition-all duration-200 shrink-0",
-                              isActive
-                                ? "text-blue-400 opacity-100 translate-x-0"
-                                : "text-slate-500 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:text-blue-400"
-                            )}
-                          />
-                        </Link>
-                      );
-                    })}
-                  </div>
+                            {/* Item Title & Description */}
+                            <div className="flex flex-col flex-1 min-w-0">
+                              <span
+                                className={cn(
+                                  "text-xs font-bold transition-colors leading-tight truncate",
+                                  isActive ? "text-white" : "text-slate-900 group-hover:text-blue-600"
+                                )}
+                              >
+                                {item.name}
+                              </span>
+                              <span
+                                className={cn(
+                                  "text-[10px] font-medium truncate mt-0.5",
+                                  isActive ? "text-blue-100" : "text-slate-500 group-hover:text-slate-600"
+                                )}
+                              >
+                                {item.desc}
+                              </span>
+                            </div>
 
-                  {/* Card Footer Link */}
-                  <div className="pt-2 mt-1 border-t border-white/10">
-                    <Link
-                      href="/services"
-                      onClick={() => setIsExpertiseOpen(false)}
-                      className="flex items-center justify-between px-3 py-1.5 rounded-xl hover:bg-white/10 text-[11px] font-bold text-blue-400 transition-colors group normal-case"
-                    >
-                      <span>Explore all services</span>
-                      <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-                    </Link>
+                            {/* Hover Arrow */}
+                            <ChevronRight
+                              className={cn(
+                                "w-3.5 h-3.5 transition-all duration-200 shrink-0",
+                                isActive
+                                  ? "text-white opacity-100 translate-x-0"
+                                  : "text-slate-400 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:text-blue-600"
+                              )}
+                            />
+                          </Link>
+                        );
+                      })}
+                    </div>
+
+                    {/* Card Footer Link */}
+                    <div className="pt-2 mt-1 border-t border-slate-100">
+                      <Link
+                        href="/services"
+                        onClick={() => setIsExpertiseOpen(false)}
+                        className="flex items-center justify-between px-3 py-1.5 rounded-xl hover:bg-blue-50 text-[11px] font-bold text-blue-600 transition-colors group normal-case"
+                      >
+                        <span>Explore all services</span>
+                        <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                      </Link>
+                    </div>
                   </div>
                 </motion.div>
               )}
@@ -546,37 +554,52 @@ export const ResizableNavbar = () => {
             <div className="flex flex-col">
               <div
                 className={cn(
-                  "px-4 py-2.5 rounded-xl transition-all flex items-center justify-between cursor-pointer",
+                  "px-4 py-2.5 rounded-xl transition-all flex items-center justify-between cursor-pointer select-none",
                   isExpertiseActive ? "bg-blue-500/20 text-blue-600 border border-blue-400/30" : "text-black hover:bg-black/5"
                 )}
-                onClick={() => setIsExpertiseOpen(!isExpertiseOpen)}
+                onClick={() => setIsExpertiseOpen((prev) => !prev)}
               >
                 <span>EXPERTISE</span>
                 <ChevronDown className={cn("w-4 h-4 transition-transform", isExpertiseOpen && "rotate-180")} />
               </div>
 
               {/* Mobile Expertise List */}
-              <div className="ml-4 pl-3 border-l-2 border-slate-200 flex flex-col gap-1.5 my-1.5">
-                {expertiseList.map((item, idx) => {
-                  const Icon = item.icon;
-                  return (
-                    <Link
-                      key={idx}
-                      href={item.link}
-                      onClick={() => setIsOpen(false)}
-                      className={cn(
-                        "px-3 py-2 rounded-xl text-xs font-semibold normal-case tracking-normal transition-all flex items-center gap-2.5",
-                        pathname === item.link
-                          ? "bg-blue-500/20 text-blue-600 font-bold"
-                          : "text-slate-800 hover:bg-black/5 hover:text-black"
-                      )}
-                    >
-                      <Icon className="w-4 h-4 text-blue-600 shrink-0" />
-                      <span>{item.name}</span>
-                    </Link>
-                  );
-                })}
-              </div>
+              <AnimatePresence>
+                {isExpertiseOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.2 }}
+                    className="overflow-hidden"
+                  >
+                    <div className="ml-4 pl-3 border-l-2 border-slate-200 flex flex-col gap-1.5 my-1.5">
+                      {expertiseList.map((item, idx) => {
+                        const Icon = item.icon;
+                        return (
+                          <Link
+                            key={idx}
+                            href={item.link}
+                            onClick={() => {
+                              setIsOpen(false);
+                              setIsExpertiseOpen(false);
+                            }}
+                            className={cn(
+                              "px-3 py-2 rounded-xl text-xs font-semibold normal-case tracking-normal transition-all flex items-center gap-2.5",
+                              pathname === item.link
+                                ? "bg-blue-500/20 text-blue-600 font-bold"
+                                : "text-slate-800 hover:bg-black/5 hover:text-black"
+                            )}
+                          >
+                            <Icon className="w-4 h-4 text-blue-600 shrink-0" />
+                            <span>{item.name}</span>
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
 
             <Link
