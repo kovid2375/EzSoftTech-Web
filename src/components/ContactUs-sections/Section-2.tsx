@@ -100,11 +100,10 @@ export function Section2() {
             src={mapEmbedUrl}
             width="100%"
             height="100%"
-            style={{ border: 3 }}
             allowFullScreen={false}
             loading="lazy"
             referrerPolicy="strict-origin-when-cross-origin"
-            className="w-full h-full min-h-[450px] lg:min-h-[580px] rounded-3xl"
+            className="w-full h-full min-h-[450px] lg:min-h-[580px] rounded-3xl border-0"
           />
         </div>
       </div>
