@@ -1,7 +1,15 @@
 "use client";
 
-import React from 'react';
+import Link from 'next/link';
 import Button from '@/components/button';
+
+const SERVICES = [
+  { name: 'Website Development', href: '/services/web-dev' },
+  { name: 'Mobile App Development', href: '/services/app-dev' },
+  { name: 'Custom Software', href: '/services/desk-app' },
+  { name: 'Billing Software', href: '/services/business-auto' },
+  { name: 'Digital Marketing', href: '/services/digital-marketing' },
+];
 
 export function Footer() {
   return (
@@ -61,15 +69,20 @@ export function Footer() {
             
             {/* Column 2 - Services */}
             <div>
-              <h4 className="text-sm font-semibold tracking-wider text-white mb-5">Our Services</h4>
+              <h4 className="text-sm font-semibold tracking-wider text-white mb-5">Our Services & Careers</h4>
               <ul className="flex flex-col gap-3">
-                {['Website Development', 'Mobile App Development', 'Custom Software', 'Billing Software', 'API Development', 'Digital Marketing'].map((service) => (
-                  <li key={service}>
-                    <a href="#" className="text-sm text-neutral-400 hover:text-white transition-colors duration-200 font-normal">
-                      {service}
-                    </a>
+                {SERVICES.map((service) => (
+                  <li key={service.name}>
+                    <Link href={service.href} className="text-sm text-neutral-400 hover:text-white transition-colors duration-200 font-normal">
+                      {service.name}
+                    </Link>
                   </li>
                 ))}
+                <li>
+                  <Link href="/careers" className="text-sm text-blue-400 hover:text-blue-300 font-semibold transition-colors duration-200 flex items-center gap-1.5">
+                    <span>Join Our Team (Careers)</span>
+                  </Link>
+                </li>
               </ul>
             </div>
 

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import Link from "next/link";
 
 // Types & Interfaces
 interface CardItem {
@@ -229,11 +230,14 @@ export default function CurvedCarousel() {
       content: (
         <div className="w-full h-full bg-gradient-to-tr from-blue-500/15 via-sky-400/10 to-blue-600/20 backdrop-blur-lg border border-blue-400/20 rounded-3xl p-5 flex flex-col justify-center items-center text-center shadow-lg relative overflow-hidden group">
           <div className="absolute -top-10 -right-10 w-36 h-36 rounded-full bg-white/10 blur-xl" />
+          
+          <Link href="/contact">
           <div className="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-white shadow-lg mb-4 transition-all duration-500 group-hover:scale-110 group-hover:rotate-90">
             <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="3.5" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
             </svg>
           </div>
+          </Link>
           <h3 className="text-2xl font-bold text-neutral-900 tracking-tight">
             Start Your Project
           </h3>

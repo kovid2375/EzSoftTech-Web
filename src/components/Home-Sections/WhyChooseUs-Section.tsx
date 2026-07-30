@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Star, Award, Clock, Users, ShieldCheck, MapPin } from "lucide-react";
 import Button from "@/components/button";
 
@@ -68,7 +69,7 @@ export function WhyChooseUsSection() {
               We combine innovation, expertise, and a customer-first approach to deliver software solutions that drive real results.
             </p>
             <div className="w-50">
-              <Button href="/about">Learn more</Button>
+              <Button href="/about-us">Learn more</Button>
             </div>
           </div>
         </div>
@@ -78,9 +79,10 @@ export function WhyChooseUsSection() {
           {features.map((feature) => {
             const IconComponent = feature.icon;
             return (
-              <div
+              <Link
                 key={feature.id}
-                className="relative h-[420px] rounded-2xl overflow-hidden shadow-lg flex flex-col justify-between p-6 group transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+                href="/services"
+                className="relative h-[420px] rounded-2xl overflow-hidden shadow-lg flex flex-col justify-between p-6 group transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 block cursor-pointer"
               >
                 {/* Full Card Background Image */}
                 <Image
@@ -109,7 +111,7 @@ export function WhyChooseUsSection() {
                     {feature.description}
                   </p>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </div>

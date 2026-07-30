@@ -6,6 +6,8 @@ import { Footer } from "@/components/footer";
 import Navbar1 from "@/components/resizable-navbar-demo";
 import { SmoothScroll } from "@/components/SmoothScroll";
 
+import { Toaster } from "sonner";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -34,6 +36,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
+        <Toaster position="top-right" richColors />
         <SmoothScroll>
           <Navbar1 />
           {children}

@@ -378,6 +378,7 @@ export const ResizableNavbar = () => {
             SERVICES
           </Link>
 
+          
           {/* 4. EXPERTISE Dropdown */}
           <div
             className="relative"
@@ -501,6 +502,19 @@ export const ResizableNavbar = () => {
               )}
             </AnimatePresence>
           </div>
+          {/* 4. CAREERS */}
+          <Link
+            href="/careers"
+            className={cn(
+              "px-4 py-1.5 rounded-full transition-all duration-200",
+              pathname === "/careers"
+                ? "bg-blue-600 text-white font-black shadow-md"
+                : "text-black hover:text-black hover:bg-black/10 font-bold"
+            )}
+          >
+            CAREERS
+          </Link>
+
 
           
         </div>
@@ -549,6 +563,17 @@ export const ResizableNavbar = () => {
               )}
             >
               SERVICES
+            </Link>
+
+            <Link
+              href="/careers"
+              onClick={() => setIsOpen(false)}
+              className={cn(
+                "px-4 py-2.5 rounded-xl transition-all",
+                pathname === "/careers" ? "bg-blue-500/20 text-blue-600 border border-blue-400/30" : "text-black hover:bg-black/5"
+              )}
+            >
+              CAREERS
             </Link>
 
             <div className="flex flex-col">

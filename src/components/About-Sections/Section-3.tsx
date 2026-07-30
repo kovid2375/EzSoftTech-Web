@@ -2,16 +2,20 @@
 
 import React, { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { 
-  CheckCircle2, 
-  Terminal, 
-  Clock, 
-  Star, 
-  ShieldCheck, 
-  Globe2, 
-  MapPin, 
-  Lock, 
-  HeartHandshake 
+import {
+  CheckCircle2,
+  Terminal,
+  Clock,
+  Star,
+  ShieldCheck,
+  Globe2,
+  MapPin,
+  Lock,
+  HeartHandshake,
+  FileCode,
+  ShieldAlert,
+  Award,
+  FileCheck
 } from 'lucide-react'
 
 interface ReasonItem {
@@ -63,7 +67,7 @@ export function Section3() {
               <p className="text-neutral-700">→ Unit Tests: 42 passed</p>
               <p className="text-neutral-700">→ Integration Tests: 18 passed</p>
               <p className="text-neutral-600 flex items-center gap-2">
-                → Code Coverage: 
+                → Code Coverage:
                 <span className="text-emerald-600 font-bold">98.4%</span>
               </p>
             </div>
@@ -207,21 +211,33 @@ export function Section3() {
 
           {/* Security Badges Grid */}
           <div className="grid grid-cols-2 gap-3 flex-1 justify-content-center py-2">
-            <div className="bg-neutral-50 border border-neutral-200/60 p-3 rounded-xl flex flex-col justify-between hover:border-purple-500/30 transition-colors">
-              <span className="text-[9px] font-bold text-neutral-500 uppercase">Coding standards</span>
-              <span className="text-xs font-semibold text-neutral-700 mt-1">OWASP Top 10</span>
+            <div className="bg-neutral-50 border border-neutral-200/60 p-3.5 rounded-xl flex flex-col justify-between  hover:bg-purple-50/20 transition-all duration-300 group/card">
+              
+                
+                
+                <FileCode className="w-15 h-15 text-purple-600 group-hover/card:scale-110 transition-transform" />
+                <span className="text-xs font-semibold text-neutral-800 mt-2">Code Sec</span>
             </div>
-            <div className="bg-neutral-50 border border-neutral-200/60 p-3 rounded-xl flex flex-col justify-between hover:border-purple-500/30 transition-colors">
-              <span className="text-[9px] font-bold text-neutral-500 uppercase">EU Data Privacy</span>
-              <span className="text-xs font-semibold text-neutral-700 mt-1">GDPR Compliant</span>
+
+            <div className="bg-neutral-50 border border-neutral-200/60 p-3.5 rounded-xl flex flex-col justify-between  hover:bg-purple-50/20 transition-all duration-300 group/card">
+             
+                <ShieldAlert className="w-15 h-15 text-blue-600 group-hover/card:scale-110 transition-transform" />
+                <span className="text-xs font-semibold text-neutral-800 mt-2">Data Privacy</span>
             </div>
-            <div className="bg-neutral-50 border border-neutral-200/60 p-3 rounded-xl flex flex-col justify-between hover:border-purple-500/30 transition-colors">
-              <span className="text-[9px] font-bold text-neutral-500 uppercase">Information Sec</span>
-              <span className="text-xs font-semibold text-neutral-700 mt-1">ISO 27001 Ready</span>
+
+            <div className="bg-neutral-50 border border-neutral-200/60 p-3.5 rounded-xl flex flex-col justify-between  hover:bg-purple-50/20 transition-all duration-300 group/card">
+              
+                <Award className="w-15 h-15 text-emerald-600 group-hover/card:scale-110 transition-transform" />
+                <span className="text-xs font-semibold text-neutral-800 mt-2">Information Sec</span>
+              
+                
+              
             </div>
-            <div className="bg-neutral-50 border border-neutral-200/60 p-3 rounded-xl flex flex-col justify-between hover:border-purple-500/30 transition-colors">
-              <span className="text-[9px] font-bold text-neutral-500 uppercase">Data Trust Audited</span>
-              <span className="text-xs font-semibold text-neutral-700 mt-1">SOC 2 Compliant</span>
+
+            <div className="bg-neutral-50 border border-neutral-200/60 p-3.5 rounded-xl flex flex-col justify-between hover:border-purple-500/40 hover:bg-purple-50/20 transition-all duration-300 group/card">
+                <FileCheck className="w-15 h-15 text-indigo-600 group-hover/card:scale-110 transition-transform" />
+                <span className="text-xs font-semibold text-neutral-800 mt-2">SOC 2 Compliant</span>
+              
             </div>
           </div>
         </div>
@@ -248,28 +264,28 @@ export function Section3() {
           {/* Global Locations List */}
           <div className="grid grid-cols-2 gap-2.5 flex-1 py-1">
             <div className="bg-neutral-50 border border-neutral-200/60 px-3.5 py-2.5 rounded-xl flex items-center gap-2 hover:bg-neutral-100 transition-colors duration-300">
-              <span className="text-base shrink-0">🇮🇳</span>
+              <img className='rounded-xl' src="/india.png" alt="" />
               <div className="overflow-hidden">
                 <span className="block text-[10px] font-bold text-neutral-800 leading-tight">India</span>
                 <span className="text-[8px] text-neutral-500 block leading-tight">Dev HQ</span>
               </div>
             </div>
             <div className="bg-neutral-50 border border-neutral-200/60 px-3.5 py-2.5 rounded-xl flex items-center gap-2 hover:bg-neutral-100 transition-colors duration-300">
-              <span className="text-base shrink-0">🇺🇸</span>
+              <img className='rounded-xl' src="/usa.png" alt="" />
               <div className="overflow-hidden">
                 <span className="block text-[10px] font-bold text-neutral-800 leading-tight">USA</span>
                 <span className="text-[8px] text-neutral-500 block leading-tight">Partnership</span>
               </div>
             </div>
             <div className="bg-neutral-50 border border-neutral-200/60 px-3.5 py-2.5 rounded-xl flex items-center gap-2 hover:bg-neutral-100 transition-colors duration-300">
-              <span className="text-base shrink-0">🇬🇧</span>
+              <img className='rounded-xl' src="/UK.png" alt="" />
               <div className="overflow-hidden">
                 <span className="block text-[10px] font-bold text-neutral-800 leading-tight">UK</span>
                 <span className="text-[8px] text-neutral-500 block leading-tight">Client Hub</span>
               </div>
             </div>
             <div className="bg-neutral-50 border border-neutral-200/60 px-3.5 py-2.5 rounded-xl flex items-center gap-2 hover:bg-neutral-100 transition-colors duration-300">
-              <span className="text-base shrink-0">🇦🇪</span>
+              <img className='rounded-xl' src="/UAE.png" alt="" />
               <div className="overflow-hidden">
                 <span className="block text-[10px] font-bold text-neutral-800 leading-tight">UAE</span>
                 <span className="text-[8px] text-neutral-500 block leading-tight">Regional Support</span>
@@ -314,7 +330,7 @@ export function Section3() {
     }
 
     const observer = new IntersectionObserver(observerCallback, observerOptions)
-    
+
     cardRefs.current.forEach((ref) => {
       if (ref) observer.observe(ref)
     })
@@ -328,7 +344,7 @@ export function Section3() {
   const scrollToCard = (index: number) => {
     isScrollingRef.current = true
     setActiveIndex(index)
-    
+
     const card = cardRefs.current[index]
     if (card) {
       // Find element top offset relative to the document
@@ -375,13 +391,13 @@ export function Section3() {
   return (
     <section className="px-6 md:px-16 lg:px-24 xl:px-40 py-20 bg-white   relative mb-2 md:mb-4">
       <div className="max-w-7xl mx-auto">
-        
+
         {/* Desktop Interactive Sticky Scroll Grid */}
         <div className="hidden md:flex gap-16 lg:gap-24 items-start relative min-h-screen pb-24">
-          
+
           {/* Left Column: Sticky Details & Navigation Menu */}
           <div className="w-1/2 sticky top-28 flex flex-col gap-10 py-4 select-none">
-            
+
             {/* Top Area: Giant Numbers Backdrop */}
             <div className="leading-none select-none">
               <AnimatePresence mode="wait">
@@ -452,8 +468,8 @@ export function Section3() {
                   {/* Emojis Badges */}
                   <div className="flex flex-wrap gap-2 pt-1">
                     {reasons[activeIndex].emojiBadges.map((badge) => (
-                      <span 
-                        key={badge} 
+                      <span
+                        key={badge}
                         className="text-[9px] font-bold text-neutral-600 bg-neutral-100 border border-neutral-200/85 px-3 py-1 rounded-full uppercase tracking-wider flex items-center gap-1.5"
                       >
                         {badge}
@@ -474,7 +490,7 @@ export function Section3() {
                 data-index={idx}
                 className="w-full min-h-[360px] lg:min-h-[400px] flex items-center justify-center transition-all duration-700"
               >
-                <motion.div 
+                <motion.div
                   className="w-full aspect-[4/3] rounded-2xl p-1 bg-gradient-to-tr from-neutral-100 to-neutral-200/80 shadow-2xl border border-neutral-200/80 transition-all duration-500 hover:scale-[1.01] hover:border-neutral-300/80"
                   initial={{ opacity: 0.7, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
@@ -491,7 +507,7 @@ export function Section3() {
 
         {/* Mobile Vertical Flow Stack (Fallback for screens < 768px) */}
         <div className="flex flex-col gap-12 md:hidden">
-          
+
           {/* Main Title Mobile */}
           <div>
             <span className="text-[9px] font-bold text-neutral-600 uppercase tracking-widest border border-neutral-200 bg-neutral-100 px-2.5 py-0.5 rounded-full inline-block mb-2">
@@ -508,7 +524,7 @@ export function Section3() {
           {/* List of sections on mobile */}
           <div className="space-y-10">
             {reasons.map((reason) => (
-              <div 
+              <div
                 key={reason.number}
                 className="bg-neutral-50/60 border border-neutral-200 p-6 rounded-2xl shadow-xl flex flex-col gap-5"
               >
@@ -535,8 +551,8 @@ export function Section3() {
                   {/* Emojis Badges */}
                   <div className="flex flex-wrap gap-1.5 pt-1">
                     {reason.emojiBadges.map((badge) => (
-                      <span 
-                        key={badge} 
+                      <span
+                        key={badge}
                         className="text-[8px] font-bold text-neutral-600 bg-neutral-100 border border-neutral-200 px-2 py-0.5 rounded-full uppercase tracking-wider"
                       >
                         {badge}
