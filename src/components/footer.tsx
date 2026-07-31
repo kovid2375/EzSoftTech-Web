@@ -155,11 +155,16 @@ export function Footer() {
             <span className="text-neutral-600">Software Company in Bilaspur, Chhattisgarh</span>
           </p>
           <div className="flex flex-wrap justify-center gap-x-5 gap-y-2">
-            {['Privacy Policy', 'Terms of Service', 'Support', 'Payment Methods', 'Refund Policy', 'Payment Security'].map((item) => (
-              <a key={item} href="#" className="hover:text-neutral-300 transition-colors duration-200">
-                {item}
-              </a>
-            ))}
+            <Link href="/privacy-policy" className="hover:text-neutral-300 transition-colors duration-200">
+              Privacy Policy
+            </Link>
+            <Link href="/terms-of-service" className="hover:text-neutral-300 transition-colors duration-200">
+              Terms of Service
+            </Link>
+            <Link href="/support" className="hover:text-neutral-300 transition-colors duration-200">
+              Support
+            </Link>
+            
           </div>
         </div>
 

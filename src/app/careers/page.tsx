@@ -84,7 +84,10 @@ export default function JoinUsPage() {
     phone: "",
     role: "Full Stack Developer",
     message: "",
+    resume:null as File|null,
   });
+
+  const [resumeName, setResumeName] = useState("");
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -97,31 +100,38 @@ export default function JoinUsPage() {
     }));
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (
+  e: React.FormEvent<HTMLFormElement>
+) => {
   e.preventDefault();
+
   setIsSubmitting(true);
 
   try {
-    const googleForm = new FormData();
+    const data = new FormData();
 
-    googleForm.append("entry.1781500597", formData.fullName);
-    googleForm.append("entry.1640447617", formData.email);
-    googleForm.append("entry.297979220", formData.phone);
-    googleForm.append("entry.1078004677", formData.role);
-    googleForm.append("entry.549088996", formData.message);
+    data.append("fullName", formData.fullName);
+    data.append("email", formData.email);
+    data.append("phone", formData.phone);
+    data.append("role", formData.role);
+    data.append("message", formData.message);
 
-    await fetch(
-      "https://docs.google.com/forms/d/e/1FAIpQLSdcfEtAtXqv5uf-HEW0ebhPaf9ZNU9OCjO_4Q8u_ZJuLyZKtA/formResponse",
-      {
-        method: "POST",
-        mode: "no-cors",
-        body: googleForm,
-      }
-    );
+    if (formData.resume) {
+      data.append("resume", formData.resume);
+    }
 
-    toast.success(
-      "Application submitted successfully! Our HR team will contact you soon."
-    );
+    const response = await fetch("/api/career", {
+      method: "POST",
+      body: data,
+    });
+
+    const result = await response.json();
+
+    if (!response.ok) {
+      throw new Error(result.message);
+    }
+
+    toast.success("Application submitted successfully!");
 
     setFormData({
       fullName: "",
@@ -129,10 +139,17 @@ export default function JoinUsPage() {
       phone: "",
       role: "Full Stack Developer",
       message: "",
+      resume: null,
     });
-  } catch (err) {
-    console.error(err);
-    toast.error("Failed to submit application.");
+
+    // File input reset
+    (
+      document.querySelector(
+        'input[type="file"]'
+      ) as HTMLInputElement
+    ).value = "";
+  } catch (err: any) {
+    toast.error(err.message || "Submission Failed");
   } finally {
     setIsSubmitting(false);
   }
@@ -337,6 +354,68 @@ export default function JoinUsPage() {
                 className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 focus:bg-white transition-all text-sm font-medium resize-none"
               />
             </div>
+            {/* Resume upload */}
+            <div className="space-y-2">
+                <label className="text-xs font-bold uppercase tracking-wider text-slate-700">
+                  Resume <span className="text-blue-600">*</span>
+                </label>
+
+                <label
+                  htmlFor="resume"
+                  className="flex items-center justify-between w-full px-5 py-4 rounded-xl border-2 border-dashed border-slate-300 bg-slate-50 hover:border-blue-500 hover:bg-blue-50 transition-all duration-300 cursor-pointer group"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center group-hover:bg-blue-600 transition-colors">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-6 h-6 text-blue-600 group-hover:text-white"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M12 11v8m0-8l-3 3m3-3l3 3"
+                        />
+                      </svg>
+                    </div>
+
+                    <div>
+                      <p className="text-sm font-semibold text-slate-800">
+                        {resumeName || "Upload your Resume"}
+                      </p>
+
+                      <p className="text-xs text-slate-500 mt-1">
+                        PDF, DOC or DOCX • Max 5 MB
+                      </p>
+                    </div>
+                  </div>
+
+                  <span className="text-xs font-bold px-3 py-1.5 rounded-lg bg-blue-600 text-white">
+                    Browse
+                  </span>
+                </label>
+
+                <input
+                  id="resume"
+                  type="file"
+                  accept=".pdf,.doc,.docx"
+                  required
+                  className="hidden"
+                  onChange={(e) => {
+                    const file = e.target.files?.[0];
+
+                    setResumeName(file?.name || "");
+
+                    setFormData((prev) => ({
+                      ...prev,
+                      resume: file || null,
+                    }));
+                  }}
+                />
+              </div>
 
             {/* Submit Button */}
             <button
