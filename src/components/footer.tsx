@@ -139,9 +139,9 @@ export function Footer() {
                 </ul>
               </div>
 
-              <div>
+              {/* <div>
                 <Button>GetQuote</Button>
-              </div>
+              </div> */}
             </div>
 
           </div>
