@@ -22,40 +22,48 @@ export function Section1() {
     }));
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-    const data = new FormData();
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
 
-    data.append("entry.2005620554", formData.name);
-    data.append("entry.1045781291", formData.email);
-    data.append("entry.1065046570", formData.phone);
-    data.append("entry.839337160", formData.message);
+  setIsSubmitting(true);
 
-    try {
-      await fetch(
-        "https://docs.google.com/forms/d/e/1FAIpQLSd5MQEUu0iSP_cvz7xMFEy9j8Eel2HIWDrWwovfu5w7lTHlHg/formResponse",
-        {
-          method: "POST",
-          mode: "no-cors",
-          body: data,
-        }
-      );
+  try {
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        fullName: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        message: formData.message,
+      }),
+    });
 
-      toast.success("Form submitted successfully");
+    const result = await response.json();
 
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        message: "",
-      });
-    } catch (err) {
-      console.error(err);
-      toast.error("Something went wrong.");
+    if (!response.ok) {
+      throw new Error(result.message || "Something went wrong.");
     }
-  };
 
+    toast.success("Your message has been sent successfully!");
+
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
+    });
+  } catch (err: any) {
+    console.error(err);
+    toast.error(err.message || "Failed to send message.");
+  } finally {
+    setIsSubmitting(false);
+  }
+};
   return (
     <section className="px-6 md:px-20 py-10 mt-20 md:mt-28 max-w-7xl mx-auto w-full">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
@@ -143,9 +151,13 @@ export function Section1() {
               />
             </div>
 
-            <Button type="submit" className="w-full sm:w-auto">
-              SUBMIT
-            </Button>
+            <Button
+  type="submit"
+  disabled={isSubmitting}
+  className="w-full sm:w-auto"
+>
+  {isSubmitting ? "SENDING..." : "SUBMIT"}
+</Button>
           </form>
         </div>
 
