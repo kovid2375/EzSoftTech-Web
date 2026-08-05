@@ -88,7 +88,7 @@ const processSteps = [
       "Usability Testing"
     ],
     estimatedTime: "3 - 5 Days",
-    image: "/image.png",
+    image: "/saas aplication1.png",
     floatingBadges: [
       { icon: SiFigma, color: "#F24E1E", name: "UI/UX" },
       { icon: Sparkles, color: "#8B5CF6", name: "Design" },
