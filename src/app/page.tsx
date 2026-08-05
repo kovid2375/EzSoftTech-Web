@@ -13,7 +13,6 @@ export default function Main() {
     <div className="">
 
       <Hero />
-      {/* <LogoSection /> */}
       <AboutUsSection />
       <ExpertiseSection />
       <ServicesSection />
