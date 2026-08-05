@@ -1,6 +1,6 @@
 "use client"
 
-import { Smartphone, MonitorSmartphone, Building2, MonitorPlay, BotMessageSquare, ChartNoAxesCombined } from 'lucide-react';
+import { Smartphone, MonitorSmartphone, Building2, MonitorPlay, BotMessageSquare, ChartNoAxesCombined,MonitorCloud,ShoppingCart,ShoppingBag,HousePlug } from 'lucide-react';
 import Link from 'next/link';
 
 export function Section2(){
@@ -164,6 +164,102 @@ export function Section2(){
                     </div>
                   </div>
                 </Link>
+                {/* 7. SAAS APLICATIONS */}
+                <Link href="/services" className="group block h-full text-left bg-black">
+                  <div className="pt-10 px-6 sm:px-8 pb-0 flex flex-col justify-between min-h-[440px] h-full sm:h-[460px] transition-all duration-300 hover:bg-neutral-950/80">
+                    <div>
+                      <h3 className="text-xl flex items-center gap-3 font-semibold text-white mb-3 tracking-tight font-plus-jakarta">
+                        <MonitorCloud className="text-green-700" size={24} />
+                        SAAS Applications
+                      </h3>
+                      <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-normal">
+                        From idea to deployment, we build secure, scalable SaaS products featuring user management, billing systems, dashboards, and cloud-native architecture for long-term success
+                      </p>
+                    </div>
+                    <div className="relative mt-6 w-full px-2 pb-6">
+                      <div className="relative w-full h-[250px] rounded-xl overflow-hidden border border-neutral-800 bg-neutral-950">
+                        <img 
+                          src="/saas aplication1.png" 
+                          alt="Digital Marketing"
+                          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+
+                {/* 8. ECOMMERCE DEVELOPMENT */}
+                <Link href="/services" className="group block h-full text-left bg-black">
+                  <div className="pt-10 px-6 sm:px-8 pb-0 flex flex-col justify-between min-h-[440px] h-full sm:h-[460px] transition-all duration-300 hover:bg-neutral-950/80">
+                    <div>
+                      <h3 className="text-xl flex items-center gap-3 font-semibold text-white mb-3 tracking-tight font-plus-jakarta">
+                        <ShoppingCart className="text-blue-700" size={24} />
+                        E-Commerce Development
+                      </h3>
+                      <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-normal">
+                        Build high-performance e-commerce platforms with secure payments, intuitive shopping experiences, inventory management, and scalable architecture to grow your online business.
+                      </p>
+                    </div>
+                    <div className="relative mt-6 w-full px-2 pb-6">
+                      <div className="relative w-full h-[250px] rounded-xl overflow-hidden border border-neutral-800 bg-neutral-950">
+                        <img 
+                          src="/e-commerce.png" 
+                          alt="Digital Marketing"
+                          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+
+                {/* 9.QUICK Commerce */}
+                <Link href="/services" className="group block h-full text-left bg-black">
+                  <div className="pt-10 px-6 sm:px-8 pb-0 flex flex-col justify-between min-h-[440px] h-full sm:h-[460px] transition-all duration-300 hover:bg-neutral-950/80">
+                    <div>
+                      <h3 className="text-xl flex items-center gap-3 font-semibold text-white mb-3 tracking-tight font-plus-jakarta">
+                        <ShoppingBag className="text-red-700" size={24} />
+                        Quick Commerce
+                      </h3>
+                      <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-normal">
+                        Build high-speed quick commerce platforms with real-time inventory, instant order processing, smart delivery management, and seamless payment integration to deliver products in minutes.
+                      </p>
+                    </div>
+                    <div className="relative mt-6 w-full px-2 pb-6">
+                      <div className="relative w-full h-[250px] rounded-xl overflow-hidden border border-neutral-800 bg-neutral-950">
+                        <img 
+                          src="/quickCommerce.png" 
+                          alt="Digital Marketing"
+                          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+
+                {/* 10.GCC- GLOBAL COMPATIBILITY CENTER */}
+                <Link href="/services" className="group block h-full text-left bg-black">
+                  <div className="pt-10 px-6 sm:px-8 pb-0 flex flex-col justify-between min-h-[440px] h-full sm:h-[460px] transition-all duration-300 hover:bg-neutral-950/80">
+                    <div>
+                      <h3 className="text-xl flex items-center gap-3 font-semibold text-white mb-3 tracking-tight font-plus-jakarta">
+                        <HousePlug className="text-yellow-400" size={24} />
+                        GCC - Global Capability Center
+                      </h3>
+                      <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-normal">
+                        Build world-class Global Capability Centers that drive innovation, streamline enterprise operations, and deliver scalable technology, engineering, and business support across global markets.
+                      </p>
+                    </div>
+                    <div className="relative mt-6 w-full px-2 pb-6">
+                      <div className="relative w-full h-[250px] rounded-xl overflow-hidden border border-neutral-800 bg-neutral-950">
+                        <img 
+                          src="/gcc.png" 
+                          alt="Digital Marketing"
+                          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+                
               </div>
             </section>
         </div>
