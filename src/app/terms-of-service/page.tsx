@@ -31,13 +31,13 @@ const sections: Section[] = [
     id: 'service-agreement',
     title: 'Service Agreement',
     icon: Briefcase,
-    body: 'By engaging EZ Soft Tech for software development, consulting, or related technology services, you acknowledge and agree to the terms outlined in this Service Agreement. All project requirements, objectives, deliverables, timelines, and pricing must be clearly documented and mutually agreed upon before work begins. Any modifications or additions to the agreed project scope may require additional development time, revised timelines, and corresponding costs. Throughout the project, both parties are expected to maintain regular communication and provide timely feedback to ensure smooth collaboration and successful project delivery. Upon fulfillment of the agreed payment terms, EZ Soft Tech will provide the final project deliverables, including all applicable files, documentation, and assets as specified in the project agreement.',
+    body: 'By engaging EZ GLOBAL for software development, consulting, or related technology services, you acknowledge and agree to the terms outlined in this Service Agreement. All project requirements, objectives, deliverables, timelines, and pricing must be clearly documented and mutually agreed upon before work begins. Any modifications or additions to the agreed project scope may require additional development time, revised timelines, and corresponding costs. Throughout the project, both parties are expected to maintain regular communication and provide timely feedback to ensure smooth collaboration and successful project delivery. Upon fulfillment of the agreed payment terms, EZ GLOBAL will provide the final project deliverables, including all applicable files, documentation, and assets as specified in the project agreement.',
   },
   {
     id: 'payment-terms',
     title: 'Payment Terms',
     icon: CreditCard,
-    body: 'To ensure a smooth and transparent working relationship, EZ Soft Tech follows a structured payment process for all projects. A 50% advance payment is required before project development begins to confirm engagement and allocate resources. The remaining project cost is typically divided into predefined milestone payments, which become due upon the successful completion of agreed project phases. The final balance must be paid before the delivery, deployment, or transfer of the completed project and associated deliverables. Payments not received by the agreed due date may be subject to late payment charges or interest, as permitted by applicable laws and the project agreement. Any requests for refunds will be evaluated based on the project\'s stage of completion, work already performed, and the terms specified in the individual service contract.',
+    body: 'To ensure a smooth and transparent working relationship, EZ GLOBAL follows a structured payment process for all projects. A 50% advance payment is required before project development begins to confirm engagement and allocate resources. The remaining project cost is typically divided into predefined milestone payments, which become due upon the successful completion of agreed project phases. The final balance must be paid before the delivery, deployment, or transfer of the completed project and associated deliverables. Payments not received by the agreed due date may be subject to late payment charges or interest, as permitted by applicable laws and the project agreement. Any requests for refunds will be evaluated based on the project\'s stage of completion, work already performed, and the terms specified in the individual service contract.',
   },
   {
     id: 'intellectual-property',
@@ -49,8 +49,8 @@ const sections: Section[] = [
         body: 'Upon receipt of full payment for the agreed services, the client will own all custom-developed software, source code, applications, and other deliverables specifically created for the project, as outlined in the project agreement. This ownership excludes any third-party software, open-source libraries, frameworks, APIs, plugins, or tools that are governed by their respective licenses and terms of use.',
       },
       {
-        title: 'EZ Soft Tech Rights',
-        body: "While the client retains ownership of the custom project deliverables, EZ Soft Tech reserves the right to retain ownership of its proprietary methodologies, development processes, technical know-how, reusable code components, internal frameworks, templates, utilities, and best practices developed independently of the project. With the client's prior consent, EZ Soft Tech may also showcase the completed project, including non-confidential information, as part of its portfolio, case studies, marketing materials, or promotional content to demonstrate its expertise and capabilities.",
+        title: 'EZ GLOBAL Tech Rights',
+        body: "While the client retains ownership of the custom project deliverables, EZ GLOBAL reserves the right to retain ownership of its proprietary methodologies, development processes, technical know-how, reusable code components, internal frameworks, templates, utilities, and best practices developed independently of the project. With the client's prior consent, EZ GLOBAL may also showcase the completed project, including non-confidential information, as part of its portfolio, case studies, marketing materials, or promotional content to demonstrate its expertise and capabilities.",
       },
     ],
   },
@@ -61,11 +61,11 @@ const sections: Section[] = [
     subsections: [
       {
         title: 'Service Warranty',
-        body: 'EZ Soft Tech is committed to delivering high-quality software solutions that meet the agreed project requirements. We provide a 90-day warranty from the date of project delivery to cover software defects or issues directly resulting from our development work. During this warranty period, eligible bugs and defects will be resolved at no additional cost. Any ongoing support, feature enhancements, maintenance, or updates beyond the warranty period can be provided through a separate support and maintenance agreement tailored to the client\'s requirements.',
+        body: 'EZ GLOBAL is committed to delivering high-quality software solutions that meet the agreed project requirements. We provide a 90-day warranty from the date of project delivery to cover software defects or issues directly resulting from our development work. During this warranty period, eligible bugs and defects will be resolved at no additional cost. Any ongoing support, feature enhancements, maintenance, or updates beyond the warranty period can be provided through a separate support and maintenance agreement tailored to the client\'s requirements.',
       },
       {
         title: 'Limitations of Liability',
-        body: "While we make every effort to deliver reliable and secure software solutions, EZ Soft Tech's liability is limited to the total value of the project or services provided. We are not responsible for indirect, incidental, consequential, or special damages, including loss of profits, business interruption, or data loss. Additionally, we cannot be held liable for issues arising from third-party services, APIs, software, hosting providers, cloud platforms, or other external dependencies beyond our control. The performance, availability, and scalability of the delivered solution may also vary depending on the client's hosting environment, infrastructure, network conditions, and third-party service providers.",
+        body: "While we make every effort to deliver reliable and secure software solutions, EZ GLOBAL's liability is limited to the total value of the project or services provided. We are not responsible for indirect, incidental, consequential, or special damages, including loss of profits, business interruption, or data loss. Additionally, we cannot be held liable for issues arising from third-party services, APIs, software, hosting providers, cloud platforms, or other external dependencies beyond our control. The performance, availability, and scalability of the delivered solution may also vary depending on the client's hosting environment, infrastructure, network conditions, and third-party service providers.",
       },
     ],
   },
@@ -73,13 +73,13 @@ const sections: Section[] = [
     id: 'project-termination',
     title: 'Project Termination',
     icon: AlertTriangle,
-    body: "Either the client or EZ Soft Tech may terminate a project by providing 30 days' written notice, provided the project is not subject to critical deadlines or other contractual obligations requiring continued engagement. Either party may also terminate the agreement immediately in the event of a material breach of contract, including but not limited to non-payment, failure to meet agreed obligations, or violation of the terms and conditions. In the event of termination, the client shall be responsible for payment of all work completed, approved milestones, and any expenses incurred up to the effective date of termination. Upon receipt of all outstanding payments, EZ Soft Tech will deliver the completed work, project assets, and relevant documentation produced up to the termination date, in accordance with the agreed project scope and contractual terms.",
+    body: "Either the client or EZ GLOBAL may terminate a project by providing 30 days' written notice, provided the project is not subject to critical deadlines or other contractual obligations requiring continued engagement. Either party may also terminate the agreement immediately in the event of a material breach of contract, including but not limited to non-payment, failure to meet agreed obligations, or violation of the terms and conditions. In the event of termination, the client shall be responsible for payment of all work completed, approved milestones, and any expenses incurred up to the effective date of termination. Upon receipt of all outstanding payments, EZ GLOBAL will deliver the completed work, project assets, and relevant documentation produced up to the termination date, in accordance with the agreed project scope and contractual terms.",
   },
   {
     id: 'governing-law',
     title: 'Governing Law',
     icon: Scale,
-    body: 'These Terms and Conditions shall be governed by and interpreted in accordance with the laws of India. Any dispute, claim, or controversy arising out of or relating to these terms, the services provided by EZ Soft Tech, or any related agreement shall first be resolved through good-faith discussions and mutual negotiation between the parties. If a resolution cannot be reached amicably, the dispute shall be referred to arbitration in Bilaspur, Chhattisgarh, in accordance with the provisions of the Arbitration and Conciliation Act, 1996, as amended from time to time. The decision of the arbitrator shall be final and binding on both parties. Subject to the foregoing, the courts located in Bilaspur, Chhattisgarh, India, shall have exclusive jurisdiction over any matters arising under these terms where applicable.',
+    body: 'These Terms and Conditions shall be governed by and interpreted in accordance with the laws of India. Any dispute, claim, or controversy arising out of or relating to these terms, the services provided by EZ GLOBAL, or any related agreement shall first be resolved through good-faith discussions and mutual negotiation between the parties. If a resolution cannot be reached amicably, the dispute shall be referred to arbitration in Raipur, Chhattisgarh, in accordance with the provisions of the Arbitration and Conciliation Act, 1996, as amended from time to time. The decision of the arbitrator shall be final and binding on both parties. Subject to the foregoing, the courts located in Raipur, Chhattisgarh, India, shall have exclusive jurisdiction over any matters arising under these terms where applicable.',
   },
 ];
 
@@ -144,7 +144,7 @@ function TermsOfService() {
             Terms of <span className="text-blue-600">Service</span>
           </h1>
           <p className="mt-4 max-w-2xl text-lg leading-relaxed text-slate-600">
-            These terms govern your engagement with EZ Soft Tech for software
+            These terms govern your engagement with EZ GLOBAL for software
             development and related technology services. Please read them
             carefully before work begins.
           </p>
@@ -266,7 +266,7 @@ function TermsOfService() {
                   </h3>
                   <p className="mt-1 text-sm text-slate-600">
                     We're happy to clarify any part of these terms and how they
-                    apply to your engagement with EZ Soft Tech.
+                    apply to your engagement with EZ GLOBAL.
                   </p>
                 </div>
                 <Link
@@ -290,7 +290,7 @@ function TermsOfService() {
               <Scale className="h-4 w-4 text-blue-600" />
               Clear terms, fair engagement.
             </p>
-            <p>© {new Date().getFullYear()} EZ Soft Tech. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} EZ GLOBAL. All rights reserved.</p>
           </div>
         </div>
       </footer>

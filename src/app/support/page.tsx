@@ -257,9 +257,9 @@ function SupportPage() {
           <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
             <p className="flex items-center gap-2">
               <Headphones className="h-4 w-4 text-[#0951DE]" />
-              EZ Soft Tech Support
+              EZ GLOBAL Support
             </p>
-            <p>© {new Date().getFullYear()} EZ Soft Tech. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} EZ GLOBAL. All rights reserved.</p>
           </div>
         </div>
       </footer>
