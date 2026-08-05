@@ -95,6 +95,7 @@ export const Navbar = ({ children, className }: NavbarProps) => {
 export const NavBody = ({ children, className, visible }: NavBodyProps) => {
   return (
     <motion.div
+      initial={false}
       animate={{
         backdropFilter: "blur(8px) ",
         boxShadow: visible
@@ -116,7 +117,7 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
         backgroundColor: "rgba(255, 255, 255, 0.42)",
       }}
       className={cn(
-        "relative z-[60] mx-auto hidden w-full flex-row items-center justify-between rounded-full lg:flex transition-all duration-300 text-black backdrop-blur-2xl",
+        "relative z-[60] mx-auto hidden w-full flex-row items-center justify-between rounded-full lg:flex text-black backdrop-blur-2xl",
         className,
       )}
     >
@@ -160,6 +161,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
 export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
   return (
     <motion.div
+      initial={false}
       animate={{
         backdropFilter: "blur(8px) saturate(190%)",
         boxShadow: "0 15px 35px -8px rgba(0, 0, 0, 0.35), 0 8px 20px rgba(37, 99, 235, 0.15), inset 0 1px 0 0 rgba(255, 255, 255, 0.18)",
@@ -177,7 +179,7 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
         backgroundColor: "rgba(255, 255, 255, 0.42)",
       }}
       className={cn(
-        "relative z-50 mx-auto flex w-full flex-col items-center justify-between rounded-full px-5 lg:hidden transition-all duration-300 text-black backdrop-blur-2xl",
+        "relative z-50 mx-auto flex w-full flex-col items-center justify-between rounded-full px-5 lg:hidden text-black backdrop-blur-2xl",
         className,
       )}
     >
@@ -251,9 +253,9 @@ export const NavbarLogo = () => {
     <div className="">
       <Link href="/" className="flex items-center shrink-0 opacity-100 h-10 md:h-14 overflow-visible">
       <img
-        src="/ez-logo.png"
+        src="/EZGLOBAL.png"
         alt="EZ Soft Tech"
-        className="h-full w-auto object-contain transition-all duration-200 opacity-100"
+        className="h-full w-35 object-contain transition-all duration-200 opacity-100"
       />
     </Link>
     </div>
@@ -296,13 +298,13 @@ export const ResizableNavbar = () => {
 
   const expertiseList = [
     {
-      name: "Web Development",
+      name: "Enterprise Web Application",
       desc: "Custom web apps & responsive portals",
       link: "/services/web-dev",
       icon: Globe,
     },
     {
-      name: "Mobile Applications",
+      name: "Native and Cross Platform Application",
       desc: "iOS & Android mobile experiences",
       link: "/services/app-dev",
       icon: Smartphone,

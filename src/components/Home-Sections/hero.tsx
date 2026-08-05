@@ -153,7 +153,7 @@ export default function Hero() {
 
                     {/* Subheading */}
                     <p className="mt-10 text-neutral-600 text-sm sm:text-base md:text-md font-medium tracking-wide max-w-2xl leading-relaxed">
-                        EZ Soft Tech transforms ideas into powerful digital products.<br className="hidden sm:inline" />
+                        EZGlobal transforms ideas into powerful digital products.<br className="hidden sm:inline" />
                         From modern websites and mobile apps to custom software and <br className="hidden sm:inline" />
                         business automation, we create scalable technology solutions.
                     </p>

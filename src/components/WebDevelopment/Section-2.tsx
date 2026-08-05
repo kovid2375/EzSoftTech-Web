@@ -116,7 +116,7 @@ export default function Section2() {
               <div className="w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-yellow-400" />
               <div className="w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-green-400" />
               <div className="h-4 w-28 sm:w-40 bg-white border border-neutral-200/60 rounded-md mx-auto flex items-center justify-center text-[8px] sm:text-[9px] text-neutral-400 font-mono truncate px-1">
-                ezsoft.tech/dashboard
+                ezglobal/dashboard
               </div>
             </div>
             <div className="relative w-full h-full overflow-hidden bg-neutral-950">

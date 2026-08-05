@@ -13,13 +13,13 @@ interface FaqItem {
 const faqData: FaqItem[] = [
   {
     key: "faq-1",
-    question: "What services does EZ Soft Tech offer in Bilaspur?",
-    answer: "EZ Soft Tech offers comprehensive software development services in Bilaspur including website development, mobile app development (iOS & Android), custom software solutions, business automation, billing software, API development, and digital marketing services. We serve clients locally in Chhattisgarh and globally in UK, UAE, and USA."
+    question: "What services does EZGlobal offer in Raipur?",
+    answer: "EZGlobal offers comprehensive software development services in Raipur including website development, mobile app development (iOS & Android), custom software solutions, business automation, billing software, API development, and digital marketing services. We serve clients locally in Chhattisgarh and globally in UK, UAE, and USA."
   },
   {
     key: "faq-2",
-    question: "How much does website development cost in Bilaspur?",
-    answer: "Website development costs vary based on project requirements. At EZ Soft Tech, we offer competitive pricing starting from ₹15,000 for basic websites to ₹2,00,000+ for complex web applications. We provide free consultations and detailed quotes tailored to your specific needs. Contact us for a customized estimate."
+    question: "How much does website development cost in Raipur?",
+    answer: "Website development costs vary based on project requirements. At EZGlobal, we offer competitive pricing starting from ₹15,000 for basic websites to ₹2,00,000+ for complex web applications. We provide free consultations and detailed quotes tailored to your specific needs. Contact us for a customized estimate."
   },
   {
     key: "faq-3",
@@ -34,7 +34,7 @@ const faqData: FaqItem[] = [
   {
     key: "faq-5",
     question: "Can you help with digital marketing for my business?",
-    answer: "Absolutely! As a digital marketing company in Bilaspur, we offer SEO optimization, social media marketing, Google Ads management, content marketing, and email marketing services. Our strategies are designed to increase your online visibility and generate quality leads."
+    answer: "Absolutely! As a digital marketing company in Raipur, we offer SEO optimization, social media marketing, Google Ads management, content marketing, and email marketing services. Our strategies are designed to increase your online visibility and generate quality leads."
   },
   {
     key: "faq-6",
@@ -69,7 +69,7 @@ export function FaqSection() {
             </h2>
             {/* Paragraph Description */}
             <p className="text-sm md:text-base text-neutral-500 leading-relaxed max-w-sm">
-              Find answers to common questions about our software development services in Bilaspur and Chhattisgarh.
+              Find answers to common questions about our software development services in Raipur, Chhattisgarh.
             </p>
           {/* Dark CTA Card */}
           <div className="bg-[#0b0f19] text-white rounded-[2rem] p-8 md:p-10 mt-12 flex flex-col sm:flex-col sm:items-center justify-between gap-6 relative overflow-hidden shadow-xl border border-slate-800">

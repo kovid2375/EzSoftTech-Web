@@ -12,7 +12,7 @@ export default function Section1() {
                 </div>
                 <div className="flex flex-col">
                     <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-neutral-900 leading-tight">
-                        WEB DEVELOPMENT
+                        Enterprise Web Application
                     </h1>
                 </div>
             </div>
@@ -24,7 +24,7 @@ export default function Section1() {
                         Overview
                     </h2>
                     <p className="text-base sm:text-lg text-neutral-600 leading-relaxed">
-                        At EZ Soft Tech, we build modern, high-performing websites that help businesses establish a strong digital presence and achieve their goals. Our skilled web development team combines the latest technologies, responsive design principles, and industry best practices to create <span className="text-blue-600 font-bold">fast, secure, and scalable web solutions</span> tailored to your unique requirements.
+                        At EZGlobal, we build modern, high-performing websites that help businesses establish a strong digital presence and achieve their goals. Our skilled web development team combines the latest technologies, responsive design principles, and industry best practices to create <span className="text-blue-600 font-bold">fast, secure, and scalable web solutions</span> tailored to your unique requirements.
                     </p>
                     <p className="text-base sm:text-lg text-neutral-600 leading-relaxed">
                         Our Web Development services include <span className="text-blue-700 font-bold">  responsive website development, custom web applications, eCommerce solutions, CMS development, API integration, performance optimization, SEO-friendly architecture, and ongoing support</span>.We focus on delivering engaging digital experiences that not only look great but also improve user engagement, streamline business operations, and drive measurable growth for your business.

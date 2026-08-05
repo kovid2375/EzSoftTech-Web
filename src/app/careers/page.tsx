@@ -18,7 +18,7 @@ const JOB_OPENINGS = [
     title: "Full Stack Developer",
     department: "Engineering",
     type: "Full-time",
-    location: "Bilaspur / Hybrid",
+    location: "Raipur / Remote",
     icon: Code,
     description: "Build high-performance web applications with React, Next.js, and Node.js.",
     requirements: ["experience in React/Next.js", "Node.js & PostgreSQL/MongoDB", "REST APIs & GraphQL"],
@@ -27,7 +27,7 @@ const JOB_OPENINGS = [
     title: "Frontend Developer",
     department: "Engineering",
     type: "Full-time",
-    location: "Bilaspur / Remote",
+    location: "Raipur / Remote",
     icon: Layout,
     description: "Craft responsive, state-of-the-art user interfaces with modern CSS and Tailwind.",
     requirements: ["Proficient in TypeScript & React", "TailwindCSS & animation libraries", "Responsive web design"],
@@ -45,7 +45,7 @@ const JOB_OPENINGS = [
     title: "UI /UX Developer",
     department: "Design",
     type: "Full-time",
-    location: "Bilaspur / Hybrid",
+    location: "Bilaspur / Remote",
     icon: Layout,
     description: "Design pixel-perfect interfaces, user flows, wireframes, and design systems.",
     requirements: ["Figma & Adobe Creative Suite", "Design system architecture", "User research & prototyping"],
@@ -54,7 +54,7 @@ const JOB_OPENINGS = [
     title: "Devops Engineer",
     department: "Infrastructure",
     type: "Full-time",
-    location: "Bilaspur / Remote",
+    location: "Raipur / Remote",
     icon: Cloud,
     description: "Automate CI/CD pipelines, manage AWS/GCP infrastructure, and optimize security.",
     requirements: ["Docker, Kubernetes & Terraform", "CI/CD (GitHub Actions / GitLab)", "Cloud infrastructure (AWS/GCP)"],
@@ -63,7 +63,7 @@ const JOB_OPENINGS = [
     title: "Digital Marketing",
     department: "Growth",
     type: "Full-time",
-    location: "Bilaspur / On-site",
+    location: "Raipur / Remote",
     icon: Megaphone,
     description: "Drive SEO strategies, PPC campaigns, social media growth, and content marketing.",
     requirements: ["SEO/SEM & Google Analytics", "Social media strategy", "Content creation & ad campaigns"],
@@ -173,7 +173,7 @@ export default function JoinUsPage() {
             Build the <span className="text-blue-600">Future</span> With Us
           </h1>
           <p className="text-slate-600 text-base sm:text-lg leading-relaxed font-medium">
-            Join EZ Soft Tech and work on transformative digital products. We're looking for passionate minds to shape next-generation software solutions.
+            Join EZGLOBAL and work on transformative digital products. We're looking for passionate minds to shape next-generation software solutions.
           </p>
         </div>
 

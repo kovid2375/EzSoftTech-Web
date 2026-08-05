@@ -20,7 +20,7 @@ export function ExpertiseSection() {
 
       {/* Subtitle */}
       <p className="text-base sm:text-lg md:text-xl text-neutral-500 max-w-3xl mx-auto leading-relaxed mb-12">
-        EZ Soft Tech offers comprehensive software development services in Bilaspur <br className="hidden md:inline" />
+        EZGlobal offers comprehensive software development services in Raipur, Chhattisgarh <br className="hidden md:inline" />
         we handle every aspect of software development.
       </p>
 
@@ -78,9 +78,9 @@ export function ExpertiseSection() {
             </div>
           </div>
           {/* Metadata */}
-          <h3 className="text-xl md:text-2xl font-semibold text-neutral-900 mb-2">Website Development</h3>
+          <h3 className="text-xl md:text-2xl font-semibold text-neutral-900 mb-2">Enterprise Web Application</h3>
           <p className="text-sm md:text-base text-neutral-500 max-w-sm mx-auto leading-relaxed">
-            Design and launch modern, blazing-fast websites with optimized SEO, responsive grids, and clean design language.
+            Building powerful, custom web applications that handle complex workflows, large datasets, and enterprise-grade security requirements.
           </p>
         </div>
 
@@ -132,7 +132,7 @@ export function ExpertiseSection() {
             </div>
           </div>
           {/* Metadata */}
-          <h3 className="text-xl md:text-2xl font-semibold text-neutral-900 mb-2">App Development</h3>
+          <h3 className="text-xl md:text-2xl font-semibold text-neutral-900 mb-2">Native and Cross Platform Applications</h3>
           <p className="text-sm md:text-base text-neutral-500 max-w-sm mx-auto leading-relaxed">
             Build native-feeling iOS and Android applications with offline capabilities, push alerts, and intuitive layouts.
           </p>

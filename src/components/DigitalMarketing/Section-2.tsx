@@ -145,7 +145,7 @@ export default function Section2() {
                 </div>
                 <div className="flex flex-col gap-1.5 text-[10px] sm:text-[11px] text-neutral-600">
                   <div className="flex justify-between">
-                    <span className="font-medium text-neutral-800 truncate pr-2">best software company bilaspur</span>
+                    <span className="font-medium text-neutral-800 truncate pr-2">best software company Raipur</span>
                     <span className="font-mono text-emerald-600 font-bold flex-shrink-0">#1</span>
                   </div>
                   <div className="flex justify-between border-t border-neutral-100/50 pt-1.5">

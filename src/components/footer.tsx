@@ -22,11 +22,11 @@ export function Footer() {
           {/* Column 1 - Brand Info */}
           <div className="lg:col-span-5 flex flex-col items-start">
             {/* Logo */}
-            <img className='w-50' src="/ez-logo.png" alt="" />
+            <img className='w-50' src="/EZGLOBAL1.png" alt="" />
 
             {/* Description */}
             <p className="text-sm text-neutral-400 leading-relaxed mt-1 max-w-sm">
-              EZ Soft Tech is the leading <strong className="text-neutral-200 font-semibold">software development company in Bilaspur, Chhattisgarh</strong>. We deliver world-class website development, mobile app development, and billing software solutions to clients across India, UK, UAE, and USA.
+              EZGlobal is the leading <strong className="text-neutral-200 font-semibold">software development company in Raipur, Chhattisgarh</strong>. We deliver world-class website development, mobile app development, and billing software solutions to clients across India, UK, UAE, and USA.
             </p>
 
             {/* Social Icons */}
@@ -100,7 +100,7 @@ export function Footer() {
               <div className="mt-8">
                 <h5 className="text-[11px] font-bold uppercase tracking-wider text-neutral-500 mb-2">Headquarters</h5>
                 <p className="text-xs text-neutral-400 leading-relaxed font-normal">
-                  3rd Floor, Infinity Business Park,<br />Vyapar Vihar, Bilaspur (C.G)<br />India 495001
+                  3rd Floor, Block E, Lk Corporates Tower, New Dhamtari Road Dumartarai, Raipur, Chhattisgarh 492015
                 </p>
               </div>
             </div>
@@ -133,7 +133,7 @@ export function Footer() {
                       <circle cx="12" cy="10" r="3"></circle>
                     </svg>
                     <span className="leading-relaxed font-normal">
-                      3rd Floor, Infinity Business Park, Vyapar Vihar, Bilaspur (C.G)
+                      3rd Floor, Block E, Lk Corporates Tower, New Dhamtari Road Dumartarai, Raipur, Chhattisgarh 492015
                     </span>
                   </li>
                 </ul>
@@ -151,8 +151,8 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-neutral-900/60 pt-8 flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-neutral-500">
           <p className="text-center md:text-left leading-relaxed">
-            &copy; {new Date().getFullYear()} EZ Soft Tech. All rights reserved. <span className="hidden sm:inline">|</span> <br className="sm:hidden" />
-            <span className="text-neutral-600">Software Company in Bilaspur, Chhattisgarh</span>
+            &copy; {new Date().getFullYear()} EZGlobal. All rights reserved. <span className="hidden sm:inline">|</span> <br className="sm:hidden" />
+            <span className="text-neutral-600">Software Company in Raipur, Chhattisgarh</span>
           </p>
           <div className="flex flex-wrap justify-center gap-x-5 gap-y-2">
             <Link href="/privacy-policy" className="hover:text-neutral-300 transition-colors duration-200">

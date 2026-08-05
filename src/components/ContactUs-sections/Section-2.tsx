@@ -6,10 +6,10 @@ import Button from "@/components/button";
 
 export function Section2() {
   const mapEmbedUrl =
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3697.502488562641!2d82.14167786048876!3d22.068618979769912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a280b14b986792b%3A0xa1f0ad35d69d16d5!2sEZ%20Soft%20tech!5e0!3m2!1sen!2sin!4v1784705966125!5m2!1sen!2sin";
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.8995778475182!2d81.69085771046188!3d21.19614788041402!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a28c34ae4f42f47%3A0x4fbb8df483243127!2sL.K.%20Corporate%20And%20Logistic%20Park!5e0!3m2!1sen!2sin!4v1785925018652!5m2!1sen!2sin";
 
   const googleMapsDirectionsUrl =
-    "https://maps.app.goo.gl/JHYKnVTT65ZDyffM6";
+    "https://maps.app.goo.gl/gCutr2gFdtRMr66S6";
 
   return (
     <section className="bg-white py-9 px-4 sm:px-6 lg:px-12 text-slate-900">
@@ -21,7 +21,7 @@ export function Section2() {
               Visit Our Office
             </h2>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              Ready to start something? Drop by our Bilaspur studio, or reach out — we work with teams across India, UK, UAE, and the USA.
+              Ready to start something? Drop by our Raipur studio, or reach out — we work with teams across India, UK, UAE, and the USA.
             </p>
           </div>
 
@@ -37,7 +37,7 @@ export function Section2() {
                   Office Address
                 </p>
                 <p className="text-sm font-medium text-black mt-0.5 leading-snug">
-                  3rd Floor, Infinity Business Park, Vyapar Vihar, Bilaspur (C.G)
+                  3rd Floor, Block E, Lk Corporates Tower, New Dhamtari Road Dumartarai, Raipur, Chhattisgarh 492015
                 </p>
               </div>
             </div>

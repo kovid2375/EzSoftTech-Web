@@ -22,7 +22,7 @@ export function Section2(){
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-[1px] bg-neutral-800/40 border-y border-neutral-800/40 w-full max-w-7xl mx-auto mt-12">
                 {/* 1. Website Development */}
-                <Link href="/services/web-dev" className="group block h-full text-left bg-black">
+                <Link href="" className="group block h-full text-left bg-black">
                   <div className="pt-10 px-6 sm:px-8 pb-0 flex flex-col justify-between min-h-[440px] h-full sm:h-[460px] transition-all duration-300 hover:bg-neutral-950/80">
                     <div>
                       <h3 className="text-xl flex items-center gap-3 font-semibold text-white mb-3 tracking-tight font-plus-jakarta">
@@ -30,7 +30,7 @@ export function Section2(){
                         Website Development
                       </h3>
                       <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-normal">
-                        Custom websites and web applications built with modern technologies. As a leading website development company in Bilaspur, we deliver responsive, fast, and SEO-optimized solutions.
+                        Custom websites and web applications built with modern technologies. As a leading website development company in Raipur, we deliver responsive, fast, and SEO-optimized solutions.
                       </p>
                     </div>
                     <div className="relative mt-6 w-full px-2 pb-6">
@@ -46,7 +46,7 @@ export function Section2(){
                 </Link>
 
                 {/* 2. App Development */}
-                <Link href="/services/app-dev" className="group block h-full text-left bg-black">
+                <Link href="" className="group block h-full text-left bg-black">
                   <div className="pt-10 px-6 sm:px-8 pb-0 flex flex-col justify-between min-h-[440px] h-full sm:h-[460px] transition-all duration-300 hover:bg-neutral-950/80">
                     <div>
                       <h3 className="text-xl flex items-center gap-3 font-semibold text-white mb-3 tracking-tight font-plus-jakarta">
@@ -54,7 +54,7 @@ export function Section2(){
                         App Development
                       </h3>
                       <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-normal">
-                        Native and cross-platform mobile applications for iOS and Android. Our mobile app development company in Bilaspur creates user-friendly interfaces with robust functionality.
+                        Native and cross-platform mobile applications for iOS and Android. Our mobile app development company in Raipur creates user-friendly interfaces with robust functionality.
                       </p>
                     </div>
                     <div className="relative mt-6 w-full px-2 pb-6">
@@ -70,7 +70,7 @@ export function Section2(){
                 </Link>
 
                 {/* 3. Billing Software */}
-                <Link href="/services/business-auto" className="group block h-full text-left bg-black">
+                <Link href="" className="group block h-full text-left bg-black">
                   <div className="pt-10 px-6 sm:px-8 pb-0 flex flex-col justify-between min-h-[440px] h-full sm:h-[460px] transition-all duration-300 hover:bg-neutral-950/80">
                     <div>
                       <h3 className="text-xl flex items-center gap-3 font-semibold text-white mb-3 tracking-tight font-plus-jakarta">
@@ -94,7 +94,7 @@ export function Section2(){
                 </Link>
 
                 {/* 4. Desktop Applications */}
-                <Link href="/services/desk-app" className="group block h-full text-left bg-black">
+                <Link href="" className="group block h-full text-left bg-black">
                   <div className="pt-10 px-6 sm:px-8 pb-0 flex flex-col justify-between min-h-[440px] h-full sm:h-[460px] transition-all duration-300 hover:bg-neutral-950/80">
                     <div>
                       <h3 className="text-xl flex items-center gap-3 font-semibold text-white mb-3 tracking-tight font-plus-jakarta">
@@ -142,7 +142,7 @@ export function Section2(){
                 </Link>
 
                 {/* 6. Digital Marketing */}
-                <Link href="/services/digital-marketing" className="group block h-full text-left bg-black">
+                <Link href="" className="group block h-full text-left bg-black">
                   <div className="pt-10 px-6 sm:px-8 pb-0 flex flex-col justify-between min-h-[440px] h-full sm:h-[460px] transition-all duration-300 hover:bg-neutral-950/80">
                     <div>
                       <h3 className="text-xl flex items-center gap-3 font-semibold text-white mb-3 tracking-tight font-plus-jakarta">
@@ -150,7 +150,7 @@ export function Section2(){
                         Digital Marketing
                       </h3>
                       <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-normal">
-                        Complete digital marketing solutions in Bilaspur. High-impact SEO, social media management, targeted PPC campaigns, and analytics to grow your digital footprint.
+                        Complete digital marketing solutions in Raipur. High-impact SEO, social media management, targeted PPC campaigns, and analytics to grow your digital footprint.
                       </p>
                     </div>
                     <div className="relative mt-6 w-full px-2 pb-6">
@@ -165,7 +165,7 @@ export function Section2(){
                   </div>
                 </Link>
                 {/* 7. SAAS APLICATIONS */}
-                <Link href="/services" className="group block h-full text-left bg-black">
+                <Link href="" className="group block h-full text-left bg-black">
                   <div className="pt-10 px-6 sm:px-8 pb-0 flex flex-col justify-between min-h-[440px] h-full sm:h-[460px] transition-all duration-300 hover:bg-neutral-950/80">
                     <div>
                       <h3 className="text-xl flex items-center gap-3 font-semibold text-white mb-3 tracking-tight font-plus-jakarta">
@@ -189,7 +189,7 @@ export function Section2(){
                 </Link>
 
                 {/* 8. ECOMMERCE DEVELOPMENT */}
-                <Link href="/services" className="group block h-full text-left bg-black">
+                <Link href="" className="group block h-full text-left bg-black">
                   <div className="pt-10 px-6 sm:px-8 pb-0 flex flex-col justify-between min-h-[440px] h-full sm:h-[460px] transition-all duration-300 hover:bg-neutral-950/80">
                     <div>
                       <h3 className="text-xl flex items-center gap-3 font-semibold text-white mb-3 tracking-tight font-plus-jakarta">
@@ -213,7 +213,7 @@ export function Section2(){
                 </Link>
 
                 {/* 9.QUICK Commerce */}
-                <Link href="/services" className="group block h-full text-left bg-black">
+                <Link href="" className="group block h-full text-left bg-black">
                   <div className="pt-10 px-6 sm:px-8 pb-0 flex flex-col justify-between min-h-[440px] h-full sm:h-[460px] transition-all duration-300 hover:bg-neutral-950/80">
                     <div>
                       <h3 className="text-xl flex items-center gap-3 font-semibold text-white mb-3 tracking-tight font-plus-jakarta">
@@ -237,7 +237,7 @@ export function Section2(){
                 </Link>
 
                 {/* 10.GCC- GLOBAL COMPATIBILITY CENTER */}
-                <Link href="/services" className="group block h-full text-left bg-black">
+                <Link href="" className="group block h-full text-left bg-black">
                   <div className="pt-10 px-6 sm:px-8 pb-0 flex flex-col justify-between min-h-[440px] h-full sm:h-[460px] transition-all duration-300 hover:bg-neutral-950/80">
                     <div>
                       <h3 className="text-xl flex items-center gap-3 font-semibold text-white mb-3 tracking-tight font-plus-jakarta">

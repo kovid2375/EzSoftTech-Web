@@ -19,9 +19,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "EZ Soft Tech | Best Software Company in Bilaspur, Chhattisgarh",
-  description: "EZ Soft Tech is the leading software development company in Bilaspur, Chhattisgarh. We offer website development, mobile app development, billing software & digital marketing services. Serving India, UK, UAE & USA.",
-  keywords:"software company in Bilaspur, website development company in Bilaspur, mobile app development company in Bilaspur, digital marketing company in Bilaspur, billing software provider in Chhattisgarh, IT company Bilaspur, web development Chhattisgarh"
+  title: "EZGLOBAL | Best Software Company in Raipur, Chhattisgarh",
+  description: "EZGLOBAL is the leading software development company in Raipur, Chhattisgarh. We offer website development, mobile app development, billing software & digital marketing services. Serving India, UK, UAE & USA.",
+  keywords:"software company in Raipur, website development company in Raipur, mobile app development company in Raipur, digital marketing company in Raipur, billing software provider in Chhattisgarh, IT company Raipur, web development Chhattisgarh"
 };
 
 export default function RootLayout({

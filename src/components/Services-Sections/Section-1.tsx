@@ -5,26 +5,7 @@ import { InfiniteMovingCards } from "../ui/infinite-moving-cards"
 import { motion } from "framer-motion"
 
 export function Section1(){
-    const items = [
-        {
-            image: "/services-3.png"
-        },
-        {
-            image: "/services-4.png"
-        },
-        {
-            image: "/services-6.png"
-        },
-        {
-            image: "/sevices-2.png"
-        },
-        {
-            image: "/services-7.png"
-        },
-        {
-            image: "/services-8.png"
-        }
-    ]
+    
     return(
         <main className="p-3">
             <div 
@@ -208,7 +189,7 @@ export function Section1(){
                             <div className="flex items-center gap-2 text-[11px] sm:text-xs text-neutral-400 font-sans">
                                 <div className="flex items-center gap-1.5 px-3 py-1 bg-[#27272a] rounded-md text-neutral-200 border border-neutral-700/50">
                                     <span className="w-1.5 h-1.5 bg-[#0b64f1] rounded-full" />
-                                    <span>ezsoft.tech/services</span>
+                                    <span>ezglobal/services</span>
                                 </div>
                             </div>
 

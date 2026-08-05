@@ -67,8 +67,8 @@ export function AboutUsSection() {
         About Us
       </div>
       <h2 className="text-2xl sm:text-5xl md:text-[42px] font-medium tracking-tight text-black leading-[1.2] md:leading-[1.15] max-w-5xl mx-auto mb-16">
-        A Trusted Software Company <br className="hidden md:inline" />
-        Dedicated to Building{" "}
+        A trusted software company <br className="hidden md:inline" />
+        dedicated to building{" "}
         <span className="group inline-flex items-center justify-center bg-sky-400 text-black rounded-full w-[38px] h-[38px] md:w-[64px] md:h-[64px] mx-1 md:mx-2 align-middle transition-transform duration-300 hover:scale-110 cursor-pointer">
           <svg
             viewBox="0 0 24 24"
@@ -108,7 +108,7 @@ export function AboutUsSection() {
               <path d="M10 22h4" />
             </svg>
           </span>{" "}
-          more adaptive Softwares
+          more adaptive softwares
         </span>
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl w-full mx-auto mt-6 text-left">
@@ -119,7 +119,7 @@ export function AboutUsSection() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-black/35" />
           <div className="relative z-10 p-6 flex justify-between items-start w-full">
-            <span className="text-white font-bold tracking-[0.25em] text-sm">EZSOFT</span>
+            <span className="text-white font-bold tracking-[0.25em] text-sm">EZGlobal</span>
             <div className="w-9 h-9 flex items-center justify-center bg-white rounded-xl text-neutral-900 shadow-sm">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
                 <line x1="18" y1="20" x2="18" y2="10" />

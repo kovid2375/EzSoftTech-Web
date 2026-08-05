@@ -24,7 +24,7 @@ export default function Section1() {
                         Overview
                     </h2>
                     <p className="text-base sm:text-lg text-neutral-600 leading-relaxed">
-                        At EZ Soft Tech, <span className="text-blue-600 font-bold">we design and build high-performance, secure, and feature-rich desktop applications for Windows, macOS, and Linux</span>. Our experienced engineering team delivers tailored desktop solutions that integrate deeply with OS-level APIs, handle intensive computations efficiently, and work seamlessly offline to optimize your business operations.
+                        At EZGlobal, <span className="text-blue-600 font-bold">we design and build high-performance, secure, and feature-rich desktop applications for Windows, macOS, and Linux</span>. Our experienced engineering team delivers tailored desktop solutions that integrate deeply with OS-level APIs, handle intensive computations efficiently, and work seamlessly offline to optimize your business operations.
                     </p>
                     <p className="text-base sm:text-lg text-neutral-600 leading-relaxed">
                         Our Desktop App Development services include cross-platform development, native OS integrations,<span className="text-blue-600 font-bold"> legacy software modernization, offline-first application architectures, enterprise ERP systems, and hardware integrations.</span> We focus on delivering responsive user interfaces, robust security, and reliable performance that streamline complex workflows and boost productivity.

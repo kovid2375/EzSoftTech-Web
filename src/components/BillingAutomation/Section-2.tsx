@@ -113,7 +113,7 @@ export default function Section2() {
             <div className="relative w-full max-w-[420px] min-h-[220px] sm:h-[250px] border border-neutral-200/80 bg-neutral-50 rounded-2xl shadow-lg overflow-hidden flex flex-col p-3 sm:p-4">
               <div className="flex justify-between items-start border-b border-neutral-200/80 pb-2 sm:pb-3">
                 <div>
-                  <h4 className="text-[11px] sm:text-xs font-bold text-neutral-900">EZ SOFT TECH PVT. LTD.</h4>
+                  <h4 className="text-[11px] sm:text-xs font-bold text-neutral-900">EZGlobal PVT. LTD</h4>
                   <p className="text-[9px] sm:text-[10px] text-neutral-400">GSTIN: 22AAAAA0000A1Z5</p>
                 </div>
                 <div className="text-right">

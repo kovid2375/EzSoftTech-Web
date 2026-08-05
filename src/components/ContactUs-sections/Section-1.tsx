@@ -82,7 +82,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 
             <p className="mt-4 text-sm md:text-base text-neutral-600 leading-relaxed">
               Ready to start your next project? Get in touch with the leading
-              software development company in Bilaspur.
+              software development company in Raipur.
             </p>
           </div>
 

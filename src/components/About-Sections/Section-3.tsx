@@ -167,7 +167,7 @@ export function Section3() {
             <div className="bg-neutral-50 p-4 rounded-xl border border-neutral-200/80 relative">
               <span className="absolute -top-3 left-4 text-3xl font-serif text-amber-500/30 leading-none">“</span>
               <p className="text-[11px] leading-relaxed text-neutral-600 italic pl-2">
-                The communication and agility of EZ Soft Tech are outstanding. They delivered the billing software 2 weeks early and supported us post-launch flawlessly.
+                The communication and agility of EZGlobal are outstanding. They delivered the billing software 2 weeks early and supported us post-launch flawlessly.
               </p>
               <div className="mt-3 flex items-center gap-2 pl-2">
                 <div className="w-6 h-6 rounded-full bg-neutral-200 flex items-center justify-center text-[10px] font-bold text-neutral-700 uppercase">
@@ -297,7 +297,7 @@ export function Section3() {
           <div className="flex justify-between items-center pt-3 border-t border-neutral-200 text-[10px] text-neutral-500">
             <span className="flex items-center gap-1.5">
               <MapPin className="w-3.5 h-3.5 text-rose-500" />
-              Chhattisgarh, Bilaspur (Core)
+              Chhattisgarh, Raipur (Core)
             </span>
             <span className="text-rose-500 font-semibold">24/7 Ops</span>
           </div>
@@ -514,7 +514,7 @@ export function Section3() {
               ( WHY CHOOSE US )
             </span>
             <h2 className="text-3xl font-semibold tracking-tight text-black leading-tight">
-              Why Choose <br />EZ Soft Tech?
+              Why Choose <br />EZGlobal?
             </h2>
             <p className="text-neutral-600 mt-2.5 text-sm leading-relaxed">
               We combine engineering excellence, transparent partnership, and global compliance to deliver products that perform.

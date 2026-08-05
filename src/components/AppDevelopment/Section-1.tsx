@@ -12,7 +12,7 @@ export default function Section1() {
                 </div>
                 <div className="flex flex-col">
                     <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-neutral-900 leading-tight">
-                        APP DEVELOPMENT
+                        Native and Cross Platform Application
                     </h1>
                 </div>
             </div>
@@ -24,7 +24,7 @@ export default function Section1() {
                         Overview
                     </h2>
                     <p className="text-base sm:text-lg text-neutral-600 leading-relaxed">
-                        At EZ Soft Tech, we develop innovative mobile applications that deliver exceptional user experiences and help businesses connect with their customers anytime, anywhere.<span className="text-blue-600 font-bold"> Our experienced app developers create high-performance, feature-rich applications for Android, iOS, and cross-platform environments</span> using modern technologies and industry best practices.
+                        At EZGlobal, we develop innovative mobile applications that deliver exceptional user experiences and help businesses connect with their customers anytime, anywhere.<span className="text-blue-600 font-bold"> Our experienced app developers create high-performance, feature-rich applications for Android, iOS, and cross-platform environments</span> using modern technologies and industry best practices.
                     </p>
                     <p className="text-base sm:text-lg text-neutral-600 leading-relaxed">
                         Our App Development services include <span className="text-blue-700 font-bold">native and cross-platform app development, enterprise mobility solutions, eCommerce applications, API integration, cloud connectivity, app maintenance, performance optimization, and ongoing updates</span>.We focus on building reliable mobile solutions that increase customer engagement, streamline operations, and accelerate business growth.

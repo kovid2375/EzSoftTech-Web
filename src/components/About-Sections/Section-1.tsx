@@ -37,12 +37,12 @@ export function Section1() {
 
                     {/* Main Heading */}
                     <h1 className="text-4xl lg:text-5xl font-semibold tracking-tight text-neutral-900 leading-[1.15] max-w-xl">
-                        About EZ Soft Tech - Leading Software Company in Bilaspur
+                        About EZGlobal - Leading software company in raipur, chhattisgarh
                     </h1>
 
                     {/* Description */}
                     <p className="text-base md:text-lg text-neutral-500 leading-relaxed mt-6 max-w-lg">
-                        Based in Bilaspur, Chhattisgarh, EZ Soft Tech is a premier software development company that has been delivering innovative digital solutions since 2019. We specialize in website development, mobile app development, billing software, and digital marketing services for clients across India, UK, UAE, and USA.
+                        Based in Raipur, Chhattisgarh, EZGlobal is a premier software development company that has been delivering innovative digital solutions since 2019. We specialize in website development, mobile app development, billing software, and digital marketing services for clients across India, UK, UAE, and USA.
                     </p>
 
                     {/* Action Button */}
@@ -55,7 +55,7 @@ export function Section1() {
 
                 {/* Right Side */}
                 <div className="w-full md:w-[60%] flex justify-center relative mt-10 md:mt-0">
-                   <video className='rounded-xl w-full border border-neutral-100/80 shadow-md' src="/About-section.mp4" loop muted autoPlay></video>
+                   <video className='rounded-xl w-full border border-neutral-100/80 shadow-md' src="/About-section-1.mp4" loop muted autoPlay></video>
                 </div>
 
             </div>

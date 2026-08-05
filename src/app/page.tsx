@@ -1,7 +1,6 @@
 import Hero from "@/components/Home-Sections/hero";
 
 import Image from "next/image";
-import LogoSection from "@/components/Home-Sections/Logo-Section";
 import { ServicesSection } from "@/components/Home-Sections/Services-Section";
 import { WhyChooseUsSection } from "@/components/Home-Sections/WhyChooseUs-Section";
 import { AboutUsSection } from "@/components/Home-Sections/AboutUs-Section";
@@ -14,7 +13,7 @@ export default function Main() {
     <div className="">
 
       <Hero />
-      <LogoSection />
+      {/* <LogoSection /> */}
       <AboutUsSection />
       <ExpertiseSection />
       <ServicesSection />
