@@ -10,7 +10,7 @@ export function Section1(){
         <main className="p-3">
             <div 
                 className="relative w-full rounded-3xl overflow-hidden flex flex-col shadow-xl bg-[#faf9f7] bg-cover bg-center"
-                style={{ backgroundImage: "url('/hero_luxury_bg.png')" }}
+                style={{ backgroundImage: "url('/hero_luxury_bg.webp')" }}
             >
                 {/* Noise Overlay */}
                 <div

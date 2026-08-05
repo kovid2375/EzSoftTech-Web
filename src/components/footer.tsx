@@ -22,7 +22,7 @@ export function Footer() {
           {/* Column 1 - Brand Info */}
           <div className="lg:col-span-5 flex flex-col items-start">
             {/* Logo */}
-            <img className='w-50' src="/EZGLOBAL1.png" alt="" />
+            <img className='w-50' src="/EZGLOBAL1.webp" alt="" />
 
             {/* Description */}
             <p className="text-sm text-neutral-400 leading-relaxed mt-1 max-w-sm">

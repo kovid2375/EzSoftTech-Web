@@ -253,7 +253,7 @@ export const NavbarLogo = () => {
     <div className="">
       <Link href="/" className="flex items-center shrink-0 opacity-100 h-10 md:h-14 overflow-visible">
       <img
-        src="/EZGLOBAL.png"
+        src="/EZGLOBAL.webp"
         alt="EZ Soft Tech"
         className="h-full w-35 object-contain transition-all duration-200 opacity-100"
       />

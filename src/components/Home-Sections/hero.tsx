@@ -12,7 +12,7 @@ export default function Hero() {
         <main className="p-3 bg-white">
             <div
                 className="relative min-h-[900px] lg:min-h-[1050px] w-full rounded-3xl overflow-hidden flex flex-col items-center pt-45 pb-12 bg-[#faf9f7] bg-cover bg-center"
-                style={{ backgroundImage: "url('/hero_luxury_bg.png')" }}
+                style={{ backgroundImage: "url('/hero_luxury_bg.webp')" }}
             >
                 {/* Noise Overlay */}
                 <div

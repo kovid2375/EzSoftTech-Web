@@ -12,7 +12,7 @@ export function Section3(){
             <p className="text-neutral-600 text-sm sm:text-base md:text-lg leading-relaxed">Contact the best software company in Raipur for a free consultation. Let's discuss your requirements and create a solution that perfectly fits your business needs.</p>
         </div>
         <div className="w-full flex justify-center lg:justify-end">
-            <img className="rounded-[32px] shadow-lg w-full h-auto object-cover max-h-[450px]" src="./services-5.png" alt="" />
+            <img className="rounded-[32px] shadow-lg w-full h-auto object-cover max-h-[450px]" src="./services-5.webp" alt="" />
         </div>
     </section>
     )

@@ -118,7 +118,7 @@ export default function Section2() {
               </div>
               <div className="relative w-full h-full overflow-hidden bg-neutral-900 pt-2 sm:pt-2.5">
                 <img 
-                  src="/appdevlopment.jpeg" 
+                  src="/appdevlopment.webp" 
                   alt="App Application Showcase"
                   className="w-full h-full object-cover object-top opacity-90 group-hover:opacity-100 transition-opacity duration-300"
                 />

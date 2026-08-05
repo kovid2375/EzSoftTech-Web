@@ -264,28 +264,28 @@ export function Section3() {
           {/* Global Locations List */}
           <div className="grid grid-cols-2 gap-2.5 flex-1 py-1">
             <div className="bg-neutral-50 border border-neutral-200/60 px-3.5 py-2.5 rounded-xl flex items-center gap-2 hover:bg-neutral-100 transition-colors duration-300">
-              <img className='rounded-xl' src="/india.png" alt="" />
+              <img className='rounded-xl' src="/india.webp" alt="" />
               <div className="overflow-hidden">
                 <span className="block text-[10px] font-bold text-neutral-800 leading-tight">India</span>
                 <span className="text-[8px] text-neutral-500 block leading-tight">Dev HQ</span>
               </div>
             </div>
             <div className="bg-neutral-50 border border-neutral-200/60 px-3.5 py-2.5 rounded-xl flex items-center gap-2 hover:bg-neutral-100 transition-colors duration-300">
-              <img className='rounded-xl' src="/usa.png" alt="" />
+              <img className='rounded-xl' src="/usa.webp" alt="" />
               <div className="overflow-hidden">
                 <span className="block text-[10px] font-bold text-neutral-800 leading-tight">USA</span>
                 <span className="text-[8px] text-neutral-500 block leading-tight">Partnership</span>
               </div>
             </div>
             <div className="bg-neutral-50 border border-neutral-200/60 px-3.5 py-2.5 rounded-xl flex items-center gap-2 hover:bg-neutral-100 transition-colors duration-300">
-              <img className='rounded-xl' src="/UK.png" alt="" />
+              <img className='rounded-xl' src="/UK.webp" alt="" />
               <div className="overflow-hidden">
                 <span className="block text-[10px] font-bold text-neutral-800 leading-tight">UK</span>
                 <span className="text-[8px] text-neutral-500 block leading-tight">Client Hub</span>
               </div>
             </div>
             <div className="bg-neutral-50 border border-neutral-200/60 px-3.5 py-2.5 rounded-xl flex items-center gap-2 hover:bg-neutral-100 transition-colors duration-300">
-              <img className='rounded-xl' src="/UAE.png" alt="" />
+              <img className='rounded-xl' src="/UAE.webp" alt="" />
               <div className="overflow-hidden">
                 <span className="block text-[10px] font-bold text-neutral-800 leading-tight">UAE</span>
                 <span className="text-[8px] text-neutral-500 block leading-tight">Regional Support</span>

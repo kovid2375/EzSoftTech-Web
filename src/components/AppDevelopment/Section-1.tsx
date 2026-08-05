@@ -32,7 +32,7 @@ export default function Section1() {
                 </div>
                 <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
                     <img 
-                        src="/app-dev.png" 
+                        src="/app-dev.webp" 
                         className="w-full max-w-lg lg:max-w-xl h-auto object-cover rounded-3xl shadow-md border border-neutral-100" 
                         alt="App Development Overview" 
                     />

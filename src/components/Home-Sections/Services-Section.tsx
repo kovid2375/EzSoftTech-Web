@@ -44,7 +44,7 @@ const processSteps = [
       "Project Roadmap"
     ],
     estimatedTime: "1 - 2 Days",
-    image: "/web-dev.png",
+    image: "/web-dev.webp",
     floatingBadges: [
       { icon: SiFigma, color: "#F24E1E", name: "Figma" },
       { icon: Code, color: "#2563EB", name: "Analysis" },
@@ -66,7 +66,7 @@ const processSteps = [
       "Sprint Breakdown"
     ],
     estimatedTime: "2 - 4 Days",
-    image: "/billing-and-software.jpeg",
+    image: "/billing-and-software.webp",
     floatingBadges: [
       { icon: SiReact, color: "#61DAFB", name: "React" },
       { icon: SiNextdotjs, color: "#000000", name: "Next.js" },
@@ -88,7 +88,7 @@ const processSteps = [
       "Usability Testing"
     ],
     estimatedTime: "3 - 5 Days",
-    image: "/saas aplication1.png",
+    image: "/saas aplication1.webp",
     floatingBadges: [
       { icon: SiFigma, color: "#F24E1E", name: "UI/UX" },
       { icon: Sparkles, color: "#8B5CF6", name: "Design" },
@@ -110,7 +110,7 @@ const processSteps = [
       "Performance Tuning"
     ],
     estimatedTime: "1 - 3 Weeks",
-    image: "/desktop.jpeg",
+    image: "/desktop.webp",
     floatingBadges: [
       { icon: Code, color: "#2563EB", name: "TypeScript" },
       { icon: SiFlutter, color: "#02569B", name: "Mobile" },
@@ -132,7 +132,7 @@ const processSteps = [
       "Load & Speed Benchmarking"
     ],
     estimatedTime: "2 - 4 Days",
-    image: "/appdevlopment.jpeg",
+    image: "/appdevlopment.webp",
     floatingBadges: [
       { icon: CheckCircle2, color: "#10B981", name: "QA Verified" },
       { icon: Shield, color: "#3B82F6", name: "Security" },
@@ -154,7 +154,7 @@ const processSteps = [
       "SEO Indexing Submission"
     ],
     estimatedTime: "1 - 2 Days",
-    image: "/Devops.jpeg",
+    image: "/Devops.webp",
     floatingBadges: [
       { icon: FaAws, color: "#FF9900", name: "AWS Cloud" },
       { icon: Cloud, color: "#0EA5E9", name: "DevOps" },
@@ -176,7 +176,7 @@ const processSteps = [
       "Performance Scaling"
     ],
     estimatedTime: "Ongoing",
-    image: "/Digital marketing.jpeg",
+    image: "/Digital marketing.webp",
     floatingBadges: [
       { icon: HeartHandshake, color: "#EC4899", name: "24/7 Support" },
       { icon: Clock, color: "#6366F1", name: "99.9% Uptime" },

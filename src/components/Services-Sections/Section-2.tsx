@@ -36,7 +36,7 @@ export function Section2(){
                     <div className="relative mt-6 w-full px-2 pb-6">
                       <div className="relative w-full h-[200px] rounded-xl overflow-hidden border border-neutral-800 bg-neutral-950">
                         <img 
-                          src="/Webdevlopment.jpeg" 
+                          src="/Webdevlopment.webp" 
                           alt="Website Development"
                           className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                         />
@@ -60,7 +60,7 @@ export function Section2(){
                     <div className="relative mt-6 w-full px-2 pb-6">
                       <div className="relative w-full h-[200px] rounded-xl overflow-hidden border border-neutral-800 bg-neutral-950">
                         <img 
-                          src="/appdevlopment.jpeg" 
+                          src="/appdevlopment.webp" 
                           alt="App Development"
                           className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                         />
@@ -84,7 +84,7 @@ export function Section2(){
                     <div className="relative mt-6 w-full px-2 pb-6">
                       <div className="relative w-full h-[200px] rounded-xl overflow-hidden border border-neutral-800 bg-neutral-950">
                         <img 
-                          src="/billing-and-software.jpeg" 
+                          src="/billing-and-software.webp" 
                           alt="Billing Software & Business Automation"
                           className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                         />
@@ -108,7 +108,7 @@ export function Section2(){
                     <div className="relative mt-6 w-full px-2 pb-6">
                       <div className="relative w-full h-[200px] rounded-xl overflow-hidden border border-neutral-800 bg-neutral-950">
                         <img 
-                          src="/desktop.jpeg" 
+                          src="/desktop.webp" 
                           alt="Desktop Applications"
                           className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                         />
@@ -132,7 +132,7 @@ export function Section2(){
                     <div className="relative mt-6 w-full px-2 pb-6">
                       <div className="relative w-full h-[200px] rounded-xl overflow-hidden border border-neutral-800 bg-neutral-950">
                         <img 
-                          src="/Devops.jpeg" 
+                          src="/Devops.webp" 
                           alt="API Development & DevOps"
                           className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                         />
@@ -156,7 +156,7 @@ export function Section2(){
                     <div className="relative mt-6 w-full px-2 pb-6">
                       <div className="relative w-full h-[200px] rounded-xl overflow-hidden border border-neutral-800 bg-neutral-950">
                         <img 
-                          src="/Digital marketing.jpeg" 
+                          src="/Digital marketing.webp" 
                           alt="Digital Marketing"
                           className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                         />
@@ -179,7 +179,7 @@ export function Section2(){
                     <div className="relative mt-6 w-full px-2 pb-6">
                       <div className="relative w-full h-[250px] rounded-xl overflow-hidden border border-neutral-800 bg-neutral-950">
                         <img 
-                          src="/saas aplication1.png" 
+                          src="/saas aplication1.webp" 
                           alt="Digital Marketing"
                           className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                         />
@@ -203,7 +203,7 @@ export function Section2(){
                     <div className="relative mt-6 w-full px-2 pb-6">
                       <div className="relative w-full h-[250px] rounded-xl overflow-hidden border border-neutral-800 bg-neutral-950">
                         <img 
-                          src="/e-commerce.png" 
+                          src="/e-commerce.webp" 
                           alt="Digital Marketing"
                           className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                         />
@@ -227,7 +227,7 @@ export function Section2(){
                     <div className="relative mt-6 w-full px-2 pb-6">
                       <div className="relative w-full h-[250px] rounded-xl overflow-hidden border border-neutral-800 bg-neutral-950">
                         <img 
-                          src="/quickCommerce.png" 
+                          src="/quickCommerce.webp" 
                           alt="Digital Marketing"
                           className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                         />
@@ -251,7 +251,7 @@ export function Section2(){
                     <div className="relative mt-6 w-full px-2 pb-6">
                       <div className="relative w-full h-[250px] rounded-xl overflow-hidden border border-neutral-800 bg-neutral-950">
                         <img 
-                          src="/gcc.png" 
+                          src="/gcc.webp" 
                           alt="Digital Marketing"
                           className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                         />

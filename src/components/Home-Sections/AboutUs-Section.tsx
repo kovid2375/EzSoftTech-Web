@@ -115,7 +115,7 @@ export function AboutUsSection() {
         <div className="relative rounded-3xl overflow-hidden min-h-[420px] flex flex-col bg-neutral-100 group shadow-sm">
           <div 
             className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-            style={{ backgroundImage: 'url("/home.png")' }}
+            style={{ backgroundImage: 'url("/home.webp")' }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-black/35" />
           <div className="relative z-10 p-6 flex justify-between items-start w-full">

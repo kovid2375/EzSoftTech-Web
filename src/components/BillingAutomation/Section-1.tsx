@@ -34,7 +34,7 @@ export default function Section1() {
                 </div>
                 <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
                     <img 
-                        src="/billing-and-software.jpeg" 
+                        src="/billing-and-software.webp" 
                         className="w-full max-w-lg lg:max-w-xl h-auto object-cover rounded-3xl shadow-md border border-neutral-100" 
                         alt="Billing Software & Business Automation Overview" 
                     />

@@ -12,7 +12,7 @@ const features = [
     title: "Quality First",
     description:
       "We never compromise on quality. Every detail matters.",
-    image: "/why-quality-first.png",
+    image: "/why-quality-first.webp",
     icon: Award,
   },
   {
@@ -20,7 +20,7 @@ const features = [
     title: "Fast Delivery",
     description:
       "On-time, every time. We value your time and meet every deadline.",
-    image: "/why-fast-delivery.png",
+    image: "/why-fast-delivery.webp",
     icon: Clock,
   },
   {
@@ -28,7 +28,7 @@ const features = [
     title: "Client Centric",
     description:
       "Your satisfaction is our priority. We listen, adapt, and deliver.",
-    image: "/why-client-centric.png",
+    image: "/why-client-centric.webp",
     icon: Users,
   },
   {
@@ -36,7 +36,7 @@ const features = [
     title: "Global Standards",
     description:
       "We follow international standards to ensure consistency and trust.",
-    image: "/why-global-standards.png",
+    image: "/why-global-standards.webp",
     icon: ShieldCheck,
   },
   {
@@ -44,7 +44,7 @@ const features = [
     title: "Global Presence",
     description:
       "A strong global footprint that allows us to serve you anywhere.",
-    image: "/why-global-presence.png",
+    image: "/why-global-presence.webp",
     icon: MapPin,
   },
 ];

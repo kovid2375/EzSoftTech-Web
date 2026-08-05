@@ -9,7 +9,7 @@ export default function Section1() {
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-6 md:gap-10 mb-10 sm:mb-16">
                 <div>
                     <span className="text-5xl sm:text-7xl md:text-8xl lg:text-[130px] text-blue-600 font-semibold leading-none tracking-tight">
-                        06.
+                        05.
                     </span>
                 </div>
                 <div className="flex flex-col">
@@ -34,7 +34,7 @@ export default function Section1() {
                 </div>
                 <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
                     <img 
-                        src="/Digital marketing.jpeg" 
+                        src="/Digital marketing.webp" 
                         className="w-full max-w-lg lg:max-w-xl h-auto object-cover rounded-3xl shadow-md border border-neutral-100" 
                         alt="Digital Marketing Overview" 
                     />
