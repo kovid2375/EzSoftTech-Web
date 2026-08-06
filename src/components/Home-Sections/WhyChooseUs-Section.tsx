@@ -9,41 +9,41 @@ import Button from "@/components/button";
 const features = [
   {
     id: 1,
-    title: "Quality First",
+    title: "Security by defaul",
     description:
-      "We never compromise on quality. Every detail matters.",
+      "access control, encryption and audit trails designed in from the first sprint",
     image: "/why-quality-first.webp",
     icon: Award,
   },
   {
     id: 2,
-    title: "Fast Delivery",
+    title: "Performance as a requirement",
     description:
-      "On-time, every time. We value your time and meet every deadline.",
+      "measured against defined thresholds, not assessed by impression",
     image: "/why-fast-delivery.webp",
     icon: Clock,
   },
   {
     id: 3,
-    title: "Client Centric",
+    title: "Documented decisions",
     description:
-      "Your satisfaction is our priority. We listen, adapt, and deliver.",
+      "architecture recorded as it is agreed, not reconstructed afterwards",
     image: "/why-client-centric.webp",
     icon: Users,
   },
   {
     id: 4,
-    title: "Global Standards",
+    title: "Tested before delivered",
     description:
-      "We follow international standards to ensure consistency and trust.",
+      "functional, performance and security testing precede every release",
     image: "/why-global-standards.webp",
     icon: ShieldCheck,
   },
   {
     id: 5,
-    title: "Global Presence",
+    title: "Portable by design",
     description:
-      "A strong global footprint that allows us to serve you anywhere.",
+      "you are never locked to us; everything we build can be handed over cleanly",
     image: "/why-global-presence.webp",
     icon: MapPin,
   },
@@ -53,20 +53,24 @@ export function WhyChooseUsSection() {
   return (
     <section className="bg-white py-20 px-4 sm:px-6 lg:px-12 text-slate-900 overflow-hidden">
       <div className="max-w-7xl mx-auto">
+        <div className="flex items-center gap-2 mb-2 md:mb-10 text-xs md:text-sm font-semibold tracking-[0.2em] text-black uppercase">
+          <span className="w-1.5 h-1.5 bg-black rounded-full" />
+          Our Standards
+        </div>
         {/* Header Row */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16">
           <div className="space-y-4">
             {/* Main Title */}
-            <h2 className="text-5xl sm:text-6xl lg:text-7xl font-light tracking-tight text-slate-900 leading-tight font-plus-jakarta">
-              Why <br />
-              <span className=" font-plus-jakarta text-blue-700 font-semibold">choose us</span>
+            <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-slate-900 leading-tight font-plus-jakarta">
+              Judgement <br />
+              <span className=" font-plus-jakarta text-blue-700 font-semibold">over fashion.</span>
             </h2>
             <div className="w-24 h-1 bg-blue-700 rounded-full mt-2" />
           </div>
 
           <div className="max-w-md space-y-6">
             <p className="text-slate-600 text-lg leading-relaxed font-normal">
-              We combine innovation, expertise, and a customer-first approach to deliver software solutions that drive real results.
+              Technology choices are made against three criteria: the demands of your project, how cleanly it fits the systems you already run, and how economical it will be to maintain in five years' time. We hold no allegiance to any particular tool, and we will always explain the reasoning behind an architectural decision in terms of its commercial consequence rather than its technical novelty.
             </p>
             <div className="w-50">
               <Button href="/about-us">Learn more</Button>

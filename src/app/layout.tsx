@@ -19,9 +19,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "EZGLOBAL | Best Software Company in Raipur, Chhattisgarh",
-  description: "EZGLOBAL is the leading software development company in Raipur, Chhattisgarh. We offer website development, mobile app development, billing software & digital marketing services. Serving India, UK, UAE & USA.",
-  keywords:"software company in Raipur, website development company in Raipur, mobile app development company in Raipur, digital marketing company in Raipur, billing software provider in Chhattisgarh, IT company Raipur, web development Chhattisgarh"
+  title: "Software Development Company in Raipur | EZGlobal",
+  description: "EZGlobal engineers web platforms, mobile products, AI automation and commerce systems from Raipur, Chhattisgarh — for clients in India, UK, UAE and USA.",
+
+  keywords: "software company in Raipur, website development company in Raipur, mobile app development company in Raipur, digital marketing company in Raipur, billing software provider in Chhattisgarh, IT company Raipur, web development Chhattisgarh",
+  openGraph: {
+    title: "Smarter strategy. Engineered with AI.",
+    description:
+      "A software engineering company headquartered in Raipur, building web, mobile, cloud and AI-enabled systems for clients across four markets.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

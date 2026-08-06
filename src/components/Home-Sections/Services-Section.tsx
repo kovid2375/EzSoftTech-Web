@@ -36,7 +36,7 @@ const processSteps = [
     subtitle: "Understanding Your Vision",
     navTitle: "Discovery",
     navSub: "Understand & Analyze",
-    description: "We start by understanding your business, goals, target audience and requirements to build a strong foundation for your project.",
+    description: "We start with your commercial objective, not your feature list. Over an initial consultation and a short discovery phase, we establish what success looks like, what constraints exist and what the realistic scope is.",
     checkmarks: [
       "Stakeholder Meeting",
       "Requirement Analysis",
@@ -54,11 +54,11 @@ const processSteps = [
   {
     number: "02",
     stepBadge: "STEP 02",
-    title: "Planning",
+    title: "Proposal & Scope",
     subtitle: "Project Strategy & Architecture",
-    navTitle: "Planning",
+    navTitle: "Proposal & Scope",
     navSub: "Project Strategy",
-    description: "Architecting scalable systems, defining technology stacks, and structuring milestones for seamless project execution.",
+    description: "You receive a written proposal with defined scope, fixed pricing and a delivery timeline. Assumptions are stated explicitly, so there are no surprises once work begins.",
     checkmarks: [
       "Tech Stack Selection",
       "System Architecture",
@@ -76,11 +76,11 @@ const processSteps = [
   {
     number: "03",
     stepBadge: "STEP 03",
-    title: "Design",
+    title: "Design & Architecture",
     subtitle: "UI/UX & Interactive Prototyping",
-    navTitle: "Design",
+    navTitle: "Design & Architecture",
     navSub: "UI/UX & Prototyping",
-    description: "Crafting visually stunning, user-centric interfaces and responsive prototypes that elevate your brand aesthetic.",
+    description: "Interface design and technical architecture proceed in parallel. You review and approve both before development starts.",
     checkmarks: [
       "Wireframing & Layouts",
       "Interactive Prototypes",
@@ -98,11 +98,11 @@ const processSteps = [
   {
     number: "04",
     stepBadge: "STEP 04",
-    title: "Development",
+    title: "Engineering in Sprints",
     subtitle: "Building High-Performance Code",
-    navTitle: "Development",
+    navTitle: "Engineering in Sprints",
     navSub: "Building the Solution",
-    description: "Writing clean, modular, and optimized code with modern frameworks, robust APIs, and offline-first capabilities.",
+    description: "Work runs in sprints with a reviewable build at the end of each one. You see progress continuously rather than waiting for a single reveal at the end.",
     checkmarks: [
       "Frontend Development",
       "Backend & API Integration",
@@ -120,11 +120,11 @@ const processSteps = [
   {
     number: "05",
     stepBadge: "STEP 05",
-    title: "Testing",
+    title: "Testing & Deployment",
     subtitle: "Quality Assurance & Security",
-    navTitle: "Testing",
+    navTitle: "Testing & Deployment",
     navSub: "Quality Assurance",
-    description: "Rigorous automated and manual testing to ensure zero-bugs, cross-browser compatibility, and enterprise security.",
+    description: "Functional, performance and security testing precede release. We manage deployment, environment setup and any store submissions required.",
     checkmarks: [
       "Unit & Integration Tests",
       "Cross-Browser Audits",
@@ -142,11 +142,11 @@ const processSteps = [
   {
     number: "06",
     stepBadge: "STEP 06",
-    title: "Deployment",
+    title: "Support & Iteration",
     subtitle: "Cloud Infrastructure & Launch",
-    navTitle: "Deployment",
+    navTitle: "Support & Iteration",
     navSub: "Launch to the Cloud",
-    description: "Deploying to ultra-fast CDN networks, configuring SSL certificates, and setting up automated CI/CD pipelines.",
+    description: "Every project includes a post-launch support period, with optional ongoing maintenance covering monitoring, updates and continued development.",
     checkmarks: [
       "Production Cloud Build",
       "CI/CD Pipeline Setup",
@@ -161,32 +161,11 @@ const processSteps = [
       { icon: Rocket, color: "#2563EB", name: "Live Launch" },
     ]
   },
-  {
-    number: "07",
-    stepBadge: "STEP 07",
-    title: "Support",
-    subtitle: "Ongoing Maintenance & Scaling",
-    navTitle: "Support",
-    navSub: "Ongoing Maintenance",
-    description: "Providing continuous monitoring, feature additions, security updates, and 24/7 technical support for business growth.",
-    checkmarks: [
-      "24/7 Monitoring",
-      "Bug Fixes & Security Patches",
-      "Feature Expansions",
-      "Performance Scaling"
-    ],
-    estimatedTime: "Ongoing",
-    image: "/Digital marketing.webp",
-    floatingBadges: [
-      { icon: HeartHandshake, color: "#EC4899", name: "24/7 Support" },
-      { icon: Clock, color: "#6366F1", name: "99.9% Uptime" },
-      { icon: TrendingUp, color: "#10B981", name: "Growth" },
-    ]
-  }
+  
 ];
 
 // Horizontal S-curve wave offset values for desktop
-const nodeXOffsetsDesktop = [0, 45, 75, 45, 10, 45, 95];
+const nodeXOffsetsDesktop = [0, 45, 75, 45, 10, 45];
 
 export function ServicesSection() {
   const [activeStep, setActiveStep] = useState<number>(0);
@@ -315,15 +294,16 @@ export function ServicesSection() {
     <section id="services" className="py-20 md:py-28 px-4 sm:px-6 lg:px-8 bg-white font-sans relative">
       {/* Section Header */}
       <div className="flex flex-col items-center text-center mb-16 relative z-10">
-        <div className="inline-flex items-center gap-2 mb-4 text-xs md:text-sm font-semibold tracking-[0.2em] text-blue-600 uppercase">
-          <span className="w-1.5 h-1.5 bg-blue-600 rounded-full animate-ping" />
-          Development Process
-        </div>
+        <div className="flex items-center gap-2 mb-2 md:mb-10 text-xs md:text-sm font-semibold tracking-[0.2em] text-black uppercase">
+        <span className="w-1.5 h-1.5 bg-black rounded-full" />
+        How We Work
+      </div>
+
         <h2 className="text-3xl sm:text-5xl md:text-[50px] font-bold tracking-tight text-neutral-950 leading-[1.2] md:leading-[1.15] max-w-4xl mx-auto mb-4">
-          From Idea to Impact
+          A process built on visibility.
         </h2>
         <p className="text-base sm:text-lg text-neutral-500 max-w-2xl mx-auto leading-relaxed">
-          A proven process that ensures transparency, quality, and on-time delivery for every project.
+          Most software projects fail on communication rather than code. Our process is structured so that you always know what is being built, what it will cost and when it will be ready.
         </p>
       </div>
 

@@ -5,9 +5,10 @@ import CurvedCarousel from "@/components/curved-carousel";
 import { FlipWords } from "../../components/ui/flip-words";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Button2 from "../button2";
 
 export default function Hero() {
-    const words = ["Fast", "Reliable", "Scalable"]
+    const words = ["Web Platform Engineering", "Applied AI & Automation", "Cloud Infrastructure", "Mobile Product Engineering"]
     return (
         <main className="p-3 bg-white">
             <div
@@ -78,11 +79,11 @@ export default function Hero() {
                 </motion.div>
 
                 {/* Hand-drawn SVG doodle left (Swirl + Label) */}
-                <div className="absolute left-[5%] sm:left-[16%] top-[28%]  opacity-70  sm:flex flex-col items-center select-none pointer-events-none text-neutral-800">
+                <div className="absolute left-[5%] sm:left-[16%] top-[27%]  opacity-70  sm:flex flex-col items-center select-none pointer-events-none text-neutral-800">
                     <span className="font-handwriting text-lg sm:text-2xl text-neutral-800 tracking-wide transform -rotate-8 mb-2  ">
-                        Built for scale
+                        Built for growth
                     </span>
-                    <svg className="w-10 h-10 sm:w-[70px] sm:h-[70px]" viewBox="0 0 60 60" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                    <svg className="w-10 h-10 sm:w-[70px] sm:h-[70px] hidden md:block" viewBox="0 0 60 60" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
                         {/* Self-drawing hand-drawn swirl */}
                         <motion.path
                             initial={{ pathLength: 0 }}
@@ -94,9 +95,9 @@ export default function Hero() {
                 </div>
 
                 {/* Hand-drawn SVG doodle right (Loop Arrow + Label) */}
-                <div className="absolute right-[2%] sm:right-[20%] top-[29%] opacity-70  sm:flex flex-col items-center select-none pointer-events-none text-neutral-800">
+                <div className="absolute right-[2%] sm:right-[15%] top-[35%] opacity-70  sm:flex flex-col items-center select-none pointer-events-none text-neutral-800">
                     <span className="font-handwriting text-sm sm:text-xl text-neutral-800 tracking-wide transform rotate-6 mb-1 ">
-                        Scale your operations
+                        AI-native approach
                     </span>
                     <svg className="w-12 h-10 sm:w-[100px] sm:h-[75px] transform rotate-90" fill="none" stroke="currentColor" strokeWidth="2">
                         {/* Self-drawing custom loop arrow */}
@@ -142,55 +143,44 @@ export default function Hero() {
                 </div>
 
                 <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-4xl">
-                    {/* Main Headings */}
-                    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7.5xl text-neutral-900 font-bold tracking-tight leading-[1.1] font-plus-jakarta max-w-3xl">
-                        Transforming <span className="relative inline-block px-1">Ideas<svg className="absolute -bottom-1 left-0 w-full h-3 text-[#FD5F49]" viewBox="0 0 100 10" fill="none" preserveAspectRatio="none"><motion.path initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1.2, ease: "easeOut", delay: 0.5 }} d="M3,5 C30,9 70,2 97,5 C60,7 30,5 5,8" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" /></svg></span> into
-                    </h1>
-                    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7.5xl text-neutral-900 font-bold tracking-tight leading-[1.1] font-plus-jakarta mt-2 max-w-3xl">
-                        <span className="relative inline-block px-1">Technology<svg className="absolute -bottom-2.5 left-0 w-full h-3 text-[#3C83F6]" viewBox="0 0 150 12" fill="none" preserveAspectRatio="none"><motion.path initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1.5, ease: "easeOut", delay: 0.8 }} d="M4,6 C50,11 100,5 146,7 C95,9 45,7 6,10" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" /></svg></span> <span className="text-black font-bold">that's</span>
-                    </h1>
-                    <h1 className='text-4xl sm:text-5xl md:text-6xl lg:text-7.5xl text-neutral-900 font-bold tracking-tight leading-[1.1] font-plus-jakarta mt-2 max-w-3xl'><span className="text-[#3C83F6]  min-w-[200px]"><FlipWords words={words} /></span></h1>
-
-                    {/* Subheading */}
-                    <p className="mt-10 text-neutral-600 text-sm sm:text-base md:text-md font-medium tracking-wide max-w-2xl leading-relaxed">
-                        EZGlobal transforms ideas into powerful digital products.<br className="hidden sm:inline" />
-                        From modern websites and mobile apps to custom software and <br className="hidden sm:inline" />
-                        business automation, we create scalable technology solutions.
-                    </p>
-                </div>
-                <div className="relative z-10 flex items-center justify-center mt-10">
-                    {/* Bottom doodle left */}
-                    <div className="absolute -left-20 sm:-left-50 -top-5 sm:-top-0 opacity-80  sm:flex flex-row items-center select-none pointer-events-none text-neutral-800">
-                        <span className="font-handwriting text-lg sm:text-3xl text-neutral-800 mr-2 transform -rotate-15">
-                            Start today!
-                        </span>
-                        <svg className="w-7 h-5 sm:w-[50px] sm:h-[40px] transform rotate-12" fill="none" stroke="currentColor" strokeWidth="2">
-                            <motion.path
-                                initial={{ pathLength: 0 }}
-                                animate={{ pathLength: 1 }}
-                                transition={{ duration: 1, ease: "easeOut", delay: 1 }}
-                                d="M5,30 C15,20 30,30 40,15"
-                                strokeLinecap="round"
-                            />
-                            <motion.path
-                                initial={{ pathLength: 0 }}
-                                animate={{ pathLength: 1 }}
-                                transition={{ duration: 0.4, ease: "easeOut", delay: 1.8 }}
-                                d="M30,17 L40,15 L36,25"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                            />
-                        </svg>
+                    {/* Rotating capability label */}
+                    <div className="mb-6 px-4 py-1.5 rounded-full  backdrop-blur-sm border border-neutral-200 text-md sm:text-md font-medium text-neutral-500 tracking-widest uppercase">
+                        <FlipWords words={words} />
                     </div>
 
-                    <div className="relative z-10 flex items-center justify-center">
+                    {/* Main Headings */}
+                    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-neutral-900 font-bold tracking-tight leading-[1.08] font-plus-jakarta max-w-3xl">
+                        Smarter strategy.
+                    </h1>
+                    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-neutral-900 font-bold tracking-tight leading-[1.08] font-plus-jakarta mt-1 max-w-3xl">
+                        <span className="relative inline-block">
+                            Engineered with AI.
+                            <svg className="absolute -bottom-2 left-0 w-full h-3 text-[#3C83F6]" viewBox="0 0 200 12" fill="none" preserveAspectRatio="none">
+                                <motion.path initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1.4, ease: "easeOut", delay: 0.6 }} d="M4,7 C60,12 130,4 196,7 C130,9 60,7 4,10" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+                            </svg>
+                        </span>
+                    </h1>
+
+                    {/* Subheading */}
+                    <p className="mt-10 text-neutral-600 text-sm sm:text-base md:text-lg font-medium tracking-wide max-w-2xl leading-relaxed">
+                        From initial strategy through to deployment and support, we design and build software that delivers measurable business outcomes not just deliverables.
+                    </p>
+                </div>
+                <div className="relative z-10 flex flex-col items-center justify-center mt-10 gap-4">
+                    {/* CTA Buttons */}
+                    <div className="flex flex-col sm:flex-row items-center gap-3">
                         <Link href="/contact">
-                            <Button >Get Started</Button>
+                            <Button>Start Your Project</Button>
+                        </Link>
+                        <Link href="/services">
+                            <button className="bg-black text-white py-2 px-4 rounded-xl">View Our Services</button>
                         </Link>
                     </div>
 
-                    {/* Sparkle 2 (Bottom Right) */}
-
+                    {/* Trust line */}
+                    <p className="mt-2 text-xs sm:text-sm text-neutral-500 tracking-wide">
+                        Trusted by businesses across India, the United Kingdom, the UAE and the United States.
+                    </p>
                 </div>
 
                 {/* Carousel Container */}
