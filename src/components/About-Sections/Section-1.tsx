@@ -37,12 +37,12 @@ export function Section1() {
 
                     {/* Main Heading */}
                     <h1 className="text-4xl lg:text-5xl font-semibold tracking-tight text-neutral-900 leading-[1.15] max-w-xl">
-                        About EZGlobal - Leading software company in raipur, chhattisgarh
+                        About EZGlobal - Leading software company in , chhattisgarh
                     </h1>
 
                     {/* Description */}
                     <p className="text-base md:text-lg text-neutral-500 leading-relaxed mt-6 max-w-lg">
-                        Based in Raipur, Chhattisgarh, EZGlobal is a premier software development company that has been delivering innovative digital solutions since 2019. We specialize in website development, mobile app development, billing software, and digital marketing services for clients across India, UK, UAE, and USA.
+                         EZGlobal is a premier software development company that has been delivering innovative digital solutions since 2019. We specialize in website development, mobile app development, billing software, and digital marketing services for clients across India, UK, UAE, and USA.
                     </p>
 
                     {/* Action Button */}
