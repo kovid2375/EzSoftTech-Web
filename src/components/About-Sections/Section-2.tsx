@@ -1,101 +1,172 @@
 "use client"
 
 import React from 'react'
-import { Clock, Lightbulb, Plus } from 'lucide-react'
+import { Flag, Code, Users, Target, ShieldCheck, TrendingUp, MapPin, Quote } from 'lucide-react'
 import { motion } from 'motion/react'
 
 export function Section2() {
-  const avatars = [
+  const pillars = [
     {
-      src: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&h=120&q=80",
-      alt: "Team member 1",
+      icon: <Users className="w-5 h-5 text-blue-600" />,
+      title: "People first",
+      desc: "We build lasting partnerships."
     },
     {
-      src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&h=120&q=80",
-      alt: "Team member 2",
+      icon: <Target className="w-5 h-5 text-blue-600" />,
+      title: "Solve with purpose",
+      desc: "We build what's needed, not what's loud."
     },
     {
-      src: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=120&h=120&q=80",
-      alt: "Team member 3",
+      icon: <ShieldCheck className="w-5 h-5 text-blue-600" />,
+      title: "Quality always",
+      desc: "Clean code. Clear communication."
     },
     {
-      src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=120&h=120&q=80",
-      alt: "Team member 4",
+      icon: <TrendingUp className="w-5 h-5 text-blue-600" />,
+      title: "Grow together",
+      desc: "We win when our clients win."
+    }
+  ]
+
+  const timeline = [
+    {
+      icon: <Flag className="w-4 h-4 text-blue-600" />,
+      title: "The beginning",
+      desc: "An idea to build world-class software from where we come from."
     },
     {
-      src: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=120&h=120&q=80",
-      alt: "Team member 5",
+      icon: <Code className="w-4 h-4 text-blue-600" />,
+      title: "First project",
+      desc: "Our early work taught us the value of clarity, quality and trust."
     },
+    {
+      icon: <Users className="w-4 h-4 text-blue-600" />,
+      title: "Where we are today",
+      desc: "A growing team delivering impact for clients around the world."
+    }
   ]
 
   return (
-    <section className="py-20 md:py-5 overflow-hidden bg-white">
-      <div className="max-w-5xl mx-auto px-6 flex flex-col items-center text-center">
-        
-        {/* Animated Heading */}
-        <motion.h2 
-          className="text-4xl md:text-5xl lg:text-[70px] font-semibold tracking-tight text-neutral-900 leading-[1.15] max-w-4xl"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        >
-          A global consulting partner <br className="hidden md:inline" />
-          dedicated to building{" "}
-          <span className="inline-flex items-center justify-center w-[1.1em] h-[1.1em] rounded-full bg-sky-400 text-white align-middle -mt-1 mx-1.5 md:mx-2 shadow-sm transition-transform duration-300 hover:scale-110 cursor-default">
-            <Clock className="w-[0.55em] h-[0.55em] text-white" strokeWidth={2.5} />
-          </span>{" "}
-          smarter <br className="md:hidden" />
-          <span className="text-neutral-400 font-medium">
-            and{" "}
-            <span className="inline-flex items-center justify-center w-[1.1em] h-[1.1em] rounded-full bg-[#d2fc32] text-neutral-950 align-middle -mt-1 mx-1.5 md:mx-2 shadow-sm transition-transform duration-300 hover:scale-110 cursor-default">
-              <Lightbulb className="w-[0.55em] h-[0.55em]" strokeWidth={2.5} />
-            </span>{" "}
-            more adaptive
-          </span>
-        </motion.h2>
-
-        {/* Animated Avatar Stack */}
-        <motion.div 
-          className="mt-16 flex flex-col items-center gap-3"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-        >
-          {/* Avatars */}
-          <div className="flex -space-x-3 items-center">
-            {avatars.map((avatar, idx) => (
-              <motion.div
-                key={idx}
-                className="relative"
-                whileHover={{ y: -4, zIndex: 10 }}
-                transition={{ duration: 0.2 }}
-              >
-                <img
-                  className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-white object-cover shadow-sm"
-                  src={avatar.src}
-                  alt={avatar.alt}
-                />
-              </motion.div>
-            ))}
+    <section className="py-16 md:py-24 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 md:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          
+          {/* Left Column: Our Story */}
+          <div className="lg:col-span-7 space-y-8">
             
-            {/* Plus Indicator */}
-            <motion.div 
-              className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-white bg-[#d2fc32] text-neutral-950 flex items-center justify-center shadow-sm cursor-pointer z-0"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Plus className="w-4 h-4 md:w-5 md:h-5 text-neutral-950" strokeWidth={2.5} />
-            </motion.div>
+            {/* Title */}
+            <div>
+              <h2 className="text-4xl md:text-5xl font-bold text-neutral-900 relative inline-block">
+                Our <span className="text-blue-600">story</span>
+                <span className="absolute -bottom-2 left-0 w-12 h-1 bg-blue-600 rounded-full"></span>
+              </h2>
+            </div>
+
+            {/* Intro text */}
+            <p className="text-neutral-600 text-lg leading-relaxed">
+              EZGlobal was founded in 2019 with a straightforward conviction: that businesses outside the metropolitan technology hubs deserve the same standard of engineering as those within them.
+            </p>
+
+            {/* Blockquote / Confirmation Box */}
+            <div className="bg-blue-50/50 border border-blue-100 rounded-2xl p-6 flex gap-4 text-left items-start relative overflow-hidden">
+              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white mt-1 shadow-sm">
+                <Quote className="w-5 h-5 fill-current" />
+              </div>
+              <div className="space-y-1">
+                <p className="text-blue-700 font-medium text-sm md:text-base leading-relaxed">
+                  [CONFIRM: 2–3 sentences on your actual origin — who started it, what they were doing before, what gap they saw. Specific and modest reads better than grand and vague.]
+                </p>
+              </div>
+            </div>
+
+            {/* Sub-text */}
+            <p className="text-neutral-600 text-lg leading-relaxed">
+              Today our teams deliver web, mobile, AI, cloud and commerce projects for clients across India, the United Kingdom, the United Arab Emirates and the United States — from our base in Raipur.
+            </p>
+
+            {/* 4 Pillars Grid */}
+            <div className="grid grid-cols-2 gap-6 pt-6 border-t border-neutral-100">
+              {pillars.map((pillar, idx) => (
+                <div key={idx} className="flex gap-4 items-start">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-blue-50/80 flex items-center justify-center shadow-xs">
+                    {pillar.icon}
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-neutral-900 text-sm md:text-base">
+                      {pillar.title}
+                    </h4>
+                    <p className="text-xs md:text-sm text-neutral-500 mt-0.5 leading-relaxed">
+                      {pillar.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
           </div>
 
-          {/* Trusted Text */}
-          <span className="text-sm font-semibold tracking-wide text-neutral-900 mt-1">
-            Trusted over 5,000+
-          </span>
-        </motion.div>
+          {/* Right Column: Visual and Timeline Card */}
+          <div className="lg:col-span-5 relative mt-10 lg:mt-0 flex flex-col items-center">
+            
+            {/* Soft decorative background shape at top-right */}
+            <div className="absolute top-[-20px] right-[-20px] w-64 h-64 bg-blue-100/30 rounded-tr-[80px] rounded-bl-[80px] -z-10" />
 
+            {/* Office Wall Logo Image */}
+            <div className="w-full max-w-[480px] h-[320px] md:h-[380px] rounded-[32px] overflow-hidden shadow-lg relative bg-neutral-100">
+              <img 
+                src="/headquaters.png" 
+                alt="EZGlobal Headquaters Office" 
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  // Fallback if image doesn't load or doesn't exist
+                  e.currentTarget.src = "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80"
+                }}
+              />
+            </div>
+
+            {/* Floating Timeline Card */}
+            <div className="w-full max-w-[440px] bg-white rounded-3xl p-6 md:p-8 shadow-[0_15px_50px_-15px_rgba(0,0,0,0.1)] border border-neutral-100/80 -mt-16 z-10 self-center lg:self-end lg:-mr-4">
+              
+              {/* Timeline Items */}
+              <div className="relative pl-6 border-l border-neutral-200 space-y-8 ml-2">
+                {timeline.map((item, idx) => (
+                  <div key={idx} className="relative">
+                    {/* Bullet marker */}
+                    <div className="absolute -left-[35px] top-1 w-6 h-6 rounded-full bg-white border border-neutral-200 flex items-center justify-center shadow-xs">
+                      {item.icon}
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-neutral-950 text-sm md:text-base">
+                        {item.title}
+                      </h4>
+                      <p className="text-xs md:text-sm text-neutral-500 mt-1 leading-relaxed">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Based in Raipur Badge at the bottom */}
+              <div className="mt-8 bg-blue-50/60 rounded-2xl p-4 flex items-center gap-4">
+                <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0 text-white shadow-xs">
+                  <MapPin className="w-5 h-5" />
+                </div>
+                <div>
+                  <h5 className="font-semibold text-blue-950 text-sm">
+                    Based in Raipur, India
+                  </h5>
+                  <p className="text-xs text-blue-700 mt-0.5">
+                    Delivering worldwide.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
       </div>
     </section>
   )

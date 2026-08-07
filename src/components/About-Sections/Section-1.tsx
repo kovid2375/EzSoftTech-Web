@@ -15,34 +15,20 @@ export function Section1() {
 
                     {/* Badge & Trusted Info */}
                     <div className="flex items-center gap-3 mb-6">
-                        <span className="text-sm font-medium text-neutral-500">Trusted over 5,000+</span>
-                        <div className="flex -space-x-2.5">
-                            <img
-                                className="w-8 h-8 rounded-full border-2 border-white object-cover shadow-sm"
-                                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&h=100&q=80"
-                                alt="User Avatar 1"
-                            />
-                            <img
-                                className="w-8 h-8 rounded-full border-2 border-white object-cover shadow-sm"
-                                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&h=100&q=80"
-                                alt="User Avatar 2"
-                            />
-                            <img
-                                className="w-8 h-8 rounded-full border-2 border-white object-cover shadow-sm"
-                                src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=100&h=100&q=80"
-                                alt="User Avatar 3"
-                            />
-                        </div>
+                        <h2 className="text-md md:text-md  tracking-tight text-neutral-900 leading-[1.15] max-w-xl">
+                        About Us
+                    </h2>
                     </div>
 
                     {/* Main Heading */}
-                    <h1 className="text-4xl lg:text-5xl font-semibold tracking-tight text-neutral-900 leading-[1.15] max-w-xl">
-                        About EZGlobal - Leading software company in , chhattisgarh
-                    </h1>
+                    
+                    <h2 className="text-3xl md:text-4xl lg:text-6xl font-semibold  tracking-tight text-neutral-900 leading-[1.15] max-w-xl">
+                        Building software that <span className='text-blue-600 font-bold'>earns its place.</span>
+                    </h2>
 
                     {/* Description */}
                     <p className="text-base md:text-lg text-neutral-500 leading-relaxed mt-6 max-w-lg">
-                         EZGlobal is a premier software development company that has been delivering innovative digital solutions since 2019. We specialize in website development, mobile app development, billing software, and digital marketing services for clients across India, UK, UAE, and USA.
+                          We are a software engineering company headquartered in Raipur, Chhattisgarh, working with businesses that need technology to produce a measurable result.
                     </p>
 
                     {/* Action Button */}
