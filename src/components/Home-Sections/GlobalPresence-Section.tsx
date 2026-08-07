@@ -94,9 +94,11 @@ export function GlobalPresenceSection() {
 
             {/* Heading */}
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-neutral-900 leading-[1.1] font-plus-jakarta mb-4">
-              Headquartered in Raipur.<br />
-              Delivering across<br />
-              <span className="text-[#0A51DF]">four markets.</span>
+              Proudly Headquartered in Raipur, India.<br />
+              Delivering across four geographies:{" "}
+              <span className="text-[#0A51DF]">
+                India, The USA, UK and UAE.
+              </span>
             </h2>
             <div className="w-10 h-1 bg-[#0A51DF] rounded-full mb-6" />
 
