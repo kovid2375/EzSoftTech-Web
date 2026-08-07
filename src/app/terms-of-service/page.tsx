@@ -294,7 +294,7 @@ function TermsOfService() {
               {sections.map((s) => {
                 const Icon = s.icon;
                 return (
-                  <section key={s.id} id={s.id} className="scroll-mt-8">
+                  <section key={s.id} id={s.id} className="scroll-mt-32">
                     <div className="flex items-center gap-3">
                       <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-100 text-blue-700 ring-1 ring-blue-200">
                         <Icon className="h-5 w-5" />

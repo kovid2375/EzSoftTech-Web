@@ -285,7 +285,7 @@ function PrivacyPolicy() {
                   <section
                     key={s.id}
                     id={s.id}
-                    className="scroll-mt-8"
+                    className="scroll-mt-32"
                   >
                     <div className="flex items-center gap-3">
                       <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#d0defc] text-[#0851DE] ring-1 ring-[#0851DE]">

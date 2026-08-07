@@ -105,14 +105,30 @@ export function Section1(){
 
                     {/* Main Hero Content */}
                     <div className="relative z-10 flex flex-col items-center justify-center text-center">
-                        {/* Single H1 for the page — the two visual lines are spans. */}
+                        {/*
+                            Names the page so it matches its navbar label —
+                            previously nothing on the page said "Services".
+                        */}
+                        <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-neutral-300/70 bg-white/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-neutral-600 backdrop-blur">
+                            <span className="h-1.5 w-1.5 rounded-full bg-[#0b64f1]" />
+                            Services
+                        </div>
+
+                        {/*
+                            Distinct from the home hero, which owns "Smarter
+                            strategy. Engineered with AI." Repeating it here made
+                            the two pages read as the same page. This one leads
+                            on the breadth of the offer, which is what a visitor
+                            has come to /services to find out.
+                            Single H1 — the two visual lines are spans.
+                        */}
                         <h1 className="text-neutral-900 font-bold font-plus-jakarta text-center items-center">
-                            <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-[90px] leading-tight">
-                                Smarter strategy.
+                            <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-[76px] leading-tight">
+                                Twelve capabilities.
                             </span>
-                            <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-[80px] leading-tight mt-1">
+                            <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-[70px] leading-tight mt-1">
                             <span className="relative inline-block text-[#0b64f1]">
-                                Engineered with AI.
+                                One accountable team.
                                 <svg className="absolute -bottom-1 sm:-bottom-2 left-0 w-full h-2.5 sm:h-3 text-orange-600" viewBox="0 0 150 12" fill="none" preserveAspectRatio="none">
                                     <motion.path
                                         initial={{ pathLength: 0 }}
@@ -129,8 +145,8 @@ export function Section1(){
                         </h1>
 
                         <div className="mt-4 flex flex-col text-neutral-600 text-sm sm:text-base md:text-lg font-medium tracking-wide max-w-2xl space-y-1 text-center">
-                            <p>From initial strategy through to deployment and support, we design and build</p>
-                            <p>software that delivers measurable business outcomes — not just deliverables.</p>
+                            <p>Strategy, design, engineering, infrastructure and growth — delivered by</p>
+                            <p>the people who scoped the work, not handed to someone else.</p>
                         </div>
 
                         <div className="relative flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mt-8">

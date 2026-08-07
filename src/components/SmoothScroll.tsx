@@ -10,11 +10,16 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 2,
+      // Was duration 2 with an unmultiplied wheel, which made a single tick
+      // drift a long way and overshoot — most noticeable on short pages like
+      // Contact. Shorter settle and a damped wheel make it feel controlled.
+      duration: 1.1,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: "vertical",
       gestureOrientation: "vertical",
       smoothWheel: true,
+      wheelMultiplier: 0.8,
+      touchMultiplier: 1.4,
     });
 
     lenisRef.current = lenis;

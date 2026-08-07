@@ -120,7 +120,7 @@ export function Section1() {
           <div className="flex flex-row gap-2 items-center mb-4">
             <span className="h-2 w-2 bg-[#3C83F6] rounded-full"></span>
             <h2 className="text-sm font-semibold tracking-wider uppercase text-neutral-500">
-              Contact
+              Contact Us
             </h2>
           </div>
 

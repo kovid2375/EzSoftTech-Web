@@ -170,7 +170,7 @@ export function Section2() {
           </p>
 
           <p className="text-sm font-medium tracking-wide text-neutral-500 sm:text-base">
-            Twelve capability areas. One accountable delivery team.
+            Explore any capability to see how we scope, build and support it.
           </p>
         </div>
 

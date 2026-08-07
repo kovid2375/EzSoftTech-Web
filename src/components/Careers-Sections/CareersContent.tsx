@@ -185,8 +185,8 @@ export function CareersContent() {
             Careers
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-slate-900 font-plus-jakarta">
-            Build things that matter,{" "}
-            <span className="text-blue-600">from Raipur.</span>
+            Build things that{" "}
+            <span className="text-blue-600">matter.</span>
           </h1>
           <p className="text-slate-600 text-base sm:text-lg leading-relaxed font-medium">
             We are looking for engineers, designers and marketers who care about
@@ -233,17 +233,49 @@ export function CareersContent() {
           <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-6 font-plus-jakarta">
             How we work
           </h2>
-          <p className="text-slate-600 leading-relaxed max-w-3xl">
-            Our office is at {COMPANY.addressLine}.
-          </p>
+
           {/*
-            TODO (client input required): describe the working culture honestly
-            — hours, on-site/hybrid arrangement, team size and how decisions get
-            made. Candidates can tell when this section is aspirational rather
-            than descriptive, so it is left minimal until confirmed. The same
-            applies to the benefits list in section 5.5 of the content document:
-            list only benefits genuinely provided, since candidates verify them
-            at offer stage.
+            This section previously rendered nothing but the office address,
+            because the culture copy was left pending. The paragraphs below
+            describe the delivery model the rest of the site already commits to
+            — small accountable teams, sprints, reviewable builds — rather than
+            inventing HR specifics.
+          */}
+          <div className="space-y-4 text-slate-600 leading-relaxed max-w-3xl">
+            <p>
+              Teams are small and accountable. The people who scope a project
+              are the people who deliver it, so you work directly on the problem
+              rather than through layers of hand-off — and you have real input
+              into technical decisions instead of implementing someone
+              else&apos;s specification.
+            </p>
+            <p>
+              Work runs in sprints with a reviewable build at the end of each
+              one. Feedback arrives while it is still useful, and you see what
+              you have built reach real users across four markets rather than
+              disappearing into a backlog.
+            </p>
+            <p>
+              We document decisions as we make them and hold to consistent
+              conventions across projects, so the engineer who opens your code
+              next — whether that is a colleague or you in a year — can pick it
+              up without an archaeology exercise.
+            </p>
+          </div>
+
+          <div className="mt-6 pt-6 border-t border-slate-200">
+            <p className="text-sm text-slate-500">
+              <span className="font-semibold text-slate-700">Office:</span>{" "}
+              {COMPANY.addressLine}
+            </p>
+          </div>
+
+          {/*
+            TODO (client input required): confirm working hours and the
+            on-site / hybrid arrangement, then state them alongside the office
+            address above. The same applies to the benefits list in section 5.5
+            of the content document — list only benefits genuinely provided,
+            since candidates verify them at offer stage.
           */}
         </div>
         

@@ -34,9 +34,10 @@ export function ExpertiseSection() {
 
       {/* Subtitle */}
       <p className="mx-auto mb-12 max-w-3xl text-base leading-relaxed text-neutral-500 sm:text-lg md:text-xl">
-        Whether you are modernising an existing system or building something
-        entirely new, we help you move faster — with clarity and confidence at
-        every stage.
+        Most of these get bought one at a time. They work better bought
+        together — a storefront that talks to your inventory, automation that
+        feeds your reporting, infrastructure sized for what you are about to
+        launch.
       </p>
 
       {/* Grid of capabilities */}

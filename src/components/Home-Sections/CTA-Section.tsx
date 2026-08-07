@@ -12,8 +12,8 @@ export function CTASection() {
           {/* Left Content */}
           <div className="flex-1 lg:max-w-xl">
             <h2 className="text-4xl sm:text-5xl lg:text-[56px] font-bold text-[#111827] tracking-tight leading-[1.1] font-plus-jakarta mb-6">
-              Let's discuss<br />
-              what <span className="text-[#0A51DF]">you're building.</span>
+              What&rsquo;s your<br />
+              <span className="text-[#0A51DF]">idea?</span>
             </h2>
             <div className="w-12 h-1 bg-[#0A51DF] rounded-full mb-8"></div>
             

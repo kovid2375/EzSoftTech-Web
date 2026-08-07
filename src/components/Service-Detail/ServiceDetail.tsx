@@ -95,17 +95,20 @@ export default function ServiceDetail({
             className="flex items-center gap-2 text-xs sm:text-sm text-neutral-500 mb-8 font-medium"
           >
             <Link href="/" className="hover:text-[#0b64f1] transition-colors">
-              ezglobal
+              Home
             </Link>
             <span className="text-neutral-300">/</span>
             <Link
               href="/services"
               className="hover:text-[#0b64f1] transition-colors"
             >
-              services
+              Services
             </Link>
             <span className="text-neutral-300">/</span>
-            <span className="text-neutral-900">{service.slug}</span>
+            {/* The service's real name, not its URL slug. */}
+            <span className="text-neutral-900" aria-current="page">
+              {service.name}
+            </span>
           </nav>
 
           <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-16">
@@ -243,7 +246,7 @@ export default function ServiceDetail({
           <div className="mb-12 sm:mb-16">
             <SectionLabel>Process</SectionLabel>
             <h2 className="text-2xl sm:text-4xl md:text-[44px] font-bold tracking-tight text-neutral-900 leading-tight font-plus-jakarta">
-              How the work runs.
+              How it works.
             </h2>
           </div>
 
@@ -371,7 +374,7 @@ export default function ServiceDetail({
       <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-2xl sm:text-4xl md:text-[44px] font-bold tracking-tight text-neutral-900 leading-tight font-plus-jakarta mb-6">
-            Let&rsquo;s discuss what you&rsquo;re building.
+            What&rsquo;s your idea?
           </h2>
           <p className="text-base sm:text-lg text-neutral-600 leading-relaxed max-w-2xl mx-auto mb-10">
             {service.closing ??

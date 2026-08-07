@@ -13,7 +13,7 @@ const COMPANY_LINKS = [
 
 const PRESENCE = [
   { code: "IN", label: "India — Headquarters" },
-  { code: "GB", label: "United Kingdom" },
+  { code: "UK", label: "United Kingdom" },
   { code: "AE", label: "United Arab Emirates" },
   { code: "US", label: "United States" },
 ];

@@ -66,7 +66,7 @@ export function AboutUsSection() {
     <section id="about" className="py-20 md:py-28 px-4 bg-white flex flex-col items-center text-center font-sans overflow-hidden -mt-8 ">
       <div className="flex items-center gap-2 mb-8 md:mb-10 text-xs md:text-sm font-semibold tracking-[0.2em] text-black uppercase">
         <span className="w-1.5 h-1.5 bg-black rounded-full" />
-        Who we are
+        Who We Are
       </div>
       <h2 className="text-3xl sm:text-5xl md:text-[52px] font-bold tracking-tight text-neutral-900 leading-[1.15] max-w-5xl mx-auto mb-12">
         {/* Line 1 */}

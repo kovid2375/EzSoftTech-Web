@@ -70,7 +70,11 @@ export function WhyChooseUsSection() {
 
           <div className="max-w-md space-y-6">
             <p className="text-slate-600 text-lg leading-relaxed font-normal">
-              Technology choices are made against three criteria: the demands of your project, how cleanly it fits the systems you already run, and how economical it will be to maintain in five years' time. We hold no allegiance to any particular tool, and we will always explain the reasoning behind an architectural decision in terms of its commercial consequence rather than its technical novelty.
+              We have no favourite tools. Every choice is judged on three
+              things: what your project actually demands, how cleanly it fits
+              what you already run, and what it will cost to maintain in five
+              years. And we will always explain the decision in terms of what it
+              costs you — not how interesting it was to build.
             </p>
             <div className="w-50">
               <Button href="/about-us">Learn more</Button>

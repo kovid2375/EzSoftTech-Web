@@ -61,7 +61,7 @@ export function IndustriesSection() {
             
             {/* Title */}
             <h2 className="text-4xl md:text-5xl font-bold text-neutral-900 tracking-tight font-plus-jakarta mb-4">
-              Sectors we <span className="text-[#0A51DF]">know well</span>
+              Domains we <span className="text-[#0A51DF]">work in</span>
             </h2>
             <div className="w-12 h-1 bg-[#0A51DF] rounded-full"></div>
           </div>

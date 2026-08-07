@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -27,10 +27,19 @@ import {
   MonitorCloud,
   Building2,
   Database,
+  Compass,
+  Gauge,
+  CheckCircle2,
+  ShieldCheck,
+  Server,
   type LucideIcon,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { navGroups, servicesInGroup } from "@/data/services";
+import {
+  disciplineGroups,
+  disciplinesInGroup,
+} from "@/data/expertise";
 
 /** Icons live here so the services data module stays free of React imports. */
 const serviceIcons: Record<string, LucideIcon> = {
@@ -48,6 +57,16 @@ const serviceIcons: Record<string, LucideIcon> = {
   "data-analytics": Database,
 };
 
+/** Icons for the engineering disciplines in the EXPERTISE menu. */
+const disciplineIcons: Record<string, LucideIcon> = {
+  architecture: Compass,
+  data: Database,
+  performance: Gauge,
+  quality: CheckCircle2,
+  security: ShieldCheck,
+  infrastructure: Server,
+};
+
 // Primitive Interfaces
 interface NavbarProps {
   children: React.ReactNode;
@@ -57,7 +76,10 @@ interface NavbarProps {
 interface NavBodyProps {
   children: React.ReactNode;
   className?: string;
+  /** Compact state — true while the page is in motion. */
   visible?: boolean;
+  /** True once away from the very top, regardless of motion. */
+  scrolled?: boolean;
 }
 
 interface NavItemsProps {
@@ -73,6 +95,7 @@ interface MobileNavProps {
   children: React.ReactNode;
   className?: string;
   visible?: boolean;
+  scrolled?: boolean;
 }
 
 interface MobileNavHeaderProps {
@@ -90,15 +113,40 @@ interface MobileNavMenuProps {
 // Primitive Component Exports
 export const Navbar = ({ children, className }: NavbarProps) => {
   const { scrollY } = useScroll();
+  /**
+   * `visible` drives the compact state further down the tree.
+   *
+   * It now tracks scroll *motion* rather than scroll *position*: the bar
+   * condenses as soon as the page starts moving and expands again once it has
+   * been still for a moment, at any depth in the page. Previously it shrank
+   * past 20px and stayed shrunk until you returned to the very top.
+   */
   const [visible, setVisible] = useState<boolean>(false);
+  /**
+   * Separate from `visible`: the background needs to be more opaque whenever
+   * the bar sits over page content, which is a question of position, not of
+   * whether the page happens to be moving right now.
+   */
+  const [scrolled, setScrolled] = useState<boolean>(false);
+  const idleTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    if (latest > 20) {
-      setVisible(true);
-    } else {
-      setVisible(false);
-    }
+    setScrolled(latest > 20);
+
+    // Setting the same value is a no-op in React, so this does not re-render
+    // on every scroll event — only on the transition into motion.
+    setVisible(true);
+
+    if (idleTimer.current) clearTimeout(idleTimer.current);
+    idleTimer.current = setTimeout(() => setVisible(false), 200);
   });
+
+  useEffect(
+    () => () => {
+      if (idleTimer.current) clearTimeout(idleTimer.current);
+    },
+    []
+  );
 
   return (
     <motion.div
@@ -107,8 +155,11 @@ export const Navbar = ({ children, className }: NavbarProps) => {
       {React.Children.map(children, (child) =>
         React.isValidElement(child)
           ? React.cloneElement(
-              child as React.ReactElement<{ visible?: boolean }>,
-              { visible },
+              child as React.ReactElement<{
+                visible?: boolean;
+                scrolled?: boolean;
+              }>,
+              { visible, scrolled },
             )
           : child,
       )}
@@ -116,7 +167,7 @@ export const Navbar = ({ children, className }: NavbarProps) => {
   );
 };
 
-export const NavBody = ({ children, className, visible }: NavBodyProps) => {
+export const NavBody = ({ children, className, visible, scrolled }: NavBodyProps) => {
   return (
     <motion.div
       initial={false}
@@ -138,10 +189,15 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
         damping: 26,
       }}
       style={{
-        backgroundColor: "rgba(255, 255, 255, 0.42)",
+        // Raised from 0.42: at that opacity the black nav text sat on whatever
+        // hero imagery happened to be behind it, and contrast varied per page.
+        backgroundColor: scrolled
+          ? "rgba(255, 255, 255, 0.92)"
+          : "rgba(255, 255, 255, 0.78)",
       }}
+      data-nav-root=""
       className={cn(
-        "relative z-[60] mx-auto hidden w-full flex-row items-center justify-between rounded-full lg:flex text-black backdrop-blur-2xl",
+        "relative z-[60] mx-auto hidden w-full flex-row items-center justify-between rounded-full lg:flex text-black backdrop-blur-2xl border border-white/60",
         className,
       )}
     >
@@ -182,7 +238,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
   );
 };
 
-export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
+export const MobileNav = ({ children, className, visible, scrolled }: MobileNavProps) => {
   return (
     <motion.div
       initial={false}
@@ -200,10 +256,13 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
         damping: 26,
       }}
       style={{
-        backgroundColor: "rgba(255, 255, 255, 0.42)",
+        backgroundColor: scrolled
+          ? "rgba(255, 255, 255, 0.94)"
+          : "rgba(255, 255, 255, 0.82)",
       }}
+      data-nav-root=""
       className={cn(
-        "relative z-50 mx-auto flex w-full flex-col items-center justify-between rounded-full px-5 lg:hidden text-black backdrop-blur-2xl",
+        "relative z-50 mx-auto flex w-full flex-col items-center justify-between rounded-full px-5 lg:hidden text-black backdrop-blur-2xl border border-white/60",
         className,
       )}
     >
@@ -247,7 +306,7 @@ export const MobileNavMenu = ({
             backdropFilter: "blur(12px) saturate(180%)",
           }}
           className={cn(
-            "absolute inset-x-0 top-16 z-50 flex w-full flex-col items-start justify-start gap-4 rounded-3xl px-6 py-6 text-black backdrop-blur-xl shadow-2xl",
+            "absolute inset-x-0 top-16 z-50 flex w-full flex-col items-start justify-start gap-4 rounded-3xl px-6 py-6 text-black backdrop-blur-xl shadow-2xl max-h-[80vh] overflow-y-auto overscroll-contain",
             className,
           )}
         >
@@ -265,10 +324,20 @@ export const MobileNavToggle = ({
   isOpen: boolean;
   onClick: () => void;
 }) => {
-  return isOpen ? (
-    <IconX className="text-black cursor-pointer hover:opacity-80 w-6 h-6" onClick={onClick} />
-  ) : (
-    <IconMenu2 className="text-black cursor-pointer hover:opacity-80 w-6 h-6" onClick={onClick} />
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-label={isOpen ? "Close menu" : "Open menu"}
+      aria-expanded={isOpen}
+      className="p-1.5 -mr-1.5 rounded-lg text-black transition-colors hover:bg-black/5 outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
+    >
+      {isOpen ? (
+        <IconX className="w-6 h-6" />
+      ) : (
+        <IconMenu2 className="w-6 h-6" />
+      )}
+    </button>
   );
 };
 
@@ -334,10 +403,14 @@ const ServicesMegaPanel = ({
   groups,
   pathname,
   onNavigate,
+  footerLabel = "Explore all services",
+  footerHref = "/services",
 }: {
   groups: MenuGroup[];
   pathname: string;
   onNavigate: () => void;
+  footerLabel?: string;
+  footerHref?: string;
 }) => (
   <motion.div
     initial={{ opacity: 0, y: 8, scale: 0.96 }}
@@ -436,11 +509,11 @@ const ServicesMegaPanel = ({
       {/* Card Footer Link */}
       <div className="pt-2 mt-1 border-t border-slate-100">
         <Link
-          href="/services"
+          href={footerHref}
           onClick={onNavigate}
           className="flex items-center justify-between px-3 py-1.5 rounded-xl hover:bg-blue-50 text-[11px] font-bold text-blue-600 transition-colors group normal-case"
         >
-          <span>Explore all services</span>
+          <span>{footerLabel}</span>
           <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
         </Link>
       </div>
@@ -465,7 +538,11 @@ const MobileServicesList = ({
     transition={{ duration: 0.2 }}
     className="overflow-hidden"
   >
-    <div className="ml-4 pl-3 border-l-2 border-slate-200 flex flex-col gap-1.5 my-1.5">
+    {/*
+      Capped and scrollable: twelve services ran past the bottom of the mobile
+      sheet with no way to reach the last few.
+    */}
+    <div className="ml-4 pl-3 border-l-2 border-slate-200 flex flex-col gap-1.5 my-1.5 max-h-[45vh] overflow-y-auto overscroll-contain pr-1">
       {items.map((item) => {
         const Icon = item.icon;
         return (
@@ -502,7 +579,65 @@ export const ResizableNavbar = () => {
   );
   const pathname = usePathname();
 
-  const closeMenus = () => setOpenMenu(null);
+  /**
+   * Hover intent. Closing the instant the pointer leaves made the menu flicker
+   * when moving diagonally toward it, or when crossing the gap between the two
+   * triggers. A short grace period lets the pointer travel.
+   */
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const cancelClose = () => {
+    if (closeTimer.current) {
+      clearTimeout(closeTimer.current);
+      closeTimer.current = null;
+    }
+  };
+
+  const openMenuNow = (menu: "services" | "expertise") => {
+    cancelClose();
+    setOpenMenu(menu);
+  };
+
+  const closeMenus = () => {
+    cancelClose();
+    setOpenMenu(null);
+  };
+
+  const scheduleClose = () => {
+    cancelClose();
+    closeTimer.current = setTimeout(() => setOpenMenu(null), 140);
+  };
+
+  useEffect(() => cancelClose, []);
+
+  /**
+   * Escape closes the menu and outside clicks dismiss it — a hover-only menu
+   * strands keyboard users and anyone who opened it by tapping.
+   */
+  useEffect(() => {
+    if (!openMenu && !isOpen) return;
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        closeMenus();
+        setIsOpen(false);
+      }
+    };
+    const onPointerDown = (e: PointerEvent) => {
+      const target = e.target as Element | null;
+      if (!target?.closest?.("[data-nav-root]")) {
+        closeMenus();
+      }
+    };
+
+    document.addEventListener("keydown", onKeyDown);
+    document.addEventListener("pointerdown", onPointerDown);
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.removeEventListener("pointerdown", onPointerDown);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [openMenu, isOpen]);
 
   /**
    * A dozen services cannot sit in a flat menu, so the dropdown groups them
@@ -518,10 +653,27 @@ export const ResizableNavbar = () => {
     })),
   }));
 
-  const expertiseList = expertiseGroups.flatMap((entry) => entry.items);
+  const servicesList = expertiseGroups.flatMap((entry) => entry.items);
+
+  /**
+   * EXPERTISE is a different axis from SERVICES: a service is what a client
+   * buys, a discipline is how the work is done regardless of which service it
+   * was sold as. Both menus previously showed the identical service list.
+   */
+  const disciplineMenu = disciplineGroups.map((group) => ({
+    group,
+    items: disciplinesInGroup(group).map((d) => ({
+      name: d.name,
+      desc: d.summary,
+      link: `/expertise#${d.slug}`,
+      icon: disciplineIcons[d.icon] ?? Compass,
+    })),
+  }));
+
+  const disciplineList = disciplineMenu.flatMap((entry) => entry.items);
 
   const isServicesActive = pathname === "/services";
-  const isExpertiseActive = pathname.startsWith("/services/");
+  const isExpertiseActive = pathname.startsWith("/expertise");
 
   return (
     <Navbar>
@@ -561,8 +713,8 @@ export const ResizableNavbar = () => {
           {/* 3. SERVICES — same mega-panel as EXPERTISE */}
           <div
             className="relative"
-            onMouseEnter={() => setOpenMenu("services")}
-            onMouseLeave={closeMenus}
+            onMouseEnter={() => openMenuNow("services")}
+            onMouseLeave={scheduleClose}
           >
             {/*
               The label stays a real link: SERVICES has a landing page of its
@@ -571,8 +723,11 @@ export const ResizableNavbar = () => {
             <Link
               href="/services"
               onClick={closeMenus}
+              onFocus={() => openMenuNow("services")}
+              aria-haspopup="menu"
+              aria-expanded={openMenu === "services"}
               className={cn(
-                "px-4 py-1.5 rounded-full transition-all duration-200 flex items-center gap-1.5 select-none",
+                "px-4 py-1.5 rounded-full transition-all duration-200 flex items-center gap-1.5 select-none outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2",
                 isServicesActive || openMenu === "services"
                   ? "bg-blue-600 text-white font-black shadow-md"
                   : "text-black hover:text-black hover:bg-black/10 font-bold"
@@ -605,15 +760,23 @@ export const ResizableNavbar = () => {
           {/* 4. EXPERTISE — renders the identical panel */}
           <div
             className="relative"
-            onMouseEnter={() => setOpenMenu("expertise")}
-            onMouseLeave={closeMenus}
+            onMouseEnter={() => openMenuNow("expertise")}
+            onMouseLeave={scheduleClose}
           >
-            <div
+            {/*
+              A real <button>: this was a <div>, which meant tabIndex -1 and no
+              way for a keyboard user to reach or open the menu at all.
+            */}
+            <button
+              type="button"
+              aria-haspopup="menu"
+              aria-expanded={openMenu === "expertise"}
               onClick={() =>
                 setOpenMenu((prev) => (prev === "expertise" ? null : "expertise"))
               }
+              onFocus={() => openMenuNow("expertise")}
               className={cn(
-                "px-4 py-1.5 rounded-full transition-all duration-200 flex items-center gap-1.5 cursor-pointer select-none",
+                "px-4 py-1.5 rounded-full transition-all duration-200 flex items-center gap-1.5 cursor-pointer select-none uppercase tracking-wider outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2",
                 isExpertiseActive || openMenu === "expertise"
                   ? "bg-blue-600 text-white font-black shadow-md"
                   : "text-black hover:text-black hover:bg-black/10 font-bold"
@@ -629,14 +792,16 @@ export const ResizableNavbar = () => {
                   openMenu === "expertise" && "rotate-180"
                 )}
               />
-            </div>
+            </button>
 
             <AnimatePresence>
               {openMenu === "expertise" && (
                 <ServicesMegaPanel
-                  groups={expertiseGroups}
+                  groups={disciplineMenu}
                   pathname={pathname}
                   onNavigate={closeMenus}
+                  footerLabel="See how we work"
+                  footerHref="/expertise"
                 />
               )}
             </AnimatePresence>
@@ -717,7 +882,7 @@ export const ResizableNavbar = () => {
               <AnimatePresence>
                 {openMenu === "services" && (
                   <MobileServicesList
-                    items={expertiseList}
+                    items={servicesList}
                     pathname={pathname}
                     onNavigate={() => {
                       setIsOpen(false);
@@ -774,7 +939,7 @@ export const ResizableNavbar = () => {
               <AnimatePresence>
                 {openMenu === "expertise" && (
                   <MobileServicesList
-                    items={expertiseList}
+                    items={disciplineList}
                     pathname={pathname}
                     onNavigate={() => {
                       setIsOpen(false);
