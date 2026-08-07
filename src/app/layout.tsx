@@ -5,6 +5,7 @@ import "./globals.css";
 import { Footer } from "@/components/footer";
 import Navbar1 from "@/components/resizable-navbar-demo";
 import { SmoothScroll } from "@/components/SmoothScroll";
+import { COMPANY, SITE_URL, jsonLdScript } from "@/lib/company";
 
 import { Toaster } from "sonner";
 
@@ -19,16 +20,51 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Software Development Company in Raipur | EZGlobal",
-  description: "EZGlobal engineers web platforms, mobile products, AI automation and commerce systems from Raipur, Chhattisgarh — for clients in India, UK, UAE and USA.",
-
-  keywords: "software company in Raipur, website development company in Raipur, mobile app development company in Raipur, digital marketing company in Raipur, billing software provider in Chhattisgarh, IT company Raipur, web development Chhattisgarh",
+  metadataBase: new URL(SITE_URL),
+  title: "Software Development Company | EZGlobal",
+  description:
+    "EZGlobal engineers web platforms, mobile products, AI automation and commerce systems from Raipur, Chhattisgarh — for clients in India, UK, UAE and USA.",
+  keywords:
+    "software company in Raipur, website development company in Raipur, mobile app development company in Raipur, digital marketing company in Raipur, business automation Chhattisgarh, AI automation company India, IT company Raipur, web development Chhattisgarh",
   openGraph: {
     title: "Smarter strategy. Engineered with AI.",
     description:
       "A software engineering company headquartered in Raipur, building web, mobile, cloud and AI-enabled systems for clients across four markets.",
     type: "website",
   },
+};
+
+/**
+ * Organization + LocalBusiness structured data, rendered site-wide.
+ * Significant for local search visibility in Raipur.
+ */
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": ["Organization", "LocalBusiness"],
+  "@id": `${COMPANY.url}/#organization`,
+  name: COMPANY.name,
+  legalName: COMPANY.legalName,
+  url: COMPANY.url,
+  description: COMPANY.description,
+  telephone: COMPANY.telephone,
+  email: COMPANY.email.general,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: COMPANY.address.streetAddress,
+    addressLocality: COMPANY.address.addressLocality,
+    addressRegion: COMPANY.address.addressRegion,
+    postalCode: COMPANY.address.postalCode,
+    addressCountry: COMPANY.address.addressCountry,
+  },
+  areaServed: COMPANY.markets.map((market) => ({
+    "@type": "Country",
+    name: market,
+  })),
+  ...(COMPANY.socialProfiles.length > 0
+    ? { sameAs: COMPANY.socialProfiles.map((profile) => profile.href) }
+    : {}),
+  // TODO (client input required): add `geo` coordinates, `openingHours`,
+  // `foundingDate` and `numberOfEmployees` once confirmed by the team.
 };
 
 export default function RootLayout({
@@ -43,6 +79,10 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={jsonLdScript(organizationJsonLd)}
+        />
         <Toaster position="top-right" richColors />
         <SmoothScroll>
           <Navbar1 />

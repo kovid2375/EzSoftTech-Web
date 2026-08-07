@@ -258,24 +258,35 @@ export default function CurvedCarousel() {
               Technologies
             </span>
             <h3 className="text-lg font-bold text-neutral-900 mt-0.5">
-              Modern Tech Stack
+              Judgement Over Fashion
             </h3>
             <p className="text-[11px] text-neutral-500 mt-1">
-              Powerful technology for powerful products.
+              Chosen for your project, not for novelty.
             </p>
           </div>
 
+          {/*
+            Standards rather than tool names: the content document keeps every
+            framework, language and platform name off the public site.
+          */}
           <div className="grid grid-cols-2 gap-2 my-4">
-            {["React", "Next.js", "Node.js", "TypeScript", "MongoDB", "Cloud"].map((tech) => (
-              <div key={tech} className="bg-white/40 border border-white/30 rounded-xl p-2 flex items-center gap-1.5">
-                <div className="w-1.5 h-1.5 rounded-full bg-blue-500" />
-                <span className="text-[11px] font-bold text-neutral-700">{tech}</span>
+            {[
+              "Security by default",
+              "Measured performance",
+              "Documented decisions",
+              "Tested before delivered",
+              "Portable by design",
+              "Built to maintain",
+            ].map((standard) => (
+              <div key={standard} className="bg-white/40 border border-white/30 rounded-xl p-2 flex items-center gap-1.5">
+                <div className="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0" />
+                <span className="text-[11px] font-bold text-neutral-700 leading-tight">{standard}</span>
               </div>
             ))}
           </div>
 
           <div className="pt-2 border-t border-neutral-200/30 text-[11px] text-neutral-500 font-medium">
-            Built with modern, scalable technologies.
+            Decisions explained in commercial terms, not technical novelty.
           </div>
         </div>
       ),
@@ -532,25 +543,13 @@ export default function CurvedCarousel() {
           ))}
         </div>
 
-        {/* Review & Trust Footer (Image 5 Bottom) */}
-        <div className="mt-4 flex flex-col items-center gap-1.5">
-          <p className="text-neutral-800 text-base font-semibold font-plus-jakarta">
-            Rated 4.9/5 by 4,900+ clients
-          </p>
-
-          <div className="flex gap-1">
-            {[1, 2, 3, 4, 5].map((star) => (
-              <svg
-                key={star}
-                className="w-5 h-5 text-amber-400 hover:scale-125 transition-transform cursor-pointer"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-            ))}
-          </div>
-        </div>
+        {/*
+          The "Rated 4.9/5 by 4,900+ clients" star block was removed here.
+          The content document is explicit that only substantiated figures may
+          be published, and the claim contradicted the site's own credibility
+          bar (200+ projects delivered). Reinstate a rating only alongside a
+          verifiable public review profile.
+        */}
 
       </div>
     </section>

@@ -1,173 +1,223 @@
 "use client";
 
-import Link from 'next/link';
-import Button from '@/components/button';
+import Link from "next/link";
+import { services } from "@/data/services";
+import { COMPANY } from "@/lib/company";
 
-const SERVICES = [
-  { name: 'Website Development', href: '/services/web-dev' },
-  { name: 'Mobile App Development', href: '/services/app-dev' },
-  { name: 'Custom Software', href: '/services/desk-app' },
-  { name: 'Billing Software', href: '/services/business-auto' },
-  { name: 'Digital Marketing', href: '/services/digital-marketing' },
+const COMPANY_LINKS = [
+  { name: "About Us", href: "/about-us" },
+  { name: "Careers", href: "/careers" },
+  { name: "Contact", href: "/contact" },
+  { name: "Support", href: "/support" },
+];
+
+const PRESENCE = [
+  { code: "IN", label: "India — Headquarters" },
+  { code: "GB", label: "United Kingdom" },
+  { code: "AE", label: "United Arab Emirates" },
+  { code: "US", label: "United States" },
 ];
 
 export function Footer() {
   return (
-    <footer className=" p-4 bg-[#222] text-white rounded-t-[32px] md:rounded-t-[40px] px-4 pt-16 pb-8 md:pt-24 md:pb-12  overflow-hidden justify-center items-center">
-      <div className=" p-6 flex flex-col gap-16 justify-center items-center">
-        
+    <footer className="p-4 bg-[#222] text-white rounded-t-[32px] md:rounded-t-[40px] px-4 pt-16 pb-8 md:pt-24 md:pb-12 overflow-hidden justify-center items-center">
+      <div className="p-6 flex flex-col gap-16 justify-center items-center">
         {/* Top Grid Area */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 justify-center items-center">
-          
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 max-w-7xl w-full">
           {/* Column 1 - Brand Info */}
-          <div className="lg:col-span-5 flex flex-col items-start">
-            {/* Logo */}
-            <img className='w-50' src="/EZGLOBAL1.webp" alt="" />
+          <div className="lg:col-span-4 flex flex-col items-start">
+            <img className="w-50" src="/EZGLOBAL1.webp" alt="EZGlobal" />
 
-            {/* Description */}
             <p className="text-sm text-neutral-400 leading-relaxed mt-1 max-w-sm">
-              EZGlobal is the leading <strong className="text-neutral-200 font-semibold">software development company in Raipur, Chhattisgarh</strong>. We deliver world-class website development, mobile app development, and billing software solutions to clients across India, UK, UAE, and USA.
+              EZGlobal is a{" "}
+              <strong className="text-neutral-200 font-semibold">
+                software engineering company headquartered in Raipur,
+                Chhattisgarh
+              </strong>
+              . We build web platforms, mobile products, AI-enabled automation,
+              commerce systems and cloud infrastructure for clients across
+              India, the United Kingdom, the UAE and the United States.
             </p>
 
-            {/* Social Icons */}
-            <div className="flex items-center gap-3 mt-3">
-              <a href="#" className="w-9 h-9 rounded-full bg-neutral-900 border border-neutral-800/80 flex items-center justify-center text-neutral-400 hover:bg-blue-600 hover:text-white  transition-all duration-300" aria-label="Code">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
-                  <polyline points="16 18 22 12 16 6"></polyline>
-                  <polyline points="8 6 2 12 8 18"></polyline>
-                </svg>
-              </a>
-              <a href="#" className="w-9 h-9 rounded-full bg-neutral-900 border border-neutral-800/80 flex items-center justify-center text-neutral-400 hover:bg-blue-600 hover:text-white  transition-all duration-300" aria-label="Mobile">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
-                  <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
-                  <line x1="12" y1="18" x2="12.01" y2="18"></line>
-                </svg>
-              </a>
-              <a href="#" className="w-9 h-9 rounded-full bg-neutral-900 border border-neutral-800/80 flex items-center justify-center text-neutral-400 hover:bg-blue-600 hover:text-white transition-all duration-300" aria-label="Globe">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <line x1="2" y1="12" x2="22" y2="12"></line>
-                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                </svg>
-              </a>
-              <a href="#" className="w-9 h-9 rounded-full bg-neutral-900 border border-neutral-800/80 flex items-center justify-center text-neutral-400 hover:bg-blue-600 hover:text-white  transition-all duration-300" aria-label="Database">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
-                  <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
-                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
-                  <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"></path>
-                </svg>
-              </a>
-            </div>
-
-            {/* Newsletter */}
-            
-
+            {/*
+              Social icons are rendered only once live profile URLs exist —
+              icons pointing at "#" read as an unfinished site. Populate
+              COMPANY.socialProfiles in src/lib/company.ts to enable them.
+            */}
+            {COMPANY.socialProfiles.length > 0 && (
+              <div className="flex items-center gap-3 mt-4">
+                {COMPANY.socialProfiles.map((profile) => (
+                  <a
+                    key={profile.label}
+                    href={profile.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3 h-9 rounded-full bg-neutral-900 border border-neutral-800/80 flex items-center justify-center text-xs font-semibold text-neutral-400 hover:bg-blue-600 hover:text-white transition-all duration-300"
+                  >
+                    {profile.label}
+                  </a>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Right Columns Area - Links */}
-          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-8">
-            
-            {/* Column 2 - Services */}
-            <div>
-              <h4 className="text-sm font-semibold tracking-wider text-white mb-5">Our Services & Careers</h4>
+          <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Column 2 - Services (every line, from the shared data) */}
+            <div className="sm:col-span-2 lg:col-span-1">
+              <h4 className="text-sm font-semibold tracking-wider text-white mb-5">
+                Services
+              </h4>
               <ul className="flex flex-col gap-3">
-                {SERVICES.map((service) => (
-                  <li key={service.name}>
-                    <Link href={service.href} className="text-sm text-neutral-400 hover:text-white transition-colors duration-200 font-normal">
+                {services.map((service) => (
+                  <li key={service.slug}>
+                    <Link
+                      href={`/services/${service.slug}`}
+                      className="text-sm text-neutral-400 hover:text-white transition-colors duration-200 font-normal"
+                    >
                       {service.name}
                     </Link>
                   </li>
                 ))}
-                <li>
-                  <Link href="/careers" className="text-sm text-blue-400 hover:text-blue-300 font-semibold transition-colors duration-200 flex items-center gap-1.5">
-                    <span>Join Our Team (Careers)</span>
-                  </Link>
-                </li>
               </ul>
             </div>
 
-            {/* Column 3 - Global Presence & HQ */}
-            <div className="flex flex-col justify-between">
-              <div>
-                <h4 className="text-sm font-semibold tracking-wider text-white mb-5">Global Presence</h4>
-                <ul className="flex flex-col gap-3 text-sm text-neutral-400">
-                  <li className="flex items-center gap-2"><span className="font-mono text-xs text-neutral-500 bg-neutral-900 border border-neutral-800 px-1 py-0.5 rounded-sm">IN</span> India (HQ)</li>
-                  <li className="flex items-center gap-2"><span className="font-mono text-xs text-neutral-500 bg-neutral-900 border border-neutral-800 px-1 py-0.5 rounded-sm">GB</span> United Kingdom</li>
-                  <li className="flex items-center gap-2"><span className="font-mono text-xs text-neutral-500 bg-neutral-900 border border-neutral-800 px-1 py-0.5 rounded-sm">AE</span> UAE</li>
-                  <li className="flex items-center gap-2"><span className="font-mono text-xs text-neutral-500 bg-neutral-900 border border-neutral-800 px-1 py-0.5 rounded-sm">US</span> USA</li>
-                </ul>
-              </div>
-              <div className="mt-8">
-                <h5 className="text-[11px] font-bold uppercase tracking-wider text-neutral-500 mb-2">Headquarters</h5>
-                <p className="text-xs text-neutral-400 leading-relaxed font-normal">
-                  3rd Floor, Block E, Lk Corporates Tower, New Dhamtari Road Dumartarai, Raipur, Chhattisgarh 492015
-                </p>
-              </div>
+            {/* Column 3 - Company */}
+            <div>
+              <h4 className="text-sm font-semibold tracking-wider text-white mb-5">
+                Company
+              </h4>
+              <ul className="flex flex-col gap-3">
+                {COMPANY_LINKS.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="text-sm text-neutral-400 hover:text-white transition-colors duration-200 font-normal"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            {/* Column 4 - Contact Us */}
-            <div className="flex flex-col justify-between items-start">
-              <div>
-                <h4 className="text-sm font-semibold tracking-wider text-white mb-5">Contact Us</h4>
-                <ul className="flex flex-col gap-4 text-sm text-neutral-400">
-                  <li>
-                    <a href="tel:+918962370822" className="flex items-start gap-2.5 hover:text-white transition-colors duration-200">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-blue-500 mt-0.5 shrink-0">
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                      </svg>
-                      <span className="font-normal">+91 89623 70822</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="mailto:info@ezsofttech.in" className="flex items-start gap-2.5 hover:text-white transition-colors duration-200">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-blue-500 mt-0.5 shrink-0">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                        <polyline points="22,6 12,13 2,6"></polyline>
-                      </svg>
-                      <span className="font-normal break-all">info@ezsofttech.in</span>
-                    </a>
-                  </li>
-                  <li className="flex items-start gap-2.5">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-blue-500 mt-0.5 shrink-0">
-                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                      <circle cx="12" cy="10" r="3"></circle>
-                    </svg>
-                    <span className="leading-relaxed font-normal">
-                      3rd Floor, Block E, Lk Corporates Tower, New Dhamtari Road Dumartarai, Raipur, Chhattisgarh 492015
+            {/* Column 4 - Global Presence */}
+            <div>
+              <h4 className="text-sm font-semibold tracking-wider text-white mb-5">
+                Global Presence
+              </h4>
+              <ul className="flex flex-col gap-3 text-sm text-neutral-400">
+                {PRESENCE.map((place) => (
+                  <li key={place.code} className="flex items-center gap-2">
+                    <span className="font-mono text-xs text-neutral-500 bg-neutral-900 border border-neutral-800 px-1 py-0.5 rounded-sm">
+                      {place.code}
                     </span>
+                    {place.label}
                   </li>
-                </ul>
-              </div>
-
-              {/* <div>
-                <Button>GetQuote</Button>
-              </div> */}
+                ))}
+              </ul>
             </div>
 
+            {/* Column 5 - Contact */}
+            <div>
+              <h4 className="text-sm font-semibold tracking-wider text-white mb-5">
+                Contact
+              </h4>
+              <ul className="flex flex-col gap-4 text-sm text-neutral-400">
+                <li>
+                  <a
+                    href={COMPANY.telephoneHref}
+                    className="flex items-start gap-2.5 hover:text-white transition-colors duration-200"
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="w-4 h-4 text-blue-500 mt-0.5 shrink-0"
+                    >
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    <span className="font-normal">{COMPANY.telephone}</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={`mailto:${COMPANY.email.general}`}
+                    className="flex items-start gap-2.5 hover:text-white transition-colors duration-200"
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="w-4 h-4 text-blue-500 mt-0.5 shrink-0"
+                    >
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                      <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    <span className="font-normal break-all">
+                      {COMPANY.email.general}
+                    </span>
+                  </a>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="w-4 h-4 text-blue-500 mt-0.5 shrink-0"
+                  >
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <span className="leading-relaxed font-normal">
+                    {COMPANY.addressLine}
+                  </span>
+                </li>
+              </ul>
+            </div>
           </div>
-
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-neutral-900/60 pt-8 flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-neutral-500">
+        <div className="border-t border-neutral-900/60 pt-8 w-full max-w-7xl flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-neutral-500">
           <p className="text-center md:text-left leading-relaxed">
-            &copy; {new Date().getFullYear()} EZGlobal. All rights reserved. <span className="hidden sm:inline">|</span> <br className="sm:hidden" />
-            <span className="text-neutral-600">Software Company in Raipur, Chhattisgarh</span>
+            &copy; {new Date().getFullYear()} EZGlobal. All rights reserved.{" "}
+            <span className="hidden sm:inline">|</span>{" "}
+            <br className="sm:hidden" />
+            <span className="text-neutral-600">
+              Software Company in Raipur, Chhattisgarh
+            </span>
           </p>
           <div className="flex flex-wrap justify-center gap-x-5 gap-y-2">
-            <Link href="/privacy-policy" className="hover:text-neutral-300 transition-colors duration-200">
+            <Link
+              href="/privacy-policy"
+              className="hover:text-neutral-300 transition-colors duration-200"
+            >
               Privacy Policy
             </Link>
-            <Link href="/terms-of-service" className="hover:text-neutral-300 transition-colors duration-200">
+            <Link
+              href="/terms-of-service"
+              className="hover:text-neutral-300 transition-colors duration-200"
+            >
               Terms of Service
             </Link>
-            <Link href="/support" className="hover:text-neutral-300 transition-colors duration-200">
+            <Link
+              href="/support"
+              className="hover:text-neutral-300 transition-colors duration-200"
+            >
               Support
             </Link>
-            
           </div>
         </div>
-
       </div>
     </footer>
   );

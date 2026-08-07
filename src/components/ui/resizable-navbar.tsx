@@ -20,9 +20,33 @@ import {
   Monitor,
   Cpu,
   TrendingUp,
-  Sparkles
+  Sparkles,
+  Cloud,
+  ShoppingCart,
+  ShoppingBag,
+  MonitorCloud,
+  Building2,
+  Database,
+  type LucideIcon,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { navGroups, servicesInGroup } from "@/data/services";
+
+/** Icons live here so the services data module stays free of React imports. */
+const serviceIcons: Record<string, LucideIcon> = {
+  "web-dev": Globe,
+  "app-dev": Smartphone,
+  "ai-automation": Sparkles,
+  "business-auto": Building2,
+  "desk-app": Monitor,
+  "cloud-platform": Cloud,
+  saas: MonitorCloud,
+  commerce: ShoppingCart,
+  "quick-commerce": ShoppingBag,
+  "digital-marketing": TrendingUp,
+  gcc: Cpu,
+  "data-analytics": Database,
+};
 
 // Primitive Interfaces
 interface NavbarProps {
@@ -296,38 +320,21 @@ export const ResizableNavbar = () => {
   const [isExpertiseOpen, setIsExpertiseOpen] = useState(false);
   const pathname = usePathname();
 
-  const expertiseList = [
-    {
-      name: "Enterprise Web Application",
-      desc: "Custom web apps & responsive portals",
-      link: "/services/web-dev",
-      icon: Globe,
-    },
-    {
-      name: "Native and Cross Platform Application",
-      desc: "iOS & Android mobile experiences",
-      link: "/services/app-dev",
-      icon: Smartphone,
-    },
-    {
-      name: "Desktop Applications",
-      desc: "Cross-platform desktop software",
-      link: "/services/desk-app",
-      icon: Monitor,
-    },
-    {
-      name: "Business Automation",
-      desc: "AI & automated workflow systems",
-      link: "/services/business-auto",
-      icon: Cpu,
-    },
-    {
-      name: "Digital Marketing",
-      desc: "Growth, SEO & brand strategies",
-      link: "/services/digital-marketing",
-      icon: TrendingUp,
-    },
-  ];
+  /**
+   * A dozen services cannot sit in a flat menu, so the dropdown groups them
+   * into Build / Automate / Scale exactly as the content document specifies.
+   */
+  const expertiseGroups = navGroups.map((group) => ({
+    group,
+    items: servicesInGroup(group).map((service) => ({
+      name: service.navName,
+      desc: service.oneLine,
+      link: `/services/${service.slug}`,
+      icon: serviceIcons[service.slug] ?? Globe,
+    })),
+  }));
+
+  const expertiseList = expertiseGroups.flatMap((entry) => entry.items);
 
   const isServicesActive = pathname === "/services";
   const isExpertiseActive = pathname.startsWith("/services/");
@@ -414,78 +421,89 @@ export const ResizableNavbar = () => {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 6, scale: 0.96 }}
                   transition={{ type: "spring", stiffness: 350, damping: 25 }}
-                  className="absolute -left-12 top-full pt-2.5 w-80 z-50 flex flex-col"
+                  className="absolute left-1/2 -translate-x-1/2 top-full pt-2.5 w-[min(90vw,940px)] z-50 flex flex-col"
                 >
+                  {/*
+                    Opaque rather than translucent: at this width the panel sits
+                    over hero headlines, and any bleed-through makes the service
+                    names hard to read.
+                  */}
                   <div
                     style={{
-                      backgroundColor: "rgba(255, 255, 255, 0.96)",
+                      backgroundColor: "#ffffff",
                       boxShadow: "0 20px 50px -10px rgba(0, 0, 0, 0.25), 0 10px 25px -5px rgba(37, 99, 235, 0.15)",
-                      backdropFilter: "blur(20px) saturate(180%)",
                     }}
-                    className="rounded-3xl p-3 flex flex-col gap-1.5 shadow-2xl backdrop-blur-xl border border-slate-200/80"
+                    className="rounded-3xl p-4 flex flex-col gap-1.5 shadow-2xl border border-slate-200/80"
                   >
-                    {/* Dropdown Items List */}
-                    <div className="flex flex-col gap-1">
-                      {expertiseList.map((item, idx) => {
-                        const Icon = item.icon;
-                        const isActive = pathname === item.link;
+                    {/* Three grouped columns: Build / Automate / Scale */}
+                    <div className="grid grid-cols-3 gap-x-3 gap-y-1">
+                      {expertiseGroups.map(({ group, items }) => (
+                        <div key={group} className="flex flex-col">
+                          <span className="px-2.5 pb-2 text-[10px] font-black uppercase tracking-[0.18em] text-slate-400">
+                            {group}
+                          </span>
 
-                        return (
-                          <Link
-                            key={idx}
-                            href={item.link}
-                            onClick={() => setIsExpertiseOpen(false)}
-                            className={cn(
-                              "group flex items-center gap-3 p-2.5 rounded-2xl transition-all duration-200 normal-case tracking-normal border border-transparent",
-                              isActive
-                                ? "bg-blue-600 text-white font-semibold shadow-xs"
-                                : "hover:bg-blue-50/80 hover:border-blue-100/80 text-slate-900"
-                            )}
-                          >
-                            {/* Icon Container */}
-                            <div
-                              className={cn(
-                                "w-9 h-9 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300 shadow-xs",
-                                isActive
-                                  ? "bg-white text-blue-600"
-                                  : "bg-blue-50 text-blue-600 border border-blue-100 group-hover:bg-blue-600 group-hover:text-white group-hover:scale-105"
-                              )}
-                            >
-                              <Icon className="w-4 h-4" />
-                            </div>
+                          <div className="flex flex-col gap-1">
+                            {items.map((item) => {
+                              const Icon = item.icon;
+                              const isActive = pathname === item.link;
 
-                            {/* Item Title & Description */}
-                            <div className="flex flex-col flex-1 min-w-0">
-                              <span
-                                className={cn(
-                                  "text-xs font-bold transition-colors leading-tight truncate",
-                                  isActive ? "text-white" : "text-slate-900 group-hover:text-blue-600"
-                                )}
-                              >
-                                {item.name}
-                              </span>
-                              <span
-                                className={cn(
-                                  "text-[10px] font-medium truncate mt-0.5",
-                                  isActive ? "text-blue-100" : "text-slate-500 group-hover:text-slate-600"
-                                )}
-                              >
-                                {item.desc}
-                              </span>
-                            </div>
+                              return (
+                                <Link
+                                  key={item.link}
+                                  href={item.link}
+                                  onClick={() => setIsExpertiseOpen(false)}
+                                  className={cn(
+                                    "group flex items-center gap-2.5 p-2 rounded-2xl transition-all duration-200 normal-case tracking-normal border border-transparent",
+                                    isActive
+                                      ? "bg-blue-600 text-white font-semibold shadow-xs"
+                                      : "hover:bg-blue-50/80 hover:border-blue-100/80 text-slate-900"
+                                  )}
+                                >
+                                  <div
+                                    className={cn(
+                                      "w-8 h-8 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300 shadow-xs",
+                                      isActive
+                                        ? "bg-white text-blue-600"
+                                        : "bg-blue-50 text-blue-600 border border-blue-100 group-hover:bg-blue-600 group-hover:text-white group-hover:scale-105"
+                                    )}
+                                  >
+                                    <Icon className="w-4 h-4" />
+                                  </div>
 
-                            {/* Hover Arrow */}
-                            <ChevronRight
-                              className={cn(
-                                "w-3.5 h-3.5 transition-all duration-200 shrink-0",
-                                isActive
-                                  ? "text-white opacity-100 translate-x-0"
-                                  : "text-slate-400 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:text-blue-600"
-                              )}
-                            />
-                          </Link>
-                        );
-                      })}
+                                  <div className="flex flex-col flex-1 min-w-0">
+                                    <span
+                                      className={cn(
+                                        "text-[11px] font-bold transition-colors leading-tight",
+                                        isActive ? "text-white" : "text-slate-900 group-hover:text-blue-600"
+                                      )}
+                                    >
+                                      {item.name}
+                                    </span>
+                                    <span
+                                      className={cn(
+                                        "text-[10px] font-medium truncate mt-0.5",
+                                        isActive ? "text-blue-100" : "text-slate-500 group-hover:text-slate-600"
+                                      )}
+                                    >
+                                      {item.desc}
+                                    </span>
+                                  </div>
+
+                                  <ChevronRight
+                                    className={cn(
+                                      "w-3.5 h-3.5 transition-all duration-200 shrink-0",
+                                      isActive
+                                        ? "text-white opacity-100 translate-x-0"
+                                        : "text-slate-400 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:text-blue-600"
+                                    )}
+                                  />
+                                </Link>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      ))}
                     </div>
 
                     {/* Card Footer Link */}

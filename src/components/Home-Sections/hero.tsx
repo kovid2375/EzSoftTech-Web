@@ -117,10 +117,10 @@ export default function Hero() {
                     </svg>
                 </div>
 
-                {/* Hand-drawn "explore our stack" indicator (Middle Left) */}
+                {/* Hand-drawn "how we work" indicator (Middle Left) */}
                 <div className="absolute left-[3%] sm:left-[13%] bottom-[33%] opacity-75 hidden sm:flex flex-col items-center select-none pointer-events-none text-neutral-800">
                     <span className="font-handwriting text-xl sm:text-3xl text-neutral-700 tracking-wider transform -rotate-6 mb-1 hidden sm:block">
-                        explore our stack
+                        how we work
                     </span>
                     <svg className="w-8 h-7 sm:w-[60px] sm:h-[50px] transform rotate-45" viewBox="0 0 60 50" fill="none" stroke="currentColor" strokeWidth="2">
                         {/* Self-drawing curved indicator arrow */}
@@ -149,15 +149,16 @@ export default function Hero() {
                     </div>
 
                     {/* Main Headings */}
+                    {/* Single H1 for the page — the two visual lines are spans. */}
                     <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-neutral-900 font-bold tracking-tight leading-[1.08] font-plus-jakarta max-w-3xl">
-                        Smarter strategy.
-                    </h1>
-                    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-neutral-900 font-bold tracking-tight leading-[1.08] font-plus-jakarta mt-1 max-w-3xl">
+                        <span className="block">Smarter strategy.</span>
+                        <span className="block mt-1">
                         <span className="relative inline-block">
                             Engineered with AI.
                             <svg className="absolute -bottom-2 left-0 w-full h-3 text-[#3C83F6]" viewBox="0 0 200 12" fill="none" preserveAspectRatio="none">
                                 <motion.path initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1.4, ease: "easeOut", delay: 0.6 }} d="M4,7 C60,12 130,4 196,7 C130,9 60,7 4,10" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
                             </svg>
+                        </span>
                         </span>
                     </h1>
 

@@ -15,16 +15,15 @@ export function Section1() {
 
                     {/* Badge & Trusted Info */}
                     <div className="flex items-center gap-3 mb-6">
-                        <h2 className="text-md md:text-md  tracking-tight text-neutral-900 leading-[1.15] max-w-xl">
+                        <span className="text-md md:text-md tracking-tight text-neutral-900 leading-[1.15] max-w-xl">
                         About Us
-                    </h2>
+                    </span>
                     </div>
 
-                    {/* Main Heading */}
-                    
-                    <h2 className="text-3xl md:text-4xl lg:text-6xl font-semibold  tracking-tight text-neutral-900 leading-[1.15] max-w-xl">
+                    {/* Main Heading — the page's single H1 */}
+                    <h1 className="text-3xl md:text-4xl lg:text-6xl font-semibold  tracking-tight text-neutral-900 leading-[1.15] max-w-xl">
                         Building software that <span className='text-blue-600 font-bold'>earns its place.</span>
-                    </h2>
+                    </h1>
 
                     {/* Description */}
                     <p className="text-base md:text-lg text-neutral-500 leading-relaxed mt-6 max-w-lg">

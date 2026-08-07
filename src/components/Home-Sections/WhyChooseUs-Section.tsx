@@ -9,7 +9,7 @@ import Button from "@/components/button";
 const features = [
   {
     id: 1,
-    title: "Security by defaul",
+    title: "Security by default",
     description:
       "access control, encryption and audit trails designed in from the first sprint",
     image: "/why-quality-first.webp",

@@ -46,7 +46,7 @@ const processSteps = [
     estimatedTime: "1 - 2 Days",
     image: "/web-dev.webp",
     floatingBadges: [
-      { icon: SiFigma, color: "#F24E1E", name: "Figma" },
+      { icon: SiFigma, color: "#F24E1E", name: "Discovery" },
       { icon: Code, color: "#2563EB", name: "Analysis" },
       { icon: BarChart3, color: "#3B82F6", name: "Metrics" },
     ]
@@ -60,17 +60,17 @@ const processSteps = [
     navSub: "Project Strategy",
     description: "You receive a written proposal with defined scope, fixed pricing and a delivery timeline. Assumptions are stated explicitly, so there are no surprises once work begins.",
     checkmarks: [
-      "Tech Stack Selection",
+      "Technical Approach",
       "System Architecture",
-      "Database Schema",
+      "Data Model",
       "Sprint Breakdown"
     ],
     estimatedTime: "2 - 4 Days",
     image: "/billing-and-software.webp",
     floatingBadges: [
-      { icon: SiReact, color: "#61DAFB", name: "React" },
-      { icon: SiNextdotjs, color: "#000000", name: "Next.js" },
-      { icon: SiNodedotjs, color: "#339933", name: "Node.js" },
+      { icon: SiReact, color: "#61DAFB", name: "Architecture" },
+      { icon: SiNextdotjs, color: "#000000", name: "Scope" },
+      { icon: SiNodedotjs, color: "#339933", name: "Estimate" },
     ]
   },
   {
@@ -92,7 +92,7 @@ const processSteps = [
     floatingBadges: [
       { icon: SiFigma, color: "#F24E1E", name: "UI/UX" },
       { icon: Sparkles, color: "#8B5CF6", name: "Design" },
-      { icon: SiTailwindcss, color: "#06B6D4", name: "Tailwind" },
+      { icon: SiTailwindcss, color: "#06B6D4", name: "Design System" },
     ]
   },
   {
@@ -112,9 +112,9 @@ const processSteps = [
     estimatedTime: "1 - 3 Weeks",
     image: "/desktop.webp",
     floatingBadges: [
-      { icon: Code, color: "#2563EB", name: "TypeScript" },
+      { icon: Code, color: "#2563EB", name: "Engineering" },
       { icon: SiFlutter, color: "#02569B", name: "Mobile" },
-      { icon: SiMongodb, color: "#47A248", name: "Database" },
+      { icon: SiMongodb, color: "#47A248", name: "Data" },
     ]
   },
   {
@@ -149,14 +149,14 @@ const processSteps = [
     description: "Every project includes a post-launch support period, with optional ongoing maintenance covering monitoring, updates and continued development.",
     checkmarks: [
       "Production Cloud Build",
-      "CI/CD Pipeline Setup",
+      "Automated Deployment",
       "Domain & SSL Security",
       "SEO Indexing Submission"
     ],
     estimatedTime: "1 - 2 Days",
     image: "/Devops.webp",
     floatingBadges: [
-      { icon: FaAws, color: "#FF9900", name: "AWS Cloud" },
+      { icon: FaAws, color: "#FF9900", name: "Cloud" },
       { icon: Cloud, color: "#0EA5E9", name: "DevOps" },
       { icon: Rocket, color: "#2563EB", name: "Live Launch" },
     ]

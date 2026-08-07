@@ -12,6 +12,7 @@ import {
   Mail,
   ChevronRight,
 } from 'lucide-react';
+import { COMPANY } from '@/lib/company';
 
 type Section = {
   id: string;
@@ -21,46 +22,140 @@ type Section = {
   bullets?: string[];
 };
 
+/**
+ * Privacy Policy — section 7 of the master content document.
+ *
+ * ⚠️ This is a drafted template, not legal advice. Before publishing, have it
+ * reviewed by a qualified legal practitioner familiar with Indian law — the
+ * Information Technology Act 2000, the SPDI Rules 2011 and the Digital
+ * Personal Data Protection Act 2023 — and with UK/EU GDPR where data belonging
+ * to clients in those markets is processed.
+ */
 const sections: Section[] = [
   {
-    id: 'personal-information',
-    title: 'Personal Information',
+    id: "introduction",
+    title: "Introduction",
+    icon: Shield,
+    body: `EZGlobal ("we", "us", "our") operates this website and provides software engineering and digital growth services. This policy explains what personal information we collect, why we collect it, how we use it, and what rights you have in relation to it. By using our website or engaging our services, you acknowledge the practices described here.`,
+  },
+  {
+    id: "information-we-collect",
+    title: "Information We Collect",
     icon: Database,
-    body: 'We collect personal information that you voluntarily provide when interacting with us, including your name, email address, phone number, and relevant business information such as your company name, industry, and project requirements. We may also collect your communication preferences and maintain a record of your interactions with us to improve our services and provide better customer support.',
+    body: "We collect information you provide directly, information collected automatically when you visit the website, and — where applicable — information provided to us by third parties.",
+    bullets: [
+      "Information you provide: name, email address and telephone number submitted through enquiry or careers forms; company name and role, where provided; project requirements, budget indications and correspondence; curriculum vitae and supporting materials submitted through careers applications; and any other information you choose to share with us.",
+      "Information collected automatically: IP address, browser type and version, and device information; pages viewed, time spent and referring source; and cookie and similar technology data, subject to your consent.",
+      "Information from third parties: analytics, advertising and CRM platforms that provide us with data. (To be confirmed and listed before publication.)",
+    ],
   },
   {
-    id: 'technical-information',
-    title: 'Technical Information',
-    icon: Eye,
-    body: 'When you visit our website, we automatically collect certain technical information to enhance your browsing experience and improve our services. This may include website usage and analytics data, your device information, browser type, IP address, and approximate location data. This information helps us monitor website performance, maintain security, and understand how visitors use our website.',
-  },
-  {
-    id: 'how-we-use-it',
-    title: 'How We Use Your Information',
+    id: "how-we-use-it",
+    title: "How We Use Your Information",
     icon: FileText,
-    body: 'We use the information we collect to provide, maintain, and improve our software development services. Your information helps us process service requests, manage orders and payments, and deliver the solutions you require. We also use it to respond to customer support inquiries, communicate important service updates, project progress, and promotional offers that may be relevant to you. Additionally, we analyze website usage to enhance performance and user experience, while using security measures to detect, prevent, and investigate fraudulent activities, unauthorized access, and other potential security threats.',
+    body: "We use the information we collect for the following purposes:",
+    bullets: [
+      "To respond to enquiries and provide requested information",
+      "To deliver, manage and support the services you engage us for",
+      "To process and assess job applications",
+      "To issue invoices and manage payments",
+      "To send service updates and, where you have consented, marketing communications",
+      "To improve our website, services and user experience",
+      "To comply with legal, regulatory and contractual obligations",
+      "To detect, prevent and address security incidents and fraud",
+    ],
   },
   {
-    id: 'sharing',
-    title: 'Sharing of Information',
+    id: "legal-basis",
+    title: "Legal Basis for Processing",
+    icon: FileText,
+    body: "Where applicable law requires a legal basis, we rely on:",
+    bullets: [
+      "Consent — marketing communications and non-essential cookies",
+      "Contract — processing necessary to deliver services you have engaged",
+      "Legitimate interests — service improvement, security and business administration",
+      "Legal obligation — tax, accounting and statutory requirements",
+    ],
+  },
+  {
+    id: "cookies",
+    title: "Cookies",
+    icon: Eye,
+    body: "We use cookies and similar technologies to operate the website, understand usage and — where you consent — support marketing. You may manage preferences through our cookie banner or your browser settings. Disabling non-essential cookies will not affect core functionality.",
+    bullets: [
+      "Strictly necessary — required for the site to function; cannot be disabled",
+      "Analytics — help us understand how the site is used",
+      "Marketing — used to measure and target advertising",
+    ],
+  },
+  {
+    id: "sharing",
+    title: "Sharing Your Information",
     icon: Share2,
-    body: 'We respect your privacy and do not sell, rent, or trade your personal information to third parties. However, we may share your information with trusted third-party service providers who assist us in delivering our services, including payment processing, cloud hosting, website analytics, technical support, and other business operations. These partners are authorized to use your information only for the purpose of providing services on our behalf and are contractually required to maintain the confidentiality and security of your data. We may also disclose information when required by law or to protect our legal rights, comply with regulatory obligations, or ensure the safety and security of our users and services.',
+    body: "We do not sell personal information. We share it only with:",
+    bullets: [
+      "Service providers acting on our behalf — hosting, analytics, email delivery and payment processing — under contractual confidentiality obligations",
+      "Professional advisers including legal, accounting and insurance providers",
+      "Authorities, where required by law or to protect our legal rights",
+      "A successor entity, in the event of a merger, acquisition or asset transfer",
+    ],
   },
   {
-    id: 'data-security',
-    title: 'Data Security',
+    id: "international-transfers",
+    title: "International Transfers",
+    icon: Share2,
+    body: "We serve clients in India, the United Kingdom, the United Arab Emirates and the United States. Personal information may therefore be transferred to and processed in countries other than your own. Where such transfers occur, we implement appropriate safeguards consistent with applicable law.",
+  },
+  {
+    id: "data-retention",
+    title: "Data Retention",
+    icon: Database,
+    body: "We retain personal information only for as long as necessary for the purposes described in this policy. Financial records are retained as required by applicable tax and accounting legislation. Retention periods for enquiry data, client project data and careers applications are confirmed on request.",
+  },
+  {
+    id: "data-security",
+    title: "Security",
     icon: Lock,
-    body: 'We are committed to protecting your personal information by implementing appropriate administrative, technical, and physical security measures designed to prevent unauthorized access, disclosure, alteration, or destruction of your data. These measures include secure data storage, encrypted data transmission, access controls, regular security monitoring, and periodic system updates to maintain a safe and reliable environment. While we strive to use commercially accepted security practices to safeguard your information, please note that no method of transmission over the internet or electronic storage is completely secure. Therefore, although we make every reasonable effort to protect your personal data, we cannot guarantee its absolute security.',
+    body: "We apply appropriate technical and organisational measures to protect personal information, including encrypted transmission, access controls and regular review. No method of transmission or storage is entirely secure, and we cannot guarantee absolute security.",
   },
   {
-    id: 'your-rights',
-    title: 'Your Rights',
+    id: "your-rights",
+    title: "Your Rights",
     icon: Users,
-    body: 'We believe you should have control over your personal information. Depending on the applicable laws and regulations in your jurisdiction, you may have the right to access, review, update, or correct the personal information we hold about you. You may also request the deletion of your personal data, object to or restrict certain processing activities, withdraw your consent where processing is based on consent, and opt out of receiving marketing communications. Additionally, where applicable, you may request a copy of your personal information in a portable format. If you wish to exercise any of these rights or have questions about how your data is processed, please contact us using the details provided below. We will respond to your request in accordance with applicable data protection laws.',
+    body: "Subject to applicable law, you may request access, correction or erasure of your information; object to or restrict processing; withdraw consent; request transfer to another provider; or lodge a complaint with the relevant supervisory authority. To exercise any of these rights, contact us using the address below.",
+  },
+  {
+    id: "childrens-privacy",
+    title: "Children's Privacy",
+    icon: Users,
+    body: "Our services are directed to businesses and are not intended for individuals under 18. We do not knowingly collect information from children. If you believe a child has provided us with personal information, contact us and we will delete it.",
+  },
+  {
+    id: "third-party-links",
+    title: "Third-Party Links",
+    icon: Share2,
+    body: "Our website may link to third-party sites. We are not responsible for their privacy practices and encourage you to review their policies.",
+  },
+  {
+    id: "changes",
+    title: "Changes to This Policy",
+    icon: RefreshCw,
+    body: 'We may update this policy from time to time. Material changes will be indicated by the "Last updated" date above and, where appropriate, notified directly.',
+  },
+  {
+    id: "contact",
+    title: "Contact",
+    icon: Mail,
+    body: `For any question about this policy or to exercise your rights, write to ${COMPANY.email.privacy}, call ${COMPANY.telephone}, or write to us at ${COMPANY.addressLine}, India.`,
   },
 ];
 
-const lastUpdated = 'July 31, 2026';
+/**
+ * TODO (client input required): confirm the effective date with your legal
+ * adviser, along with the named data protection contact, the list of
+ * processors, and the specific retention periods referenced above.
+ */
+const lastUpdated = "7 August 2026";
 
 function useActiveSection() {
   const [active, setActive] = useState(sections[0].id);
@@ -131,7 +226,7 @@ function PrivacyPolicy() {
             </span>
             <span className="inline-flex items-center gap-2">
               <Mail className="h-3.5 w-3.5" />
-              info@ezsofttech.in
+              {COMPANY.email.privacy}
             </span>
           </div>
         </div>
@@ -229,8 +324,14 @@ function PrivacyPolicy() {
                     Questions about your privacy?
                   </h3>
                   <p className="mt-1 text-sm text-slate-600">
-                    We're here to help. Reach out and our team will get back to
-                    you within 30 days.
+                    Write to{" "}
+                    <a
+                      href={`mailto:${COMPANY.email.privacy}`}
+                      className="font-semibold text-[#0851DE] hover:underline"
+                    >
+                      {COMPANY.email.privacy}
+                    </a>{" "}
+                    and our team will respond.
                   </p>
                 </div>
                 <a
@@ -246,18 +347,6 @@ function PrivacyPolicy() {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="border-t border-slate-200 bg-white">
-        <div className="mx-auto max-w-5xl px-6 py-8 text-sm text-slate-500">
-          <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
-            <p className="flex items-center gap-2">
-              <Shield className="h-4 w-4 text-[#0851DE]" />
-              Your privacy, protected.
-            </p>
-            <p>© {new Date().getFullYear()} All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

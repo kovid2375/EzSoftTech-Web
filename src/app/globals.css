@@ -343,3 +343,90 @@ h1 {
 .btn-uiverse-mother:hover .span-mother2 span {
   transform: translateY(0);
 }
+/* ── Expertise card artwork ───────────────────────────────────────────────
+   Layered, looping motion for the inline SVG scenes in the "What We Do"
+   section. Each scene combines several of these so the illustration keeps
+   revealing something rather than repeating one gesture.
+
+   Everything animates transform / opacity / stroke-dashoffset only, so the
+   whole section stays on the compositor. All motion is disabled under
+   prefers-reduced-motion.
+   ───────────────────────────────────────────────────────────────────────── */
+
+@keyframes ex-float   { 0%,100%{transform:translateY(0)}   50%{transform:translateY(-6px)} }
+@keyframes ex-float-s { 0%,100%{transform:translateY(0)}   50%{transform:translateY(-3px)} }
+@keyframes ex-dash    { to{stroke-dashoffset:-44} }
+@keyframes ex-draw    { 0%{stroke-dashoffset:320} 55%,100%{stroke-dashoffset:0} }
+@keyframes ex-spin    { to{transform:rotate(360deg)} }
+@keyframes ex-spin-rev{ to{transform:rotate(-360deg)} }
+@keyframes ex-blink   { 0%,45%{opacity:1} 55%,100%{opacity:.2} }
+
+/* Background halo — own keyframe, because a CSS animation overrides the SVG
+   `opacity` attribute and a stronger range would swamp the artwork above it. */
+@keyframes ex-halo    { 0%,100%{opacity:.06;transform:scale(1)} 50%{opacity:.11;transform:scale(1.06)} }
+
+/* accent dot breathing */
+@keyframes ex-pulse   { 0%,100%{opacity:.3;transform:scale(1)} 50%{opacity:.75;transform:scale(1.12)} }
+/* expanding sonar ring */
+@keyframes ex-ping    { 0%{transform:scale(.4);opacity:.55} 80%,100%{transform:scale(1.9);opacity:0} }
+/* badge / tick popping into place then resting */
+@keyframes ex-pop     { 0%,12%{transform:scale(0);opacity:0} 26%{transform:scale(1.15);opacity:1} 34%,88%{transform:scale(1);opacity:1} 100%{transform:scale(1);opacity:1} }
+/* a bar growing then settling */
+@keyframes ex-bar     { 0%,100%{transform:scaleY(.45)} 50%{transform:scaleY(1)} }
+/* text/line being typed out */
+@keyframes ex-type    { 0%{transform:scaleX(0)} 45%,60%{transform:scaleX(1)} 100%{transform:scaleX(0)} }
+/* scan line sweeping down a panel */
+@keyframes ex-scan    { 0%{transform:translateY(0);opacity:0} 12%,72%{opacity:.85} 100%{transform:translateY(74px);opacity:0} }
+/* item riding a conveyor left → right */
+@keyframes ex-feed    { 0%{transform:translateX(0);opacity:0} 14%,60%{opacity:1} 100%{transform:translateX(96px);opacity:0} }
+/* item dropping into place */
+@keyframes ex-drop    { 0%{transform:translateY(-26px);opacity:0} 30%,80%{transform:translateY(0);opacity:1} 100%{transform:translateY(0);opacity:0} }
+/* gentle rocking */
+@keyframes ex-swing   { 0%,100%{transform:rotate(-5deg)} 50%{transform:rotate(5deg)} }
+/* rider travelling a delivery route */
+@keyframes ex-travel  { 0%{offset-distance:0%} 100%{offset-distance:100%} }
+/* highlight sliding down a nav list */
+@keyframes ex-nav     { 0%,100%{transform:translateY(0)} 33%{transform:translateY(18px)} 66%{transform:translateY(36px)} }
+/* stacked row cycling upward */
+@keyframes ex-stack   { 0%{transform:translateY(14px);opacity:0} 20%,80%{transform:translateY(0);opacity:1} 100%{transform:translateY(-14px);opacity:0} }
+/* counter-style flicker between states */
+@keyframes ex-flip    { 0%,40%{opacity:1} 50%,90%{opacity:0} 100%{opacity:1} }
+/* packet rising into the cloud */
+@keyframes ex-lift    { 0%{transform:translateY(16px);opacity:0} 25%,60%{opacity:1} 100%{transform:translateY(-30px);opacity:0} }
+
+.ex-float    { animation: ex-float 5s ease-in-out infinite; }
+.ex-float-s  { animation: ex-float-s 4.2s ease-in-out infinite; }
+.ex-halo     { animation: ex-halo 6s ease-in-out infinite; transform-origin:center; }
+.ex-pulse    { animation: ex-pulse 3.4s ease-in-out infinite; transform-origin:center; }
+.ex-ping     { animation: ex-ping 2.8s ease-out infinite; transform-origin:center; }
+.ex-dash     { stroke-dasharray:6 8; animation: ex-dash 2.6s linear infinite; }
+.ex-draw     { stroke-dasharray:320; animation: ex-draw 4.5s ease-in-out infinite; }
+.ex-bar      { animation: ex-bar 3s ease-in-out infinite; transform-origin:bottom; }
+.ex-spin     { animation: ex-spin 18s linear infinite; transform-origin:center; }
+.ex-spin-rev { animation: ex-spin-rev 12s linear infinite; transform-origin:center; }
+.ex-blink    { animation: ex-blink 2.2s ease-in-out infinite; }
+.ex-pop      { animation: ex-pop 4s ease-in-out infinite; transform-origin:center; }
+.ex-type     { animation: ex-type 4s ease-in-out infinite; transform-origin:left; }
+.ex-scan     { animation: ex-scan 3.6s ease-in-out infinite; }
+.ex-feed     { animation: ex-feed 3.8s ease-in-out infinite; }
+.ex-drop     { animation: ex-drop 3.4s ease-in-out infinite; }
+.ex-swing    { animation: ex-swing 4s ease-in-out infinite; transform-origin:center; }
+.ex-travel   { animation: ex-travel 5s ease-in-out infinite; offset-rotate:0deg; }
+.ex-nav      { animation: ex-nav 5s ease-in-out infinite; }
+.ex-stack    { animation: ex-stack 4.4s ease-in-out infinite; }
+.ex-flip     { animation: ex-flip 3s steps(1,end) infinite; }
+.ex-lift     { animation: ex-lift 3.2s ease-in-out infinite; }
+
+.ex-d1 { animation-delay:.25s } .ex-d2 { animation-delay:.5s }
+.ex-d3 { animation-delay:.75s } .ex-d4 { animation-delay:1s }
+.ex-d5 { animation-delay:1.25s } .ex-d6 { animation-delay:1.5s }
+.ex-d7 { animation-delay:1.9s } .ex-d8 { animation-delay:2.3s }
+
+@media (prefers-reduced-motion: reduce) {
+  .ex-float,.ex-float-s,.ex-halo,.ex-pulse,.ex-ping,.ex-dash,.ex-draw,.ex-bar,
+  .ex-spin,.ex-spin-rev,.ex-blink,.ex-pop,.ex-type,.ex-scan,.ex-feed,.ex-drop,
+  .ex-swing,.ex-travel,.ex-nav,.ex-stack,.ex-flip,.ex-lift { animation: none; }
+  .ex-draw { stroke-dashoffset: 0; }
+  .ex-type,.ex-pop { transform: none; opacity: 1; }
+  .ex-feed,.ex-drop,.ex-stack,.ex-lift,.ex-scan { opacity: 1; }
+}

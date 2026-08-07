@@ -1,267 +1,198 @@
-"use client"
+"use client";
 
-import { Smartphone, MonitorSmartphone, Building2, MonitorPlay, BotMessageSquare, ChartNoAxesCombined,MonitorCloud,ShoppingCart,ShoppingBag,HousePlug } from 'lucide-react';
-import Link from 'next/link';
+import Link from "next/link";
+import { motion, Variants } from "framer-motion";
+import {
+  Smartphone,
+  MonitorSmartphone,
+  Building2,
+  MonitorPlay,
+  Sparkles,
+  ChartNoAxesCombined,
+  MonitorCloud,
+  ShoppingCart,
+  ShoppingBag,
+  HousePlug,
+  Cloud,
+  Database,
+  ArrowRight,
+  type LucideIcon,
+} from "lucide-react";
+import { services, type Service } from "@/data/services";
 
-export function Section2(){
-    return(
-        <div className="p-3">
-            <section id="services" className="py-20 md:py-28 px-4 bg-black flex flex-col items-center text-center font-sans overflow-hidden rounded-3xl border border-neutral-900 shadow-xl">
-                  <div className="flex items-center gap-2 mb-2 md:mb-10 text-xs md:text-sm font-semibold tracking-[0.2em] text-neutral-400 uppercase">
-                <span className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
-                Services
+/**
+ * Icons live here rather than in the data module so that the data stays free
+ * of React imports and can be consumed by server components.
+ */
+const icons: Record<string, LucideIcon> = {
+  "web-dev": MonitorSmartphone,
+  "app-dev": Smartphone,
+  "ai-automation": Sparkles,
+  "business-auto": Building2,
+  "desk-app": MonitorPlay,
+  "cloud-platform": Cloud,
+  saas: MonitorCloud,
+  commerce: ShoppingCart,
+  "quick-commerce": ShoppingBag,
+  "digital-marketing": ChartNoAxesCombined,
+  gcc: HousePlug,
+  "data-analytics": Database,
+};
+
+const container: Variants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { staggerChildren: 0.05 } },
+};
+
+const card: Variants = {
+  hidden: { opacity: 0, y: 28 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { type: "spring", stiffness: 90, damping: 18 },
+  },
+};
+
+function ServiceCard({
+  service,
+  index,
+}: {
+  service: Service;
+  index: number;
+}) {
+  const Icon = icons[service.slug] ?? MonitorSmartphone;
+
+  return (
+    <motion.div variants={card}>
+      <Link
+        href={`/services/${service.slug}`}
+        aria-label={`${service.name} — ${service.category}`}
+        className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-neutral-200 bg-white shadow-sm transition-[transform,box-shadow,border-color] duration-300 ease-out hover:-translate-y-1 hover:border-[#0b64f1]/40 hover:shadow-[0_18px_50px_-18px_rgba(11,100,241,0.35)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0b64f1] focus-visible:ring-offset-2"
+      >
+        {/* ── Media ──────────────────────────────────────── */}
+        {/*
+          The zoom lives on an inner wrapper that is GPU-promoted and animates
+          transform only. Animating a filter (brightness/saturate) alongside a
+          scale forces a repaint of the whole layer every frame, which is what
+          made the earlier version flicker; the resting dim is now a separate
+          overlay that animates opacity instead.
+        */}
+        <div className="relative isolate overflow-hidden rounded-t-3xl bg-neutral-100">
+          <div className="relative aspect-[16/10] w-full transform-gpu will-change-transform backface-hidden transition-transform duration-500 ease-out group-hover:scale-[1.05]">
+            {service.image ? (
+              <img
+                src={service.image}
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+                decoding="async"
+                className="absolute inset-0 h-full w-full object-cover object-top"
+              />
+            ) : (
+              // Fallback for any service still awaiting artwork.
+              <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#eaf1fe] via-[#dfe9fd] to-[#cfe0fb]">
+                <Icon className="text-[#0b64f1]/70" size={44} />
               </div>
-              <h2 className="text-3xl sm:text-5xl md:text-[50px] font-bold tracking-tight text-white leading-[1.2] md:leading-[1.15] max-w-5xl mx-auto mb-6">
-                Comprehensive consulting and<br className="hidden md:inline" />
-                intelligent innovation
-              </h2>
-              <p className="text-base sm:text-lg md:text-xl text-neutral-400 max-w-3xl mx-auto leading-relaxed mb-12">
-                Whether you’re optimizing today or building for tomorrow, we help you <br className="hidden md:inline" />
-                move faster with confidence.
-              </p>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-[1px] bg-neutral-800/40 border-y border-neutral-800/40 w-full max-w-7xl mx-auto mt-12">
-                {/* 1. Website Development */}
-                <Link href="" className="group block h-full text-left bg-black">
-                  <div className="pt-10 px-6 sm:px-8 pb-0 flex flex-col justify-between min-h-[440px] h-full sm:h-[460px] transition-all duration-300 hover:bg-neutral-950/80">
-                    <div>
-                      <h3 className="text-xl flex items-center gap-3 font-semibold text-white mb-3 tracking-tight font-plus-jakarta">
-                        <MonitorSmartphone className="text-blue-500" size={24} />
-                        Website Development
-                      </h3>
-                      <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-normal">
-                        Custom websites and web applications built with modern technologies. As a leading website development company in Raipur, we deliver responsive, fast, and SEO-optimized solutions.
-                      </p>
-                    </div>
-                    <div className="relative mt-6 w-full px-2 pb-6">
-                      <div className="relative w-full h-[200px] rounded-xl overflow-hidden border border-neutral-800 bg-neutral-950">
-                        <img 
-                          src="/Webdevlopment.webp" 
-                          alt="Website Development"
-                          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </Link>
+            )}
+          </div>
 
-                {/* 2. App Development */}
-                <Link href="" className="group block h-full text-left bg-black">
-                  <div className="pt-10 px-6 sm:px-8 pb-0 flex flex-col justify-between min-h-[440px] h-full sm:h-[460px] transition-all duration-300 hover:bg-neutral-950/80">
-                    <div>
-                      <h3 className="text-xl flex items-center gap-3 font-semibold text-white mb-3 tracking-tight font-plus-jakarta">
-                        <Smartphone className="text-indigo-500" size={24} />
-                        App Development
-                      </h3>
-                      <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-normal">
-                        Native and cross-platform mobile applications for iOS and Android. Our mobile app development company in Raipur creates user-friendly interfaces with robust functionality.
-                      </p>
-                    </div>
-                    <div className="relative mt-6 w-full px-2 pb-6">
-                      <div className="relative w-full h-[200px] rounded-xl overflow-hidden border border-neutral-800 bg-neutral-950">
-                        <img 
-                          src="/appdevlopment.webp" 
-                          alt="App Development"
-                          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </Link>
+          {/* Resting dim — opacity-only, so it never triggers a repaint */}
+          <div className="pointer-events-none absolute inset-0 bg-neutral-900/10 opacity-100 transition-opacity duration-500 group-hover:opacity-0" />
 
-                {/* 3. Billing Software */}
-                <Link href="" className="group block h-full text-left bg-black">
-                  <div className="pt-10 px-6 sm:px-8 pb-0 flex flex-col justify-between min-h-[440px] h-full sm:h-[460px] transition-all duration-300 hover:bg-neutral-950/80">
-                    <div>
-                      <h3 className="text-xl flex items-center gap-3 font-semibold text-white mb-3 tracking-tight font-plus-jakarta">
-                        <Building2 className="text-emerald-500" size={24} />
-                        Billing Software
-                      </h3>
-                      <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-normal">
-                        GST-compliant billing software provider in Chhattisgarh. Streamline your business processes with automated solutions that increase efficiency and billing speed.
-                      </p>
-                    </div>
-                    <div className="relative mt-6 w-full px-2 pb-6">
-                      <div className="relative w-full h-[200px] rounded-xl overflow-hidden border border-neutral-800 bg-neutral-950">
-                        <img 
-                          src="/billing-and-software.webp" 
-                          alt="Billing Software & Business Automation"
-                          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-
-                {/* 4. Desktop Applications */}
-                <Link href="" className="group block h-full text-left bg-black">
-                  <div className="pt-10 px-6 sm:px-8 pb-0 flex flex-col justify-between min-h-[440px] h-full sm:h-[460px] transition-all duration-300 hover:bg-neutral-950/80">
-                    <div>
-                      <h3 className="text-xl flex items-center gap-3 font-semibold text-white mb-3 tracking-tight font-plus-jakarta">
-                        <MonitorPlay className="text-rose-500" size={24} />
-                        Desktop Applications
-                      </h3>
-                      <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-normal">
-                        Powerful desktop software for Windows, macOS, and Linux. We deliver feature-rich, high-performance offline and online applications for complex business operations.
-                      </p>
-                    </div>
-                    <div className="relative mt-6 w-full px-2 pb-6">
-                      <div className="relative w-full h-[200px] rounded-xl overflow-hidden border border-neutral-800 bg-neutral-950">
-                        <img 
-                          src="/desktop.webp" 
-                          alt="Desktop Applications"
-                          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-
-                {/* 5. API & Cloud DevOps */}
-                <Link href="" className="group block h-full text-left bg-black">
-                  <div className="pt-10 px-6 sm:px-8 pb-0 flex flex-col justify-between min-h-[440px] h-full sm:h-[460px] transition-all duration-300 hover:bg-neutral-950/80">
-                    <div>
-                      <h3 className="text-xl flex items-center gap-3 font-semibold text-white mb-3 tracking-tight font-plus-jakarta">
-                        <BotMessageSquare className="text-purple-500" size={24} />
-                        API & Cloud DevOps
-                      </h3>
-                      <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-normal">
-                        Robust, secure APIs and modern DevOps deployment pipelines. We offer seamless integrations, cloud setup, and microservice architectures for global reliability.
-                      </p>
-                    </div>
-                    <div className="relative mt-6 w-full px-2 pb-6">
-                      <div className="relative w-full h-[200px] rounded-xl overflow-hidden border border-neutral-800 bg-neutral-950">
-                        <img 
-                          src="/Devops.webp" 
-                          alt="API Development & DevOps"
-                          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-
-                {/* 6. Digital Marketing */}
-                <Link href="" className="group block h-full text-left bg-black">
-                  <div className="pt-10 px-6 sm:px-8 pb-0 flex flex-col justify-between min-h-[440px] h-full sm:h-[460px] transition-all duration-300 hover:bg-neutral-950/80">
-                    <div>
-                      <h3 className="text-xl flex items-center gap-3 font-semibold text-white mb-3 tracking-tight font-plus-jakarta">
-                        <ChartNoAxesCombined className="text-amber-500" size={24} />
-                        Digital Marketing
-                      </h3>
-                      <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-normal">
-                        Complete digital marketing solutions in Raipur. High-impact SEO, social media management, targeted PPC campaigns, and analytics to grow your digital footprint.
-                      </p>
-                    </div>
-                    <div className="relative mt-6 w-full px-2 pb-6">
-                      <div className="relative w-full h-[200px] rounded-xl overflow-hidden border border-neutral-800 bg-neutral-950">
-                        <img 
-                          src="/Digital marketing.webp" 
-                          alt="Digital Marketing"
-                          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-                {/* 7. SAAS APLICATIONS */}
-                <Link href="" className="group block h-full text-left bg-black">
-                  <div className="pt-10 px-6 sm:px-8 pb-0 flex flex-col justify-between min-h-[440px] h-full sm:h-[460px] transition-all duration-300 hover:bg-neutral-950/80">
-                    <div>
-                      <h3 className="text-xl flex items-center gap-3 font-semibold text-white mb-3 tracking-tight font-plus-jakarta">
-                        <MonitorCloud className="text-green-700" size={24} />
-                        SAAS Applications
-                      </h3>
-                      <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-normal">
-                        From idea to deployment, we build secure, scalable SaaS products featuring user management, billing systems, dashboards, and cloud-native architecture for long-term success
-                      </p>
-                    </div>
-                    <div className="relative mt-6 w-full px-2 pb-6">
-                      <div className="relative w-full h-[250px] rounded-xl overflow-hidden border border-neutral-800 bg-neutral-950">
-                        <img 
-                          src="/saas aplication1.webp" 
-                          alt="Digital Marketing"
-                          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-
-                {/* 8. ECOMMERCE DEVELOPMENT */}
-                <Link href="" className="group block h-full text-left bg-black">
-                  <div className="pt-10 px-6 sm:px-8 pb-0 flex flex-col justify-between min-h-[440px] h-full sm:h-[460px] transition-all duration-300 hover:bg-neutral-950/80">
-                    <div>
-                      <h3 className="text-xl flex items-center gap-3 font-semibold text-white mb-3 tracking-tight font-plus-jakarta">
-                        <ShoppingCart className="text-blue-700" size={24} />
-                        E-Commerce Development
-                      </h3>
-                      <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-normal">
-                        Build high-performance e-commerce platforms with secure payments, intuitive shopping experiences, inventory management, and scalable architecture to grow your online business.
-                      </p>
-                    </div>
-                    <div className="relative mt-6 w-full px-2 pb-6">
-                      <div className="relative w-full h-[250px] rounded-xl overflow-hidden border border-neutral-800 bg-neutral-950">
-                        <img 
-                          src="/e-commerce.webp" 
-                          alt="Digital Marketing"
-                          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-
-                {/* 9.QUICK Commerce */}
-                <Link href="" className="group block h-full text-left bg-black">
-                  <div className="pt-10 px-6 sm:px-8 pb-0 flex flex-col justify-between min-h-[440px] h-full sm:h-[460px] transition-all duration-300 hover:bg-neutral-950/80">
-                    <div>
-                      <h3 className="text-xl flex items-center gap-3 font-semibold text-white mb-3 tracking-tight font-plus-jakarta">
-                        <ShoppingBag className="text-red-700" size={24} />
-                        Quick Commerce
-                      </h3>
-                      <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-normal">
-                        Build high-speed quick commerce platforms with real-time inventory, instant order processing, smart delivery management, and seamless payment integration to deliver products in minutes.
-                      </p>
-                    </div>
-                    <div className="relative mt-6 w-full px-2 pb-6">
-                      <div className="relative w-full h-[250px] rounded-xl overflow-hidden border border-neutral-800 bg-neutral-950">
-                        <img 
-                          src="/quickCommerce.webp" 
-                          alt="Digital Marketing"
-                          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-
-                {/* 10.GCC- GLOBAL COMPATIBILITY CENTER */}
-                <Link href="" className="group block h-full text-left bg-black">
-                  <div className="pt-10 px-6 sm:px-8 pb-0 flex flex-col justify-between min-h-[440px] h-full sm:h-[460px] transition-all duration-300 hover:bg-neutral-950/80">
-                    <div>
-                      <h3 className="text-xl flex items-center gap-3 font-semibold text-white mb-3 tracking-tight font-plus-jakarta">
-                        <HousePlug className="text-yellow-400" size={24} />
-                        GCC - Global Capability Center
-                      </h3>
-                      <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-normal">
-                        Build world-class Global Capability Centers that drive innovation, streamline enterprise operations, and deliver scalable technology, engineering, and business support across global markets.
-                      </p>
-                    </div>
-                    <div className="relative mt-6 w-full px-2 pb-6">
-                      <div className="relative w-full h-[250px] rounded-xl overflow-hidden border border-neutral-800 bg-neutral-950">
-                        <img 
-                          src="/gcc.webp" 
-                          alt="Digital Marketing"
-                          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-                
-              </div>
-            </section>
+          {/*
+            Index — mirrors the numbering on each service detail page. A frosted
+            pill rather than bare text, because the artwork ranges from a
+            near-white illustration to a dark dashboard screenshot and plain
+            text would lose contrast against one end or the other.
+          */}
+          <span className="pointer-events-none absolute right-4 top-4 rounded-full bg-white/85 px-2.5 py-1 text-[10px] font-bold tabular-nums tracking-widest text-neutral-900 shadow-sm backdrop-blur-sm">
+            {String(index + 1).padStart(2, "0")}
+          </span>
         </div>
-    )
+
+        {/* ── Body ───────────────────────────────────────── */}
+        <div className="flex flex-1 flex-col gap-3 p-6">
+          <div className="flex items-center gap-3">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-neutral-200 bg-neutral-50 transition-colors duration-300 group-hover:border-[#0b64f1]/30 group-hover:bg-[#0b64f1]/5">
+              <Icon className={service.accent} size={18} />
+            </span>
+            <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-neutral-500">
+              {service.category}
+            </span>
+          </div>
+
+          <h3 className="font-plus-jakarta text-lg font-bold tracking-tight text-neutral-900 transition-colors duration-300 group-hover:text-[#0b64f1]">
+            {service.name}
+          </h3>
+
+          <p className="flex-1 text-sm leading-relaxed text-neutral-600">
+            {service.cardCopy}
+          </p>
+
+          <span className="mt-1 inline-flex items-center gap-1.5 text-xs font-semibold text-[#0b64f1] transition-[gap] duration-300 group-hover:gap-2.5">
+            Explore
+            <ArrowRight className="h-3.5 w-3.5" />
+          </span>
+        </div>
+      </Link>
+    </motion.div>
+  );
+}
+
+export function Section2() {
+  return (
+    <div className="p-3">
+      <section
+        id="services"
+        className="relative overflow-hidden rounded-3xl border border-neutral-200 bg-neutral-50 px-4 py-20 font-sans md:py-28"
+      >
+        {/* Soft brand wash behind the heading */}
+        <div
+          className="pointer-events-none absolute left-1/2 top-0 h-[420px] w-[820px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-[0.12] blur-[120px]"
+          style={{ background: "radial-gradient(circle, #0b64f1, transparent)" }}
+        />
+
+        <div className="relative flex flex-col items-center text-center">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-neutral-600 shadow-sm md:text-sm">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#0b64f1]" />
+            Our Services
+          </div>
+
+          <h2 className="mx-auto mb-6 max-w-5xl font-plus-jakarta text-3xl font-bold leading-[1.15] tracking-tight text-neutral-900 sm:text-5xl md:text-[50px]">
+            Considered consulting.
+            <br className="hidden md:inline" /> Intelligent engineering.
+          </h2>
+
+          <p className="mx-auto mb-4 max-w-3xl text-base leading-relaxed text-neutral-600 sm:text-lg md:text-xl">
+            Whether you are modernising an existing system or building something
+            entirely new, our teams help you move faster — with clarity,
+            accountability and confidence at every stage.
+          </p>
+
+          <p className="text-sm font-medium tracking-wide text-neutral-500 sm:text-base">
+            Twelve capability areas. One accountable delivery team.
+          </p>
+        </div>
+
+        {/*
+          Twelve cards on a three-column grid — exactly four full rows. The
+          first card previously spanned two columns as a featured tile, which
+          worked at eleven services (12 cells, 4 rows) but at twelve would
+          strand a single card alone on a fifth row. A uniform grid keeps every
+          row complete at both the two- and three-column breakpoints.
+        */}
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="relative mx-auto mt-16 grid w-full max-w-7xl grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3"
+        >
+          {services.map((service, index) => (
+            <ServiceCard key={service.slug} service={service} index={index} />
+          ))}
+        </motion.div>
+      </section>
+    </div>
+  );
 }

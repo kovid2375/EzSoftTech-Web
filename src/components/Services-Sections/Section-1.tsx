@@ -1,7 +1,7 @@
 "use client"
 
+import Link from "next/link"
 import Button from "../button"
-import { InfiniteMovingCards } from "../ui/infinite-moving-cards"
 import { motion } from "framer-motion"
 
 export function Section1(){
@@ -26,7 +26,7 @@ export function Section1(){
                     {/* Hand-drawn Service Doodle 1 (Top-Right: Web Apps) */}
                     <div className="absolute right-[2%] sm:right-[5%] md:right-[8%] lg:right-[10%] top-[20%] sm:top-[6%] md:top-[12%] lg:top-[16%] opacity-80 flex flex-col items-center select-none pointer-events-none text-neutral-800 z-10 scale-75 xs:scale-85 sm:scale-90 md:scale-100 origin-top-right transition-all">
                         <span className="font-handwriting text-lg xs:text-sm sm:text-xl lg:text-2xl text-neutral-700 tracking-wide transform -rotate-6 mb-1 whitespace-nowrap">
-                            Modern Web Apps
+                            Modern Web Applications
                         </span>
                         <motion.div
                             animate={{ y: [0, -8, 0], rotate: [-2, 2, -2] }}
@@ -46,7 +46,7 @@ export function Section1(){
                         </motion.div>
                     </div>
 
-                    {/* Hand-drawn Service Doodle 2 (Top-Left: AI & Automation) */}
+                    {/* Hand-drawn Service Doodle 2 (Top-Left: Applied AI & Automation) */}
                     <div className="absolute left-[2%] sm:left-[5%] md:left-[8%] lg:left-[10%] top-[25%] sm:top-[6%] md:top-[12%] lg:top-[17%] opacity-80 flex flex-col xs:flex-row items-center select-none pointer-events-none text-amber-500 z-10 scale-75 xs:scale-85 sm:scale-90 md:scale-100 origin-top-left transition-all">
                         <motion.div
                             animate={{ scale: [0.9, 1.1, 0.9], rotate: [0, 360] }}
@@ -60,7 +60,7 @@ export function Section1(){
                             </svg>
                         </motion.div>
                         <span className="font-handwriting text-lg xs:text-sm sm:text-xl lg:text-2xl text-amber-600 tracking-wider transform -rotate-6 whitespace-nowrap">
-                            AI & Automation
+                            Applied AI & Automation
                         </span>
                     </div>
 
@@ -80,10 +80,10 @@ export function Section1(){
                         </motion.div>
                     </div>
 
-                    {/* Hand-drawn Service Doodle 4 (Bottom-Right: iOS & Android Apps) */}
+                    {/* Hand-drawn Service Doodle 4 (Bottom-Right: iOS & Android Products) */}
                     <div className="absolute right-[2%] sm:right-[5%] md:right-[8%] lg:right-[13%] bottom-[30%] sm:bottom-[12%] md:top-[60%] lg:top-[63%] opacity-80 flex flex-col items-center select-none pointer-events-none text-neutral-800 z-10 scale-75 xs:scale-85 sm:scale-90 md:scale-100 origin-bottom-right transition-all">
                         <span className="font-handwriting text-lg xs:text-sm sm:text-lg lg:text-xl text-neutral-700 tracking-wide transform rotate-6 mb-1 whitespace-nowrap">
-                            iOS & Android Apps
+                            iOS & Android Products
                         </span>
                         <motion.div
                             animate={{ y: [0, 8, 0], rotate: [2, -2, 2] }}
@@ -105,12 +105,14 @@ export function Section1(){
 
                     {/* Main Hero Content */}
                     <div className="relative z-10 flex flex-col items-center justify-center text-center">
-                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[90px] text-neutral-900 font-bold font-plus-jakarta leading-tight text-center items-center">
-                            Smarter strategy.
-                        </h1>
-                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[80px] text-neutral-900 font-bold font-plus-jakarta leading-tight mt-1 text-center items-center">
+                        {/* Single H1 for the page — the two visual lines are spans. */}
+                        <h1 className="text-neutral-900 font-bold font-plus-jakarta text-center items-center">
+                            <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-[90px] leading-tight">
+                                Smarter strategy.
+                            </span>
+                            <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-[80px] leading-tight mt-1">
                             <span className="relative inline-block text-[#0b64f1]">
-                                Powered By AI
+                                Engineered with AI.
                                 <svg className="absolute -bottom-1 sm:-bottom-2 left-0 w-full h-2.5 sm:h-3 text-orange-600" viewBox="0 0 150 12" fill="none" preserveAspectRatio="none">
                                     <motion.path
                                         initial={{ pathLength: 0 }}
@@ -123,16 +125,23 @@ export function Section1(){
                                     />
                                 </svg>
                             </span>
+                            </span>
                         </h1>
 
                         <div className="mt-4 flex flex-col text-neutral-600 text-sm sm:text-base md:text-lg font-medium tracking-wide max-w-2xl space-y-1 text-center">
-                            <p>From strategy to implementation, we create solutions</p>
-                            <p>that deliver measurable impact.</p>
+                            <p>From initial strategy through to deployment and support, we design and build</p>
+                            <p>software that delivers measurable business outcomes — not just deliverables.</p>
                         </div>
 
                         <div className="relative flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mt-8">
-                            <Button href="/contact">Get Started</Button>
-                            
+                            <Button href="/contact">Start Your Project</Button>
+                            <Link
+                                href="/contact"
+                                className="inline-flex justify-center items-center gap-2 bg-white/80 backdrop-blur border border-neutral-300 hover:border-[#0b64f1] text-neutral-900 px-6 py-3 rounded-full font-semibold text-sm transition-colors"
+                            >
+                                Speak to an Engineer
+                            </Link>
+
                             {/* Hand-drawn Service Doodle 5 (CTA Pointer placed inline/responsive) */}
                             <div className="flex items-center gap-2 select-none pointer-events-none text-neutral-700 sm:absolute sm:left-[calc(50%+85px)] md:left-[calc(50%+100px)] lg:left-[-300px] sm:top-1/2 sm:-translate-y-1/2">
                                 <svg className="w-8 h-7 sm:w-11 sm:h-9 md:w-[55px] md:h-[45px] transform -rotate-45 sm:rotate-12" viewBox="0 0 60 45" fill="none" stroke="currentColor" strokeWidth="2">

@@ -1,8 +1,9 @@
 "use client";
 
 import React from "react";
-import { MapPin, Phone, Mail, Clock, ArrowUpRight } from "lucide-react";
+import { MapPin, Phone, Mail } from "lucide-react";
 import Button from "@/components/button";
+import { COMPANY } from "@/lib/company";
 
 export function Section2() {
   const mapEmbedUrl =
@@ -18,10 +19,12 @@ export function Section2() {
         <div className="lg:col-span-5 bg-white rounded-3xl p-8 sm:p-10 flex flex-col justify-between space-y-8">
           <div className="space-y-4">
             <h2 className="text-4xl sm:text-5xl font-semibold text-slate-900 tracking-tight leading-tight">
-              Visit Our Office
+              How to reach us
             </h2>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              Ready to start something? Drop by our Raipur studio, or reach out — we work with teams across India, UK, UAE, and the USA.
+              Drop by our Raipur office, or reach out directly — we work with
+              clients across India, the United Kingdom, the UAE and the United
+              States.
             </p>
           </div>
 
@@ -37,7 +40,7 @@ export function Section2() {
                   Office Address
                 </p>
                 <p className="text-sm font-medium text-black mt-0.5 leading-snug">
-                  3rd Floor, Block E, Lk Corporates Tower, New Dhamtari Road Dumartarai, Raipur, Chhattisgarh 492015
+                  {COMPANY.addressLine}
                 </p>
               </div>
             </div>
@@ -51,41 +54,60 @@ export function Section2() {
                 <p className="text-[11px] font-bold tracking-wider text-black uppercase">
                   Phone
                 </p>
-                <p className="text-sm font-medium text-black mt-0.5">
-                  +91 89623 70822
-                </p>
+                <a
+                  href={COMPANY.telephoneHref}
+                  className="text-sm font-medium text-black mt-0.5 block hover:text-blue-700 transition-colors"
+                >
+                  {COMPANY.telephone}
+                </a>
               </div>
             </div>
 
-            {/* Email */}
-            <div className="flex items-center gap-4 p-4 rounded-2xl bg-white border border-stone-200/60 shadow-xs">
-              <div className="w-10 h-10 rounded-full bg-blue-700 text-white flex items-center justify-center shrink-0">
-                <Mail className="w-5 h-5" />
+            {/* Email addresses — one per purpose, so enquiries are not lost */}
+            {[
+              {
+                label: "Email",
+                address: COMPANY.email.general,
+                note: "New enquiries, technical questions and partnerships.",
+              },
+              {
+                label: "Careers",
+                address: COMPANY.email.careers,
+                note: "Applications and role enquiries.",
+              },
+              {
+                label: "Support",
+                address: COMPANY.email.support,
+                note: "Existing clients with issues or change requests.",
+              },
+            ].map((entry) => (
+              <div
+                key={entry.address}
+                className="flex items-start gap-4 p-4 rounded-2xl bg-white border border-stone-200/60 shadow-xs"
+              >
+                <div className="w-10 h-10 rounded-full bg-blue-700 text-white flex items-center justify-center shrink-0 mt-0.5">
+                  <Mail className="w-5 h-5" />
+                </div>
+                <div className="min-w-0">
+                  <p className="text-[11px] font-bold tracking-wider text-black uppercase">
+                    {entry.label}
+                  </p>
+                  <a
+                    href={`mailto:${entry.address}`}
+                    className="text-sm font-medium text-black mt-0.5 block break-all hover:text-blue-700 transition-colors"
+                  >
+                    {entry.address}
+                  </a>
+                  <p className="text-xs text-slate-500 mt-0.5">{entry.note}</p>
+                </div>
               </div>
-              <div>
-                <p className="text-[11px] font-bold tracking-wider text-black uppercase">
-                  Email
-                </p>
-                <p className="text-sm font-medium text-black mt-0.5">
-                  info@ezsofttech.in
-                </p>
-              </div>
-            </div>
+            ))}
 
-            {/* Business Hours */}
-            <div className="flex items-center gap-4 p-4 rounded-2xl bg-white border border-stone-200/60 shadow-xs">
-              <div className="w-10 h-10 rounded-full bg-blue-700 text-white flex items-center justify-center shrink-0">
-                <Clock className="w-5 h-5" />
-              </div>
-              <div>
-                <p className="text-[11px] font-bold tracking-wider text-black uppercase">
-                  Office Hours
-                </p>
-                <p className="text-sm font-medium text-black mt-0.5">
-                  Mon–Sat · 10:30 AM – 7:00 PM IST
-                </p>
-              </div>
-            </div>
+            {/*
+              TODO (client input required): confirm office hours before
+              publishing them, then reinstate a card here using the Clock icon.
+              The content document lists this as an unverified input.
+            */}
           </div>
 
           {/* Action Button */}

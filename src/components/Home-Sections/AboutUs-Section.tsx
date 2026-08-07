@@ -149,7 +149,7 @@ export function AboutUsSection() {
 
       </div>
       <div className='items-center justify-center'>
-          <Link href="/AboutUs">
+          <Link href="/about-us">
             <Button>More about us</Button>          
           </Link>
              

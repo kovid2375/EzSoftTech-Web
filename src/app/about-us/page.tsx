@@ -4,7 +4,7 @@ import { Section3 } from '@/components/About-Sections/Section-3'
 
 import type { Metadata } from 'next';
 export const metadata: Metadata = {
-  title: 'About EZGlobal | Software Company in Raipur, India',
+  title: 'About EZGlobal | Software Company in India',
   description: 'Learn about EZGlobal, a software engineering company in Raipur, Chhattisgarh, delivering web, mobile, AI and cloud systems across India, UK, UAE and USA.',
   // Add additional SEO fields as needed.
 };

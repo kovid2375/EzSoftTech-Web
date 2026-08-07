@@ -10,6 +10,7 @@ import {
   Mail,
   ChevronRight,
 } from 'lucide-react';
+import { COMPANY } from '@/lib/company';
 import Link from 'next/link';
 
 type Subsection = {
@@ -26,64 +27,146 @@ type Section = {
   subsections?: Subsection[];
 };
 
+/**
+ * Terms of Service — section 8 of the master content document.
+ *
+ * ⚠️ Drafted template, not legal advice. Have this reviewed by a qualified
+ * legal practitioner before publishing, including the liability cap, the IP
+ * transfer clause, the payment schedule, and the jurisdiction position for UK,
+ * UAE and US clients.
+ *
+ * Where the content document left a figure to be confirmed, the concrete term
+ * already published on the site has been retained rather than replaced with a
+ * placeholder — payment schedule, defect window and notice period below.
+ */
 const sections: Section[] = [
   {
-    id: 'service-agreement',
-    title: 'Service Agreement',
+    id: "agreement",
+    title: "Agreement",
     icon: Briefcase,
-    body: 'By engaging EZ GLOBAL for software development, consulting, or related technology services, you acknowledge and agree to the terms outlined in this Service Agreement. All project requirements, objectives, deliverables, timelines, and pricing must be clearly documented and mutually agreed upon before work begins. Any modifications or additions to the agreed project scope may require additional development time, revised timelines, and corresponding costs. Throughout the project, both parties are expected to maintain regular communication and provide timely feedback to ensure smooth collaboration and successful project delivery. Upon fulfillment of the agreed payment terms, EZ GLOBAL will provide the final project deliverables, including all applicable files, documentation, and assets as specified in the project agreement.',
+    body: "These Terms govern your use of the EZGlobal website and, where applicable, the provision of our services. By accessing this website or engaging our services, you agree to be bound by these Terms. Where a separate signed agreement, statement of work or proposal exists between us, that document prevails in the event of conflict.",
   },
   {
-    id: 'payment-terms',
-    title: 'Payment Terms',
+    id: "services",
+    title: "Services",
+    icon: Briefcase,
+    body: "EZGlobal provides software engineering, digital growth and related professional services. The specific scope, deliverables, timeline and fees applicable to any engagement are set out in the written proposal or statement of work agreed between the parties.",
+  },
+  {
+    id: "quotations-and-fees",
+    title: "Quotations and Fees",
     icon: CreditCard,
-    body: 'To ensure a smooth and transparent working relationship, EZ GLOBAL follows a structured payment process for all projects. A 50% advance payment is required before project development begins to confirm engagement and allocate resources. The remaining project cost is typically divided into predefined milestone payments, which become due upon the successful completion of agreed project phases. The final balance must be paid before the delivery, deployment, or transfer of the completed project and associated deliverables. Payments not received by the agreed due date may be subject to late payment charges or interest, as permitted by applicable laws and the project agreement. Any requests for refunds will be evaluated based on the project\'s stage of completion, work already performed, and the terms specified in the individual service contract.',
+    body: "Any pricing indicated on this website is indicative; final fees are confirmed in a written proposal. All fees are exclusive of applicable taxes unless expressly stated.",
+    bullets: [
+      "A 50% advance payment is required before development begins, with the remainder divided into milestone payments due on completion of agreed project phases.",
+      "The final balance is payable before delivery, deployment or transfer of the completed project and associated deliverables.",
+      "Late payment may attract interest as permitted by applicable law and the project agreement, and may result in suspension of work.",
+      "Refund requests are evaluated against the project's stage of completion, work already performed, and the terms of the individual service contract.",
+    ],
   },
   {
-    id: 'intellectual-property',
-    title: 'Intellectual Property',
+    id: "client-responsibilities",
+    title: "Client Responsibilities",
+    icon: Briefcase,
+    body: "To enable timely delivery, you agree to:",
+    bullets: [
+      "Provide required content, assets, access and approvals promptly",
+      "Nominate a single decision-making contact for the engagement",
+      "Respond to requests for feedback or approval within a reasonable period",
+      "Ensure all materials supplied to us do not infringe third-party rights",
+    ],
+  },
+  {
+    id: "scope-changes",
+    title: "Changes to Scope",
+    icon: AlertTriangle,
+    body: "Requests falling outside the agreed scope will be assessed and quoted separately. No additional work commences without your written approval of the revised scope and cost. Delays attributable to the client may affect agreed timelines and, where material, costs.",
+  },
+  {
+    id: "intellectual-property",
+    title: "Intellectual Property",
     icon: Copyright,
     subsections: [
       {
-        title: 'Client Ownership',
-        body: 'Upon receipt of full payment for the agreed services, the client will own all custom-developed software, source code, applications, and other deliverables specifically created for the project, as outlined in the project agreement. This ownership excludes any third-party software, open-source libraries, frameworks, APIs, plugins, or tools that are governed by their respective licenses and terms of use.',
+        title: "Our materials",
+        body: "All content on this website — text, design, graphics, code and marks — is owned by EZGlobal or its licensors and may not be reproduced without written permission.",
       },
       {
-        title: 'EZ GLOBAL Tech Rights',
-        body: "While the client retains ownership of the custom project deliverables, EZ GLOBAL reserves the right to retain ownership of its proprietary methodologies, development processes, technical know-how, reusable code components, internal frameworks, templates, utilities, and best practices developed independently of the project. With the client's prior consent, EZ GLOBAL may also showcase the completed project, including non-confidential information, as part of its portfolio, case studies, marketing materials, or promotional content to demonstrate its expertise and capabilities.",
+        title: "Project deliverables",
+        body: "Unless otherwise stated in the applicable agreement, intellectual property in custom deliverables transfers to the client upon receipt of full payment.",
+      },
+      {
+        title: "Retained rights",
+        body: "We retain ownership of pre-existing tools, libraries, frameworks and generic components used in delivery, and grant you a perpetual, non-exclusive licence to use them as incorporated into your deliverables.",
+      },
+      {
+        title: "Third-party components",
+        body: "Deliverables may incorporate third-party or open-source components governed by their own licences, which will be disclosed to you.",
+      },
+      {
+        title: "Portfolio rights",
+        body: "We may reference the engagement and display non-confidential work in our portfolio and marketing materials, unless you notify us otherwise in writing.",
       },
     ],
   },
   {
-    id: 'warranties-disclaimers',
-    title: 'Warranties & Disclaimers',
+    id: "confidentiality",
+    title: "Confidentiality",
     icon: ShieldCheck,
-    subsections: [
-      {
-        title: 'Service Warranty',
-        body: 'EZ GLOBAL is committed to delivering high-quality software solutions that meet the agreed project requirements. We provide a 90-day warranty from the date of project delivery to cover software defects or issues directly resulting from our development work. During this warranty period, eligible bugs and defects will be resolved at no additional cost. Any ongoing support, feature enhancements, maintenance, or updates beyond the warranty period can be provided through a separate support and maintenance agreement tailored to the client\'s requirements.',
-      },
-      {
-        title: 'Limitations of Liability',
-        body: "While we make every effort to deliver reliable and secure software solutions, EZ GLOBAL's liability is limited to the total value of the project or services provided. We are not responsible for indirect, incidental, consequential, or special damages, including loss of profits, business interruption, or data loss. Additionally, we cannot be held liable for issues arising from third-party services, APIs, software, hosting providers, cloud platforms, or other external dependencies beyond our control. The performance, availability, and scalability of the delivered solution may also vary depending on the client's hosting environment, infrastructure, network conditions, and third-party service providers.",
-      },
-    ],
+    body: "Each party agrees to keep confidential all non-public information received from the other and to use it solely for the purposes of the engagement. This obligation survives termination. Formal non-disclosure agreements are available on request.",
   },
   {
-    id: 'project-termination',
-    title: 'Project Termination',
+    id: "warranties-disclaimers",
+    title: "Warranties and Defects",
+    icon: ShieldCheck,
+    body: "We warrant that services will be performed with reasonable skill and care. We will correct defects in deliverables reported within 90 days of delivery at no additional cost, provided the defect arises from our work and not from client modification, third-party interference or changes in scope. Beyond this, and to the fullest extent permitted by law, services are provided without further warranty. Ongoing support, feature enhancements and maintenance beyond that period are available under a separate agreement.",
+  },
+  {
+    id: "limitation-of-liability",
+    title: "Limitation of Liability",
     icon: AlertTriangle,
-    body: "Either the client or EZ GLOBAL may terminate a project by providing 30 days' written notice, provided the project is not subject to critical deadlines or other contractual obligations requiring continued engagement. Either party may also terminate the agreement immediately in the event of a material breach of contract, including but not limited to non-payment, failure to meet agreed obligations, or violation of the terms and conditions. In the event of termination, the client shall be responsible for payment of all work completed, approved milestones, and any expenses incurred up to the effective date of termination. Upon receipt of all outstanding payments, EZ GLOBAL will deliver the completed work, project assets, and relevant documentation produced up to the termination date, in accordance with the agreed project scope and contractual terms.",
+    body: "To the fullest extent permitted by law, EZGlobal shall not be liable for indirect, incidental, consequential or punitive damages, or for loss of profit, revenue, data or business opportunity. Our total aggregate liability arising from any engagement shall not exceed the total fees paid by the client under that engagement. We are not liable for issues arising from third-party services, hosting providers or other external dependencies beyond our control. Nothing in these Terms excludes liability that cannot lawfully be excluded.",
   },
   {
-    id: 'governing-law',
-    title: 'Governing Law',
+    id: "project-termination",
+    title: "Termination",
+    icon: AlertTriangle,
+    body: "Either party may terminate an engagement by giving 30 days' written notice, and either party may terminate immediately in the event of a material breach. On termination, fees for work completed to the termination date become payable, we will deliver completed work in its then-current state, and confidentiality and intellectual property provisions continue to apply.",
+  },
+  {
+    id: "force-majeure",
+    title: "Force Majeure",
+    icon: AlertTriangle,
+    body: "Neither party is liable for failure to perform due to events beyond reasonable control, including natural disaster, government action, war, civil disruption, epidemic, or failure of telecommunications or utility infrastructure.",
+  },
+  {
+    id: "governing-law",
+    title: "Governing Law and Jurisdiction",
     icon: Scale,
-    body: 'These Terms and Conditions shall be governed by and interpreted in accordance with the laws of India. Any dispute, claim, or controversy arising out of or relating to these terms, the services provided by EZ GLOBAL, or any related agreement shall first be resolved through good-faith discussions and mutual negotiation between the parties. If a resolution cannot be reached amicably, the dispute shall be referred to arbitration in Raipur, Chhattisgarh, in accordance with the provisions of the Arbitration and Conciliation Act, 1996, as amended from time to time. The decision of the arbitrator shall be final and binding on both parties. Subject to the foregoing, the courts located in Raipur, Chhattisgarh, India, shall have exclusive jurisdiction over any matters arising under these terms where applicable.',
+    body: "These Terms are governed by the laws of India. Any dispute shall first be addressed through good-faith negotiation. Failing resolution, the dispute shall be referred to arbitration in Raipur, Chhattisgarh, under the Arbitration and Conciliation Act, 1996, as amended. Subject to the foregoing, the courts at Raipur, Chhattisgarh shall have exclusive jurisdiction.",
+  },
+  {
+    id: "changes-to-terms",
+    title: "Changes to These Terms",
+    icon: Scale,
+    body: "We may revise these Terms from time to time. Continued use of the website following revision constitutes acceptance. Changes do not retrospectively affect engagements already contracted.",
+  },
+  {
+    id: "contact",
+    title: "Contact",
+    icon: Mail,
+    body: `Questions about these Terms may be sent to ${COMPANY.email.general}, or by telephone on ${COMPANY.telephone}. Our registered address is ${COMPANY.addressLine}, India.`,
   },
 ];
 
-const lastUpdated = 'July 31, 2026';
+/*
+ * TODO (legal review required): confirm the liability cap, the proposal
+ * validity window, the client feedback window, and whether a separate
+ * jurisdiction or arbitration provision is appropriate for UK, UAE and US
+ * clients.
+ */
+
+const lastUpdated = "7 August 2026";
 
 function useActiveSection() {
   const [active, setActive] = useState(sections[0].id);
@@ -144,9 +227,9 @@ function TermsOfService() {
             Terms of <span className="text-blue-600">Service</span>
           </h1>
           <p className="mt-4 max-w-2xl text-lg leading-relaxed text-slate-600">
-            These terms govern your engagement with EZ GLOBAL for software
-            development and related technology services. Please read them
-            carefully before work begins.
+            The terms governing use of the EZGlobal website and the provision of
+            our engineering and growth services. Please read them carefully
+            before work begins.
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-4 text-sm text-slate-500">
             <span className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-3 py-1 font-medium">
@@ -155,7 +238,7 @@ function TermsOfService() {
             </span>
             <span className="inline-flex items-center gap-2">
               <Mail className="h-3.5 w-3.5" />
-              info@ezsofttech.in
+              {COMPANY.email.general}
             </span>
           </div>
         </div>

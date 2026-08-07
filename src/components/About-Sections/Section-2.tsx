@@ -1,7 +1,7 @@
 "use client"
 
 import React from 'react'
-import { Flag, Code, Users, Target, ShieldCheck, TrendingUp, MapPin, Quote } from 'lucide-react'
+import { Flag, Code, Users, Target, ShieldCheck, TrendingUp, MapPin } from 'lucide-react'
 import { motion } from 'motion/react'
 
 export function Section2() {
@@ -32,7 +32,7 @@ export function Section2() {
     {
       icon: <Flag className="w-4 h-4 text-blue-600" />,
       title: "The beginning",
-      desc: "An idea to build world-class software from where we come from."
+      desc: "A conviction that businesses outside the metropolitan technology hubs deserve the same standard of engineering as those within them."
     },
     {
       icon: <Code className="w-4 h-4 text-blue-600" />,
@@ -67,17 +67,14 @@ export function Section2() {
               EZGlobal was founded in 2019 with a straightforward conviction: that businesses outside the metropolitan technology hubs deserve the same standard of engineering as those within them.
             </p>
 
-            {/* Blockquote / Confirmation Box */}
-            <div className="bg-blue-50/50 border border-blue-100 rounded-2xl p-6 flex gap-4 text-left items-start relative overflow-hidden">
-              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white mt-1 shadow-sm">
-                <Quote className="w-5 h-5 fill-current" />
-              </div>
-              <div className="space-y-1">
-                <p className="text-blue-700 font-medium text-sm md:text-base leading-relaxed">
-                  [CONFIRM: 2–3 sentences on your actual origin — who started it, what they were doing before, what gap they saw. Specific and modest reads better than grand and vague.]
-                </p>
-              </div>
-            </div>
+            {/*
+              An origin-story quote box sat here holding placeholder text.
+              Removed rather than filled: the content document is explicit that
+              invented history is the fastest way to lose a serious client's
+              trust. To reinstate it, wrap 2–3 factual sentences about who
+              started the company, what they did before and what gap they saw
+              in a blue quote card using the `Quote` icon.
+            */}
 
             {/* Sub-text */}
             <p className="text-neutral-600 text-lg leading-relaxed">
