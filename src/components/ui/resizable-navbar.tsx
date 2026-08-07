@@ -314,11 +314,195 @@ export const NavbarButton = ({
   );
 };
 
+type MenuItem = {
+  name: string;
+  desc: string;
+  link: string;
+  icon: LucideIcon;
+};
+
+type MenuGroup = { group: string; items: MenuItem[] };
+
+/**
+ * The grouped services mega-panel.
+ *
+ * Extracted so SERVICES and EXPERTISE render the identical menu from one
+ * implementation — duplicating ~130 lines of markup would guarantee the two
+ * drift apart the first time either is touched.
+ */
+const ServicesMegaPanel = ({
+  groups,
+  pathname,
+  onNavigate,
+}: {
+  groups: MenuGroup[];
+  pathname: string;
+  onNavigate: () => void;
+}) => (
+  <motion.div
+    initial={{ opacity: 0, y: 8, scale: 0.96 }}
+    animate={{ opacity: 1, y: 0, scale: 1 }}
+    exit={{ opacity: 0, y: 6, scale: 0.96 }}
+    transition={{ type: "spring", stiffness: 350, damping: 25 }}
+    className="absolute left-1/2 -translate-x-1/2 top-full pt-2.5 w-[min(90vw,940px)] z-50 flex flex-col"
+  >
+    {/*
+      Opaque rather than translucent: at this width the panel sits over hero
+      headlines, and any bleed-through makes the service names hard to read.
+    */}
+    <div
+      style={{
+        backgroundColor: "#ffffff",
+        boxShadow:
+          "0 20px 50px -10px rgba(0, 0, 0, 0.25), 0 10px 25px -5px rgba(37, 99, 235, 0.15)",
+      }}
+      className="rounded-3xl p-4 flex flex-col gap-1.5 shadow-2xl border border-slate-200/80"
+    >
+      {/* Three grouped columns: Build / Automate / Scale */}
+      <div className="grid grid-cols-3 gap-x-3 gap-y-1">
+        {groups.map(({ group, items }) => (
+          <div key={group} className="flex flex-col">
+            <span className="px-2.5 pb-2 text-[10px] font-black uppercase tracking-[0.18em] text-slate-400">
+              {group}
+            </span>
+
+            <div className="flex flex-col gap-1">
+              {items.map((item) => {
+                const Icon = item.icon;
+                const isActive = pathname === item.link;
+
+                return (
+                  <Link
+                    key={item.link}
+                    href={item.link}
+                    onClick={onNavigate}
+                    className={cn(
+                      "group flex items-center gap-2.5 p-2 rounded-2xl transition-all duration-200 normal-case tracking-normal border border-transparent",
+                      isActive
+                        ? "bg-blue-600 text-white font-semibold shadow-xs"
+                        : "hover:bg-blue-50/80 hover:border-blue-100/80 text-slate-900"
+                    )}
+                  >
+                    <div
+                      className={cn(
+                        "w-8 h-8 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300 shadow-xs",
+                        isActive
+                          ? "bg-white text-blue-600"
+                          : "bg-blue-50 text-blue-600 border border-blue-100 group-hover:bg-blue-600 group-hover:text-white group-hover:scale-105"
+                      )}
+                    >
+                      <Icon className="w-4 h-4" />
+                    </div>
+
+                    <div className="flex flex-col flex-1 min-w-0">
+                      <span
+                        className={cn(
+                          "text-[11px] font-bold transition-colors leading-tight",
+                          isActive
+                            ? "text-white"
+                            : "text-slate-900 group-hover:text-blue-600"
+                        )}
+                      >
+                        {item.name}
+                      </span>
+                      <span
+                        className={cn(
+                          "text-[10px] font-medium truncate mt-0.5",
+                          isActive
+                            ? "text-blue-100"
+                            : "text-slate-500 group-hover:text-slate-600"
+                        )}
+                      >
+                        {item.desc}
+                      </span>
+                    </div>
+
+                    <ChevronRight
+                      className={cn(
+                        "w-3.5 h-3.5 transition-all duration-200 shrink-0",
+                        isActive
+                          ? "text-white opacity-100 translate-x-0"
+                          : "text-slate-400 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:text-blue-600"
+                      )}
+                    />
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Card Footer Link */}
+      <div className="pt-2 mt-1 border-t border-slate-100">
+        <Link
+          href="/services"
+          onClick={onNavigate}
+          className="flex items-center justify-between px-3 py-1.5 rounded-xl hover:bg-blue-50 text-[11px] font-bold text-blue-600 transition-colors group normal-case"
+        >
+          <span>Explore all services</span>
+          <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+        </Link>
+      </div>
+    </div>
+  </motion.div>
+);
+
+/** Collapsible services list used inside the mobile menu. */
+const MobileServicesList = ({
+  items,
+  pathname,
+  onNavigate,
+}: {
+  items: MenuItem[];
+  pathname: string;
+  onNavigate: () => void;
+}) => (
+  <motion.div
+    initial={{ opacity: 0, height: 0 }}
+    animate={{ opacity: 1, height: "auto" }}
+    exit={{ opacity: 0, height: 0 }}
+    transition={{ duration: 0.2 }}
+    className="overflow-hidden"
+  >
+    <div className="ml-4 pl-3 border-l-2 border-slate-200 flex flex-col gap-1.5 my-1.5">
+      {items.map((item) => {
+        const Icon = item.icon;
+        return (
+          <Link
+            key={item.link}
+            href={item.link}
+            onClick={onNavigate}
+            className={cn(
+              "px-3 py-2 rounded-xl text-xs font-semibold normal-case tracking-normal transition-all flex items-center gap-2.5",
+              pathname === item.link
+                ? "bg-blue-500/20 text-blue-600 font-bold"
+                : "text-slate-800 hover:bg-black/5 hover:text-black"
+            )}
+          >
+            <Icon className="w-4 h-4 text-blue-600 shrink-0" />
+            <span>{item.name}</span>
+          </Link>
+        );
+      })}
+    </div>
+  </motion.div>
+);
+
 // Resizable Navbar with Translucent Glass Body & Slightly Transparent Dropdown
 export const ResizableNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isExpertiseOpen, setIsExpertiseOpen] = useState(false);
+  /**
+   * Which mega-menu is open. SERVICES and EXPERTISE show the same panel, so a
+   * single value keeps them mutually exclusive — hovering one closes the other
+   * instead of leaving two identical panels stacked on screen.
+   */
+  const [openMenu, setOpenMenu] = useState<null | "services" | "expertise">(
+    null
+  );
   const pathname = usePathname();
+
+  const closeMenus = () => setOpenMenu(null);
 
   /**
    * A dozen services cannot sit in a flat menu, so the dropdown groups them
@@ -374,31 +558,63 @@ export const ResizableNavbar = () => {
             ABOUT US
           </Link>
 
-          {/* 3. SERVICES */}
-          <Link
-            href="/services"
-            className={cn(
-              "px-4 py-1.5 rounded-full transition-all duration-200",
-              isServicesActive
-                ? "bg-blue-600 text-white font-black shadow-md"
-                : "text-black hover:text-black hover:bg-black/10 font-bold"
-            )}
-          >
-            SERVICES
-          </Link>
-
-          
-          {/* 4. EXPERTISE Dropdown */}
+          {/* 3. SERVICES — same mega-panel as EXPERTISE */}
           <div
             className="relative"
-            onMouseEnter={() => setIsExpertiseOpen(true)}
-            onMouseLeave={() => setIsExpertiseOpen(false)}
+            onMouseEnter={() => setOpenMenu("services")}
+            onMouseLeave={closeMenus}
+          >
+            {/*
+              The label stays a real link: SERVICES has a landing page of its
+              own, so clicking navigates while hovering reveals the menu.
+            */}
+            <Link
+              href="/services"
+              onClick={closeMenus}
+              className={cn(
+                "px-4 py-1.5 rounded-full transition-all duration-200 flex items-center gap-1.5 select-none",
+                isServicesActive || openMenu === "services"
+                  ? "bg-blue-600 text-white font-black shadow-md"
+                  : "text-black hover:text-black hover:bg-black/10 font-bold"
+              )}
+            >
+              <span>SERVICES</span>
+              <ChevronDown
+                className={cn(
+                  "w-3.5 h-3.5 stroke-[2.5] transition-transform duration-200",
+                  isServicesActive || openMenu === "services"
+                    ? "text-white"
+                    : "text-slate-800",
+                  openMenu === "services" && "rotate-180"
+                )}
+              />
+            </Link>
+
+            <AnimatePresence>
+              {openMenu === "services" && (
+                <ServicesMegaPanel
+                  groups={expertiseGroups}
+                  pathname={pathname}
+                  onNavigate={closeMenus}
+                />
+              )}
+            </AnimatePresence>
+          </div>
+
+
+          {/* 4. EXPERTISE — renders the identical panel */}
+          <div
+            className="relative"
+            onMouseEnter={() => setOpenMenu("expertise")}
+            onMouseLeave={closeMenus}
           >
             <div
-              onClick={() => setIsExpertiseOpen((prev) => !prev)}
+              onClick={() =>
+                setOpenMenu((prev) => (prev === "expertise" ? null : "expertise"))
+              }
               className={cn(
                 "px-4 py-1.5 rounded-full transition-all duration-200 flex items-center gap-1.5 cursor-pointer select-none",
-                isExpertiseActive || isExpertiseOpen
+                isExpertiseActive || openMenu === "expertise"
                   ? "bg-blue-600 text-white font-black shadow-md"
                   : "text-black hover:text-black hover:bg-black/10 font-bold"
               )}
@@ -407,118 +623,21 @@ export const ResizableNavbar = () => {
               <ChevronDown
                 className={cn(
                   "w-3.5 h-3.5 stroke-[2.5] transition-transform duration-200",
-                  isExpertiseActive || isExpertiseOpen ? "text-white" : "text-slate-800",
-                  isExpertiseOpen && "rotate-180"
+                  isExpertiseActive || openMenu === "expertise"
+                    ? "text-white"
+                    : "text-slate-800",
+                  openMenu === "expertise" && "rotate-180"
                 )}
               />
             </div>
 
-            {/* Slightly Transparent Dropdown Card with padding-top gap bridge */}
             <AnimatePresence>
-              {isExpertiseOpen && (
-                <motion.div
-                  initial={{ opacity: 0, y: 8, scale: 0.96 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: 6, scale: 0.96 }}
-                  transition={{ type: "spring", stiffness: 350, damping: 25 }}
-                  className="absolute left-1/2 -translate-x-1/2 top-full pt-2.5 w-[min(90vw,940px)] z-50 flex flex-col"
-                >
-                  {/*
-                    Opaque rather than translucent: at this width the panel sits
-                    over hero headlines, and any bleed-through makes the service
-                    names hard to read.
-                  */}
-                  <div
-                    style={{
-                      backgroundColor: "#ffffff",
-                      boxShadow: "0 20px 50px -10px rgba(0, 0, 0, 0.25), 0 10px 25px -5px rgba(37, 99, 235, 0.15)",
-                    }}
-                    className="rounded-3xl p-4 flex flex-col gap-1.5 shadow-2xl border border-slate-200/80"
-                  >
-                    {/* Three grouped columns: Build / Automate / Scale */}
-                    <div className="grid grid-cols-3 gap-x-3 gap-y-1">
-                      {expertiseGroups.map(({ group, items }) => (
-                        <div key={group} className="flex flex-col">
-                          <span className="px-2.5 pb-2 text-[10px] font-black uppercase tracking-[0.18em] text-slate-400">
-                            {group}
-                          </span>
-
-                          <div className="flex flex-col gap-1">
-                            {items.map((item) => {
-                              const Icon = item.icon;
-                              const isActive = pathname === item.link;
-
-                              return (
-                                <Link
-                                  key={item.link}
-                                  href={item.link}
-                                  onClick={() => setIsExpertiseOpen(false)}
-                                  className={cn(
-                                    "group flex items-center gap-2.5 p-2 rounded-2xl transition-all duration-200 normal-case tracking-normal border border-transparent",
-                                    isActive
-                                      ? "bg-blue-600 text-white font-semibold shadow-xs"
-                                      : "hover:bg-blue-50/80 hover:border-blue-100/80 text-slate-900"
-                                  )}
-                                >
-                                  <div
-                                    className={cn(
-                                      "w-8 h-8 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300 shadow-xs",
-                                      isActive
-                                        ? "bg-white text-blue-600"
-                                        : "bg-blue-50 text-blue-600 border border-blue-100 group-hover:bg-blue-600 group-hover:text-white group-hover:scale-105"
-                                    )}
-                                  >
-                                    <Icon className="w-4 h-4" />
-                                  </div>
-
-                                  <div className="flex flex-col flex-1 min-w-0">
-                                    <span
-                                      className={cn(
-                                        "text-[11px] font-bold transition-colors leading-tight",
-                                        isActive ? "text-white" : "text-slate-900 group-hover:text-blue-600"
-                                      )}
-                                    >
-                                      {item.name}
-                                    </span>
-                                    <span
-                                      className={cn(
-                                        "text-[10px] font-medium truncate mt-0.5",
-                                        isActive ? "text-blue-100" : "text-slate-500 group-hover:text-slate-600"
-                                      )}
-                                    >
-                                      {item.desc}
-                                    </span>
-                                  </div>
-
-                                  <ChevronRight
-                                    className={cn(
-                                      "w-3.5 h-3.5 transition-all duration-200 shrink-0",
-                                      isActive
-                                        ? "text-white opacity-100 translate-x-0"
-                                        : "text-slate-400 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:text-blue-600"
-                                    )}
-                                  />
-                                </Link>
-                              );
-                            })}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* Card Footer Link */}
-                    <div className="pt-2 mt-1 border-t border-slate-100">
-                      <Link
-                        href="/services"
-                        onClick={() => setIsExpertiseOpen(false)}
-                        className="flex items-center justify-between px-3 py-1.5 rounded-xl hover:bg-blue-50 text-[11px] font-bold text-blue-600 transition-colors group normal-case"
-                      >
-                        <span>Explore all services</span>
-                        <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-                      </Link>
-                    </div>
-                  </div>
-                </motion.div>
+              {openMenu === "expertise" && (
+                <ServicesMegaPanel
+                  groups={expertiseGroups}
+                  pathname={pathname}
+                  onNavigate={closeMenus}
+                />
               )}
             </AnimatePresence>
           </div>
@@ -574,16 +693,53 @@ export const ResizableNavbar = () => {
               ABOUT US
             </Link>
 
-            <Link
-              href="/services"
-              onClick={() => setIsOpen(false)}
-              className={cn(
-                "px-4 py-2.5 rounded-xl transition-all",
-                isServicesActive ? "bg-blue-500/20 text-blue-600 border border-blue-400/30" : "text-black hover:bg-black/5"
+            <div className="flex flex-col">
+              <div
+                className={cn(
+                  "px-4 py-2.5 rounded-xl transition-all flex items-center justify-between cursor-pointer select-none",
+                  isServicesActive ? "bg-blue-500/20 text-blue-600 border border-blue-400/30" : "text-black hover:bg-black/5"
+                )}
+                onClick={() =>
+                  setOpenMenu((prev) => (prev === "services" ? null : "services"))
+                }
+              >
+                {/* Tapping the label opens the list; the "All services" row
+                    below it navigates, so the landing page stays reachable. */}
+                <span>SERVICES</span>
+                <ChevronDown
+                  className={cn(
+                    "w-4 h-4 transition-transform",
+                    openMenu === "services" && "rotate-180"
+                  )}
+                />
+              </div>
+
+              <AnimatePresence>
+                {openMenu === "services" && (
+                  <MobileServicesList
+                    items={expertiseList}
+                    pathname={pathname}
+                    onNavigate={() => {
+                      setIsOpen(false);
+                      closeMenus();
+                    }}
+                  />
+                )}
+              </AnimatePresence>
+
+              {openMenu === "services" && (
+                <Link
+                  href="/services"
+                  onClick={() => {
+                    setIsOpen(false);
+                    closeMenus();
+                  }}
+                  className="ml-4 pl-6 py-2 text-xs font-bold normal-case tracking-normal text-blue-600 hover:underline"
+                >
+                  All services →
+                </Link>
               )}
-            >
-              SERVICES
-            </Link>
+            </div>
 
             <Link
               href="/careers"
@@ -602,47 +758,29 @@ export const ResizableNavbar = () => {
                   "px-4 py-2.5 rounded-xl transition-all flex items-center justify-between cursor-pointer select-none",
                   isExpertiseActive ? "bg-blue-500/20 text-blue-600 border border-blue-400/30" : "text-black hover:bg-black/5"
                 )}
-                onClick={() => setIsExpertiseOpen((prev) => !prev)}
+                onClick={() =>
+                  setOpenMenu((prev) => (prev === "expertise" ? null : "expertise"))
+                }
               >
                 <span>EXPERTISE</span>
-                <ChevronDown className={cn("w-4 h-4 transition-transform", isExpertiseOpen && "rotate-180")} />
+                <ChevronDown
+                  className={cn(
+                    "w-4 h-4 transition-transform",
+                    openMenu === "expertise" && "rotate-180"
+                  )}
+                />
               </div>
 
-              {/* Mobile Expertise List */}
               <AnimatePresence>
-                {isExpertiseOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.2 }}
-                    className="overflow-hidden"
-                  >
-                    <div className="ml-4 pl-3 border-l-2 border-slate-200 flex flex-col gap-1.5 my-1.5">
-                      {expertiseList.map((item, idx) => {
-                        const Icon = item.icon;
-                        return (
-                          <Link
-                            key={idx}
-                            href={item.link}
-                            onClick={() => {
-                              setIsOpen(false);
-                              setIsExpertiseOpen(false);
-                            }}
-                            className={cn(
-                              "px-3 py-2 rounded-xl text-xs font-semibold normal-case tracking-normal transition-all flex items-center gap-2.5",
-                              pathname === item.link
-                                ? "bg-blue-500/20 text-blue-600 font-bold"
-                                : "text-slate-800 hover:bg-black/5 hover:text-black"
-                            )}
-                          >
-                            <Icon className="w-4 h-4 text-blue-600 shrink-0" />
-                            <span>{item.name}</span>
-                          </Link>
-                        );
-                      })}
-                    </div>
-                  </motion.div>
+                {openMenu === "expertise" && (
+                  <MobileServicesList
+                    items={expertiseList}
+                    pathname={pathname}
+                    onNavigate={() => {
+                      setIsOpen(false);
+                      closeMenus();
+                    }}
+                  />
                 )}
               </AnimatePresence>
             </div>

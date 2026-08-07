@@ -70,7 +70,7 @@ export function AboutUsSection() {
       </div>
       <h2 className="text-3xl sm:text-5xl md:text-[52px] font-bold tracking-tight text-neutral-900 leading-[1.15] max-w-5xl mx-auto mb-12">
         {/* Line 1 */}
-        <span className="block">A Software Partner</span>
+        <span className="block">A Technology Partner</span>
         {/* Line 2 */}
         <span className="flex items-center justify-center gap-3 flex-wrap">
           <span className="">not</span>

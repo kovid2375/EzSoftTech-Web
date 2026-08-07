@@ -29,7 +29,14 @@ export function Footer() {
             <img className="w-50" src="/EZGLOBAL1.webp" alt="EZGlobal" />
 
             <p className="text-sm text-neutral-400 leading-relaxed mt-1 max-w-sm">
-              EZGlobal is a{" "}
+              {/*
+                "a leading", deliberately — not "the leading". The definite
+                article claims the number one position and needs evidence
+                (awards, recognised rankings) to stand up. The indefinite
+                article claims membership of a prominent group, which is a
+                defensible statement of standing.
+              */}
+              EZGlobal is a leading{" "}
               <strong className="text-neutral-200 font-semibold">
                 software engineering company headquartered in Raipur,
                 Chhattisgarh
@@ -62,13 +69,23 @@ export function Footer() {
           </div>
 
           {/* Right Columns Area - Links */}
-          <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Column 2 - Services (every line, from the shared data) */}
-            <div className="sm:col-span-2 lg:col-span-1">
+          <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-x-8 gap-y-10">
+            {/*
+              Services — every line, from the shared data.
+
+              Given its own full-width row laid out in three sub-columns.
+              Stacked singly, twelve links ran to twelve rows and made this by
+              far the tallest thing in the footer, setting the height of the
+              whole band. Three columns turns that into four rows. It needs the
+              full width rather than a narrow slot because names like "Applied
+              AI & Intelligent Automation" wrap to three lines otherwise, which
+              would give back the height the columns just saved.
+            */}
+            <div className="sm:col-span-3">
               <h4 className="text-sm font-semibold tracking-wider text-white mb-5">
                 Services
               </h4>
-              <ul className="flex flex-col gap-3">
+              <ul className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-3">
                 {services.map((service) => (
                   <li key={service.slug}>
                     <Link

@@ -7,6 +7,33 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import Button2 from "../button2";
 
+/**
+ * Hero subheadline options.
+ *
+ * Six candidate lines, kept together so the choice is a one-word change to
+ * SUBHEADLINE below rather than an edit buried in the markup.
+ *
+ * `punchy` is live. It carries the "outcomes, not output" message the rest of
+ * the site already makes ("measurable business outcomes — not just
+ * deliverables", "AI that does actual work") without reaching for jargon like
+ * "moves the needle", which sits awkwardly against the restrained tone of the
+ * service pages.
+ *
+ * `tagline` and `process` are very short — they read better as a strapline or
+ * a step strip than as the paragraph under the H1, which has room for a full
+ * sentence.
+ */
+const SUBHEADLINES = {
+    bold: "From first idea to full-scale deployment, we build software that moves the needle — not just ships features.",
+    punchy: "We don't just build software. We build outcomes — from strategy to launch and everything after.",
+    highEnergy: "Strategy to launch, and beyond. We build software that actually moves your business forward.",
+    direct: "Your goals, our code. From day-one strategy to deployment and support, we build software that delivers real results — not just deliverables.",
+    tagline: "Built for outcomes. Not just output.",
+    process: "Strategy → Build → Deploy → Support — EZGlobal turns ideas into measurable business impact.",
+} as const;
+
+const SUBHEADLINE = SUBHEADLINES.punchy;
+
 export default function Hero() {
     const words = ["Web Platform Engineering", "Applied AI & Automation", "Cloud Infrastructure", "Mobile Product Engineering"]
     return (
@@ -164,7 +191,7 @@ export default function Hero() {
 
                     {/* Subheading */}
                     <p className="mt-10 text-neutral-600 text-sm sm:text-base md:text-lg font-medium tracking-wide max-w-2xl leading-relaxed">
-                        From initial strategy through to deployment and support, we design and build software that delivers measurable business outcomes not just deliverables.
+                        {SUBHEADLINE}
                     </p>
                 </div>
                 <div className="relative z-10 flex flex-col items-center justify-center mt-10 gap-4">
