@@ -81,7 +81,7 @@ export default function Hero() {
                 <motion.div
                     animate={{ scale: [0.85, 1.15, 0.85], rotate: [0, 5, -5, 0], opacity: [0.8, 0.8, 0.8] }}
                     transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-                    className="absolute left-[78%] sm:left-[72%] top-[42%] lg:left-[58%] text-[#0b64f1]  select-none pointer-events-none"
+                    className="absolute left-[calc(50%+25rem)] top-[42%] hidden lg:block text-[#0b64f1] select-none pointer-events-none"
                 >
                     <svg className="w-6 h-6 sm:w-10 sm:h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M4 7l6 5-6 5" />
@@ -93,7 +93,7 @@ export default function Hero() {
                 <motion.div
                     animate={{ scale: [0.8, 1.15, 0.8], opacity: [0.9, 0.85, 0.9] }}
                     transition={{ duration: 4.8, repeat: Infinity, ease: "easeInOut", delay: 1.2 }}
-                    className="absolute right-[15%] sm:right-[33%] bottom-[12%] text-amber-500  select-none pointer-events-none"
+                    className="absolute right-[calc(50%+25rem)] bottom-[12%] hidden lg:block text-amber-500 select-none pointer-events-none"
                 >
                     <svg className="w-6 h-6 sm:w-10 sm:h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
                         <circle cx="6" cy="18" r="2" fill="currentColor" />
@@ -112,7 +112,7 @@ export default function Hero() {
                     Shares top-[30%] with its counterpart on the right so the
                     pair reads as one matched set flanking the headline.
                 */}
-                <div className="absolute left-[5%] sm:left-[16%] top-[30%]  opacity-70  sm:flex flex-col items-center select-none pointer-events-none text-neutral-800">
+                <div className="absolute right-[calc(50%+25.5rem)] top-[30%] opacity-70 hidden xl:flex flex-col items-center select-none pointer-events-none text-neutral-800">
                     <span className="font-handwriting text-lg sm:text-2xl text-neutral-800 tracking-wide transform -rotate-8 mb-2  ">
                         Strategy first
                     </span>
@@ -137,7 +137,7 @@ export default function Hero() {
                     borrows the Applied AI page's own headline instead, so the
                     hero and the service page make the same claim.
                 */}
-                <div className="absolute right-[2%] sm:right-[15%] top-[30%] opacity-70  sm:flex flex-col items-center select-none pointer-events-none text-neutral-800">
+                <div className="absolute left-[calc(50%+25.5rem)] top-[30%] opacity-70 hidden xl:flex flex-col items-center select-none pointer-events-none text-neutral-800">
                     <span className="font-handwriting text-sm sm:text-xl text-neutral-800 tracking-wide transform rotate-6 mb-1 ">
                         AI that does actual work
                     </span>
@@ -160,7 +160,7 @@ export default function Hero() {
                 </div>
 
                 {/* Hand-drawn "how we work" indicator (Middle Left) */}
-                <div className="absolute left-[3%] sm:left-[13%] bottom-[33%] opacity-75 hidden sm:flex flex-col items-center select-none pointer-events-none text-neutral-800">
+                <div className="absolute right-[calc(50%+25.5rem)] bottom-[30%] opacity-75 hidden xl:flex flex-col items-center select-none pointer-events-none text-neutral-800">
                     <span className="font-handwriting text-xl sm:text-3xl text-neutral-700 tracking-wider transform -rotate-6 mb-1 hidden sm:block">
                         how we work
                     </span>
