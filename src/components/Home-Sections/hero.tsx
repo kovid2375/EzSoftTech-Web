@@ -105,10 +105,16 @@ export default function Hero() {
                     </svg>
                 </motion.div>
 
-                {/* Hand-drawn SVG doodle left (Swirl + Label) */}
-                <div className="absolute left-[5%] sm:left-[16%] top-[27%]  opacity-70  sm:flex flex-col items-center select-none pointer-events-none text-neutral-800">
+                {/*
+                    Hand-drawn annotation, left — points at "Smarter strategy."
+                    Was "Built for growth", which annotated nothing in the
+                    headline and could have belonged to any agency.
+                    Shares top-[30%] with its counterpart on the right so the
+                    pair reads as one matched set flanking the headline.
+                */}
+                <div className="absolute left-[5%] sm:left-[16%] top-[30%]  opacity-70  sm:flex flex-col items-center select-none pointer-events-none text-neutral-800">
                     <span className="font-handwriting text-lg sm:text-2xl text-neutral-800 tracking-wide transform -rotate-8 mb-2  ">
-                        Built for growth
+                        Strategy first
                     </span>
                     <svg className="w-10 h-10 sm:w-[70px] sm:h-[70px] hidden md:block" viewBox="0 0 60 60" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
                         {/* Self-drawing hand-drawn swirl */}
@@ -121,10 +127,19 @@ export default function Hero() {
                     </svg>
                 </div>
 
-                {/* Hand-drawn SVG doodle right (Loop Arrow + Label) */}
-                <div className="absolute right-[2%] sm:right-[15%] top-[35%] opacity-70  sm:flex flex-col items-center select-none pointer-events-none text-neutral-800">
+                {/*
+                    Hand-drawn annotation, right — points at "Engineered with AI."
+
+                    Was "AI-native approach", which contradicted the rest of the
+                    site: the Applied AI page opens by drawing a line between
+                    what AI is marketed as doing and what it reliably delivers,
+                    and Our Standards leads with "Judgement over fashion". This
+                    borrows the Applied AI page's own headline instead, so the
+                    hero and the service page make the same claim.
+                */}
+                <div className="absolute right-[2%] sm:right-[15%] top-[30%] opacity-70  sm:flex flex-col items-center select-none pointer-events-none text-neutral-800">
                     <span className="font-handwriting text-sm sm:text-xl text-neutral-800 tracking-wide transform rotate-6 mb-1 ">
-                        AI-native approach
+                        AI that does actual work
                     </span>
                     <svg className="w-12 h-10 sm:w-[100px] sm:h-[75px] transform rotate-90" fill="none" stroke="currentColor" strokeWidth="2">
                         {/* Self-drawing custom loop arrow */}
